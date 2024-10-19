@@ -683,6 +683,9 @@ body .spnc-edit-link a {
 .spnc-author-box.spnc-author-box-two .spnc-author figure {
    border-color:  <?php echo esc_attr( "rgba(" . $r . ", " . $g . ", " . $b . ", 0.3)" ) ?>; 
 }
+.sticky-post-icon, .spnc-post.format-quote .spnc-quote-wrap, .spnc-post .spnc-post-btn {
+    background-color: <?php echo esc_attr($link_color); ?>;
+}
 </style>
 <?php 
 }

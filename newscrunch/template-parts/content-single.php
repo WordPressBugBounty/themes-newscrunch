@@ -102,6 +102,10 @@ else
 				if(get_theme_mod('newscrunch_enable_reorder_sp_content',true)==true):
 					if ( 'reorder_sp_content' === $newscrunch_sp_sort_val ) :?>
 				        <div itemprop="articleBody" class="spnc-entry-content">
+				        	<?php if(get_post_format() === 'quote'): ?>
+				        	<div class="spnc-quote-wrap">
+	                            <i class="fa fa-quote-left" aria-hidden="true"></i>
+	                        <?php endif; ?>
 				            <?php the_content();
 				            	wp_link_pages();
 				            	//video post format
@@ -122,7 +126,10 @@ else
 				            			endif;
 				            		}
 				            	endif;	
-				            ?>
+				            	?>
+				            	<?php if(get_post_format() === 'quote'): ?>
+						    </div>
+						<?php endif;?>
 				        </div>
 				        <?php endif;
 				endif; ?>

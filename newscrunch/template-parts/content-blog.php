@@ -7,15 +7,29 @@
 ?>  
 <article data-wow-delay=".8s" itemscope itemtype="https://schema.org/Article" id="post-<?php the_ID(); ?>" <?php post_class('spnc-grid-catpost spnc-post wow-callback zoomIn '); ?> >
 	<div class="spnc-post-overlay"></div>
+	<div class="spnc-post-format-wrapper">
     <?php
-	if(has_post_thumbnail()): ?>
-		<!-- Post Featured Image -->
-		<figure class="spnc-post-thumbnail <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>">
-			<a itemprop="url" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<?php the_post_thumbnail('full', array('class'=>'img-fluid', 'itemprop'=>'image' )); ?>
-			</a>				
-		</figure>
-	<?php endif; ?>			
+    if(has_post_format('gallery')) { ?>    
+        <span class="spnc-post-btn">
+            <i class="fa-regular fa-images"></i>
+        </span>
+     <?php } elseif (has_post_format('link')) { ?>
+     	 <span class="spnc-post-btn">
+            <i class="fa-solid fa-link"></i>
+        </span>
+    <?php     
+     } 
+	newscrunch_post_formats();
+	 if(get_theme_mod('newscrunch_enable_post_category',true)==true):
+        if ( has_category() ) : ?>
+			<div class="spnc-entry-meta">
+				<span class="spnc-cat-links">
+					<?php newscrunch_get_categories(get_the_ID()); ?>
+				</span>
+			</div>
+			<?php endif;
+		endif; ?>
+	</div> 		
 	<div class="spnc-post-content <?php if(!has_post_thumbnail()): ?>featured-img<?php endif; ?>">
 		<div class="spnc-content-wrapper">
             <div class="spnc-post-wrapper">
@@ -53,9 +67,20 @@
 	                    	<a class="<?php echo esc_attr(get_theme_mod('link_animate','a_effect1'));?>" itemprop="url" href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_title();?></a>
 	                    </h3>
 	                <?php endif; 
-	                if(get_theme_mod('newscrunch_enable_post_description',true)==true): ?>   
-                    	<div class="spnc-description"><p><?php newscrunch_excerpt(30); ?></p></div>
-                    <?php endif; ?>
+
+	                if(get_theme_mod('newscrunch_enable_post_description',true)==true): 
+                    	  if(has_post_format('quote')) {  ?>
+	                        <div class="spnc-quote-wrap">
+	                            <i class="fa fa-quote-left" aria-hidden="true"></i>
+	                            <p class="spnc-description">
+	                             <?php the_content();?>
+	                            </p>
+	                        </div>
+	                        <?php
+	                        } else { ?>
+	                        <div class="spnc-description"><p><?php newscrunch_excerpt(30); ?></p></div>
+	                        <?php }
+                     endif; ?>
 	            </header>
 	            <div class="spnc-entry-content">
 	            	<?php 

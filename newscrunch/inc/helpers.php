@@ -566,6 +566,10 @@ if (!function_exists('newscrunch_theme_layout')) :
 	function newscrunch_theme_layout() {
 		$newscrunch_highlight_view =get_theme_mod('newscrunch_highlight_view','front');
 		$newscrunch_theme_layout = get_theme_mod('theme_layout', 'wide');
+		$newscrunch_pstlayout_class="";
+		if(get_theme_mod('newscrunch_single_post_layout','1') == '8'){
+			$newscrunch_pstlayout_class = " spnc-blog-single-seven";
+		}
 		//for advertisement img
 		$newscrunch_advertisement_item = get_theme_mod('advertisement_items');
 		$newscrunch_advertisement_item = json_decode($newscrunch_advertisement_item);
@@ -605,10 +609,10 @@ if (!function_exists('newscrunch_theme_layout')) :
 		}
 		
 	    if ($newscrunch_theme_layout == "boxed") {
-	        $newscrunch_layout_type = "boxed ".$newscrunch_highlight_view. " ".$newscrunch_ads;
+	        $newscrunch_layout_type = "boxed ".$newscrunch_highlight_view. " ".$newscrunch_ads .$newscrunch_pstlayout_class;
 	    } 
 	    else {
-	        $newscrunch_layout_type = "wide ".$newscrunch_highlight_view. " ".$newscrunch_ads;
+	        $newscrunch_layout_type = "wide ".$newscrunch_highlight_view. " ".$newscrunch_ads .$newscrunch_pstlayout_class;
 	    }?>
 	    <body <?php body_class($newscrunch_layout_type); ?> <?php newcrunch_schema_attributes(); ?>>
 	<?php }
@@ -1779,6 +1783,10 @@ endif;
 if ( ! function_exists( 'newscrunch_get_first_video_url' ) ) :
 	function newscrunch_get_first_video_url( $post_id = null ) {
 
+		if(empty(newscrunch_get_video_from_post( $post_id )))
+		{
+			return '';
+		}
 		$embed = newscrunch_get_video_from_post( $post_id );
 		// Find the first video URL in the content
 		preg_match( '/<video[^>]*src=[\'"]?([^\'" >]+)|<iframe.*?src=["\'](https?:\/\/[^"\']+)[^>]*>/', $embed, $matches );
@@ -2192,3 +2200,287 @@ function newscrunch_advertisement_content($id)
     	
     }    		
 }
+
+/*
+-------------------------------------------------------------------------------
+ Get audio from post
+-------------------------------------------------------------------------------*/
+
+if ( ! function_exists( 'newscrunch_get_audio_from_post' ) ) :
+
+	/**
+	 * Get audio HTML markup from post content.
+	 *
+	 * @since 1.0.0
+	 * @param  number $post_id Post id.
+	 * @return mixed
+	 */
+	function newscrunch_get_audio_from_post( $post_id = null ) {
+
+		$post    = get_post( $post_id );
+		$content = do_shortcode( apply_filters( 'the_content', $post->post_content ) ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+		$embeds  = apply_filters( 'newscrunch_get_post_audio', get_media_embedded_in_content( $content ) );
+
+		if ( empty( $embeds ) ) {
+			return '';
+		}
+
+		// check what is the first embed containg audio tag, or soundlcoud.
+		foreach ( $embeds as $embed ) {
+			if ( strpos( $embed, 'audio' ) || strpos( $embed, 'soundcloud' ) || strpos( $embed, 'spotify' )  ) {
+				return $embed ;
+			}
+		}
+	}
+endif;
+
+/*
+-------------------------------------------------------------------------------
+ Get galley form post
+-------------------------------------------------------------------------------*/
+
+
+if ( ! function_exists( 'newscrunch_get_post_gallery' ) ) :
+	/**
+	 * A get_post_gallery() polyfill for Gutenberg.
+	 *
+	 * @since 1.0.0
+	 * @param object|int|null $post Optional. The post to check. If not supplied, defaults to the current post if used in the loop.
+	 * @param boolean         $html Return gallery HTML or array of gallery items.
+	 * @return string|array   The gallery html or array of gallery items.
+	 */
+	function newscrunch_get_post_gallery( $post = 0, $html = false ) {
+
+		// Get gallery shortcode.
+		$gallery = get_post_gallery( $post, $html );
+
+		// Already found a gallery so lets quit.
+		if ( $gallery ) {
+			return $gallery;
+		}
+
+		// Check the post exists.
+		$post = get_post( $post );
+		if ( ! $post ) {
+			return;
+		}
+
+		// Not using Gutenberg so let's quit.
+		if ( ! function_exists( 'has_blocks' ) ) {
+			return;
+		}
+
+		// Not using blocks so let's quit.
+		if ( ! has_blocks( $post->post_content ) ) {
+			return;
+		}
+
+		/**
+		 * Search for gallery blocks and then, if found, return the
+		 * first gallery block.
+		 */
+		$pattern = '/<!--\ wp:gallery.*-->([\s\S]*?)<!--\ \/wp:gallery -->/i';
+		preg_match_all( $pattern, $post->post_content, $the_galleries );
+
+		// Check a gallery was found and if so change the gallery html.
+		if ( ! empty( $the_galleries[1] ) ) {
+			$gallery_html = reset( $the_galleries[1] );
+
+			if ( $html ) {
+				$gallery = $gallery_html;
+			} else {
+				$srcs = array();
+				$ids  = array();
+
+				preg_match_all( '#src=([\'"])(.+?)\1#is', $gallery_html, $src, PREG_SET_ORDER );
+				if ( ! empty( $src ) ) {
+					foreach ( $src as $s ) {
+						$srcs[] = $s[2];
+					}
+				}
+
+				preg_match_all( '#data-id=([\'"])(.+?)\1#is', $gallery_html, $id, PREG_SET_ORDER );
+				if ( ! empty( $id ) ) {
+					foreach ( $id as $i ) {
+						$ids[] = $i[2];
+					}
+				}
+
+				$gallery = array(
+					'ids' => implode( ',', $ids ),
+					'src' => $srcs,
+				);
+			}
+		}
+
+		return $gallery;
+	}
+endif;
+
+/*
+-------------------------------------------------------------------------------
+ Get the media form post
+-------------------------------------------------------------------------------*/
+
+function newscrunch_get_post_media( $post_format = false, $post = null ) {
+
+		if ( false === $post_format ) {
+			$post_format = get_post_format( $post );
+		}
+
+		$return = '';
+
+		switch ( $post_format ) {
+
+			case 'video':
+				$return = newscrunch_get_video_from_post( $post );
+				break;
+
+			case 'audio':
+			/*$return = do_shortcode( newscrunch_get_audio_from_post( $post ) );*/
+				$return =  newscrunch_get_audio_from_post( $post ) ;
+				break;
+
+
+			case 'gallery':
+			$gallery = newscrunch_get_post_gallery( $post );
+
+			if ( isset( $gallery['ids'] ) ) {
+
+				$img_ids = explode( ',', $gallery['ids'] );
+
+				if ( is_array( $img_ids ) && ! empty( $img_ids ) ) {
+					foreach ( $img_ids as $img_id ) {
+
+						$image_alt = get_post_meta( $img_id, '_wp_attachment_image_alt', true );
+						$image_url = wp_get_attachment_url( $img_id );
+
+						$return .= '<figure class="spnc-post-thumbnail">';
+						$return .= '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( $image_alt ) . '" >';
+						$return .= '</figure>';
+					}
+				}
+			}
+			break;
+			
+		}
+
+	return apply_filters( 'newscrunch_get_post_media', $return, $post_format, $post );
+}
+
+
+/*
+-------------------------------------------------------------------------------
+ Post format section
+-------------------------------------------------------------------------------*/
+
+if ( ! function_exists( 'newscrunch_post_formats' ) ) :
+	function newscrunch_post_formats() 
+	{
+	    if ( has_post_format('video') ) {
+
+	    		if(has_post_thumbnail()): ?>
+					<!-- Post Featured Image -->
+					<figure class="spnc-post-thumbnail <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>">
+						<a itemprop="url" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+							<?php the_post_thumbnail('full', array('class'=>'img-fluid', 'itemprop'=>'image' )); ?>
+						</a>				
+					</figure>
+					
+					<span class="spnc-post-btn format-video-btn" style="cursor: pointer;">
+					    <i class="fa-solid fa-video"></i>
+					</span>
+                	<!-- Video Post PopUp Model -->
+                	<?php if ( class_exists('Newscrunch_Plus') ){
+                	$newscrunch_media = newscrunch_get_post_media( 'video' );
+                	if ( $newscrunch_media ) : ?>
+                	<!-- Video Post PopUp Model -->
+				    <div class="format-video-model">
+				        <div class="spnc-news-media">
+				            <?php echo $newscrunch_media; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				            <span class="format-video-close">&times;</span>
+				        </div>
+				    </div>
+				    <?php
+				    endif; 
+					}
+				    ?>
+				  
+					<?php
+					else :
+						$newscrunch_media = newscrunch_get_post_media( 'video' );
+						if ( $newscrunch_media ) : ?>
+							<figure class="spnc-news-media spnc-post-thumbnail">
+									<?php echo $newscrunch_media; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							</figure>
+					<?php
+				endif;
+		 endif;
+
+     }
+    else if(has_post_format('gallery')){
+
+    	if ( class_exists('Newscrunch_Plus') ){
+
+    	$newscrunch_media = newscrunch_get_post_media( 'gallery' );
+
+		if ( $newscrunch_media ) : ?>
+	     <div class="spnc-post-gallery-carousel owl-carousel spnc-post-carousel">
+           <?php echo $newscrunch_media; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+         </div>
+		<?php
+	    else: 
+		if(has_post_thumbnail()){ ?>
+			<!-- Post Featured Image -->
+			<figure class="spnc-post-thumbnail <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>">
+				<a itemprop="url" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+					<?php the_post_thumbnail('full', array('class'=>'img-fluid', 'itemprop'=>'image' )); ?>
+				</a>				
+			</figure>
+		<?php };
+		endif;
+
+		}else{
+		if(has_post_thumbnail()): ?>
+			<!-- Post Featured Image -->
+			<figure class="spnc-post-thumbnail <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>">
+				<a itemprop="url" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+					<?php the_post_thumbnail('full', array('class'=>'img-fluid', 'itemprop'=>'image' )); ?>
+				</a>				
+			</figure>
+		<?php endif;
+		}
+    }
+    else if(has_post_format('audio')){
+    	$newscrunch_media = newscrunch_get_post_media( 'audio' );
+		if ( $newscrunch_media ) : ?>
+				<figure class="spnc-post-thumbnail">
+						<?php echo $newscrunch_media; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				</figure>
+				<?php
+			else:
+				if(has_post_thumbnail()){ ?>
+					<!-- Post Featured Image -->
+					<figure class="spnc-post-thumbnail <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>">
+						<a itemprop="url" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+							<?php the_post_thumbnail('full', array('class'=>'img-fluid', 'itemprop'=>'image' )); ?>
+						</a>				
+					</figure>
+					<span class="spnc-post-btn">
+			            <i class="fa-solid fa-headphones"></i>
+			        </span>
+					<?php }
+			endif;
+    }
+    else {           
+		if(has_post_thumbnail()): ?>
+			<!-- Post Featured Image -->
+			<figure class="spnc-post-thumbnail <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>">
+				<a itemprop="url" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+					<?php the_post_thumbnail('full', array('class'=>'img-fluid', 'itemprop'=>'image' )); ?>
+				</a>				
+			</figure>
+		<?php endif;
+	}
+}
+endif;

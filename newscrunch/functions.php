@@ -100,7 +100,7 @@ if ( ! function_exists( 'newscrunch_setup' ) ) :
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		// Post Formats
-		add_theme_support( 'post-formats', array( 'video' ) );
+		add_theme_support( 'post-formats', array( 'video', 'gallery', 'quote', 'audio', 'link' ) );
 
 		//Add support for core custom logo.
 		add_theme_support('custom-logo',
@@ -322,7 +322,8 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                    <li><?php echo 'Added Advertisement Feature.'; ?></li>
+		                    <li><?php echo 'Added Post Formats.'; ?></li>
+		                    <li><?php echo 'Added categories in Blog Grid Layout & Blog Template.'; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">

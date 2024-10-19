@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Newscrunch 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/newscrunch-wordpress-theme\n"
-"POT-Creation-Date: 2024-09-26 13:42+0530\n"
+"POT-Creation-Date: 2024-10-14 18:46+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,65 +75,53 @@ msgstr ""
 msgid "theme"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:323
-msgid "Install and activate"
-msgstr ""
-
-#: admin/inc/class-spicethemes-about-page.php:327
-#: inc/customizer/upsell/class-customize.php:75
-#: inc/customizer/upsell/class-customize.php:87
-#: inc/customizer/upsell/class-customize.php:97
-msgid "Import Demo"
-msgstr ""
-
-#: admin/inc/class-spicethemes-about-page.php:334
+#: admin/inc/class-spicethemes-about-page.php:324
 msgid "Install"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:334
-#: admin/inc/class-spicethemes-about-page.php:365
+#: admin/inc/class-spicethemes-about-page.php:324
+#: admin/inc/class-spicethemes-about-page.php:355
 msgid "now"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:354
-#: admin/inc/class-spicethemes-about-page.php:365
-#: inc/customizer/customizer-recommended-plugin.php:16
+#: admin/inc/class-spicethemes-about-page.php:326
+msgid "Install and activate"
+msgstr ""
+
+#: admin/inc/class-spicethemes-about-page.php:344
+#: admin/inc/class-spicethemes-about-page.php:355
 msgid "Activate"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:358
+#: admin/inc/class-spicethemes-about-page.php:348
 msgid "Activate Import Plugin"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:374
+#: admin/inc/class-spicethemes-about-page.php:364
 msgid "Active"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:519
-msgid "To import the pre-designed demo data for the magazine theme, please install and activate this plugin."
-msgstr ""
-
-#: admin/inc/class-spicethemes-about-page.php:524
+#: admin/inc/class-spicethemes-about-page.php:505
 msgid "To display the contact form, install & activate this plugin."
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:529
+#: admin/inc/class-spicethemes-about-page.php:510
 msgid "To enable the display of breadcrumbs, please install and activate this plugin."
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:534
+#: admin/inc/class-spicethemes-about-page.php:515
 msgid "To add a different banner image for a different page or post, install & activate this plugin."
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:539
+#: admin/inc/class-spicethemes-about-page.php:520
 msgid "To display the posts in a beautiful slider with multiple options, install & activate this plugin."
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:544
+#: admin/inc/class-spicethemes-about-page.php:525
 msgid "To add the social share buttons to your posts, install & activate this plugin."
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:549
+#: admin/inc/class-spicethemes-about-page.php:530
 msgid "We highly recommend installing and activating the Seo Optimized Images plugin, which will dynamically insert SEO-friendly alt attributes and title attributes to enhance your image optimization."
 msgstr ""
 
@@ -142,113 +130,117 @@ msgid "Theme Configuration"
 msgstr ""
 
 #: admin/tab-pages/getting-started.php:22
-#: admin/tab-pages/getting-started.php:25
+#: admin/tab-pages/getting-started.php:28
 msgid "Import Image"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:26
+#: admin/tab-pages/getting-started.php:26 functions.php:221
+msgid "Install Plugin"
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:29
 msgid "Need to install & activate the \"Spice Starter Sites\" plugin to import the demo."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:35
+#: admin/tab-pages/getting-started.php:38
 msgid "Customize Image"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:44
+#: admin/tab-pages/getting-started.php:47
 msgid "Theme Features"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:49
+#: admin/tab-pages/getting-started.php:52
 msgid "Site Logo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:53
+#: admin/tab-pages/getting-started.php:56
 msgid "Site Layout"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:57
+#: admin/tab-pages/getting-started.php:60
 msgid "Header Section"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:61
+#: admin/tab-pages/getting-started.php:64
 #: inc/customizer/settings/general-settings.php:577
 msgid "Sidebar Layout"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:65
+#: admin/tab-pages/getting-started.php:68
 msgid "Social Icons"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:69
+#: admin/tab-pages/getting-started.php:72
 msgid "Footer Widgets"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:73 inc/customizer/custom_style.php:14
+#: admin/tab-pages/getting-started.php:76 inc/customizer/custom_style.php:14
 #: inc/customizer/custom_style.php:17
 msgid "Menus"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:77
+#: admin/tab-pages/getting-started.php:80
 msgid "Widgets"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:85
+#: admin/tab-pages/getting-started.php:88
 msgid "Useful Links"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:90
+#: admin/tab-pages/getting-started.php:93
 msgid "Theme Detail"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:94
+#: admin/tab-pages/getting-started.php:97
 msgid "Theme Demos"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:98 functions.php:215
+#: admin/tab-pages/getting-started.php:101 functions.php:215
 msgid "Help Docs"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:98
+#: admin/tab-pages/getting-started.php:101
 msgid "Documentation"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:102
+#: admin/tab-pages/getting-started.php:105
 msgid "Support"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:106
+#: admin/tab-pages/getting-started.php:109
 msgid "Valuable Feedback"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:106
+#: admin/tab-pages/getting-started.php:109
 msgid "Your feedback is valuable to us"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:110
+#: admin/tab-pages/getting-started.php:113
 msgid "Free or Pro Comparison"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:110
+#: admin/tab-pages/getting-started.php:113
 msgid "Free vs Pro"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:114 functions.php:341
+#: admin/tab-pages/getting-started.php:117 functions.php:335
 msgid "Changelog"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:118
+#: admin/tab-pages/getting-started.php:121
 msgid "Premium Demo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:118
+#: admin/tab-pages/getting-started.php:121
 msgid "Premium Version"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:122
+#: admin/tab-pages/getting-started.php:125
 msgid "Pre-sales Enquiry"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:122
+#: admin/tab-pages/getting-started.php:125
 msgid "Pre-sales enquiry"
 msgstr ""
 
@@ -487,12 +479,12 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: comments.php:80 inc/helpers.php:1150 inc/helpers.php:1252
+#: comments.php:80 inc/helpers.php:1154 inc/helpers.php:1256
 #: partials/widgets/featured-post.php:38 partials/widgets/featured-post.php:180
 #: partials/widgets/single-column.php:34 partials/widgets/single-column.php:94
-#: partials/widgets/single-column.php:139 template-parts/content-blog.php:46
-#: template-parts/content-list.php:62 template-parts/content-search.php:47
-#: template-parts/content-single.php:75 template-parts/content.php:49
+#: partials/widgets/single-column.php:139 template-parts/content-blog.php:60
+#: template-parts/content-list.php:81 template-parts/content-search.php:62
+#: template-parts/content-single.php:75 template-parts/content.php:67
 msgid "Comments"
 msgstr ""
 
@@ -548,47 +540,47 @@ msgstr ""
 msgid "Theme Documentation"
 msgstr ""
 
-#: functions.php:234
+#: functions.php:227
 msgid "Welcome Banner"
 msgstr ""
 
-#: functions.php:325
+#: functions.php:318
 msgid "Current"
 msgstr ""
 
-#: functions.php:328
+#: functions.php:321
 msgid "We've consistently aimed to meet our users' needs and demands. In order to address specific requirements and rectify issues from our previous version, we've rolled out version"
 msgstr ""
 
-#: functions.php:328
+#: functions.php:321
 msgid "complete with exciting new features. Take a look now!"
 msgstr ""
 
-#: functions.php:336
+#: functions.php:330
 msgid "Try Now"
 msgstr ""
 
-#: functions.php:338
+#: functions.php:332
 msgid "Try It Now"
 msgstr ""
 
-#: functions.php:343
+#: functions.php:337
 msgid "See Changelog"
 msgstr ""
 
-#: functions.php:346 functions.php:348
+#: functions.php:340 functions.php:342
 msgid "Watch Videos"
 msgstr ""
 
-#: functions.php:351 functions.php:353
+#: functions.php:345 functions.php:347
 msgid "Upgrade To Pro"
 msgstr ""
 
-#: functions.php:377
+#: functions.php:371
 msgid "ago"
 msgstr ""
 
-#: functions.php:391
+#: functions.php:385
 msgid "date-time"
 msgstr ""
 
@@ -909,30 +901,6 @@ msgstr ""
 
 #: inc/customizer/custom_style.php:18
 msgid "Copyright"
-msgstr ""
-
-#: inc/customizer/customizer-recommended-plugin.php:9
-msgid "Install and activate the"
-msgstr ""
-
-#: inc/customizer/customizer-recommended-plugin.php:9
-msgid "plugin to import demo."
-msgstr ""
-
-#: inc/customizer/customizer-recommended-plugin.php:13
-msgid "Recommended Actions"
-msgstr ""
-
-#: inc/customizer/customizer-recommended-plugin.php:14
-msgid "Recommended Plugin"
-msgstr ""
-
-#: inc/customizer/customizer-recommended-plugin.php:15
-msgid "Install and Activate"
-msgstr ""
-
-#: inc/customizer/customizer-recommended-plugin.php:17
-msgid "Deactivate"
 msgstr ""
 
 #: inc/customizer/settings/advertisement.php:14
@@ -1695,7 +1663,7 @@ msgstr ""
 msgid "Enable/Disable Related Post"
 msgstr ""
 
-#: inc/customizer/settings/single-post-options.php:238 inc/helpers.php:1352
+#: inc/customizer/settings/single-post-options.php:238 inc/helpers.php:1356
 msgid "Related Posts"
 msgstr ""
 
@@ -1901,6 +1869,12 @@ msgstr ""
 msgid "Icon Background Hover Color"
 msgstr ""
 
+#: inc/customizer/upsell/class-customize.php:75
+#: inc/customizer/upsell/class-customize.php:87
+#: inc/customizer/upsell/class-customize.php:97
+msgid "Import Demo"
+msgstr ""
+
 #: inc/customizer/upsell/class-customize.php:76
 #: inc/customizer/upsell/class-customize.php:88
 #: inc/customizer/upsell/class-customize.php:98
@@ -1926,7 +1900,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: inc/helpers.php:356 template-parts/content-single.php:137
+#: inc/helpers.php:356 template-parts/content-single.php:144
 msgid "Tag"
 msgstr ""
 
@@ -1942,8 +1916,8 @@ msgstr ""
 msgid "Loading Now"
 msgstr ""
 
-#: inc/helpers.php:737 inc/helpers.php:1133 inc/helpers.php:1238
-#: inc/helpers.php:1397 partials/front/main-banner.php:75
+#: inc/helpers.php:741 inc/helpers.php:1137 inc/helpers.php:1242
+#: inc/helpers.php:1401 partials/front/main-banner.php:75
 #: partials/front/main-banner.php:157 partials/front/main-banner.php:230
 #: partials/front/missed-1.php:65 partials/front/news-video.php:134
 #: partials/widgets/featured-post.php:89 partials/widgets/featured-post.php:134
@@ -1951,66 +1925,66 @@ msgstr ""
 #: partials/widgets/post-grid-3-column-slider.php:90
 #: partials/widgets/post-list-view-slider.php:86
 #: template-parts/content-archive-first.php:65
-#: template-parts/content-blog.php:28 template-parts/content-first.php:38
-#: template-parts/content-list.php:55 template-parts/content-search.php:29
-#: template-parts/content-single.php:58 template-parts/content.php:30
+#: template-parts/content-blog.php:42 template-parts/content-first.php:38
+#: template-parts/content-list.php:74 template-parts/content-search.php:44
+#: template-parts/content-single.php:58 template-parts/content.php:48
 msgid "Posts by"
 msgstr ""
 
-#: inc/helpers.php:823
+#: inc/helpers.php:827
 msgid "Add Header Toggle Sidebar Widgets Area"
 msgstr ""
 
-#: inc/helpers.php:824
+#: inc/helpers.php:828
 msgid "Add Header Toggle Sidebar Widgets Area."
 msgstr ""
 
-#: inc/helpers.php:1118 inc/helpers.php:1223 template-parts/content-list.php:53
+#: inc/helpers.php:1122 inc/helpers.php:1227 template-parts/content-list.php:72
 msgid "author-image"
 msgstr ""
 
-#: inc/helpers.php:1150 inc/helpers.php:1252 inc/helpers.php:1402
-#: partials/widgets/featured-post.php:94 template-parts/content-blog.php:45
-#: template-parts/content-list.php:62 template-parts/content-search.php:46
-#: template-parts/content-single.php:75 template-parts/content.php:49
+#: inc/helpers.php:1154 inc/helpers.php:1256 inc/helpers.php:1406
+#: partials/widgets/featured-post.php:94 template-parts/content-blog.php:59
+#: template-parts/content-list.php:81 template-parts/content-search.php:61
+#: template-parts/content-single.php:75 template-parts/content.php:67
 msgid "Number of Comments"
 msgstr ""
 
-#: inc/helpers.php:1296
+#: inc/helpers.php:1300
 msgid "Add widgets in Primary Left Area"
 msgstr ""
 
-#: inc/helpers.php:1297
+#: inc/helpers.php:1301
 msgid "Add widgets in Primary Left Area."
 msgstr ""
 
-#: inc/helpers.php:1320
+#: inc/helpers.php:1324
 msgid "Previous post"
 msgstr ""
 
-#: inc/helpers.php:1325
+#: inc/helpers.php:1329
 msgid "Previous post arrow"
 msgstr ""
 
-#: inc/helpers.php:1331
+#: inc/helpers.php:1335
 msgid "Next post"
 msgstr ""
 
-#: inc/helpers.php:1336
+#: inc/helpers.php:1340
 msgid "Next post arrow"
 msgstr ""
 
-#: inc/helpers.php:1735
+#: inc/helpers.php:1739
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/helpers.php:1890
+#: inc/helpers.php:1898
 #, php-format
 msgid "Add your Biographical Information. %1$sEdit your Profile%2$s now."
 msgstr ""
 
-#: inc/helpers.php:1895
+#: inc/helpers.php:1903
 msgid "view all posts"
 msgstr ""
 
@@ -2088,9 +2062,9 @@ msgstr ""
 #: partials/front/main-banner.php:148 partials/widgets/featured-post.php:37
 #: partials/widgets/featured-post.php:179
 #: template-parts/content-archive-first.php:89
-#: template-parts/content-blog.php:63 template-parts/content-first.php:72
-#: template-parts/content-list.php:74 template-parts/content-search.php:71
-#: template-parts/content.php:73
+#: template-parts/content-blog.php:88 template-parts/content-first.php:72
+#: template-parts/content-list.php:93 template-parts/content-search.php:94
+#: template-parts/content.php:99
 msgid "Read More"
 msgstr ""
 

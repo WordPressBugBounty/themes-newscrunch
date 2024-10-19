@@ -470,3 +470,6 @@ body #wrapper .widget.f-w-c.widget_nav_menu .menu-primary-menu-container a:hover
 .spnc-author-box  .spnc-author-posts-link{
     color: #669c9b;
 }
+.sticky-post-icon, .spnc-post.format-quote .spnc-quote-wrap, .spnc-post .spnc-post-btn {
+    background-color: #669c9b;
+}

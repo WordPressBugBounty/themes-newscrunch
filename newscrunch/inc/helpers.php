@@ -54,6 +54,9 @@
 	# Retrieve first video from post
 	# Retrieve VideoId from embed code
 	# Extract the video ID and convert to standard YouTube URL
+	# Single Post Author Details
+ 	# Advertisement Section
+	# Post Formats
 /*
 -------------------------------------------------------------------------------
  Header
@@ -2066,11 +2069,13 @@ if ( ! function_exists( 'newscrunch_advertisement_area' ) ) {
 			// Random Post
 			if($arg == 'random post archive')
 	    	{
-			$yesArray = array_filter($newscrunch_random_post_archive, function($value) {
-			    return $value === "yes";
-			});
-			$keys = array_keys($yesArray); // retrieve key from associative array
-			return $keys;
+		    	if((get_theme_mod('ad_type','banner')=='banner')): 	
+					$yesArray = array_filter($newscrunch_random_post_archive, function($value) {
+					    return $value === "yes";
+					});
+					$keys = array_keys($yesArray); // retrieve key from associative array
+					return $keys;
+				endif;
 			}
 
 			// Before Post Content
@@ -2203,8 +2208,10 @@ function newscrunch_advertisement_content($id)
 
 /*
 -------------------------------------------------------------------------------
- Get audio from post
+ Post Formats
 -------------------------------------------------------------------------------*/
+
+// Get audio from post
 
 if ( ! function_exists( 'newscrunch_get_audio_from_post' ) ) :
 
@@ -2234,10 +2241,7 @@ if ( ! function_exists( 'newscrunch_get_audio_from_post' ) ) :
 	}
 endif;
 
-/*
--------------------------------------------------------------------------------
- Get galley form post
--------------------------------------------------------------------------------*/
+// Get galley form post
 
 
 if ( ! function_exists( 'newscrunch_get_post_gallery' ) ) :
@@ -2317,10 +2321,7 @@ if ( ! function_exists( 'newscrunch_get_post_gallery' ) ) :
 	}
 endif;
 
-/*
--------------------------------------------------------------------------------
- Get the media form post
--------------------------------------------------------------------------------*/
+// Get the media form post
 
 function newscrunch_get_post_media( $post_format = false, $post = null ) {
 
@@ -2369,10 +2370,7 @@ function newscrunch_get_post_media( $post_format = false, $post = null ) {
 }
 
 
-/*
--------------------------------------------------------------------------------
- Post format section
--------------------------------------------------------------------------------*/
+// Post format section
 
 if ( ! function_exists( 'newscrunch_post_formats' ) ) :
 	function newscrunch_post_formats() 

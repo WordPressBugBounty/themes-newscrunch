@@ -28,6 +28,7 @@
 			if(get_theme_mod('progress_bar_enable',true)):echo '<div id="spnc_scroll_progressbar"></div>';endif;
 			do_action('spncp_preloader_hook');
 			do_action( 'spncp_header_variation' );
+			if((get_theme_mod('ad_type','banner')=='popup')):do_action('newscrunch_plus_popup_ad');endif;
 		else:
 			do_action('newscrunch_preloader');
 			do_action( 'newscrunch_header' ); 

@@ -9,7 +9,7 @@ else
 }?>
 <article data-wow-delay=".8s" itemscope itemtype="https://schema.org/Article" id="post-<?php the_ID(); ?>" <?php post_class('spnc-post wow-callback zoomIn')?> >
 	<?php
-	do_action('newscrunch_before_post_content_ads','before post content');
+	if((get_theme_mod('ad_type','banner')=='banner')): do_action('newscrunch_before_post_content_ads','before post content'); endif;
 	if ( ! empty( $newscrunch_sp_sort ) && is_array( $newscrunch_sp_sort ) ) :
 		foreach ( $newscrunch_sp_sort as $newscrunch_sp_sort_key => $newscrunch_sp_sort_val ) :
 			if(get_theme_mod('newscrunch_enable_reorder_sp_img',true)==true):
@@ -151,7 +151,7 @@ else
 			endif;
 		endforeach;
 	endif;
-	do_action('newscrunch_after_post_content_ads','after post content');
+	if((get_theme_mod('ad_type','banner')=='banner')): do_action('newscrunch_after_post_content_ads','after post content'); endif;
 	newscrunch_edit_link_button();
 	?>	
 </article>

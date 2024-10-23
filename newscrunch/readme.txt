@@ -3,7 +3,7 @@
 Contributors: spicethemes
 Requires at least: 4.5
 Tested up to: 6.6
-Stable tag: 1.7.2
+Stable tag: 1.7.3
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,6 +30,10 @@ Newscrunch WordPress Theme, Copyright (C) 2023-2024, spicethemes
 Newscrunch WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+@Version 1.7.3
+* Added popup advertisement feature in pro.
+* Fixed youtube playlist title , random post archive advertisement & some other issues.
 
 @Version 1.7.2
 * Added post formats.

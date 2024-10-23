@@ -5,7 +5,7 @@ Author: spicethemes
 Author URI: https://spicethemes.com
 Description: Newscrunch is a magazine and blog theme. It is a lightweight, elegant, and fully responsive theme specifically designed for creating magazines, newspapers, editors, blogs, and dynamic news websites. It seamlessly integrates with the Gutenberg block editor, empowering you to effortlessly build your website using intuitive blocks. The theme is highly compatible with popular plugins such as Contact Form 7, Polylang, and WPML, offering expanded functionality. Newscrunch Theme prioritizes user privacy and complies with the General Data Protection Regulation (GDPR) guidelines by refraining from collecting any personal data restricted under GDPR. Additionally, all fonts used in the theme are locally hosted, eliminating the reliance on external resources like Google Fonts. The theme is also schema-ready, enhancing search engine visibility and optimization. With its GDPR compliance, sleek design, and efficient performance, Newscrunch Theme caters to various businesses. It provides a wide range of widgets and sections tailored to specific industries, enabling you to swiftly create a stunning website with beautiful designs. To explore the theme further, feel free to check out our demo at: https://demo-newscrunch.spicethemes.com/demo-one/. For video tutorial visit here https://www.youtube.com/playlist?list=PLTfjrb24Pq_DeJOZdKEaP3rZPbHuOCLtZ
 Tags: blog, news, photography, custom-background, rtl-language-support, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, one-column, two-columns, full-width-template, sticky-post, right-sidebar, footer-widgets, grid-layout
-Version: 1.7.2
+Version: 1.7.3
 Requires at least: 4.5
 Tested up to: 6.6
 Requires PHP: 5.6
@@ -3106,16 +3106,16 @@ body.rtl .repeat-advertisement{display: block;margin-right: auto;margin-left: au
 /* For All Device */
 body.rtl .spnc-advertisement.all img{display: block;}
 body.rtl.ads-img .wow-sticky.page-title-section {padding-top:32px !important;}
-body.rtl.ads-img.ad-sticky .header-sidebar {position: relative !important;}
-body.rtl.ads-img.ad-sticky .header-3 .spnc-topbar,body.rtl.ads-img.ad-sticky .header-5 .spnc-topbar {z-index: 0;}
+body.rtl.ads-img.spnc-ad-sticky .header-sidebar {position: relative !important;}
+body.rtl.ads-img.spnc-ad-sticky .header-3 .spnc-topbar,body.rtl.ads-img.spnc-ad-sticky .header-5 .spnc-topbar {z-index: 0;}
 .ads .spnc-container:not(.single-post .ads .spnc-container) {padding: 0 10px;}
 .archive .ads .spnc-row:not(.newsblogger.archive .ads .spnc-row){margin-top: 2.25rem;}
 .archive .ads .spnc-row:not(.newsblogger.archive .ads .spnc-row){margin-bottom: 0;}
 .ads .spnc-advertisement{margin: 0 auto;} 
 body.rtl.newscrunch-plus.bread-2.archive .ads .spnc-row:not(body.rtl.newsblogger.newscrunch-plus.bread-2.archive .ads .spnc-row){margin-top: 0;margin-bottom: 1.25rem;}
 @media (min-width:551px){
-  .spnc-category-page .random-post-ads:not(.spnc-post-list-view-section .random-post-ads){float: right;width: 50%;height: auto;padding: 0 0 20px 10px;}
-  .spnc-category-page .random-post-ads:nth-child(odd):not(.spnc-post-list-view-section .random-post-ads){padding: 0 10px 20px 0;}
+  .spnc-category-page .random-post-ads:not(.spnc-index-blog.front-list .random-post-ads){float: right;width: 50%;height: auto;padding: 0 0 20px 10px;}
+  .spnc-category-page .random-post-ads:nth-child(odd):not(.spnc-index-blog.front-list .random-post-ads){padding: 0 10px 20px 0;}
   .spnc-category-page .random-post-ads:nth-child(2n + 2) {clear: both;}
 }
 @media (max-width: 550px) {
@@ -3145,7 +3145,7 @@ body.rtl.newscrunch-plus.bread-2.archive .ads .spnc-row:not(body.rtl.newsblogger
 }
 /* Blog Post Quotes */
 .spnc-post.format-quote .spnc-quote-wrap {padding: 25px 30px;position: relative;color: #fff;}
-.spnc-post.format-quote .spnc-quote-wrap i {color: #fff;font-size: 1.75rem;margin-bottom: 10px;}
+.spnc-post.format-quote .spnc-quote-wrap .fa-quote-left {color: #fff;font-size: 1.75rem;margin-bottom: 10px;}
 .spnc-post.format-quote .spnc-post-content .spnc-quote-wrap p {color: #fff;font-size: 1.125rem;font-weight: bold;font-style: italic; border: none;}
 .spnc-quote-wrap cite {color: #fff;}
 .spnc-post .spnc-post-btn {position: absolute;top:auto;bottom: 20px;right: 20px;display: grid;place-content: center;color: #ffffff;border-radius: 50%;width: 50px;font-size: 16px;aspect-ratio: 1;padding: 10px;z-index: 2;transition: 0.3s;}
@@ -3202,3 +3202,6 @@ body.newsblogger .spnc-post-list-view-section .spnc-post .spnc-post-btn i, body.
 .newsblogger .spnc-post.format-quote .spnc-quote-wrap,.newsblogger .format-audio iframe, .newsblogger .spnc-news-media iframe,
 .newsblogger .spnc-single-post .wp-block-embed-youtube iframe, .newsblogger .spnc-category-page .spnc-post.format-quote.spnc-grid-catpost .spnc-entry-header {border-radius: 12px;}
 .page-template .spnc-blog-page:is(.spnc-right-sidebar, .spnc-masonry) .format-quote .spnc-post-format-wrapper{ display: none; }
+.front-list #ajax-content .spnc-advertisement{display: flex;flex-direction: column;margin-bottom: 20px;}
+.before-footer-ads:not(.newsblogger .before-footer-ads){margin-top: 26px;}
+body #page .spnc-footer-ribbon-2.site-footer {margin-top: 30px;}

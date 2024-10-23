@@ -1139,6 +1139,70 @@
                 $("#customize-control-bredcrumb_alignment #customizer_img_5").attr("src", imageUrl_right);             
             }
         });
+        
+        if($("#_customize-input-ad_type").val()=="banner")
+        {
+            $("#customize-control-ad_popup_title").hide();
+            $("#customize-control-ad_popup_des").hide();
+            $("#customize-control-ad_popup_img").hide();
+            $("#customize-control-ad_popup_btitle").hide();
+            $("#customize-control-ad_popup_url").hide();
+            $("#customize-control-ad_popup_height").hide();
+            $("#customize-control-ad_popup_width").hide();
+            $("#customize-control-ad_popup_new_tab").hide();
+            $("#customize-control-ad_popup_bgcolor").hide();
+            $("#customize-control-ad_popup_title_color").hide();
+            $("#customize-control-ad_popup_content_color").hide();
+            $("#customize-control-advertisement_items").show();
+        }
+        else if($("#_customize-input-ad_type").val()=="popup")
+        {
+            $("#customize-control-advertisement_items").hide();
+            $("#customize-control-ad_popup_title").show();
+            $("#customize-control-ad_popup_des").show();
+            $("#customize-control-ad_popup_img").show();
+            $("#customize-control-ad_popup_btitle").show();
+            $("#customize-control-ad_popup_url").show();
+            $("#customize-control-ad_popup_height").show();
+            $("#customize-control-ad_popup_width").show();
+            $("#customize-control-ad_popup_new_tab").show();
+            $("#customize-control-ad_popup_bgcolor").show();
+            $("#customize-control-ad_popup_title_color").show();
+            $("#customize-control-ad_popup_content_color").show();
+        }
+
+        $("#_customize-input-ad_type").change(function(){
+            if($(this).val()=="popup")
+            {
+                $("#customize-control-advertisement_items").hide();
+                $("#customize-control-ad_popup_title").show();
+                $("#customize-control-ad_popup_des").show();
+                $("#customize-control-ad_popup_img").show();
+                $("#customize-control-ad_popup_btitle").show();
+                $("#customize-control-ad_popup_url").show();
+                $("#customize-control-ad_popup_height").show();
+                $("#customize-control-ad_popup_width").show();
+                $("#customize-control-ad_popup_new_tab").show();
+                $("#customize-control-ad_popup_bgcolor").show();
+                $("#customize-control-ad_popup_title_color").show();
+                $("#customize-control-ad_popup_content_color").show();
+            }
+            else if($(this).val()=="banner")
+            {
+                $("#customize-control-ad_popup_title").hide();
+                $("#customize-control-ad_popup_des").hide();
+                $("#customize-control-ad_popup_img").hide();
+                $("#customize-control-ad_popup_btitle").hide();
+                $("#customize-control-ad_popup_url").hide();
+                $("#customize-control-ad_popup_height").hide();
+                $("#customize-control-ad_popup_width").hide();
+                $("#customize-control-ad_popup_new_tab").hide();
+                $("#customize-control-ad_popup_bgcolor").hide();
+                $("#customize-control-ad_popup_title_color").hide();
+                $("#customize-control-ad_popup_content_color").hide();
+                $("#customize-control-advertisement_items").show();
+            }
+        });
 
     });
 })(jQuery)

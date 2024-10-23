@@ -13,11 +13,13 @@ if ('Newscrunch' == wp_get_theme() || 'Newscrunch Child' == wp_get_theme() || 'N
     if(get_theme_mod('archive_blog_variation','grid')=='list') {
         get_template_part( 'template-parts/content-archive-first');
     }
+    $newscrunch_blog=get_theme_mod('archive_blog_variation','grid');
 }
 else {
     if(get_theme_mod('archive_blog_variation','list')=='list') {
         get_template_part( 'template-parts/content-archive-first');
     }
+    $newscrunch_blog= get_theme_mod('archive_blog_variation','list');
 }
 
 //Sidebar Selection
@@ -39,8 +41,8 @@ else
     $newscrunch_left_sidebar = get_post_meta(get_the_ID(),'newscrunch_page_left_sidebar', true );
     if($newscrunch_left_sidebar =='') { $newscrunch_left_sidebar ='left-sidebar';}
 }
-do_action('newscrunch_before_post_arc_ads','before post archive'); ?>
-<section class="page-section-space blog spnc-category-page spnc-blog-archive spnc-blog-clr <?php do_action( 'spncp_check_bread_hook' ); ?>" id="content">
+if((get_theme_mod('ad_type','banner')=='banner')): do_action('newscrunch_before_post_arc_ads','before post archive'); endif;?>
+<section class="page-section-space blog spnc-category-page spnc-blog-archive spnc-blog-clr front-<?php echo esc_attr($newscrunch_blog).' '; do_action( 'spncp_check_bread_hook' ); ?>" id="content">
     <div class="spnc-container">
         <?php
         if(get_theme_mod('bredcrumb_position','page_header')=='content_area'):

@@ -70,11 +70,11 @@
             if ( jQuery(window).scrollTop() > 100) {
                 jQuery('.header-sticky').addClass('stickymenu');
                 jQuery('.wow-callback').addClass('wow-sticky');
-                jQuery('body').addClass('ad-sticky');
+                jQuery('body').addClass('spnc-ad-sticky');
             } else {
                 jQuery('.header-sticky').removeClass('stickymenu');
                 jQuery('.wow-callback').removeClass('wow-sticky');
-                jQuery('body').removeClass('ad-sticky');
+                jQuery('body').removeClass('spnc-ad-sticky');
             }
         });
 

@@ -47,5 +47,29 @@ function newscrunch_advertisement_options_customizer ( $wp_customize ) {
         ) );
 
     }
+
+    if ( ! class_exists('Newscrunch_Plus') ):
+    class Newscrunch_Ads_Customize_Control extends WP_Customize_Control {
+            public function render_content() { ?>
+                <div class="newscrunch-premium">
+                    <h3><?php esc_html_e('Unlock more features available in Pro version.','newscrunch'); ?></h3>
+                    <a target="_blank" href="<?php echo esc_url('https://helpdoc.spicethemes.com/newscrunch/advertisement/?ref=customizer'); ?>" class=" button-primary"><?php esc_html_e('Learn More','newscrunch'); ?></a>
+                </div>
+        <?php }
+    }
+        
+    $wp_customize->add_setting(
+            'ads_pro_feature',
+            array(
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control( new Newscrunch_Ads_Customize_Control( $wp_customize, 'ads_pro_feature', array(
+                'section' => 'advertisement_section',
+                'priority' => 3
+            )
+    ));
+    endif;
 }
 add_action( 'customize_register', 'newscrunch_advertisement_options_customizer' );

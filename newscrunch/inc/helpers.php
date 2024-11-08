@@ -2195,7 +2195,7 @@ function newscrunch_advertisement_content($id)
     	
     	if(!empty($newscrunch_img[$id]))
     	{
-    		$ad_img = '<a class="spnc-advertisement '.$newscrunch_visible[$id].'" target="'.$newscrunch_img_target.'" href="'.$newscrunch_img_link[$id].'"><div class="adv_overlay"></div><img class="repeat-advertisement" src="'.$newscrunch_img[$id].'"/></a>';
+    		$ad_img = '<div data-wow-delay=".5s" class="wow-callback zoomIn"><a class="spnc-advertisement '.$newscrunch_visible[$id].'" target="'.$newscrunch_img_target.'" href="'.$newscrunch_img_link[$id].'"><div class="adv_overlay"></div><img class="repeat-advertisement" src="'.$newscrunch_img[$id].'"/></a></div>';
 			return $ad_img;
     	}
     	else

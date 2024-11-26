@@ -17,7 +17,8 @@ class Newscrunch_Customizer_Notify_Section extends WP_Customize_Section {
 	
 	public function check_active( $slug ) {
 		if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug . '/' . $slug . '.php' ) ) {
-			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+			get_template_part( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 			$needs = class_exists( 'Spice_Starter_Sites' ) ? 'deactivate' : 'activate';
 
@@ -75,7 +76,7 @@ class Newscrunch_Customizer_Notify_Section extends WP_Customize_Section {
 
 	
 	public function call_plugin_api( $slug ) {
-		include_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
+		get_template_part( ABSPATH . 'wp-admin/includes/plugin-install.php' );
 		$call_api = get_transient( 'newscrunch_cust_notify_plugin_info_' . $slug );
 		if ( false === $call_api ) {
 			$call_api = plugins_api(

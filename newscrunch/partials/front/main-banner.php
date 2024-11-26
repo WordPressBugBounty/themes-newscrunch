@@ -42,14 +42,17 @@ if($newscrunch_hide_show_banner == true) {
 							<li class="spnc_grid_item spnc_grid_item-1">
 								<div class="spnc_item">
 									<article class="spnc-post">
-										<?php if( function_exists( 'spncp_activate' )) { 
+										<div class="spnc-post-img <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>">
+											<a href="<?php the_permalink();?>" title="<?php the_title();?>">
+												<?php if( function_exists( 'spncp_activate' )) { 
 											if( (get_theme_mod('spncp_banner_left_overlay_options','custom')=='custom') &&  (get_theme_mod('spncp_banner_left_overlay',true)== true) || (get_theme_mod('spncp_banner_left_overlay_options','custom')=='gradient')) 
 												{ echo '<div class="spnc-post-overlay"></div>';}
 											}
-										else { echo '<div class="spnc-post-overlay lite"></div>'; }?>
-										<div class="spnc-post-img <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>"
-											style="background-image:url(<?php echo esc_url($newscrunch_featured_img_url) ?>);">
-											<div class="spnc-post-content">
+											else { echo '<div class="spnc-post-overlay lite"></div>'; }?>
+												<?php the_post_thumbnail('full'); ?>
+											</a>
+										</div>
+										<div class="spnc-post-content">
 												<div class="spnc-content-wrapper">
 													<div class="spnc-post-wrapper">
 														<header class="entry-header">
@@ -81,7 +84,6 @@ if($newscrunch_hide_show_banner == true) {
 													</div>
 												</div>
 											</div>
-										</div>
 									</article>
 								</div>
 							</li>
@@ -117,14 +119,17 @@ if($newscrunch_hide_show_banner == true) {
 						            	?>
 											<div class="spnc_item">
 												<article class="spnc-post">
-													<?php if( function_exists( 'spncp_activate' )) { 
-													if( (get_theme_mod('spncp_banner_center_overlay_options','custom')=='custom') &&  (get_theme_mod('spncp_slider_overlay',true)== true) || (get_theme_mod('spncp_banner_center_overlay_options','custom')=='gradient')) 
-														{ echo '<div class="spnc-post-overlay"></div>';}
-													}
-													else { echo '<div class="spnc-post-overlay lite"></div>'; }?>
-													<div class="spnc-post-img <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>"
-														style="background-image:url(<?php echo esc_url($newscrunch_featured_img_url) ?>);">
-														<div class="spnc-post-content">
+													<div class="spnc-post-img <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>">
+														<a href="<?php the_permalink();?>" title="<?php the_title();?>">
+																<?php if( function_exists( 'spncp_activate' )) { 
+														if( (get_theme_mod('spncp_banner_center_overlay_options','custom')=='custom') &&  (get_theme_mod('spncp_slider_overlay',true)== true) || (get_theme_mod('spncp_banner_center_overlay_options','custom')=='gradient')) 
+															{ echo '<div class="spnc-post-overlay"></div>';}
+														}
+														else { echo '<div class="spnc-post-overlay lite"></div>'; } ?>
+														<?php the_post_thumbnail('full'); ?>
+														</a>
+													</div>
+													<div class="spnc-post-content">
 															<div class="spnc-content-wrapper">
 																<div class="spnc-post-wrapper">
 																	<header class="entry-header">
@@ -143,14 +148,15 @@ if($newscrunch_hide_show_banner == true) {
 																		<h3 class="spnc-entry-title">
 							                                        		<a class="<?php echo esc_attr(get_theme_mod('link_animate','a_effect1'));?>" href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a>
 							                                   			</h3>
-																	</header>
-																	<?php if( get_theme_mod('hide_show_banner_center_read_more',true) == true): 
+							                                   			<?php if( get_theme_mod('hide_show_banner_center_read_more',true) == true): 
 																			$read_btn=get_theme_mod('spncp_banner_center_read_btn',__('Read More','newscrunch')); 
 
 																		?>
 																		<a href="<?php the_permalink();?>" class="spnc-info-link" title="<?php echo esc_attr($read_btn); ?>"><?php echo esc_html($read_btn); ?></a>
 																	<?php
-																	endif; 
+																	endif; ?>
+																	</header>
+																	<?php 
 																	if($newscrunch_hide_show_banner_center_meta == true) { ?>
 																		<div class="spnc-entry-content">
 																			<div class="spnc-entry-meta">
@@ -163,7 +169,6 @@ if($newscrunch_hide_show_banner == true) {
 																</div>
 															</div>
 														</div>
-													</div>
 												</article>
 											</div>
 										<?php 
@@ -196,15 +201,18 @@ if($newscrunch_hide_show_banner == true) {
 				            	?>
 							<li class="spnc_grid_item spnc_grid_item-1">
 								<div class="spnc_item">
-									<article class="spnc-post">
-										<?php if( function_exists( 'spncp_activate' )) { 
+									<article class="spnc-post">			
+										<div class="spnc-post-img <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>" >
+											<a href="<?php the_permalink();?>" title="<?php the_title();?>">
+												<?php if( function_exists( 'spncp_activate' )) { 
 											if( (get_theme_mod('spncp_banner_right_overlay_options','custom')=='custom') &&  (get_theme_mod('spncp_banner_right_overlay',true)== true) || (get_theme_mod('spncp_banner_right_overlay_options','custom')=='gradient')) 
 												{ echo '<div class="spnc-post-overlay"></div>';}
 											}
-											else { echo '<div class="spnc-post-overlay lite"></div>'; }?>			
-										<div class="spnc-post-img <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>"
-											style="background-image:url(<?php echo esc_url($newscrunch_featured_img_url) ?>);">
-											<div class="spnc-post-content">
+											else { echo '<div class="spnc-post-overlay lite"></div>'; }?>
+												<?php the_post_thumbnail('full'); ?>
+											</a>
+										</div>
+										<div class="spnc-post-content">
 												<div class="spnc-content-wrapper">
 													<div class="spnc-post-wrapper">
 														<header class="entry-header">
@@ -236,7 +244,6 @@ if($newscrunch_hide_show_banner == true) {
 													</div>
 												</div>
 											</div>
-										</div>
 									</article>
 								</div>
 							</li>

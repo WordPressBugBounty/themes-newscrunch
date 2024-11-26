@@ -1,6 +1,6 @@
 <?php 
-	$newscrunch_actions = $this->recommended_actions;
-	$newscrunch_actions_todo = get_option( 'recommended_actions', false );
+	$newscrunch_actions = get_query_var( 'newscrunch_actions', [] );
+    $newscrunch_actions_todo = get_query_var( 'newscrunch_actions_todo', [] );
 ?>
 <div id="recommended_actions" class="newscrunch-tab-pane panel-close">
 	<div class="action-list">

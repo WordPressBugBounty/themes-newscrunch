@@ -206,7 +206,7 @@ if (!class_exists('Newscrunch_About_Page')) {
 		 * 
 		 */
 		public function getting_started() {
-			require_once( NEWSCRUNCH_TEMPLATE_DIR . '/admin/tab-pages/getting-started.php' );
+			get_template_part( 'admin/tab-pages/getting-started' );
 		}
 
 		/**
@@ -214,7 +214,12 @@ if (!class_exists('Newscrunch_About_Page')) {
 		 * 
 		 */
 		public function recommended_actions() {
-			require_once( NEWSCRUNCH_TEMPLATE_DIR . '/admin/tab-pages/recommended_actions.php' );
+			$newscrunch_actions = $this->recommended_actions;
+			$newscrunch_actions_todo = get_option( 'recommended_actions', false );
+			// Pass $newscrunch_actions to the template part
+		    set_query_var( 'newscrunch_actions', $newscrunch_actions );
+		    set_query_var( 'newscrunch_actions_todo', $newscrunch_actions_todo );
+			get_template_part( 'admin/tab-pages/recommended_actions' );
 		}
 
 
@@ -223,7 +228,7 @@ if (!class_exists('Newscrunch_About_Page')) {
 		 * 
 		 */
 		public function video_tutorials() {
-			require_once( NEWSCRUNCH_TEMPLATE_DIR . '/admin/tab-pages/video-tutorials.php' );
+			get_template_part( 'admin/tab-pages/video-tutorials' );
 		}
 	
 	

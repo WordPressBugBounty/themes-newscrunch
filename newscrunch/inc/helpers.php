@@ -166,9 +166,9 @@ if (!function_exists('newscrunch_footer_widget_section')) :
 							if(get_theme_mod('hide_show_footer_copyright',true)==true): ?>
 								<div class="spnc-col-1 spnc-left">
 									<p class="copyright-section">
-										<?php $newscrunch_footer_copyright = get_theme_mod('footer_copyright', $newscrunch_tname . ' - ' . __('Magazine & Blog', 'newscrunch') . ' '. '<a href="https://wordpress.org">' . 'WordPress' . '</a>' . ' ' . __("Theme","newscrunch") . ' ' . '%year%'); 
+										<?php $newscrunch_footer_copyright = get_theme_mod('footer_copyright', $newscrunch_tname . ' - ' . __('Magazine & Blog', 'newscrunch') . ' '. '<a href="'. esc_url('https://wordpress.org') .'">' . 'WordPress' . '</a>' . ' ' . __("Theme","newscrunch") . ' ' . '%year%'); 
 										echo wp_kses_post( str_replace( '%year%', date('Y'), $newscrunch_footer_copyright ) );
-										echo ' | ' . sprintf( esc_html__('Powered By', 'newscrunch') . ' %s', '<a href="https://spicethemes.com/" rel="nofollow">' . ' ' . 'SpiceThemes'. '</a>');
+										echo ' | ' . sprintf( esc_html__('Powered By', 'newscrunch') . ' %s', '<a href="'. esc_url('https://spicethemes.com/') . '" rel="nofollow">' . ' ' . 'SpiceThemes'. '</a>');
 									?>
 									</p>
 								</div> 
@@ -1792,7 +1792,7 @@ if ( ! function_exists( 'newscrunch_get_first_video_url' ) ) :
 		}
 		$embed = newscrunch_get_video_from_post( $post_id );
 		// Find the first video URL in the content
-		preg_match( '/<video[^>]*src=[\'"]?([^\'" >]+)|<iframe.*?src=["\'](https?:\/\/[^"\']+)[^>]*>/', $embed, $matches );
+		preg_match( '/https?:\/\/\S+(\.mp4|\.webm|\.ogv|youtube\.com\/embed\/\S+|vimeo\.com\/video\/\S+)/', $embed, $matches );
 
 		$video_link = false;
 
@@ -2384,10 +2384,17 @@ if ( ! function_exists( 'newscrunch_post_formats' ) ) :
 							<?php the_post_thumbnail('full', array('class'=>'img-fluid', 'itemprop'=>'image' )); ?>
 						</a>				
 					</figure>
-					
+					<?php if ( class_exists('Newscrunch_Plus') ){ ?>
 					<span class="spnc-post-btn format-video-btn" style="cursor: pointer;">
 					    <i class="fa-solid fa-video"></i>
 					</span>
+					<?php } else { ?>
+					<a href="<?php the_permalink(); ?>" itemprop="url" title="<?php the_title(); ?>">
+						<span class="spnc-post-btn format-video-btn">
+						    <i class="fa-solid fa-video"></i>
+						</span>
+					</a>
+					<?php } ?>
                 	<!-- Video Post PopUp Model -->
                 	<?php if ( class_exists('Newscrunch_Plus') ){
                 	$newscrunch_media = newscrunch_get_post_media( 'video' );

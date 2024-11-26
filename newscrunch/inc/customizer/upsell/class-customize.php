@@ -62,7 +62,7 @@ final class Newscrunch_Customize_Upsell {
 	public function sections( $manager ) {
 
 		// Load custom sections.
-		require_once( trailingslashit( get_template_directory() ) . 'inc/customizer/upsell/section-import.php' );
+		get_template_part('inc/customizer/upsell/section-import');
 
 		// Register custom section types.
 		$manager->register_section_type( 'Newscrunch_Customize_Upsell_Section' );

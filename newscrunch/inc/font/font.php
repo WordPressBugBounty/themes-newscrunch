@@ -31,7 +31,7 @@ if(get_theme_mod('newscrunch_enable_local_google_font',true) ==true){
         $fonts_url = newscrunch_get_fonts_url();
         // Load Fonts if necessary.
         if ( $fonts_url ) {
-            require_once (get_theme_file_path( '/inc/font/wptt-webfont-loader.php' ));
+            get_template_part( 'inc/font/wptt-webfont-loader' );
             wp_enqueue_style( 'newscrunch-theme-fonts', wptt_get_webfont_url( $fonts_url ), array(), '20201110' );
         }
     }
@@ -41,9 +41,9 @@ if(get_theme_mod('newscrunch_enable_local_google_font',true) ==true){
  */
 function newscrunch_get_fonts_url() {
     $font_families = array(
-		'Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900',	
+        'Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900',    
         'Inter:100,200,300,400,500,600,700,800,900',
-        'Jost:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900',	
+        'Jost:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900',   
     );
     $query_args = array(
         'family'  => urlencode( implode( '|', $font_families ) ),

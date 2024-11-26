@@ -28,7 +28,6 @@
       <key name="nav_menu_locations"/>
       <key name="custom_css_post_id"/>
       <key name="social_icons"/>
-      <key name="header_layout"/>
       <key name="spnc_spsp_shortcode"/>
       <key name="banner_center_dropdown_category"/>
       <key name="news_highlight_title"/>
@@ -37,10 +36,7 @@
       <key name="news_highlight_num_posts"/>
       <key name="missed_section_title"/>
       <key name="missed_section_dropdown_category"/>
-      <key name="archive_blog_variation"/>
-      <key name="newscrunch_single_post_layout"/>
       <key name="newscrunch_related_post_title"/>
-      <key name="hide_show_featured_video"/>
       <key name="featured_video_title"/>
       <key name="featured_video_dropdown_category"/>
       <key name="footer_copyright"/>
@@ -49,42 +45,6 @@
       <key name="breadcrumb_right_padding"/>
       <key name="breadcrumb_bottom_padding"/>
       <key name="breadcrumb_left_padding"/>
-      <key name="topbar_left_social_icons"/>
-      <key name="progress_bar_display"/>
-      <key name="ribbon_title"/>
-      <key name="footer_social_icons"/>
-      <key name="contact_content"/>
-      <key name="top_left_variation"/>
-      <key name="subscribe_label"/>
-      <key name="subscribe_url"/>
-      <key name="banner_ads_img"/>
-      <key name="advertisement_url"/>
-      <key name="banner_center_num_posts"/>
-      <key name="spncp_banner_center_read_btn"/>
-      <key name="spncp_highlight_animation_speed"/>
-      <key name="missed_section_num_posts"/>
-      <key name="missed_animation_speed"/>
-      <key name="missed_section_back_image"/>
-      <key name="reading_time"/>
-      <key name="reading_time_postfix"/>
-      <key name="video_layout"/>
-      <key name="youtube_section_title"/>
-      <key name="newscrunch_blog_archive_read_btn"/>
-      <key name="newscrunch_blog_archive_comments"/>
-      <key name="newscrunch_tag_text"/>
-      <key name="newscrunch_post_count_text"/>
-      <key name="spncp_pp_title"/>
-      <key name="spncp_np_title"/>
-      <key name="newscrunch_related_post_num_posts"/>
-      <key name="contact_form_title"/>
-      <key name="contact_form_shortcode"/>
-      <key name="map_shortcode"/>
-      <key name="contact_info_title"/>
-      <key name="month_prefix"/>
-      <key name="category_prefix"/>
-      <key name="author_prefix"/>
-      <key name="tag_prefix"/>
-      <key name="search_prefix"/>
     </key>
     <key name="widget_newscrunch_adv">
       <key name="2">
@@ -106,9 +66,6 @@
         <key name="show_auth"/>
         <key name="show_comments"/>
         <key name="show_read"/>
-        <key name="show_read_time"/>
-        <key name="rtitle"/>
-        <key name="ctitle"/>
       </key>
       <key name="_multiwidget"/>
     </key>
@@ -122,8 +79,6 @@
         <key name="show_auth"/>
         <key name="color1"/>
         <key name="color2"/>
-        <key name="show_read_time"/>
-        <key name="animation_speed"/>
       </key>
       <key name="_multiwidget"/>
     </key>
@@ -133,7 +88,6 @@
         <key name="category"/>
         <key name="number"/>
         <key name="date"/>
-        <key name="show_read_time"/>
       </key>
       <key name="_multiwidget"/>
     </key>
@@ -145,9 +99,6 @@
         <key name="date"/>
         <key name="show_cat"/>
         <key name="show_auth"/>
-        <key name="show_read_time"/>
-        <key name="animation_speed"/>
-        <key name="btitle"/>
       </key>
       <key name="_multiwidget"/>
     </key>
@@ -157,7 +108,6 @@
         <key name="category"/>
         <key name="number"/>
         <key name="date"/>
-        <key name="show_read_time"/>
       </key>
       <key name="_multiwidget"/>
     </key>
@@ -169,8 +119,6 @@
         <key name="date"/>
         <key name="show_cat"/>
         <key name="show_auth"/>
-        <key name="show_read_time"/>
-        <key name="animation_speed"/>
       </key>
       <key name="_multiwidget"/>
     </key>
@@ -192,8 +140,6 @@
         <key name="number"/>
         <key name="date"/>
         <key name="show_comments"/>
-        <key name="show_read_time"/>
-        <key name="ctitle"/>
       </key>
       <key name="_multiwidget"/>
     </key>
@@ -242,127 +188,6 @@
         <key name="show_date"/>
         <key name="show_post_image"/>
         <key name="show_no_preview_img"/>
-        <key name="show_read_time"/>
-        <key name="rtitle"/>
-        <key name="ptitle"/>
-        <key name="ctitle"/>
-      </key>
-      <key name="_multiwidget"/>
-    </key>
-    <key name="widget_spncp_filter_two_column">
-      <key name="2">
-        <key name="title"/>
-        <key name="color1"/>
-        <key name="color2"/>
-        <key name="date"/>
-        <key name="show_cat"/>
-        <key name="show_read_time"/>
-        <key name="show_auth"/>
-        <key name="animation_speed"/>
-        <key name="selected_options">
-          <key name="0"/>
-        </key>
-      </key>
-      <key name="_multiwidget"/>
-    </key>
-    <key name="widget_spncp_filter_three_column">
-      <key name="2">
-        <key name="title"/>
-        <key name="btitle"/>
-        <key name="date"/>
-        <key name="show_cat"/>
-        <key name="show_read_time"/>
-        <key name="show_auth"/>
-        <key name="animation_speed"/>
-        <key name="selected_options">
-          <key name="0"/>
-        </key>
-      </key>
-      <key name="_multiwidget"/>
-    </key>
-    <key name="widget_spncp_filter_list_view">
-      <key name="2">
-        <key name="title"/>
-        <key name="date"/>
-        <key name="show_cat"/>
-        <key name="show_read"/>
-        <key name="show_read_time"/>
-        <key name="show_auth"/>
-        <key name="number"/>
-        <key name="rtitle"/>
-        <key name="btitle"/>
-        <key name="selected_options">
-          <key name="0"/>
-        </key>
-      </key>
-      <key name="_multiwidget"/>
-    </key>
-    <key name="widget_newscrunch_plus_list_view">
-      <key name="2">
-        <key name="title"/>
-        <key name="category"/>
-        <key name="number"/>
-        <key name="date"/>
-        <key name="comments"/>
-        <key name="show_read_time"/>
-      </key>
-      <key name="_multiwidget"/>
-    </key>
-    <key name="widget_newscrunch_category_collection">
-      <key name="2">
-        <key name="title"/>
-        <key name="selected_options">
-          <key name="0"/>
-        </key>
-      </key>
-      <key name="_multiwidget"/>
-    </key>
-    <key name="widget_newscrunch_author">
-      <key name="2">
-        <key name="title"/>
-        <key name="name"/>
-        <key name="type"/>
-        <key name="img"/>
-        <key name="designation"/>
-        <key name="url"/>
-        <key name="desc"/>
-      </key>
-      <key name="_multiwidget"/>
-    </key>
-    <key name="widget_spncp_verticle_post_slider">
-      <key name="2">
-        <key name="title"/>
-        <key name="date"/>
-        <key name="show_cat"/>
-        <key name="show_read_time"/>
-        <key name="show_auth"/>
-        <key name="number"/>
-        <key name="animation_speed"/>
-        <key name="selected_options">
-          <key name="0"/>
-        </key>
-      </key>
-      <key name="_multiwidget"/>
-    </key>
-    <key name="widget_spncp_social_icons">
-      <key name="2">
-        <key name="title"/>
-        <key name="facebook_link"/>
-        <key name="facebook_target"/>
-        <key name="twitter_link"/>
-        <key name="twitter_target"/>
-        <key name="linkedin_link"/>
-        <key name="linkedin_target"/>
-        <key name="instagram_link"/>
-        <key name="instagram_target"/>
-        <key name="youtube_link"/>
-        <key name="youtube_target"/>
-        <key name="skype_link"/>
-        <key name="skype_target"/>
-        <key name="vimeo_link"/>
-        <key name="vimeo_target"/>
-        <key name="dribble_link"/>
-        <key name="dribble_target"/>
       </key>
       <key name="_multiwidget"/>
     </key>

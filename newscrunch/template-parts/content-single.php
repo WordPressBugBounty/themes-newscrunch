@@ -115,14 +115,16 @@ else
 				            		{
 				            			$newscrunch_videoId = 	newscrunch_get_youtube_videoId($newscrunch_video_url);
 				            			if(!empty($newscrunch_videoId)):
-				            			echo '<iframe width="100%" height="600" src="https://www.youtube.com/embed/'.$newscrunch_videoId.'" frameborder="0" allowfullscreen></iframe>';
+				            				$youtube_url = esc_url( 'https://www.youtube.com/embed/' . esc_attr( $newscrunch_videoId ) );
+											echo wp_oembed_get( $youtube_url, array( 'width' => '100%', 'height' => '600' ) );
 				            			endif;
 				            		}
 				            		else
 				            		{
 				            			$newscrunch_videoId = 	newscrunch_get_vimeoid($newscrunch_video_url);
 				            			if(!empty($newscrunch_videoId)):
-				            			echo '<iframe src="https://player.vimeo.com/video/'.$newscrunch_videoId.'" width="980" height="600" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+				            				$vimeo_url = esc_url( 'https://www.vimeo.com/embed/' . esc_attr( $newscrunch_videoId ) );
+											echo wp_oembed_get( $vimeo_url, array( 'width' => '100%', 'height' => '600' ) );
 				            			endif;
 				            		}
 				            	endif;	

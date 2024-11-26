@@ -7,10 +7,18 @@
 ?>
 <div data-wow-delay=".8s" class="wow-callback zoomIn spnc-first-catpost">
 	<article  itemscope itemtype="https://schema.org/Article" id="post-<?php the_ID(); ?>" <?php post_class('spnc-post '); ?> >
-	    <div class="spnc-post-overlay"></div>
-	    <div class="spnc-post-img <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>" style="background-image:url(<?php the_post_thumbnail_url(); ?>);" width="1920" height="865">
-	    	<div class="alt-text"><?php the_title();?></div>
-	        <div class="spnc-post-content">
+	    <div class="spnc-post-img <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>">
+			<a href="<?php the_permalink();?>" itemprop="url"  title="<?php the_title(); ?>" >
+				<div class="spnc-post-overlay"></div>
+				<?php if(has_post_thumbnail()): ?>
+					<!-- Post Featured Image -->
+					<figure class="spnc-post-thumbnail <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>">
+						<?php the_post_thumbnail('full', array('class'=>'img-fluid', 'itemprop'=>'image' )); ?>	
+					</figure>
+				<?php endif;?>
+			</a>
+    	</div>
+	    <div class="spnc-post-content">
 	            <div class="spnc-content-wrapper">
 	                <div class="spnc-post-wrapper">
 	                    <header class="spnc-entry-header">
@@ -82,6 +90,5 @@
 					<?php endif; ?>
 	            </div>
 	        </div>
-	    </div>
 	</article>   
 </div>

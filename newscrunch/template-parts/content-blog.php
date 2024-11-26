@@ -10,13 +10,17 @@
 	<div class="spnc-post-format-wrapper">
     <?php
     if(has_post_format('gallery')) { ?>    
+    <a href="<?php the_permalink(); ?>" itemprop="url" title="<?php the_title(); ?>">    
         <span class="spnc-post-btn">
             <i class="fa-regular fa-images"></i>
         </span>
-     <?php } elseif (has_post_format('link')) { ?>
-     	 <span class="spnc-post-btn">
+    </a>
+    <?php } elseif (has_post_format('link')) { ?>
+ 	<a href="<?php the_permalink(); ?>" itemprop="url" title="<?php the_title(); ?>">  
+     	<span class="spnc-post-btn">
             <i class="fa-solid fa-link"></i>
         </span>
+    </a>
     <?php     
      } 
 	newscrunch_post_formats();

@@ -12,7 +12,7 @@
 
 # Extra check in case the script is being loaded by a theme.
 if ( ! function_exists( 'breadcrumb_trail' ) )
-	require_once( 'breadcrumbs.php' );
+	get_template_part('inc/breadcrumbs/breadcrumb-trail/breadcrumbs');
 
 # Plugin setup callback.
 add_action( 'plugins_loaded', 'breadcrumb_trail_setup' );

@@ -30,7 +30,7 @@ if ( ! class_exists( 'Newscrunch_Layout_Meta_Box' ) ) {
         //Callback Meta Function
         function newscrunch_meta_cb_fn()
         {
-            require_once('newscrunch-meta-box-page-settings.php');
+            get_template_part('inc/meta-boxes/newscrunch-meta-box-page-settings');
         }
 
         //Save Meta Values

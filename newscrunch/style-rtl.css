@@ -5,9 +5,9 @@ Author: spicethemes
 Author URI: https://spicethemes.com
 Description: Newscrunch is a magazine and blog theme. It is a lightweight, elegant, and fully responsive theme specifically designed for creating magazines, newspapers, editors, blogs, and dynamic news websites. It seamlessly integrates with the Gutenberg block editor, empowering you to effortlessly build your website using intuitive blocks. The theme is highly compatible with popular plugins such as Contact Form 7, Polylang, and WPML, offering expanded functionality. Newscrunch Theme prioritizes user privacy and complies with the General Data Protection Regulation (GDPR) guidelines by refraining from collecting any personal data restricted under GDPR. Additionally, all fonts used in the theme are locally hosted, eliminating the reliance on external resources like Google Fonts. The theme is also schema-ready, enhancing search engine visibility and optimization. With its GDPR compliance, sleek design, and efficient performance, Newscrunch Theme caters to various businesses. It provides a wide range of widgets and sections tailored to specific industries, enabling you to swiftly create a stunning website with beautiful designs. To explore the theme further, feel free to check out our demo at: https://demo-newscrunch.spicethemes.com/demo-one/. For video tutorial visit here https://www.youtube.com/playlist?list=PLTfjrb24Pq_DeJOZdKEaP3rZPbHuOCLtZ
 Tags: blog, news, photography, custom-background, rtl-language-support, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, one-column, two-columns, full-width-template, sticky-post, right-sidebar, footer-widgets, grid-layout
-Version: 1.7.3.1
+Version: 1.7.3.2
 Requires at least: 4.5
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1966,7 +1966,8 @@ body.newscrunch .widget_newscrunch_grid_slider_two_column .spnc-filter .spnc-pos
 @media (min-width: 1101px) {.spnc-custom .spnc-nav>li.menu-item-type-custom i {font-size: 14px;}}
 #spnc_scroll_progressbar {position: fixed;height: 8px;z-index: 999999;top: 0;right: 0;left: calc(100%);transition: left 0.5s linear 0s;}
 .spnc-category-page .spnc-grid-catpost.sticky .spnc-post-wrapper,
-.spnc-category-page .spnc-blog-cat-wrapper .spnc-first-catpost .post.sticky .spnc-content-wrapper, .spnc-post-list-view-section .spnc-post.sticky {background-color: #ababab;}
+.spnc-category-page .spnc-blog-cat-wrapper .spnc-first-catpost .post.sticky .spnc-content-wrapper{background-color: #676767;}
+.spnc-post-list-view-section .spnc-post.sticky {background-color: #ABABAB;}
 @media (max-width: 1100px) {
   .menu-item.dropdown .fa-angle-down {position: absolute;top: 50%;left: 0;margin: -0.5em 0 0 0.5em;border: 1px solid rgba(0, 0, 0, 0.1);border-radius: 0.25rem;padding: 0;width: 0em;height: 1.4em;line-height: 1.2em;text-align: center;}
 }
@@ -3195,7 +3196,7 @@ body.newsblogger .spnc-post-list-view-section .spnc-post .spnc-post-btn i, body.
 .format-audio audio{ width: 100%; margin-bottom: -10px;}
 .format-video video{ width:100%; height:100%; object-fit: cover;}
 .spnc-category-page .spnc-grid-catpost .spnc-post-format-wrapper .spnc-post-thumbnail:has(audio) { height: auto; }
-.spnc-category-page .spnc-post:is(.format-gallery, .format-link) :not(:has(.spnc-post-thumbnail))  .spnc-post-btn {display: none;}
+.spnc-category-page .spnc-post:is(.format-gallery, .format-link) :not(:has(.spnc-post-thumbnail))  a .spnc-post-btn {display: none;}
 .page-template .spnc-blog-page:is(.spnc-right-sidebar, .spnc-masonry ) .spnc-post-format-wrapper:has(iframe, audio, video) .spnc-entry-meta { display: none; }
 .spnc-list-view .spnc-blog-wrapper .spnc-post.format-audio .spnc-post-thumbnail:has(audio),
 .spnc-post-list-view-section .spnc-post.format-audio .spnc-post-thumbnail:has(audio){ display: flex; align-items: center; }
@@ -3215,3 +3216,24 @@ body.ads-img.ad-sticky.single-post .header-sidebar.header-1.bread-nt-1, body.ads
 }
 .single-post header.wow-sticky.sp-8  .spnc-topbar{display: none;}
 body #page .img-remove.spnc-grid-catpost .spnc-cat-links{position: inherit;}
+
+.format-quote a:hover{color: #fff;}
+/* ===== Banner corrections css ====== */
+.spnc-bnr-1 .spnc-post-content{ position:unset; }
+.spnc-bnr-1 .spnc-post-wrapper, .spnc-bnr-1 .spnc_column-2 .spnc-post-wrapper, .spnc-bnr-1 .spnc_column-3 .spnc-post-wrapper {padding: 0;}
+.spnc-bnr-1 .spnc-post .spnc-post-img img{ height: 100%; }
+.spnc-bnr-1 .spnc-entry-content {z-index: 1;}
+.spnc-bnr-1 .spnc-post-wrapper .entry-header{ position: absolute; top: auto;bottom: 10px; z-index: 1; padding-left: 20px; }
+.spnc-category-page .spnc-blog-cat-wrapper .spnc-first-catpost .spnc-post-overlay { margin: 0; }
+.spnc-category-page .spnc-blog-cat-wrapper .spnc-first-catpost .spnc-content-wrapper { bottom: 1.25rem; left: 1.25rem; margin-right: 4rem; z-index: 1; }
+.spnc-category-page .spnc-blog-cat-wrapper .spnc-first-catpost .spnc-post-thumbnail { margin: 0; height: 100%; }
+.spnc-category-page .spnc-blog-cat-wrapper .spnc-first-catpost .spnc-post-thumbnail img{ width: 100%;  height: 100%; position: absolute; object-fit: cover; }
+@media (max-width: 550px) { .spnc-category-page .spnc-blog-cat-wrapper .spnc-first-catpost .spnc-post-img {height: 500px;} }
+
+/* Animation correction for blog */
+
+:is(.spnc-category-page, .spnc-right-sidebar, .spnc-list-view, .spnc-masonry) .i_effect2::before{ display:none; }
+:is(.spnc-category-page, .spnc-right-sidebar, .spnc-list-view, .spnc-masonry) .i_effect2 a::before { content: "";position: absolute;inset: 20px;border: 2px solid #fff;border: 3px solid #fff;opacity: 0;-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;transition: opacity 0.35s, transform 0.35s;-webkit-transform: scale3d(1.4, 1.4, 1);transform: scale3d(1.4, 1.4, 1);z-index: 1;}
+:is(.spnc-category-page, .spnc-right-sidebar, .spnc-list-view, .spnc-masonry) .i_effect2 a:hover::before{ opacity: 1;-webkit-transform: scale3d(1, 1, 1); transform: scale3d(1.03, 1.06, 1); }
+.spnc-first-catpost .i_effect4::before, .spnc-first-catpost .i_effect2 a::before {z-index: 2;}
+.spnc-category-page .spnc-blog-cat-wrapper .spnc-first-catpost .spnc-post-img { z-index: 1; }

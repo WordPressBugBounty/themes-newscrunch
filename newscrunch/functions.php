@@ -46,6 +46,8 @@ if ( ! function_exists( 'spncp_activate' ) ) {
 	require NEWSCRUNCH_TEMPLATE_DIR . '/inc/font/font.php';
 }
 
+require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/sanitize-callback.php' );
+
 if ( ! function_exists( 'newscrunch_setup' ) ) :
 	/**
 		* Sets up theme defaults and registers support for various WordPress features.
@@ -67,10 +69,15 @@ if ( ! function_exists( 'newscrunch_setup' ) ) :
 		add_theme_support( 'automatic-feed-links' );
 
 		/*
-		* Let WordPress manage the document title.
+		* Add theme supports.
 		*/
 		add_theme_support( 'title-tag' );
-
+		add_theme_support( "align-wide" );
+		add_editor_style();
+		add_theme_support( 'responsive-embeds' );
+		add_theme_support( 'wp-block-styles' );
+		add_theme_support( 'register_block_style' );
+		add_theme_support( 'register_block_pattern' );
 		/*
 		* Enable support for Post Thumbnails on posts and pages.
 		*/
@@ -322,7 +329,8 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                    <li><?php echo 'Fixed some minor issues.'; ?></li>
+		                    <li><?php echo 'Added image link in banner section.'; ?></li>
+		                    <li><?php echo 'Fixed blog section image link issue with animation & theme check plugin issues.'; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">
@@ -442,8 +450,7 @@ function newscrunch_install_and_activate_plugin() {
     $plugin_slug = sanitize_text_field($_POST['plugin_slug']);
     $plugin_main_file = $plugin_slug . '/' . $plugin_slug . '.php'; // Ensure this matches your plugin structure
 
-    // Download the plugin file
-    WP_Filesystem();
+    // Download the plugin file without needing WP_Filesystem
     $temp_file = download_url($plugin_url);
 
     if (is_wp_error($temp_file)) {
@@ -454,7 +461,7 @@ function newscrunch_install_and_activate_plugin() {
     // Unzip the plugin to the plugins folder
     $plugin_folder = WP_PLUGIN_DIR;
     $result = unzip_file($temp_file, $plugin_folder);
-    
+
     // Clean up temporary file
     unlink($temp_file);
 
@@ -465,8 +472,6 @@ function newscrunch_install_and_activate_plugin() {
 
     // Activate the plugin if it was installed
     $activate_result = activate_plugin($plugin_main_file);
-
-    
 
     // Return success with redirect URL
     wp_send_json_success(array('redirect_url' => admin_url('admin.php?page=newscrunch-welcome')));

@@ -33,19 +33,17 @@ if ( ! class_exists( 'Newscrunch_Customizer' ) ) :
 		 * Adds custom controls
 		*/
 		public function custom_controls( $wp_customize ) {
-
 			// Load customize control classes
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/custom-controls/customizer-text-radio/text-radio-control.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/custom-controls/toggle/class-toggle-control.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/custom-controls/customizer-tabs/class/class-newscrunch-customize-control-tabs.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/custom-controls/customizer-repeater/class/customizer-repeater-control.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/custom-controls/customizer-slider/customizer-slider.php' );	
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/custom-controls/customizer-image-radio/customizer-image-radio.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/custom-controls/customizer-alpha-color-picker/class-customize-alpha-color-control.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/custom-controls/dropdown-posts/dropdown-posts-control.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/custom-controls/multiple-category-dropdown/multiple-category-dropdown-control.php' );
-
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/custom-controls/sortable/class-sortable-control.php' );
+			get_template_part( 'inc/customizer/custom-controls/customizer-text-radio/text-radio-control' );
+			get_template_part( 'inc/customizer/custom-controls/toggle/class-toggle-control' );
+			get_template_part( 'inc/customizer/custom-controls/customizer-tabs/class/class-newscrunch-customize-control-tabs' );
+			get_template_part( 'inc/customizer/custom-controls/customizer-repeater/class/customizer-repeater-control' );
+			get_template_part( 'inc/customizer/custom-controls/customizer-slider/customizer-slider' );
+			get_template_part( 'inc/customizer/custom-controls/customizer-image-radio/customizer-image-radio' );
+			get_template_part( 'inc/customizer/custom-controls/customizer-alpha-color-picker/class-customize-alpha-color-control' );
+			get_template_part( 'inc/customizer/custom-controls/dropdown-posts/dropdown-posts-control' );
+			get_template_part( 'inc/customizer/custom-controls/multiple-category-dropdown/multiple-category-dropdown-control' );
+			get_template_part( 'inc/customizer/custom-controls/sortable/class-sortable-control' );
 
 			// Register custom controls
 			$wp_customize->register_control_type('Newscrunch_Toggle_Control');
@@ -57,8 +55,7 @@ if ( ! class_exists( 'Newscrunch_Customizer' ) ) :
 		 * Adds customizer helpers
 		*/
 		public function controls_helpers() {
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/sanitize-callback.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/active-callback.php' );
+			get_template_part('inc/customizer/active-callback');
 		}
 
 
@@ -66,25 +63,24 @@ if ( ! class_exists( 'Newscrunch_Customizer' ) ) :
 		 * Adds customizer options
 		*/
 		public function register_options() {
-
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/general-settings.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/advertisement.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/top-header.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/repeater-default-value.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/site-identity.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/theme-header.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/theme-footer.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/bottom-footer.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/main-banner.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/news-highlight.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/left-content-right-sidebar.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/left-sidebar-right-content.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/missed-section.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/scroll-to-top.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/archives-options.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/single-post-options.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/featured-video.php' );
-			require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/settings/reorder-sections.php' );
+			get_template_part( 'inc/customizer/settings/general-settings' );
+			get_template_part( 'inc/customizer/settings/advertisement' );
+			get_template_part( 'inc/customizer/settings/top-header' );
+			get_template_part( 'inc/customizer/repeater-default-value' );
+			get_template_part( 'inc/customizer/settings/site-identity' );
+			get_template_part( 'inc/customizer/settings/theme-header' );
+			get_template_part( 'inc/customizer/settings/theme-footer' );
+			get_template_part( 'inc/customizer/settings/bottom-footer' );
+			get_template_part( 'inc/customizer/settings/main-banner' );
+			get_template_part( 'inc/customizer/settings/news-highlight' );
+			get_template_part( 'inc/customizer/settings/left-content-right-sidebar' );
+			get_template_part( 'inc/customizer/settings/left-sidebar-right-content' );
+			get_template_part( 'inc/customizer/settings/missed-section' );
+			get_template_part( 'inc/customizer/settings/scroll-to-top' );
+			get_template_part( 'inc/customizer/settings/archives-options' );
+			get_template_part( 'inc/customizer/settings/single-post-options' );
+			get_template_part( 'inc/customizer/settings/featured-video' );
+			get_template_part( 'inc/customizer/settings/reorder-sections' );
 		}
 
 
@@ -94,7 +90,7 @@ if ( ! class_exists( 'Newscrunch_Customizer' ) ) :
 		public function custom_customize_enqueue() {
 			/* Enqueue the CSS files */
 			wp_enqueue_style( 'newscrunch-customize-css', NEWSCRUNCH_TEMPLATE_DIR_URI .'/inc/customizer/assets/css/customize.css' );
-			require_once('custom_style.php');
+			get_template_part('inc/customizer/custom_style');
 		}
 
 	}

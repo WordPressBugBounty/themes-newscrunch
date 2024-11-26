@@ -22,13 +22,18 @@
         <?php endif; 
         if(has_post_format('gallery')){ ?>
         <!-- Icon for post gallery -->
-        <span class="spnc-post-btn">
-            <i class="fa-regular fa-images"></i>
-        </span>
+        <a href="<?php the_permalink(); ?>" itemprop="url" title="<?php the_title(); ?>">  
+            <span class="spnc-post-btn">
+                <i class="fa-regular fa-images"></i>
+            </span>
+        </a>
         <?php } elseif (has_post_format('link')) { ?>
-         <span class="spnc-post-btn">
-            <i class="fa-solid fa-link"></i>
-        </span> <?php }  ?>
+        <a href="<?php the_permalink(); ?>" itemprop="url" title="<?php the_title(); ?>">  
+            <span class="spnc-post-btn">
+                <i class="fa-solid fa-link"></i>
+            </span>
+        </a>
+        <?php } ?>
     </div>
     <div class="spnc-post-content">
         <?php if(get_theme_mod('newscrunch_enable_post_category',true)==true):

@@ -199,8 +199,6 @@ get_template_part('partials/widgets/single-column');
 get_template_part('partials/widgets/social-icons');
 get_template_part('partials/widgets/tabs');
 
-require_once ( NEWSCRUNCH_TEMPLATE_DIR . '/inc/customizer/sanitize-callback.php' );
-
 function newscrunch_widget_register_scripts($hook) {
     if( $hook !== "widgets.php" ) {
         return;

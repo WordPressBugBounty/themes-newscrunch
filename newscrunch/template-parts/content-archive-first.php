@@ -36,11 +36,12 @@ if (is_category()) {
                                         while ( $newscrunch_cat_sticky_query->have_posts() ) : $newscrunch_cat_sticky_query->the_post(); ?>
                                             <article itemscope itemtype="https://schema.org/Article" id="post-<?php the_ID(); ?>" <?php post_class('spnc-post '); ?>>
                                                 <div class="spnc-post-wrapper">
-                                                    <div class="spnc-post-overlay">
-                                                    </div>
-                                                    <figure class="spnc-post-thumbnail <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>"> 
-                                                        <?php the_post_thumbnail('full', array('class'=>'img-fluid sp-thumb-img', 'loading' => false, 'itemprop'=>'image' )); ?>
-                                                    </figure>
+                                                    <a href="<?php the_permalink();?>" itemprop="url"  title="<?php the_title(); ?>" >
+                                                        <div class="spnc-post-overlay"></div>
+                                                        <figure class="spnc-post-thumbnail <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>"> 
+                                                            <?php the_post_thumbnail('full', array('class'=>'img-fluid sp-thumb-img', 'loading' => false, 'itemprop'=>'image' )); ?>
+                                                        </figure>
+                                                    </a>
                                                     <div class="spnc-post-content">
                                                         <?php if(get_theme_mod('newscrunch_enable_post_category',true)==true):
                                                             if ( has_category() ) :

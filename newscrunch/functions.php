@@ -180,10 +180,11 @@ function newscrunch_hedder_full_layout(){
 }
 add_action('wp_head','newscrunch_hedder_full_layout');
 
+$newscrunch_theme = wp_get_theme(); // gets the current theme 
 
 // Notice to add required plugin
 if(!class_exists('Newscrunch_Plus')){
-	if('Newscrunch' == wp_get_theme() || 'Newscrunch Child' == wp_get_theme() || 'Newscrunch child' == wp_get_theme()) :
+	if('Newscrunch' == $newscrunch_theme->name || 'Newscrunch Child' == $newscrunch_theme->name || 'Newscrunch child' == $newscrunch_theme->name ) :
 	    function newscrunch_admin_plugin_notice_warn() {
 	        $theme_name=wp_get_theme();
 	        if ( get_option( 'dismissed-newscrunch_comanion_plugin', false ) ) {
@@ -274,7 +275,7 @@ if ( ! function_exists( 'newcrunch_schema_attributes' ) ) :
 endif;
 
 // Freemius snippet code
-if('Newscrunch' == wp_get_theme() || 'Newscrunch Child' == wp_get_theme() || 'Newscrunch child' == wp_get_theme()) {
+if('Newscrunch' == $newscrunch_theme->name || 'Newscrunch Child' == $newscrunch_theme->name || 'Newscrunch child' == $newscrunch_theme->name ) {
 	if ( ! function_exists( 'new_fs' ) ) {
 		if(class_exists('Spice_Starter_Sites') && defined( 'SPICE_STARTER_SITES_PLUGIN_PATH' ) && file_exists(SPICE_STARTER_SITES_PLUGIN_PATH . '/freemius/start.php')) {
 		    // Create a helper function for easy SDK access.
@@ -315,7 +316,7 @@ if('Newscrunch' == wp_get_theme() || 'Newscrunch Child' == wp_get_theme() || 'Ne
 
 // Update release notice to the admin dashboard
 if(!class_exists('Newscrunch_Plus')) {
-	if('Newscrunch' == wp_get_theme() || 'Newscrunch Child' == wp_get_theme() || 'Newscrunch child' == wp_get_theme()) :
+	if('Newscrunch' == $newscrunch_theme->name || 'Newscrunch Child' == $newscrunch_theme->name || 'Newscrunch child' == $newscrunch_theme->name ) :
 		function newscrunch_add_update_admin_notice() {
 			$theme = wp_get_theme(); 
 		  ?>
@@ -329,8 +330,7 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                    <li><?php echo 'Added image link in banner section.'; ?></li>
-		                    <li><?php echo 'Fixed blog section image link issue with animation & theme check plugin issues.'; ?></li>
+		                    <li><?php echo 'Fixed WordPress 6.7 related issues.'; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">

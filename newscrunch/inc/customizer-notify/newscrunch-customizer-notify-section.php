@@ -77,6 +77,9 @@ class Newscrunch_Customizer_Notify_Section extends WP_Customize_Section {
 	
 	public function call_plugin_api( $slug ) {
 		get_template_part( ABSPATH . 'wp-admin/includes/plugin-install.php' );
+		if (!function_exists('plugins_api')) {
+		    require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+		}
 		$call_api = get_transient( 'newscrunch_cust_notify_plugin_info_' . $slug );
 		if ( false === $call_api ) {
 			$call_api = plugins_api(
@@ -275,14 +278,13 @@ class Newscrunch_Customizer_Notify_Section extends WP_Customize_Section {
 							</div>
 						<# } #>
 					<# } #>
-
 					<# if( data.recommended_plugins.length > 0 ){ #>
 						<# for (action in data.recommended_plugins) { #>
 							<div class="newscrunch-recommeded-actions-container epsilon-recommended-plugins" data-index="{{ data.recommended_plugins[action].index }}">
 								<# if( !data.recommended_plugins[action].check ){ #>
 									<div class="newscrunch-epsilon-recommeded-actions">
                                                                                     <?php if (!is_rtl()) { ?>
-                                                                                        <p class="title">{{ data.recommended_plugins[action].title }}</p>
+                                                                                        <p class="title"><?php echo esc_html__( 'Spice Starter Sites', 'newscrunch' ); ?></p>
                                                                                         <span data-action="dismiss" class="dashicons dashicons-no newscrunch-customizer-notify-dismiss-button-recommended-plugin" id="{{ data.recommended_plugins[action].id }}"></span>
                                                                                     <?php } else {
                                                                                         ?>
@@ -292,14 +294,12 @@ class Newscrunch_Customizer_Notify_Section extends WP_Customize_Section {
 										<div class="description">{{{ data.recommended_plugins[action].description }}}</div>
 										<# if( data.recommended_plugins[action].plugin_slug ){ #>
 											<div class="custom-action">
-												<p class="plugin-card-{{ data.recommended_plugins[action].plugin_slug }} action_button {{ data.recommended_plugins[action].class }}">
-													<a data-slug="{{ data.recommended_plugins[action].plugin_slug }}" class="{{ data.recommended_plugins[action].button_class }}" href="{{ data.recommended_plugins[action].url }}">{{ data.recommended_plugins[action].button_label }}</a>
-												</p>
+												<button id="install-plugin-button" data-plugin-url="<?php echo esc_url( 'https://spicethemes.com/extensions/spice-starter-sites.zip' ); ?>">
+				                                    <?php echo esc_html__( 'Install Plugin', 'newscrunch' ); ?>
+				                                </button>
 											</div>
 										<# } #>
-										<# if( data.recommended_plugins[action].help ){ #>
-											<div class="custom-action">{{{ data.recommended_plugins[action].help }}}</div>
-										<# } #>
+										
 									</div>
 								<# } #>
 							</div>

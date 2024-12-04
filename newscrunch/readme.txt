@@ -3,7 +3,7 @@
 Contributors: spicethemes
 Requires at least: 4.5
 Tested up to: 6.7
-Stable tag: 1.7.3.3
+Stable tag: 1.7.3.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -26,11 +26,18 @@ Keyboard navigation is working properly in the forward direction by using the ta
 
 == Copyright ==
 
+Newscrunch is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
 Newscrunch WordPress Theme, Copyright (C) 2023-2024, spicethemes
 Newscrunch WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
+@Version 1.7.3.4
+* Fixed the issue related to the demo import plugin.
+* Added an option to demo import on the customizer page.
+ 
 @Version 1.7.3.3
 * Fixed WordPress 6.7 related issues.
 

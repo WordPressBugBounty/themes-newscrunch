@@ -330,7 +330,8 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                    <li><?php echo 'Fixed WordPress 6.7 related issues.'; ?></li>
+		                    <li><?php echo 'Fixed the issue related to the demo import plugin.'; ?></li>
+		                    <li><?php echo 'Added an option to demo import on the customizer page.'; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">
@@ -450,7 +451,8 @@ function newscrunch_install_and_activate_plugin() {
     $plugin_slug = sanitize_text_field($_POST['plugin_slug']);
     $plugin_main_file = $plugin_slug . '/' . $plugin_slug . '.php'; // Ensure this matches your plugin structure
 
-    // Download the plugin file without needing WP_Filesystem
+    WP_Filesystem();
+    // Download the plugin file
     $temp_file = download_url($plugin_url);
 
     if (is_wp_error($temp_file)) {
@@ -474,7 +476,11 @@ function newscrunch_install_and_activate_plugin() {
     $activate_result = activate_plugin($plugin_main_file);
 
     // Return success with redirect URL
-    wp_send_json_success(array('redirect_url' => admin_url('admin.php?page=newscrunch-welcome')));
+    if ( class_exists('Newscrunch_Plus') ){
+    	wp_send_json_success(array('redirect_url' => admin_url('admin.php?page=newscrunch-plus-welcome')));
+    }else{
+    	wp_send_json_success(array('redirect_url' => admin_url('admin.php?page=newscrunch-welcome')));
+    }
 }
 
 // Enqueue JavaScript for the button functionality

@@ -19,13 +19,13 @@ $newscrunch_name = wp_get_theme();
 					<div class="mockup install-plugin-button">
 						<?php if(class_exists('Spice_Starter_Sites')): ?>
 							<a href="<?php echo esc_url( admin_url( 'admin.php?page=spice-starter-sites' ) ); ?>">
-								<img src="<?php echo NEWSCRUNCH_TEMPLATE_DIR_URI.'/admin/assets/img/import-demo-img.png';?>" alt="<?php esc_attr_e('Import Image','newscrunch'); ?>"/>
+								<img src="<?php echo esc_url(NEWSCRUNCH_TEMPLATE_DIR_URI.'/admin/assets/img/import-demo-img.png');?>" alt="<?php esc_attr_e('Import Image','newscrunch'); ?>"/>
 							</a>
 						<?php else: ?>
 							<button id="install-plugin-button" data-plugin-url="<?php echo esc_url( 'https://spicethemes.com/extensions/spice-starter-sites.zip' ); ?>">
                                 <?php echo esc_html__( 'Install Plugin', 'newscrunch' ); ?>
                             </button>
-							<img src="<?php echo NEWSCRUNCH_TEMPLATE_DIR_URI.'/admin/assets/img/spice-starter-sites.png';?>" alt="<?php esc_attr_e('Import Image','newscrunch'); ?>"/>
+							<img src="<?php echo esc_url(NEWSCRUNCH_TEMPLATE_DIR_URI.'/admin/assets/img/spice-starter-sites.png');?>" alt="<?php esc_attr_e('Import Image','newscrunch'); ?>"/>
 						 	<span class="tooltiptext"><?php echo esc_html__('Need to install & activate the "Spice Starter Sites" plugin to import the demo.', 'newscrunch');?></span>
 						<?php endif; ?>
 			    	</div>

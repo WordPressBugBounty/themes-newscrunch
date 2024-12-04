@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Newscrunch 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/newscrunch-wordpress-theme\n"
-"POT-Creation-Date: 2024-11-14 14:53+0530\n"
+"POT-Creation-Date: 2024-12-04 16:35+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,7 +55,7 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:116 functions.php:206
+#: admin/inc/class-spicethemes-about-page.php:116 functions.php:207
 msgid "Welcome to"
 msgstr ""
 
@@ -90,6 +90,7 @@ msgstr ""
 
 #: admin/inc/class-spicethemes-about-page.php:349
 #: admin/inc/class-spicethemes-about-page.php:360
+#: inc/customizer/customizer-recommended-plugin.php:15
 msgid "Activate"
 msgstr ""
 
@@ -134,7 +135,8 @@ msgstr ""
 msgid "Import Image"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:26 functions.php:228
+#: admin/tab-pages/getting-started.php:26 functions.php:229
+#: inc/customizer-notify/newscrunch-customizer-notify-section.php:298
 msgid "Install Plugin"
 msgstr ""
 
@@ -196,7 +198,7 @@ msgstr ""
 msgid "Theme Demos"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:101 functions.php:222
+#: admin/tab-pages/getting-started.php:101 functions.php:223
 msgid "Help Docs"
 msgstr ""
 
@@ -224,7 +226,7 @@ msgstr ""
 msgid "Free vs Pro"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:117 functions.php:342
+#: admin/tab-pages/getting-started.php:117 functions.php:343
 msgid "Changelog"
 msgstr ""
 
@@ -516,71 +518,71 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:197
+#: functions.php:198
 msgid "Hello"
 msgstr ""
 
-#: functions.php:211
+#: functions.php:212
 msgid "is now installed and ready to use. We've provide some links to get you started."
 msgstr ""
 
-#: functions.php:214 functions.php:216
+#: functions.php:215 functions.php:217
 msgid "Theme Dashboard"
 msgstr ""
 
-#: functions.php:218
+#: functions.php:219
 msgid "Live Demo"
 msgstr ""
 
-#: functions.php:220
+#: functions.php:221
 msgid "View Live Demos"
 msgstr ""
 
-#: functions.php:224
+#: functions.php:225
 msgid "Theme Documentation"
 msgstr ""
 
-#: functions.php:234
+#: functions.php:235
 msgid "Welcome Banner"
 msgstr ""
 
-#: functions.php:325
+#: functions.php:326
 msgid "Current"
 msgstr ""
 
-#: functions.php:328
+#: functions.php:329
 msgid "We've consistently aimed to meet our users' needs and demands. In order to address specific requirements and rectify issues from our previous version, we've rolled out version"
 msgstr ""
 
-#: functions.php:328
+#: functions.php:329
 msgid "complete with exciting new features. Take a look now!"
 msgstr ""
 
-#: functions.php:337
+#: functions.php:338
 msgid "Try Now"
 msgstr ""
 
-#: functions.php:339
+#: functions.php:340
 msgid "Try It Now"
 msgstr ""
 
-#: functions.php:344
+#: functions.php:345
 msgid "See Changelog"
 msgstr ""
 
-#: functions.php:347 functions.php:349
+#: functions.php:348 functions.php:350
 msgid "Watch Videos"
 msgstr ""
 
-#: functions.php:352 functions.php:354
+#: functions.php:353 functions.php:355
 msgid "Upgrade To Pro"
 msgstr ""
 
-#: functions.php:378
+#: functions.php:379
 msgid "ago"
 msgstr ""
 
-#: functions.php:392
+#: functions.php:393
 msgid "date-time"
 msgstr ""
 
@@ -675,6 +677,10 @@ msgstr ""
 #: inc/breadcrumbs/breadcrumb-trail/breadcrumbs.php:840
 msgctxt "weekly archives date format"
 msgid "W"
+msgstr ""
+
+#: inc/customizer-notify/newscrunch-customizer-notify-section.php:287
+msgid "Spice Starter Sites"
 msgstr ""
 
 #: inc/customizer/custom-controls/customizer-repeater/class/customizer-repeater-control.php:42
@@ -901,6 +907,30 @@ msgstr ""
 
 #: inc/customizer/custom_style.php:18
 msgid "Copyright"
+msgstr ""
+
+#: inc/customizer/customizer-recommended-plugin.php:8
+msgid "Install and activate the"
+msgstr ""
+
+#: inc/customizer/customizer-recommended-plugin.php:8
+msgid "plugin to import demo."
+msgstr ""
+
+#: inc/customizer/customizer-recommended-plugin.php:12
+msgid "Recommended Actions"
+msgstr ""
+
+#: inc/customizer/customizer-recommended-plugin.php:13
+msgid "Recommended Plugin"
+msgstr ""
+
+#: inc/customizer/customizer-recommended-plugin.php:14
+msgid "Install and Activate"
+msgstr ""
+
+#: inc/customizer/customizer-recommended-plugin.php:16
+msgid "Deactivate"
 msgstr ""
 
 #: inc/customizer/settings/advertisement.php:14

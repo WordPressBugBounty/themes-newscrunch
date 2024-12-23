@@ -90,6 +90,13 @@ else
                                 endwhile;
                             echo'</div>';
                         }
+                        else if(get_theme_mod('archive_blog_variation','grid')=='overlay'){
+                                echo '<div class="spnc-blog-cat-wrapper">';
+                                    while (have_posts()): the_post();
+                                    get_template_part( 'template-parts/content-overlay');
+                                    endwhile;
+                                echo'</div>';
+                        }
                         else
                         {
                             $i=1;
@@ -112,6 +119,13 @@ else
                             $i++;
                             endwhile;
                             echo'</div></div>';
+                        }
+                        else if(get_theme_mod('archive_blog_variation','list')=='overlay'){
+                                echo '<div class="spnc-blog-cat-wrapper">';
+                                    while (have_posts()): the_post();
+                                    get_template_part( 'template-parts/content-overlay');
+                                    endwhile;
+                                echo'</div>';
                         }
                         else
                         {

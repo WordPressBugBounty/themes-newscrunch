@@ -5,7 +5,7 @@ Author: spicethemes
 Author URI: https://spicethemes.com
 Description: Newscrunch is a magazine and blog theme. It is a lightweight, elegant, and fully responsive theme specifically designed for creating magazines, newspapers, editors, blogs, and dynamic news websites. It seamlessly integrates with the Gutenberg block editor, empowering you to effortlessly build your website using intuitive blocks. The theme is highly compatible with popular plugins such as Contact Form 7, Polylang, and WPML, offering expanded functionality. Newscrunch Theme prioritizes user privacy and complies with the General Data Protection Regulation (GDPR) guidelines by refraining from collecting any personal data restricted under GDPR. Additionally, all fonts used in the theme are locally hosted, eliminating the reliance on external resources like Google Fonts. The theme is also schema-ready, enhancing search engine visibility and optimization. With its GDPR compliance, sleek design, and efficient performance, Newscrunch Theme caters to various businesses. It provides a wide range of widgets and sections tailored to specific industries, enabling you to swiftly create a stunning website with beautiful designs. To explore the theme further, feel free to check out our demo at: https://demo-newscrunch.spicethemes.com/demo-one/. For video tutorial visit here https://www.youtube.com/playlist?list=PLTfjrb24Pq_DeJOZdKEaP3rZPbHuOCLtZ
 Tags: blog, news, photography, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, rtl-language-support, one-column, two-columns, full-width-template, sticky-post, right-sidebar, footer-widgets, grid-layout
-Version: 1.7.3.4
+Version: 1.7.3.5
 Requires at least: 4.5
 Tested up to: 6.7
 Requires PHP: 5.6
@@ -18,6 +18,9 @@ Use it to make something cool, have fun, and share what you've learned.
 
 Newscrunch is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 Newscrunch WordPress Theme, Copyright 2024 Spicethemes.
 Newscrunch is distributed under the terms of the GNU GPL.
@@ -2754,7 +2757,7 @@ body .is-layout-constrained > .wp-block-heading { margin-left: 0 !important; }
 .newscrunch.archive .spnc-page-section-space .spnc-row:has(.spnc-cat-first-post){ 
     margin: 20px -15px -15px ;
 }
-.spnc-page-section-space:has(.spnc-cat-first-post) { padding: unset; margin: unset; }
+.spnc-page-section-space:has(.spnc-cat-first-post, .cat-box-content) { padding: unset; margin: unset; }
 .spnc-cat-first-post .spnc-post { background-color: #fff; padding: 20px 20px; box-shadow: 0 0 8px 2px rgba(23, 23, 35, 0.05); }
 .spnc-cat-first-post .spnc-post .spnc-post-wrapper{ position: relative; overflow: hidden; height: 560px; background-color: #d7d7d7;}
 .spnc-cat-first-post .spnc-post figure{margin: 0;}
@@ -3191,3 +3194,18 @@ body #page .img-remove.spnc-grid-catpost .spnc-cat-links{position: inherit;}
 :is(.spnc-category-page, .spnc-right-sidebar, .spnc-list-view, .spnc-masonry) .i_effect2 a:hover::before{ opacity: 1;-webkit-transform: scale3d(1, 1, 1); transform: scale3d(1.03, 1.06, 1); }
 .spnc-first-catpost .i_effect4::before, .spnc-first-catpost .i_effect2 a::before {z-index: 2;}
 .spnc-category-page .spnc-blog-cat-wrapper .spnc-first-catpost .spnc-post-img { z-index: 1; }
+.spnc-category-page .spnc-grid-catpost .spnc-post-format-wrapper:has(.format-video-model iframe, .format-video-model video) .spnc-entry-meta { display: block; }
+.cat-box-content{ background-color: #fff; padding: 20px 20px; box-shadow: 0 0 8px 2px rgba(23, 23, 35, 0.05); }
+.category:not(.newsblogger):has(.cat-description).archive:not(.spnc-cat-first-post) .page-section-space{padding-top: 0;}
+.category:not(.newsblogger) .spnc-page-section-space.cat-description{margin-top: 20px;}
+.category:not(.newsblogger):has(.cat-description.spnc-page-section-space).archive:has(.spnc-cat-first-post) .page-section-space{padding-top: 2.2rem;}
+.category:not(.newsblogger):has(.cat-description.spnc-page-section-space).archive:has(.spnc-cat-first-post) .page-section-space.bread-nt-2{padding-top: 0;}
+.category:not(.newsblogger):has(.cat-description).newscrunch:not(.newsblogger) .spnc-row { margin-top: 0px;}
+body.category:is(.all, .inner):has(.spnc-cat-first-post) .page-section-space{padding-top: 2.2rem;}
+body.category.newsblogger:is(.all, .inner):has(.spnc-cat-first-post) .page-section-space{padding-top: 0;}
+body.category:is(.all, .inner):has(.spnc-cat-first-post):not(.cat-description) .page-section-space.bread-nt-2{padding-top: 0;}
+body.category:is(.all, .inner):has(.cat-description).newscrunch:not(.newsblogger).archive:has(.spnc-cat-first-post) .page-section-space.bread-nt-2 {padding-top: 0; }
+body.category:is(.all, .inner):has(.spnc-cat-first-post).newscrunch:not(.newsblogger) .spnc-page-section-space.arcbread-nt-2 {padding-top: 1.2rem;}
+body.category:is(.all, .inner):has(.cat-description).newscrunch:not(.newsblogger):has(.spnc-cat-first-post) .spnc-page-section-space.arcbread-nt-2 {padding-top: 0}
+body:is(.all, .inner):has(.spnc-highlights-1).category.newsblogger .spnc-page-section-space.cat-description{margin-top: 20px;}
+body:is(.all, .inner):has(.spnc-highlights-1).category.newsblogger .spnc-page-section-space.cat-description .spnc-row{margin-bottom: 0px;}

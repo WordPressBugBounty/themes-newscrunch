@@ -230,6 +230,24 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                                 endwhile;
                                                 echo'</div></div>';
                                             }
+                                            else if(get_theme_mod('archive_blog_variation','list')=='overlay'){
+                                            $i=1;
+                                                echo '<div class="spnc-blog-cat-wrapper">';
+                                                    while (have_posts()): the_post();
+                                                    get_template_part( 'template-parts/content-overlay');
+                                                    // Insert a random advertisement
+                                                    if(!empty($result)):
+                                                        if ($i % $divisor == 0) {
+                                                            $random_ads = $result[array_rand($result)];
+                                                            echo '<div class="random-post-ads">';
+                                                            echo wp_kses_post(newscrunch_advertisement_content($random_ads));
+                                                            echo '</div>';
+                                                        }
+                                                    endif;
+                                                    $i++;
+                                                    endwhile;
+                                                echo'</div>';
+                                            }
                                             else
                                             {
                                                 $i=1;
@@ -293,6 +311,24 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                                 $i++;
                                                 endwhile;
                                             echo'</div>';
+                                          }
+                                          else if(get_theme_mod('archive_blog_variation','grid')=='overlay'){
+                                            $i=1;
+                                                echo '<div class="spnc-blog-cat-wrapper">';
+                                                    while (have_posts()): the_post();
+                                                    get_template_part( 'template-parts/content-overlay');
+                                                    // Insert a random advertisement
+                                                    if(!empty($result)):
+                                                        if ($i % $divisor == 0) {
+                                                            $random_ads = $result[array_rand($result)];
+                                                            echo '<div class="random-post-ads">';
+                                                            echo wp_kses_post(newscrunch_advertisement_content($random_ads));
+                                                            echo '</div>';
+                                                        }
+                                                    endif;
+                                                    $i++;
+                                                    endwhile;
+                                                echo'</div>';
                                           }
                                           else
                                           {

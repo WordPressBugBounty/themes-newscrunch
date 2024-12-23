@@ -24,21 +24,47 @@ function newscrunch_archives_options_customizer ( $wp_customize ) {
             'sanitize_callback' => 'newscrunch_sanitize_select'
         )
     );
-    $wp_customize->add_control( new Newscrunch_Image_Radio_Button_Custom_Control( $wp_customize, 'archive_blog_variation',
-        array(
-            'label'         =>  esc_html__( 'Blog Variation', 'newscrunch'  ),
-            'priority'      =>  1,
-            'section'       =>  'newscrunch_blog_section',
-            'choices'       =>  array(
-                'grid'    => array(
-                    'image' => trailingslashit( get_template_directory_uri() ) . '/inc/customizer/assets/img/blog/grid.png'
-                ),
-                'list'    => array(
-                    'image' => trailingslashit( get_template_directory_uri() ) . '/inc/customizer/assets/img/blog/list.png',
+
+    if ( class_exists('Newscrunch_Plus') ):
+
+        $wp_customize->add_control( new Newscrunch_Image_Radio_Button_Custom_Control( $wp_customize, 'archive_blog_variation',
+            array(
+                'label'         =>  esc_html__( 'Blog Variation', 'newscrunch'  ),
+                'priority'      =>  1,
+                'section'       =>  'newscrunch_blog_section',
+                'choices'       =>  array(
+                    'grid'    => array(
+                        'image' => trailingslashit( get_template_directory_uri() ) . '/inc/customizer/assets/img/blog/grid.png'
+                    ),
+                    'list'    => array(
+                        'image' => trailingslashit( get_template_directory_uri() ) . '/inc/customizer/assets/img/blog/list.png',
+                    ),
+                    'overlay'    => array(
+                        'image' => trailingslashit( get_template_directory_uri() ) . '/inc/customizer/assets/img/blog/overlay.jpg',
+                    )
                 )
             )
-        )
-    ) );
+        ) );
+
+    else: 
+
+        $wp_customize->add_control( new Newscrunch_Image_Radio_Button_Custom_Control( $wp_customize, 'archive_blog_variation',
+            array(
+                'label'         =>  esc_html__( 'Blog Variation', 'newscrunch'  ),
+                'priority'      =>  1,
+                'section'       =>  'newscrunch_blog_section',
+                'choices'       =>  array(
+                    'grid'    => array(
+                        'image' => trailingslashit( get_template_directory_uri() ) . '/inc/customizer/assets/img/blog/grid.png'
+                    ),
+                    'list'    => array(
+                        'image' => trailingslashit( get_template_directory_uri() ) . '/inc/customizer/assets/img/blog/list.png',
+                    )
+                )
+            )
+        ) );
+
+    endif;
 
     // enable/disable author
     $wp_customize->add_setting('newscrunch_enable_post_author',

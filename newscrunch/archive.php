@@ -9,14 +9,35 @@ get_header();
 
 do_action( 'newscrunch_breadcrumbs_filter' );
 newscrunch_highlight_views('inner');
+
+if (is_category() ):
+     $newscrunch_category_description = category_description();
+     if ($newscrunch_category_description) {
+?>
+<!-- category description section -->
+        <section class="spnc-page-section-space cat-description">
+           <div class="spnc-container">
+              <div class="spnc-row">
+                <div class="spnc-col-1">
+                    <div class="cat-box-content">
+                        <?php echo wp_kses_post($newscrunch_category_description); ?>
+                    </div>    
+                </div>
+            </div>
+          </div>
+        </section>
+<!-- category description section -->
+<?php }
+endif;
+
 if ('Newscrunch' == wp_get_theme() || 'Newscrunch Child' == wp_get_theme() || 'Newscrunch child' == wp_get_theme() ) {
-    if(get_theme_mod('archive_blog_variation','grid')=='list') {
+    if(get_theme_mod('archive_blog_variation','grid')=='list' || get_theme_mod('archive_blog_variation','grid')=='overlay' ) {
         get_template_part( 'template-parts/content-archive-first');
     }
     $newscrunch_blog=get_theme_mod('archive_blog_variation','grid');
 }
 else {
-    if(get_theme_mod('archive_blog_variation','list')=='list') {
+    if(get_theme_mod('archive_blog_variation','list')=='list' || get_theme_mod('archive_blog_variation','list')=='overlay') {
         get_template_part( 'template-parts/content-archive-first');
     }
     $newscrunch_blog= get_theme_mod('archive_blog_variation','list');
@@ -123,6 +144,24 @@ if((get_theme_mod('ad_type','banner')=='banner')): do_action('newscrunch_before_
                                 endwhile;
                             echo'</div>';
                         }
+                        else if(get_theme_mod('archive_blog_variation','grid')=='overlay'){
+                                $i=1;
+                                    echo '<div class="spnc-blog-cat-wrapper">';
+                                        while (have_posts()): the_post();
+                                        get_template_part( 'template-parts/content-overlay');
+                                        // Insert a random advertisement
+                                        if(!empty($result)):
+                                            if ($i % $divisor == 0) {
+                                                $random_ads = $result[array_rand($result)];
+                                                echo '<div class="random-post-ads">';
+                                                echo wp_kses_post(newscrunch_advertisement_content($random_ads));
+                                                echo '</div>';
+                                            }
+                                        endif;
+                                        $i++;
+                                        endwhile;
+                                    echo'</div>';
+                        }
                         else
                         {
                             $i=1;
@@ -163,6 +202,24 @@ if((get_theme_mod('ad_type','banner')=='banner')): do_action('newscrunch_before_
                             $i++;
                             endwhile;
                             echo'</div></div>';
+                        }
+                        else if(get_theme_mod('archive_blog_variation','list')=='overlay'){
+                                $i=1;
+                                    echo '<div class="spnc-blog-cat-wrapper">';
+                                        while (have_posts()): the_post();
+                                        get_template_part( 'template-parts/content-overlay');
+                                        // Insert a random advertisement
+                                        if(!empty($result)):
+                                            if ($i % $divisor == 0) {
+                                                $random_ads = $result[array_rand($result)];
+                                                echo '<div class="random-post-ads">';
+                                                echo wp_kses_post(newscrunch_advertisement_content($random_ads));
+                                                echo '</div>';
+                                            }
+                                        endif;
+                                        $i++;
+                                        endwhile;
+                                    echo'</div>';
                         }
                         else
                         {

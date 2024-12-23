@@ -45,6 +45,12 @@ width: 22%;
 #customize-control-newscrunch_single_post_author_layout .image_radio_button_control .radio-button-label > img{
 	width: 30%;
 }
+#customize-control-archive_blog_variation .image_radio_button_control .radio-button-label > img{
+	width: 30%;
+}
+#customize-control-archive_blog_variation .image_radio_button_control .radio-button-label{
+	vertical-align: unset;
+}
 #customize-control-newscrunch_logo_view .image_radio_button_control .radio-button-label > img{
 	width: 10%;
 	border: none;

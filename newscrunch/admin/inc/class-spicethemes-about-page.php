@@ -400,6 +400,10 @@ if (!class_exists('Newscrunch_About_Page')) {
 			{
 				return true;
 			}
+			if( class_exists('WooCommerce') && ($name=='WooCommerce'))
+			{
+				return true;
+			}
 
 		}
 
@@ -533,7 +537,12 @@ function newscrunch_recommended_plugins_array($plugins){
 			'name'     => 'Seo Optimized Images',
             'slug'     => 'seo-optimized-images',
             'desc'     => esc_html__('We highly recommend installing and activating the Seo Optimized Images plugin, which will dynamically insert SEO-friendly alt attributes and title attributes to enhance your image optimization.', 'newscrunch'),
-		);	
+		);
+		$plugins[] = array(
+			'name'     => 'WooCommerce',
+			'slug'     => 'woocommerce',
+			'desc'     => esc_html__('We highly recommend installing and activating the WooCommerce plugin, which allows you to create a shop and enhance your business.', 'newscrunch'),
+	    );
 
 	return $plugins;
 }

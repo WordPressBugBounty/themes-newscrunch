@@ -129,6 +129,9 @@ if ( ! function_exists( 'newscrunch_setup' ) ) :
             'caption',
         ) );
 
+        // woocommerce support
+		add_theme_support( 'woocommerce' );
+
 		if( !class_exists('Newscrunch_Plus') ) {
 			//About Theme	         
 	        $newscrunch_theme = wp_get_theme(); // gets the current theme
@@ -322,6 +325,9 @@ if(!class_exists('Newscrunch_Plus')) {
 		  ?>
 		    <div class="newscrunch-update-notice notice notice-info is-dismissible">
 		        <div class="notice-content-wrap">
+		        	<div class="admin-update-img">
+		                <img src="<?php echo esc_url(get_theme_file_uri().'/admin/assets/img/woocoomece.png');?>" alt="<?php esc_attr_e('Notice Image','newscrunch'); ?>"/>
+		            </div>
 		            <div class="notice-content">
 		            	<h2><?php printf( '%1$s ' . __('Current','newscrunch') . ' %2$s', esc_html($theme->name), '<span>Version' . ' ' . esc_html($theme->get('Version')) . '</span>'); ?></h2>
 		                
@@ -330,8 +336,7 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                    <li><?php echo 'Added Category description.'; ?></li>
-		                    <li><?php echo 'Added blog/archive overlay layout in pro.'; ?></li>
+		                    <li><?php echo 'Added WooCommerce Compatibility Related Feature.'; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">
@@ -485,3 +490,267 @@ function newscrunch_enqueue_plugin_installer_script() {
         'nonce' => wp_create_nonce('plugin_installer_nonce')
     ));
 }
+
+/*
+ * Add WooCommerce Compatibility
+ */
+if ( class_exists( 'WooCommerce' ) ) :
+	
+	//Add WooCommerce theme support
+	function newscrunch_wc_setup() {
+	   add_theme_support( 'wc-product-gallery-zoom' );
+	   add_theme_support( 'wc-product-gallery-lightbox' );
+	   add_theme_support( 'wc-product-gallery-slider' );
+	}
+	add_action( 'after_setup_theme', 'newscrunch_wc_setup' );
+
+	//Enqueue Scripts & Styles
+	function newscrunch_wc_enqueue_scripts() {
+	    if (is_product()) {
+	    	wp_enqueue_script('newscrunch-quantity-script',get_template_directory_uri() . '/assets/js/wc-quantity.js', ['jquery'],'1.0',true);
+	    }
+
+	    // Check if we're on the cart page
+	    if (is_cart()) {
+	        wp_enqueue_script('newscrunch-cart-customizations',get_template_directory_uri() . '/assets/js/wc-cart.js', array('jquery'),null,true);
+
+	        // Pass variables to JavaScript
+	        wp_localize_script('newscrunch-cart-customizations', 'customCartData', array('ajax_url' => admin_url('admin-ajax.php'),'nonce'    => wp_create_nonce('woocommerce-cart'),));
+	    }
+	}
+	add_action('wp_enqueue_scripts', 'newscrunch_wc_enqueue_scripts');
+
+	// Function to check if we are editing the Cart page
+	function newscrunch_wc_check_if_cart_page_editor() {
+	    global $post;
+
+	    // Ensure we're in the admin area and the current post is the Cart page
+	    if (is_admin() && isset($post) && $post->ID == wc_get_page_id('cart')) {
+	        return true; // It's the Cart page editor
+	    }
+
+	    return false; // Not the Cart page
+	}
+
+	// Function to remove the meta box on specific pages
+	function newscrunch_wc_remove_meta_box() {
+	    global $post;
+
+	    // Check if it's the Cart page editor
+	    if (newscrunch_wc_check_if_cart_page_editor()) {
+	        // Remove a specific meta box from the Cart page editor
+	        remove_meta_box('newscrunch_meta_id', 'page', 'normal');
+	    }
+
+	    // Check if it's the Product page editor
+	    if (newscrunch_wc_check_if_product_page_editor()) {
+	        // Remove a specific meta box from the Product page editor
+	        remove_meta_box('newscrunch_meta_id', 'product', 'normal'); // Replace 'newscrunch_meta_id' with the actual meta box ID
+	    }
+	}
+
+	// Helper function to check if the current page is the Product page editor
+	function newscrunch_wc_check_if_product_page_editor() {
+	    global $post;
+	    
+	    // Ensure $post exists and check the post type
+	    return isset($post) && $post->post_type === 'product';
+	}
+
+	// Hook into the add_meta_boxes action to remove the meta box
+	add_action('add_meta_boxes', 'newscrunch_wc_remove_meta_box', 10);
+
+
+
+	// Add product image, title, and both prices in separate anchor tags in the mini-cart
+	function newscrunch_wc_mini_cart_item_product_info( $item_name, $cart_item, $cart_item_key ) {
+	    $_product = $cart_item['data'];
+	    
+	    // Get product details
+	    $product_permalink = $_product->get_permalink( $cart_item );
+	    $product_title = $_product->get_name();
+	    $product_image = $_product->get_image( 'thumbnail' );
+	    
+	    // Get prices
+	    $regular_price = $_product->get_regular_price();
+	    $sale_price = $_product->get_sale_price();
+
+	    // Format prices
+	    $formatted_regular_price = wc_price( $regular_price );
+	    $formatted_sale_price = wc_price( $sale_price );
+
+	    // Start building the HTML
+	    $html = '<a href="'  . esc_url( $product_permalink ) . '" class="product-image">' . wp_kses_post( $product_image ) . '</a>';
+	    $html .= '<div class="spnc-title-price-wrap"><h6><a href="' . esc_url( $product_permalink ) . '" class="product-title">' . esc_html( $product_title ) . '</a></h6>';
+
+	    // Display prices
+	    if ( $_product->is_on_sale() ) {
+	        $html .= '<div class="spnc-cart-header-price"><span class="product-price">';
+	        $html .= '<del class="regular-price">' . wp_kses_post( $formatted_regular_price ) . '</del>';
+	        $html .= '<ins class="sale-price">' . wp_kses_post( $formatted_sale_price ) . '</ins>';
+	        $html .= '</span></div></div>';
+	    } else {
+	        $html .= '<span class="product-price">' . wp_kses_post( $formatted_regular_price ) . '</span>';
+	    }
+
+	    return $html;
+	}
+	add_filter( 'woocommerce_cart_item_name', 'newscrunch_wc_mini_cart_item_product_info', 10, 3 );
+
+	// Optional: Modify the cart item thumbnail size
+	function newscrunch_wc_mini_cart_item_thumbnail_size() {
+	    return 'thumbnail';
+	}
+	add_filter( 'woocommerce_cart_item_thumbnail', 'newscrunch_wc_mini_cart_item_thumbnail_size' );
+
+
+	// Display custom cart quantity and subtotal at the top of the mini-cart
+	function newscrunch_wc_add_custom_cart_summary_top() {
+		if( ! WC()->cart->is_empty() )
+		{	
+		    // Get the cart contents and subtotal
+		    $cart_contents = WC()->cart->get_cart();
+		    $total_items = 0;
+		    $cart_subtotal = WC()->cart->get_cart_subtotal();
+
+		    // Loop through cart contents to calculate the total items
+		    foreach ( $cart_contents as $cart_item ) {
+		        $total_items += $cart_item['quantity'];
+		    }
+
+		    // Display the total items and subtotal
+		    echo sprintf( 
+		        '<div class="spnc-mini-cart-summary">
+		            <span class="spnc-cart-item-quantity">%d item%s</span>
+		            <span class="spnc-cart-subtotal">Subtotal: %s</span>
+		        </div>',
+		        $total_items,
+		        $total_items > 1 ? 's' : '',
+		        $cart_subtotal
+		    );
+	    }
+	}
+	add_action( 'woocommerce_before_mini_cart', 'newscrunch_wc_add_custom_cart_summary_top' );
+
+
+	// Remove subtotal from WooCommerce mini-cart
+	function newscrunch_wc_remove_mini_cart_subtotal() {
+	    remove_action( 'woocommerce_widget_shopping_cart_total', 'woocommerce_widget_shopping_cart_subtotal', 10 );
+	}
+	add_action( 'woocommerce_before_mini_cart', 'newscrunch_wc_remove_mini_cart_subtotal' );
+
+
+	// Remove quantity × price from WooCommerce mini-cart
+	function newscrunch_wc_remove_quantity_price_in_mini_cart( $item_quantity, $cart_item, $cart_item_key ) {
+	    // Return an empty string to remove the quantity × price
+	    return '';
+	}
+	add_filter( 'woocommerce_widget_cart_item_quantity', 'newscrunch_wc_remove_quantity_price_in_mini_cart', 10, 3 );
+
+
+	function newscrunch_wc_add_icon_before_empty_cart_message() {
+	    // Only show the icon if the cart is empty
+	    if ( WC()->cart->is_empty() ) {
+	        echo '<span class="spnc-empty-cart"><i class="fa-solid fa-cart-shopping"></i></span>';
+	    }
+	}
+	add_action( 'woocommerce_before_mini_cart', 'newscrunch_wc_add_icon_before_empty_cart_message' );
+
+
+	// Automatically update the mini cart via AJAX when a product is added
+	add_action( 'wp_footer', 'newscrunch_wc_update_mini_cart_dropdown' );
+
+	function newscrunch_wc_update_mini_cart_dropdown() {
+	    if ( ! class_exists( 'WooCommerce' ) ) {
+	        return;
+	    }
+	    ?>
+	    <script type="text/javascript">
+	        jQuery(document).ready(function($) {
+	            // Trigger mini-cart dropdown when an item is added
+	            $(document.body).on('added_to_cart', function(event, fragments, cart_hash) {
+	                // Refresh mini cart contents
+	                $('.cart-dropdown').load(window.location.href + ' .cart-dropdown > *');
+	                
+	                // Optionally show the dropdown
+	                $('.header-cart .menu-item.dropdown').addClass('open');
+	            });
+	        });
+	    </script>
+	    <?php
+	}
+
+
+add_filter( 'woocommerce_before_shop_loop_item_title', 'newscrunch_wc_replace_product_title_tag_start', 0 );
+add_filter( 'woocommerce_after_shop_loop_item_title', 'newscrunch_wc_replace_product_title_tag_end', 999 );
+
+function newscrunch_wc_replace_product_title_tag_start() {
+    ob_start(); // Start output buffering
+}
+
+function newscrunch_wc_replace_product_title_tag_end() {
+    $output = ob_get_clean(); // Get the buffered content
+
+    // Replace <h2> with <h4>
+    $output = str_replace(
+        '<h2 class="woocommerce-loop-product__title">',
+        '<h4 class="woocommerce-loop-product__title">',
+        $output
+    );
+
+    // Replace closing </h2> with </h4>
+    $output = str_replace('</h2>', '</h4>', $output);
+
+    echo $output; // Output the modified content
+}
+
+
+add_action( 'init', 'newscrunch_wc_replace_single_product_title_tag' );
+
+function newscrunch_wc_replace_single_product_title_tag() {
+    // Remove the default product title (which uses <h1>)
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+
+    // Add a custom product title with <h2> instead of <h1>
+    add_action( 'woocommerce_single_product_summary', 'newscrunch_wc_single_product_title', 5 );
+}
+
+function newscrunch_wc_single_product_title() {
+    // Output the product title wrapped in an <h2> tag
+    echo '<h2 class="product_title entry-title">' . esc_html( get_the_title() ) . '</h2>';
+}
+
+
+// Remove default related products title
+remove_action( 'woocommerce_product_related_products_heading', 'woocommerce_related_products_heading' );
+
+// Add custom related products title
+add_action( 'woocommerce_product_related_products_heading', 'newscrunch_wc_related_products_heading' );
+
+function newscrunch_wc_related_products_heading() {
+    echo '<div class="related_product spnc-common-widget-area">
+        <div class="spnc-main-wrapper">
+            <div class="spnc-main-wrapper-heading">
+                <h2>' . esc_html( __( 'Related products', 'newscrunch' ) ) . '</h2>
+            </div>
+    </div>';
+}
+
+
+// Remove the default upsell heading
+remove_action( 'woocommerce_product_upsells_products_heading', 'woocommerce_upsell_display_heading', 10 );
+
+// Add custom upsell heading with your custom markup
+add_action( 'woocommerce_product_upsells_products_heading', 'newscrunch_wc_upsell_title' );
+
+function newscrunch_wc_upsell_title() {
+    echo '<div class="spnc-upsell spnc-common-widget-area">
+        <div class="spnc-main-wrapper">
+            <div class="spnc-main-wrapper-heading">
+                <h2>' . esc_html( __( 'You may also like…', 'newscrunch' ) ) . '</h2>
+            </div>
+    </div>';
+}
+
+//woocommerce endif 
+endif;

@@ -65,6 +65,7 @@ if ( ! class_exists( 'Newscrunch_Customizer' ) ) :
 		public function register_options() {
 			get_template_part( 'inc/customizer/settings/general-settings' );
 			get_template_part( 'inc/customizer/settings/advertisement' );
+			get_template_part( 'inc/customizer/settings/woocommerce' );
 			get_template_part( 'inc/customizer/settings/top-header' );
 			get_template_part( 'inc/customizer/repeater-default-value' );
 			get_template_part( 'inc/customizer/settings/site-identity' );

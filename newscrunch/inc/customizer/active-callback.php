@@ -255,3 +255,35 @@ function newscrunch_callback_single_post_layout($control) {
         return false;
     }
 }
+// callback function for related product  
+function newscrunch_related_product_section_callback($control) {
+    if (true == $control->manager->get_setting('newscrunch_wc_related_product')->value()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// callback function for upsell product  
+function newscrunch_upsell_product_section_callback($control) {
+    if (true == $control->manager->get_setting('newscrunch_wc_upsell_product')->value()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// callback function for sell product  
+function newscrunch_sell_product_section_callback($control) {
+    if (true == $control->manager->get_setting('newscrunch_wc_cross_sell_product')->value()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Active callback function to display the control only when "Show Text" is selected
+function newscrunch_show_text_active_callback( $control ) {
+    // Check if the 'Show Text' option is selected
+    return get_theme_mod('newscrunch_wc_product_sale_badge', 'percentage') === 'text';
+}

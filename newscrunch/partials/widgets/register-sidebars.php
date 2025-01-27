@@ -168,6 +168,21 @@ function newscrunch_widgets_init() {
         )
     );
 
+    /**
+    * Woocommerce widget area
+    */
+    register_sidebar(
+        array(
+            'name'          => esc_html__('WooCommerce Sidebar', 'newscrunch' ),
+            'id'            => 'woocommerce',
+            'description'   => esc_html__('Add widgets in woocommerce widget area', 'newscrunch' ),
+            'before_widget' => '<aside id="%1$s" class="wow-callback zoomIn widget side-bar-widget w-c f-w-c wc-sidebar %2$s">',
+            'after_widget'  => '</aside>',
+            'before_title'  => '<div class="spnc-widget-heading"><h2 class="spnc-widget-title" itemprop="name">',
+            'after_title'   => '</h2></div>',
+        )
+    );
+
     // Register custom widgets
     register_widget( 'Newscrunch_Advertisement_Widget_Controller' );   //Widget API: Advertisement Widget Class
     register_widget( 'Newscrunch_Featured_Post_Widget_Controller' );   //Widget API: Featured Post Widget Class

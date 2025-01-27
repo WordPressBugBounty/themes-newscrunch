@@ -377,10 +377,6 @@ box-shadow: 0 0 1px 1px rgba(42, 42, 42, 1);}
   color:#a7a7a7;
 }
 
-/*[data-theme="spnc_dark"] .spnc-single-post .spnc-blog-wrapper .spnc-post .spnc-entry-meta :is(a, .spnc-cat-links a ):is(:hover, :focus) {
-  color: #369ef6;
-}*/
-
 [data-theme="spnc_dark"]  .spnc-single-post.spnc-single-post-four .spnc-post-overlay .entry-header .spnc-cat-links a,
 [data-theme="spnc_dark"]  .spnc-single-post-six .spnc-post-overlay .entry-header .spnc-entry-meta .spnc-author a{
   color: #fff;
@@ -419,3 +415,58 @@ box-shadow: 0 0 1px 1px rgba(42, 42, 42, 1);}
 
 [data-theme="spnc_dark"]  .cat-box-content {background-color: #161616;}
 [data-theme="spnc_dark"]  .cat-box-content p{color: #fff;}
+
+/* Woocommerce Css */
+[data-theme="spnc_dark"] body.woocommerce ul.products li.product,[data-theme="spnc_dark"] .woocommerce-page ul.products li.product {background-color:#1b1b1b; }
+[data-theme="spnc_dark"] .woocommerce-loop-product__title {color: #fff;}
+[data-theme="spnc_dark"] .woocommerce-loop-product__title:hover {color: #669c9b;}
+[data-theme="spnc_dark"] .woocommerce:where(body:not(.woocommerce-uses-block-theme)) ul.products li.product .price {color: #a7a7a7;}
+[data-theme="spnc_dark"] .woocommerce ul.products li.product .price del {color: #a7a7a7;}
+[data-theme="spnc_dark"] .woocommerce-cart .is-large.wc-block-cart .wc-block-cart-items th,[data-theme="spnc_dark"] body .is-large.wc-block-cart .wc-block-cart__totals-title {color: #fff;}
+[data-theme="spnc_dark"] .woocommerce-cart tbody tr:nth-child(2n+1) {background-color: transparent;}
+[data-theme="spnc_dark"] .woocommerce-cart tbody tr:nth-child(2n+1) { background-color: transparent; }
+[data-theme="spnc_dark"] body.woocommerce-car .wc-block-components-quantity-selector {background-color: #000000;}
+[data-theme="spnc_dark"] body .wc-block-components-quantity-selector {background-color: #000;}
+[data-theme="spnc_dark"] .is-large.wc-block-cart .wc-block-cart-items tr {border-bottom: 1px solid rgba(255, 255, 255, 0.3);}
+[data-theme="spnc_dark"] .is-large.wc-block-cart .wc-block-cart-items tr:last-child {border-bottom:0;}
+[data-theme="spnc_dark"] .woocommerce #content div.product div.summary,[data-theme="spnc_dark"] .woocommerce div.product div.summary,[data-theme="spnc_dark"] .woocommerce-page #content div.product div.summary,[data-theme="spnc_dark"] .woocommerce-page div.product div.summary,[data-theme="spnc_dark"] .woocommerce #content div.product div.images,,[data-theme="spnc_dark"] .woocommerce div.product div.images,[data-theme="spnc_dark"] .woocommerce-page #content div.product div.images,[data-theme="spnc_dark"] .woocommerce-page div.product div.images {background-color: #1b1b1b;}
+[data-theme="spnc_dark"] .woocommerce.single-product div.product .product_title {color: #fff;}
+[data-theme="spnc_dark"] .wc-block-components-totals-shipping .wc-block-components-totals-shipping__change-address__link {color: #fff;}
+[data-theme="spnc_dark"]  .wc-block-components-sidebar-layout .wc-block-components-main,[data-theme="spnc_dark"]  .wc-block-components-sidebar {background-color: #1b1b1b;}
+[data-theme="spnc_dark"] .woocommerce-cart .wc-block-cart-item__total-price-and-sale-badge-wrapper {color: #a7a7a7;}
+[data-theme="spnc_dark"] .woocommerce.single-product .product_meta .sku_wrapper,[data-theme="spnc_dark"] .woocommerce.single-product .product_meta .posted_in {color: #fff;}
+[data-theme="spnc_dark"] .woocommerce.single-product .product_meta .sku_wrapper .sku,[data-theme="spnc_dark"] .woocommerce.single-product .product_meta .posted_in a {
+    color: #a7a7a7;}
+[data-theme="spnc_dark"] .woocommerce.single-product .woocommerce-tabs,[data-theme="spnc_dark"] .woocommerce.single-product .related.products{background-color: #1b1b1b;}  
+[data-theme="spnc_dark"] .woocommerce.single-product div.product .woocommerce-tabs .panel h2 {color: #fff; } 
+[data-theme="spnc_dark"] .woocommerce.single-product .woocommerce-Price-amount.amount{color: #a7a7a7;}
+[data-theme="spnc_dark"] .woocommerce-checkout .wc-block-components-form .wc-block-components-text-input input[type=email],[data-theme="spnc_dark"] .woocommerce-checkout .wc-block-components-form .wc-block-components-text-input input[type=number],[data-theme="spnc_dark"] .woocommerce-checkout .wc-block-components-form .wc-block-components-text-input input[type=password],[data-theme="spnc_dark"] .woocommerce-checkout .wc-block-components-form .wc-block-components-text-input input[type=tel],[data-theme="spnc_dark"] .woocommerce-checkout .wc-block-components-form .wc-block-components-text-input input[type=text],.woocommerce-checkout .wc-block-components-form .wc-block-components-text-input input[type=url],[data-theme="spnc_dark"] .woocommerce-checkout .wc-block-components-text-input input[type=email],[data-theme="spnc_dark"] .woocommerce-checkout .wc-block-components-text-input input[type=number],[data-theme="spnc_dark"] .woocommerce-checkout .wc-block-components-text-input input[type=password],[data-theme="spnc_dark"] .woocommerce-checkout .wc-block-components-text-input input[type=tel],[data-theme="spnc_dark"] .woocommerce-checkout .wc-block-components-text-input input[type=text],[data-theme="spnc_dark"] .woocommerce-checkout .wc-block-components-text-input input[type=url] {color: #cacbd2;border: 1px solid rgba(255, 255, 255, 0.3);background-color: transparent;}
+[data-theme="spnc_dark"] .spnc-custom .dropdown-menu .cart-dropdown {background: #000;box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);}
+[data-theme="spnc_dark"] .spnc-custom .cart-dropdown .woocommerce-mini-cart,[data-theme="spnc_dark"] .spnc-mini-cart-summary {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);}
+[data-theme="spnc_dark"]  .woocommerce-cart .spnc-entry-content .woocommerce-cart-form,[data-theme="spnc_dark"]  .woocommerce-cart .spnc-entry-content .cart-collaterals {background-color: #1a1a1a;}
+[data-theme="spnc_dark"] .spnc-wc-single-product-wrap {background-color: #1a1a1a;}  
+[data-theme="spnc_dark"] .woocommerce-checkout .wc-blocks-components-select .wc-blocks-components-select__select {color: #cacbd2;background-color: #1a1a1a;}
+[data-theme="spnc_dark"]  .woocommerce-checkout  .wc-blocks-components-select .wc-blocks-components-select__label{ color: #cacbd2;}
+[data-theme="spnc_dark"] .woocommerce.single-product .product_meta .posted_in a {color: #669c9b;}
+[data-theme="spnc_dark"] .woocommerce-cart .woocommerce-Price-amount.amount{color: #cacbd2;}
+[data-theme="spnc_dark"] .woocommerce-cart .cart-collaterals .cross-sells ul.products li.product{box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.1);}
+[data-theme="spnc_dark"] .woocommerce-cart .woocommerce-cart-form tbody tr.cart_item {border-bottom: 1px solid rgba(255, 255, 255, 0.3);}
+[data-theme="spnc_dark"] .woocommerce.single-product div.product form.cart .variations select {color: #a7a7a7;}
+[data-theme="spnc_dark"] .woocommerce-checkout .wc-block-components-sidebar {background-color: #000;}
+[data-theme="spnc_dark"] .woocommerce-cart .spnc-entry-content .spnc-cart-product-wrap {background-color: #1A1A1A;}
+[data-theme="spnc_dark"] .wp-block-woocommerce-customer-account a {color: #fff !important;}
+[data-theme="spnc_dark"] .woocommerce-page mark .woocommerce-Price-amount.amount{color: #404040;}
+[data-theme="spnc_dark"] .spnc-sidebar .widget{color: #a7a7a7;}
+[data-theme="spnc_dark"] .woocommerce ul.products li.product .price del {-webkit-text-fill-color: #a7a7a7;}
+[data-theme="spnc_dark"] .spnc-wrapper.spnc-btn-1 .spnc-sidebar .widget.widget_block .woocommerce-checkout :is( h1, h2, h3, h4, h5, h6) {color: #fff;}
+[data-theme="spnc_dark"] .spnc-sidebar .woocommerce-info a.showcoupon{color: #000;}
+[data-theme="spnc_dark"] .woocommerce .star-rating::before {color: #669c9b;}
+[data-theme="spnc_dark"] .woocommerce .star-rating span::before{color: #669c9b;}
+[data-theme="spnc_dark"] .woocommerce-store-notice, p.demo_store{color: #fff;}
+[data-theme="spnc_dark"] .woocommerce-account legend {color: #FFFFFF;}
+[data-theme="spnc_dark"] .woocommerce-account .woocommerce-password-strength.bad{color: #000;}
+[data-theme="spnc_dark"] .woocommerce-page .spnc-sidebar ul li {border-bottom: 1px solid rgba(255, 255, 255, 0.3);}
+[data-theme="spnc_dark"] .product-category .woocommerce-loop-category__title{color: #a7a7a7}
+[data-theme="spnc_dark"] body .woocommerce-tabs.wc-tabs-wrapper a:focus {outline:none;}
+[data-theme="spnc_dark"] body.woocommerce ul.products li.product {box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.1);}

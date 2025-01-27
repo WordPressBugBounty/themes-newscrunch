@@ -29,7 +29,22 @@
 				</div>
 				<div class=spnc-head-wrap>
 					<div class="spnc-header-right">
-						<?php if( get_theme_mod('hide_show_search_icon',true ) == true ):?>
+						<?php if ( class_exists( 'WooCommerce' ) ) :?>
+		                <div class="header-cart nav spnc-nav spnc-right">
+		                    <li class="menu-item">
+		                        	<a class="cart-icon" href="<?php echo esc_url( wc_get_cart_url() ); ?>">
+		                            <i class="fas fa-shopping-cart"></i>
+		                            <span class="cart-count"><?php echo esc_html( WC()->cart->get_cart_contents_count() ); ?></span>
+		    	                 </a>
+			                     <ul class="dropdown-menu">
+			                     	<div class="cart-dropdown">
+				                   <?php woocommerce_mini_cart(); ?>
+				                   </div>
+		                         </ul>
+		                    </li>
+		                </div>
+						<?php endif;
+						if( get_theme_mod('hide_show_search_icon',true ) == true ):?>
 						<ul class="nav spnc-nav">			         
 				         <li class="menu-item dropdown">
 								<a href="#searchbar_fullscreen" class="search-icon" aria-haspopup="true" aria-expanded="false" title="<?php esc_attr_e('Search','newscrunch'); ?>"><i class="fas fa-search"></i></a>

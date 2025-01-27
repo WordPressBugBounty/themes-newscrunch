@@ -57,6 +57,7 @@
 	# Single Post Author Details
  	# Advertisement Section
 	# Post Formats
+	# Add WooCommerce Compatibility
 /*
 -------------------------------------------------------------------------------
  Header
@@ -369,6 +370,11 @@ if ( ! function_exists( 'newscrunch_breadcrumbs_page_title_fn' ) ) {
 		            }
 		            else if( is_year() ) {
 		                echo $page_title_markup_before . ( get_theme_mod('month_prefix', esc_html__('Month', 'newscrunch') . ': ').get_the_date('Y') ) . $page_title_markup_after;
+		            }
+		            else if( class_exists( 'WooCommerce' ) && is_shop()) {
+		            	echo "<h1>";
+		                echo esc_html_e( 'Shop', 'newscrunch' );
+		                echo "</h1>";
 		            }
 		            else if(is_archive()) {   
 		            	the_archive_title( $page_title_markup_before, $page_title_markup_after );
@@ -1727,6 +1733,20 @@ function newscrunch_page_widget1_sidebar_sticky()
 	return $sticky;
 }
 
+/* Woocommerce Content */
+ function newscrunch_wc_sidebar_sticky()
+{
+	if(get_theme_mod('wc_sidebar_sticky',true) == true)
+	{
+		$sticky ='spnc-sticky-sidebar';
+	}
+	else
+	{
+		$sticky='';
+	}
+	return $sticky;
+}
+
 /*
 -------------------------------------------------------------------------------
  Edit link button for single posts and pages
@@ -2488,4 +2508,314 @@ if ( ! function_exists( 'newscrunch_post_formats' ) ) :
 		<?php endif;
 	}
 }
+endif;
+
+
+/*
+-------------------------------------------------------------------------------
+Woocommerce Styling
+-------------------------------------------------------------------------------*/
+if (!function_exists('newscrunch_woocommerce_css')) :
+
+	function newscrunch_woocommerce_css() { ?> 
+            <style type="text/css">
+            	/* Position secondary image on top */
+				.products .product .secondary-image {position: absolute;top: 0;left: 0;width: 100%;height: 100%;opacity: 0;transition: opacity 0.3s ease-in-out;}
+            <?php if( get_theme_mod('newscrunch_wc_gallery_zoom', true) == false):?>
+                .woocommerce-product-gallery__wrapper .zoomImg {display: none !important;}
+				.woocommerce-product-gallery__wrapper a{cursor: unset;}
+            <?php endif; if( get_theme_mod('newscrunch_wc_gallery_lightbox', true) == false):?>
+            	.woocommerce-product-gallery__trigger{display: none;}
+            <?php endif; if( get_theme_mod('newscrunch_wc_gallery_zoom', true) == false):?>
+            	.slider-prev, .slider-next {position: absolute;top: 50%;transform: translateY(-50%);font-size: 24px;color: #333;cursor: pointer;z-index: 10;}
+				.slider-prev {left: 10px;}
+				.slider-next {right: 10px;}
+				.slider-prev:hover, .slider-next:hover {color: #000;}
+            <?php endif; if( get_theme_mod('newscrunch_wc_related_product', true) == false):?>
+            	.related.products{display: none;}
+        	<?php endif; if(get_theme_mod('newscrunch_wc_upsell_product',true) == false):?>
+        		.upsells.products{display: none;}
+        	<?php endif; if(get_theme_mod('newscrunch_wc_product_hover','none') =='image-swap'):?>
+        		.products .product:hover .secondary-image {opacity: 1;}
+        	<?php endif; if(get_theme_mod('newscrunch_wc_cross_sell_product',true) == false):?>
+        		.spnc-cart-product-wrap .cart-collaterals .cross-sells{display: none;}
+        	<?php endif; ?>
+            </style>
+	    <?php
+	}
+	add_action('wp_head','newscrunch_woocommerce_css');
+endif;
+
+
+/*
+-------------------------------------------------------------------------------
+ Add WooCommerce Compatibility
+-------------------------------------------------------------------------------*/
+if ( class_exists( 'WooCommerce' ) ) :	
+
+	//Set a Higher Priority
+	function newscrunch_wc_panel_js() { ?>
+    <script type="text/javascript">
+        wp.customize.bind('ready', function() {
+            // Check if WooCommerce panel exists
+            var wooPanel = wp.customize.panel('woocommerce');
+            if ( wooPanel ) {
+                // Change the priority to make it appear higher in the Customizer
+                wooPanel.priority(41);
+            }
+        });
+    </script>
+    <?php
+	}
+	add_action( 'customize_controls_print_footer_scripts', 'newscrunch_wc_panel_js', 100 );
+
+
+	//Add Product Slider Arrow At Single Product 
+	if(get_theme_mod('newscrunch_wc_gallery_slide_arrow',true)==true):
+		function newscrunch_wc_product_arrows() {
+		    if (is_product()) {
+		        // Get the global $post object
+		        global $post;
+
+		        // Get the product object using the post ID
+		        $product = wc_get_product($post->ID);
+
+		        // Get the gallery image IDs (excluding the featured image)
+		        $gallery_image_ids = $product->get_gallery_image_ids();
+
+		        // Check if the product has more than one image
+		        if (count($gallery_image_ids) > 0) {
+		            wp_enqueue_script('newscrunch-wc-slider-arrows', NEWSCRUNCH_TEMPLATE_DIR_URI . '/assets/js/wc-arrow.js', array('jquery'), '', true);
+		        }
+		    }
+		}
+		add_action('wp_enqueue_scripts', 'newscrunch_wc_product_arrows');
+	endif;
+
+
+	// Customize Related Products Output on Single Product
+	function newscrunch_wc_related_products_args($args) {
+		$row = get_theme_mod('newscrunch_wc_related_product_row',4);
+		$col = get_theme_mod('newscrunch_wc_related_product_col',4);
+	    $args['posts_per_page'] = $row*$col; // Total number of related products 
+	    $args['columns'] = $col;            // Number of columns
+	    return $args;
+	}
+	add_filter('woocommerce_output_related_products_args', 'newscrunch_wc_related_products_args', 20);
+
+
+	// Upsell Prodcut
+	if(get_theme_mod('newscrunch_wc_upsell_product',true) == true):
+		// Adjust the number of columns for upsell products
+		add_filter('woocommerce_upsells_columns', function($columns) {
+		    return get_theme_mod('newscrunch_wc_upsell_col',4); // Set the number of columns
+		});
+
+		// Adjust the number of rows for upsell products
+		add_filter('woocommerce_upsells_total', function($rows) {
+		    return get_theme_mod('newscrunch_wc_upsell_col',4) * get_theme_mod('newscrunch_wc_upsell_row',4); // Set the number of rows
+		});
+	endif;
+
+	// Cross Sell Prodcut
+	function newscrunch_wc_set_cross_sell_rows( $rows ) {
+	    // Get the row count from the Customizer.
+	    $cross_sell_rows = get_theme_mod( 'newscrunch_wc_cross_sell_row', 4 );
+
+	    // Ensure the value is valid and sanitized.
+	    $cross_sell_rows = absint( $cross_sell_rows );
+
+	    // Each row typically contains 4 items. Adjust the total based on rows.
+	    return $cross_sell_rows * 4; // 4 columns per row
+	}
+	add_filter( 'woocommerce_cross_sells_total', 'newscrunch_wc_set_cross_sell_rows' );
+
+
+	// Add Prodcut Secondary Img Hover
+	if ( ! function_exists( 'newscrunch_wc_secondary_image_on_hover' ) ) {
+	    function newscrunch_wc_secondary_image_on_hover() {
+	        global $product;
+
+	        // Get gallery images for the product
+	        $attachment_ids = $product->get_gallery_image_ids();
+
+	        // Check if there's at least one gallery image
+	        if ($attachment_ids && isset($attachment_ids[0])) {
+	            // Get the secondary image
+	            $secondary_image_id = $attachment_ids[0];
+	            $secondary_image_url = wp_get_attachment_image_url($secondary_image_id, 'woocommerce_thumbnail');
+
+	            // Display the secondary image with a custom class for CSS targeting
+	            echo '<img class="secondary-image" src="' . esc_url($secondary_image_url) . '" alt="' . esc_attr__('Product hover image', 'newscrunch') . '" />';
+	        }
+	    }
+	}
+	add_action('wp', function() {
+		if (get_theme_mod('newscrunch_wc_product_hover', 'none') === 'image-swap')
+		{
+	        add_action('woocommerce_before_shop_loop_item_title', 'newscrunch_wc_secondary_image_on_hover', 10);
+	    }
+	});
+
+
+	//Product Sale Badege
+	function newscrunch_wc_percentage_sale_badge() {
+	    global $product;
+
+	    // Check if the product is on sale
+	    if ( $product->is_on_sale() ) {
+	        $discount = 0; // Initialize discount variable
+
+	        if ( $product->is_type( 'variable' ) ) {
+	            // Handle variable products
+	            $available_variations = $product->get_available_variations();
+
+	            foreach ( $available_variations as $variation ) {
+	                $regular_price = (float) $variation['display_regular_price'];
+	                $sale_price = (float) $variation['display_price'];
+
+	                if ( $regular_price > 0 ) {
+	                    // Calculate the discount for this variation
+	                    $variation_discount = round( ( ( $regular_price - $sale_price ) / $regular_price ) * 100 );
+
+	                    // Keep the highest discount
+	                    if ( $variation_discount > $discount ) {
+	                        $discount = $variation_discount;
+	                    }
+	                }
+	            }
+	        } else {
+	            // Handle simple products
+	            $regular_price = (float) $product->get_regular_price();
+	            $sale_price = (float) $product->get_sale_price();
+
+	            if ( $regular_price > 0 ) {
+	                $discount = round( ( ( $regular_price - $sale_price ) / $regular_price ) * 100 );
+	            }
+	        }
+
+	        // Display the discount badge if there's a valid discount
+	        if(get_theme_mod('newscrunch_wc_product_sale_badge','percentage') === 'percentage')
+	        {
+	        	if ( $discount > 0 ) {
+	            echo '<span class="onsale">' . esc_html( $discount . '%' ) . '</span>';
+	        }
+	        }
+	        else if(get_theme_mod('newscrunch_wc_product_sale_badge','percentage') === 'text')
+	        {
+	        	echo '<span class="onsale">' . esc_html(get_theme_mod('newscrunch_wc_product_sale_badge_text','Sale')) . '</span>';
+	        }
+	        
+	    }
+	}
+	// Remove default sale badge
+	remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+
+	// Add custom sale badge
+	add_action( 'woocommerce_before_shop_loop_item_title', 'newscrunch_wc_percentage_sale_badge', 9 );
+
+
+	//Product Items Reorder
+	function newscrunch_wc_reorder_product_details() {
+	    // Get the reorder options from the Customizer
+	    $order = get_theme_mod('newscrunch_wc_sort', array('newscrunch_wc_title_reorder', 'newscrunch_wc_price_reorder', 'newscrunch_wc_rating_reorder'));
+
+	    if (empty($order) || !is_array($order)) {
+	        return;
+	    }
+
+	    // Loop through the Customizer order and display corresponding content
+	    foreach ($order as $element) {
+	        switch ($element) {
+	            case 'newscrunch_wc_title_reorder':
+	                // Manually render the product title
+	                echo '<h2 class="woocommerce-loop-product__title">' . esc_html(get_the_title()) . '</h2>';
+	                break;
+
+	            case 'newscrunch_wc_price_reorder':
+	                // Display the price
+	                woocommerce_template_loop_price();
+	                break;
+
+	            case 'newscrunch_wc_rating_reorder':
+	                // Display the rating
+	                woocommerce_template_loop_rating();
+	                break;
+	        }
+	    }
+	}
+	add_action('woocommerce_before_shop_loop_item_title', 'newscrunch_wc_reorder_product_details', 20);
+	// Remove default actions to avoid duplicate output
+	remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+	remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
+	remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
+
+	//Cart Icon
+	function newscrunch_wc_update_cart_fragments( $fragments ) {
+	    // Update the cart count
+	    ob_start();
+	    ?>
+	    <span class="cart-count"><?php echo esc_html( WC()->cart->get_cart_contents_count() ); ?></span>
+
+	    <?php
+	    $fragments['span.cart-count'] = ob_get_clean();
+
+	    // Update the mini cart dropdown
+	    ob_start();
+	    ?>
+	    <div class="cart-dropdown">
+	        <?php woocommerce_mini_cart(); ?>
+	    </div>
+	    <?php
+	    $fragments['div.cart-dropdown'] = ob_get_clean();
+
+	    return $fragments;
+	}
+	add_filter( 'woocommerce_add_to_cart_fragments', 'newscrunch_wc_update_cart_fragments' );
+
+
+	// Add Custom Div In Product Page
+	function newscrunch_wc_wrap_product_image_start() { echo '<div class="spnc-wc-overlay">';}
+	function newscrunch_wc_wrap_product_image_end() { echo '</div>';}
+	add_action('woocommerce_before_shop_loop_item_title', 'newscrunch_wc_wrap_product_image_start', 5);
+	add_action('woocommerce_before_shop_loop_item_title', 'newscrunch_wc_wrap_product_image_end', 15);
+
+
+	// Add Custom Div In Single Product
+	function newscrunch_wc_start_parent_div() { echo '<div class="spnc-wc-single-product-wrap">';}
+	function newscrunch_wc_end_parent_div() { echo '</div>'; }
+	add_action( 'woocommerce_before_single_product_summary', 'newscrunch_wc_start_parent_div', 5 );
+	add_action( 'woocommerce_after_single_product_summary', 'newscrunch_wc_end_parent_div', 5 );
+
+
+	// Redirect the default cart page to the custom cart page
+	function newscrunch_wc_redirect_to_custom_cart_page() {
+	    // Check if we're on the cart page
+	    if ( is_cart() ) {
+	        // Change 'custom-cart-page.php' to the path of your custom cart page template
+	        get_template_part( 'woocommerce/cart/cart' );
+	        exit; // Stop the default WooCommerce cart page from loading
+	    }
+	}
+	add_action( 'template_redirect', 'newscrunch_wc_redirect_to_custom_cart_page' );
+
+
+	//Remove Item From Cart Page
+	function newscrunch_wc_remove_cart_item_ajax() {
+	    if ( ! isset( $_POST['security'] ) || ! wp_verify_nonce( $_POST['security'], 'woocommerce-cart' ) ) {
+	        die();  // If nonce check fails, stop the request
+	    }
+
+	    if ( isset( $_POST['cart_item_key'] ) ) {
+	        $cart_item_key = sanitize_text_field( $_POST['cart_item_key'] );
+	        WC()->cart->remove_cart_item( $cart_item_key );  // Remove the item from the cart
+	        echo 'success';  // Return success after item removal
+	    }
+
+	    wp_die();  // End the AJAX request
+	}
+	add_action( 'wp_ajax_remove_cart_item', 'newscrunch_wc_remove_cart_item_ajax' );
+	add_action( 'wp_ajax_nopriv_remove_cart_item', 'newscrunch_wc_remove_cart_item_ajax' );
+
+//woocommerce endif 
 endif;

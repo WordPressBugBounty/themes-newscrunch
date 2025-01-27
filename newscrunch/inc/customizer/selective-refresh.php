@@ -112,7 +112,17 @@ function newscrunch_customize_selective_refresh( $wp_customize ) {
     );    
     }
 
-
+    if(get_theme_mod('newscrunch_wc_product_sale_badge','percentage') === 'text')
+    {
+        // Register Selective Refresh for Sale Badge Text
+        $wp_customize->selective_refresh->add_partial('newscrunch_wc_product_sale_badge_text',
+            array(
+                'selector'        => '.onsale',
+                'render_callback' => 'newscrunch_wc_product_sale_badge_text_callback',
+                'fallback_refresh'    => false, 
+            )
+        );
+    }
 }
 add_action( 'customize_register', 'newscrunch_customize_selective_refresh' );
 
@@ -153,4 +163,8 @@ function newscrunch_related_post_title_callback(){
 }
 function newscrunch_missed_section_title_callback(){
     return get_theme_mod('missed_section_title');
+}
+function newscrunch_wc_product_sale_badge_text_callback() {
+    $badge_text = get_theme_mod('newscrunch_wc_product_sale_badge_text', 'Sale'); 
+    return esc_html($badge_text); 
 }

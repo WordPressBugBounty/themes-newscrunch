@@ -779,34 +779,70 @@ function newscrunch_general_settings_customizer ( $wp_customize )
             )
         ));
 
+        /* Woocommerce Content */
+        $wp_customize->add_setting( 'wc_sidebar_layout',
+            array(
+                'default'           => 'right',
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'newscrunch_sanitize_select'
+            )
+        );
+        $wp_customize->add_control( new Newscrunch_Image_Radio_Button_Custom_Control( $wp_customize, 'wc_sidebar_layout',
+            array(
+                'label'             => esc_html__( 'WooCommerce', 'newscrunch'  ),
+                'section'           => 'sidebar_layout_setting_section',
+                'priority'          => 10,
+                'choices'           => 
+                array(
+                    'right'         => array('image' => trailingslashit( get_template_directory_uri() ) . '/inc/customizer/assets/img/right.jpg'),
+                    'left'          => array('image' => trailingslashit( get_template_directory_uri() ) . '/inc/customizer/assets/img/left.jpg')  
+                )
+            )
+        ));
+
+        /* Woocommerce Sticky Sidebar*/
+        $wp_customize->add_setting('wc_sidebar_sticky',
+            array(
+                'default'           => true,
+                'sanitize_callback' => 'newscrunch_sanitize_checkbox'
+            )
+        );
+        $wp_customize->add_control(new Newscrunch_Toggle_Control( $wp_customize, 'wc_sidebar_sticky',
+            array(
+                'label'         => esc_html__( 'Make sidebar sticky', 'newscrunch'),
+                'section'       => 'sidebar_layout_setting_section',
+                'type'          => 'toggle',
+                'priority'      => 11
+            )
+        ));
 
 
          /* ====== Website Layout ====== */
 
         $wp_customize->add_section('theme_layout_setting_section',
             array(
-                'title'     => esc_html__('Theme Layout','newscrunch' ),
-                'panel'     => 'newscrunch_general_settings',
-                'priority'  => 6
+                'title'         => esc_html__('Theme Layout','newscrunch' ),
+                'panel'         => 'newscrunch_general_settings',
+                'priority'      => 6
             )
         );
 
         $wp_customize->add_setting( 'theme_layout',
             array(
-                'default'           => 'wide',
-                'capability'        => 'edit_theme_options',
-                'sanitize_callback' => 'newscrunch_sanitize_select'
+                'default'          => 'wide',
+                'capability'       => 'edit_theme_options',
+                'sanitize_callback'=> 'newscrunch_sanitize_select'
             )
         );
         $wp_customize->add_control( new Newscrunch_Image_Radio_Button_Custom_Control( $wp_customize, 'theme_layout',
             array(
-                'label'     => esc_html__( 'Theme Layout', 'newscrunch' ),
-                'section'   => 'theme_layout_setting_section',
-                'priority'  => 1,
-                'choices'   => 
+                'label'         => esc_html__( 'Theme Layout', 'newscrunch' ),
+                'section'       => 'theme_layout_setting_section',
+                'priority'      => 1,
+                'choices'       => 
                 array(
-                    'boxed' => array('image' => trailingslashit( get_template_directory_uri() ) . '/inc/customizer/assets/img/boxed.png'),
-                    'wide' => array('image' => trailingslashit( get_template_directory_uri() ) . '/inc/customizer/assets/img/wide.png')
+                    'boxed'     => array('image' => trailingslashit( get_template_directory_uri() ) . '/inc/customizer/assets/img/boxed.png'),
+                    'wide'      => array('image' => trailingslashit( get_template_directory_uri() ) . '/inc/customizer/assets/img/wide.png')
                     
                 )
             )

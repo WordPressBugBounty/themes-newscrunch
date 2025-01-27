@@ -48,5 +48,11 @@ jQuery( document ).ready(function($) {
 			$( '.site-info .copyright-section' ).text( to );
 		} );
 	} );
+	// Change sale badeg
+	wp.customize('newscrunch_wc_product_sale_badge_text', function(value) {
+    value.bind(function(to) {
+        jQuery('.onsale').text(to);
+    	});
+	});
 
 });

@@ -98,24 +98,54 @@ else
         ?>
         <div class="spnc-row"> 
             <?php         
-            //sidebar           
-            if(((get_theme_mod('page_sidebar_layout','right')=='left') && get_post_meta(get_the_ID(),'newscrunch_site_layout', true )== '') || get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='newscrunch_site_layout_left') {
-                echo '<div class="spnc-col-9 '.newscrunch_single_page_stickysidebar().'"><div class="spnc-sidebar spnc-main-sidebar"><div class="left-sidebar">';
-                    dynamic_sidebar($newscrunch_page_sidebar);
-                echo '</div></div></div>';
-            }
-            elseif(((get_theme_mod('page_sidebar_layout','right')=='both') && get_post_meta(get_the_ID(),'newscrunch_site_layout', true )== '') || get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='newscrunch_site_layout_both')  {
-                echo '<div class="spnc-col-10 '.newscrunch_single_page_stickysidebar().'"><div class="spnc-sidebar spnc-main-sidebar"><div class="left-sidebar">';
-                if ((!is_active_sidebar('left-sidebar')) && (get_theme_mod('page_sidebar_layout','right')=='both') || (!is_active_sidebar('left-sidebar')) && (get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='newscrunch_site_layout_both')) {
-                        newscrunch_sleft_widget_area( 'left-sidebar' );
+            //sidebar
+            if ( class_exists( 'WooCommerce' ) ) {
+                if( is_account_page() || is_cart() || is_checkout() ) {
+                    if(get_theme_mod('wc_sidebar_layout','right')=='left'): get_sidebar('woocommerce'); endif; 
+                    $page_wrap = '<div class="spnc-col-' . ( !is_active_sidebar( 'woocommerce' ) ? '1' : '7' ) . '">';
+                }
+                else
+                {
+                    if(((get_theme_mod('page_sidebar_layout','right')=='left') && get_post_meta(get_the_ID(),'newscrunch_site_layout', true )== '') || get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='newscrunch_site_layout_left') 
+                    {
+                        echo '<div class="spnc-col-9 '.newscrunch_single_page_stickysidebar().'"><div class="spnc-sidebar spnc-main-sidebar"><div class="left-sidebar">';
+                        dynamic_sidebar($newscrunch_page_sidebar);
+                        echo '</div></div></div>';
                     }
+                    elseif (((get_theme_mod('page_sidebar_layout','right')=='both') && get_post_meta(get_the_ID(),'newscrunch_site_layout', true )== '') || get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='newscrunch_site_layout_both')
+                    {
+                        echo '<div class="spnc-col-10 '.newscrunch_single_page_stickysidebar().'"><div class="spnc-sidebar spnc-main-sidebar"><div class="left-sidebar">';
+                        if ((!is_active_sidebar('left-sidebar')) && (get_theme_mod('page_sidebar_layout','right')=='both') || (!is_active_sidebar('left-sidebar')) && (get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='newscrunch_site_layout_both')) 
+                        {
+                            newscrunch_sleft_widget_area( 'left-sidebar' );
+                        }
+                        dynamic_sidebar($newscrunch_left_sidebar); 
+                        echo '</div></div></div>';
+                    }
+                    $page_wrap = $page_column;
+                }
+            }         
+            else
+            {          
+                if(((get_theme_mod('page_sidebar_layout','right')=='left') && get_post_meta(get_the_ID(),'newscrunch_site_layout', true )== '') || get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='newscrunch_site_layout_left') {
+                    echo '<div class="spnc-col-9 '.newscrunch_single_page_stickysidebar().'"><div class="spnc-sidebar spnc-main-sidebar"><div class="left-sidebar">';
+                        dynamic_sidebar($newscrunch_page_sidebar);
+                    echo '</div></div></div>';
+                }
+                elseif(((get_theme_mod('page_sidebar_layout','right')=='both') && get_post_meta(get_the_ID(),'newscrunch_site_layout', true )== '') || get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='newscrunch_site_layout_both')  {
+                    echo '<div class="spnc-col-10 '.newscrunch_single_page_stickysidebar().'"><div class="spnc-sidebar spnc-main-sidebar"><div class="left-sidebar">';
+                    if ((!is_active_sidebar('left-sidebar')) && (get_theme_mod('page_sidebar_layout','right')=='both') || (!is_active_sidebar('left-sidebar')) && (get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='newscrunch_site_layout_both')) {
+                            newscrunch_sleft_widget_area( 'left-sidebar' );
+                        }
 
-                dynamic_sidebar($newscrunch_left_sidebar); 
-                echo '</div></div></div>';
+                    dynamic_sidebar($newscrunch_left_sidebar); 
+                    echo '</div></div></div>';
+                }
+                $page_wrap = $page_column;
             }
            
            //main content
-            echo  $page_column;
+            echo  $page_wrap;
             echo '<div class="spnc-contact-wrapper">';
             while (have_posts()) : the_post();
                 get_template_part('template-parts/content', 'page');
@@ -128,18 +158,42 @@ else
         </div>  
         <?php 
         //right sidebar
-        if(((get_theme_mod('page_sidebar_layout','right')=='right') && get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='') || get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='newscrunch_site_layout_right')
+        if ( class_exists( 'WooCommerce' ) ) {
+            if( is_account_page() || is_cart() || is_checkout() )
+            {
+                if(get_theme_mod('wc_sidebar_layout','right')=='right'): get_sidebar('woocommerce'); endif;
+            }
+            else
+            {
+                if(((get_theme_mod('page_sidebar_layout','right')=='right') && get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='') || get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='newscrunch_site_layout_right')
+                {
+                    echo '<div class="spnc-col-9 '.newscrunch_single_page_stickysidebar().'"><div class="spnc-sidebar spnc-main-sidebar"><div class="right-sidebar">';
+                    dynamic_sidebar($newscrunch_page_sidebar);
+                    echo '</div></div></div>';
+                }
+                elseif(((get_theme_mod('page_sidebar_layout','right')=='both') && get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='') || get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='newscrunch_site_layout_both')
+                {
+                    echo '<div class="spnc-col-10 '.newscrunch_single_page_stickysidebar().'"><div class="spnc-sidebar spnc-main-sidebar"><div class="right-sidebar">';
+                    dynamic_sidebar($newscrunch_page_sidebar);
+                    echo '</div></div></div>';
+                }
+            }
+        }
+        else
+        {
+            if(((get_theme_mod('page_sidebar_layout','right')=='right') && get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='') || get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='newscrunch_site_layout_right')
             {
                 echo '<div class="spnc-col-9 '.newscrunch_single_page_stickysidebar().'"><div class="spnc-sidebar spnc-main-sidebar"><div class="right-sidebar">';
                     dynamic_sidebar($newscrunch_page_sidebar); 
                 echo '</div></div></div>';
             }
-        elseif(((get_theme_mod('page_sidebar_layout','right')=='both') && get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='') || get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='newscrunch_site_layout_both')
+            elseif(((get_theme_mod('page_sidebar_layout','right')=='both') && get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='') || get_post_meta(get_the_ID(),'newscrunch_site_layout', true )=='newscrunch_site_layout_both')
             {
                 echo '<div class="spnc-col-10 '.newscrunch_single_page_stickysidebar().'"><div class="spnc-sidebar spnc-main-sidebar"><div class="right-sidebar">';
-                    dynamic_sidebar($newscrunch_page_sidebar); 
+                    dynamic_sidebar($newscrunch_page_sidebar);
                 echo '</div></div></div>';
-            }    
+            }
+        }
          ?>
     </div>
 </section>

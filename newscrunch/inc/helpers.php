@@ -58,6 +58,7 @@
  	# Advertisement Section
 	# Post Formats
 	# Add WooCommerce Compatibility
+	# Number of posts display in blog/archive section
 /*
 -------------------------------------------------------------------------------
  Header
@@ -1894,7 +1895,7 @@ if (!function_exists('newscrunch_single_post_auth')) :
 					<div>
 						<span class="spnc-author">
 							<figure>
-								<?php echo wp_kses_post(get_avatar( $post->post_author )); ?>
+								<?php echo wp_kses_post(get_avatar( $post->post_author, 250 )); ?>
 							</figure>
 						</span>
 					</div>
@@ -2819,3 +2820,16 @@ if ( class_exists( 'WooCommerce' ) ) :
 
 //woocommerce endif 
 endif;
+ 
+/*
+-------------------------------------------------------------------------------
+ Number of posts display in blog/archive section
+-------------------------------------------------------------------------------*/
+
+function newscrunch_modify_posts_per_page($query) {
+    if (!is_admin() && $query->is_main_query() && (is_home() || is_archive())) {
+        $posts_per_page = get_theme_mod('newscrunch_blog_posts_per_page', 10);
+        $query->set('posts_per_page', absint($posts_per_page));
+    }
+}
+add_action('pre_get_posts', 'newscrunch_modify_posts_per_page');

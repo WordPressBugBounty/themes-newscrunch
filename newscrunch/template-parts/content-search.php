@@ -81,11 +81,25 @@
 	                             <?php the_content();?>
 	                        </div>
 	                        <?php
-	                        } else { ?>
-	                        <p class="spnc-description">
-	                            <?php newscrunch_excerpt(15); ?>
-	                        </p>
-	                        <?php }
+	                        } else { 
+	                        if ( class_exists('Newscrunch_Plus') ):
+		                        if(get_theme_mod('newscrunch_select_post_content','excerpt')=='excerpt') { ?>
+                        		<p class="spnc-description">
+		                            <?php
+		                            $newscrunch_excerpt_length = get_theme_mod('post_excerpt_length', '15');
+		                            newscrunch_excerpt($newscrunch_excerpt_length); 
+		                            ?>
+		                        </p>
+	                            <?php } else { 
+	                        	   the_content();
+	                        	}
+	                        else: ?>
+		                       	<p class="spnc-description">
+		                            <?php newscrunch_excerpt(15); ?>
+		                       	</p>
+		                        <?php
+	                 		endif;
+	                      }
 					    endif; ?>
                     </header>
                     <div class="spnc-entry-content">

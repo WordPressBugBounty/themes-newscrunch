@@ -65,6 +65,24 @@ function newscrunch_archives_options_customizer ( $wp_customize ) {
         ) );
 
     endif;
+   
+    // select number of posts
+    $wp_customize->add_setting( 'newscrunch_blog_posts_per_page', 
+        array(
+            'default'           =>  10,
+            'sanitize_callback' =>  'absint',
+        ) 
+    );
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize,'newscrunch_blog_posts_per_page',
+        array(
+            'label'             =>  esc_html__('Number of posts to show', 'newscrunch'),
+            'section'           =>  'newscrunch_blog_section',
+            'settings'          =>  'newscrunch_blog_posts_per_page',
+            'type'              =>  'number',
+            'priority'          =>  1,
+        )
+    ));
+
 
     // enable/disable author
     $wp_customize->add_setting('newscrunch_enable_post_author',

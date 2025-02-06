@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Newscrunch 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/newscrunch-wordpress-theme\n"
-"POT-Creation-Date: 2024-12-04 16:35+0530\n"
+"POT-Creation-Date: 2025-01-31 17:55+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:17 inc/helpers.php:353
+#: 404.php:17 inc/helpers.php:355
 msgid "Error 404"
 msgstr ""
 
@@ -55,7 +55,7 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:116 functions.php:207
+#: admin/inc/class-spicethemes-about-page.php:116 functions.php:210
 msgid "Welcome to"
 msgstr ""
 
@@ -102,28 +102,32 @@ msgstr ""
 msgid "Active"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:510
+#: admin/inc/class-spicethemes-about-page.php:514
 msgid "To display the contact form, install & activate this plugin."
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:515
+#: admin/inc/class-spicethemes-about-page.php:519
 msgid "To enable the display of breadcrumbs, please install and activate this plugin."
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:520
+#: admin/inc/class-spicethemes-about-page.php:524
 msgid "To add a different banner image for a different page or post, install & activate this plugin."
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:525
+#: admin/inc/class-spicethemes-about-page.php:529
 msgid "To display the posts in a beautiful slider with multiple options, install & activate this plugin."
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:530
+#: admin/inc/class-spicethemes-about-page.php:534
 msgid "To add the social share buttons to your posts, install & activate this plugin."
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:535
+#: admin/inc/class-spicethemes-about-page.php:539
 msgid "We highly recommend installing and activating the Seo Optimized Images plugin, which will dynamically insert SEO-friendly alt attributes and title attributes to enhance your image optimization."
+msgstr ""
+
+#: admin/inc/class-spicethemes-about-page.php:544
+msgid "We highly recommend installing and activating the WooCommerce plugin, which allows you to create a shop and enhance your business."
 msgstr ""
 
 #: admin/tab-pages/getting-started.php:13
@@ -135,7 +139,7 @@ msgstr ""
 msgid "Import Image"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:26 functions.php:229
+#: admin/tab-pages/getting-started.php:26 functions.php:232
 #: inc/customizer-notify/newscrunch-customizer-notify-section.php:298
 msgid "Install Plugin"
 msgstr ""
@@ -198,7 +202,7 @@ msgstr ""
 msgid "Theme Demos"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:101 functions.php:223
+#: admin/tab-pages/getting-started.php:101 functions.php:226
 msgid "Help Docs"
 msgstr ""
 
@@ -226,7 +230,7 @@ msgstr ""
 msgid "Free vs Pro"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:117 functions.php:343
+#: admin/tab-pages/getting-started.php:117 functions.php:347
 msgid "Changelog"
 msgstr ""
 
@@ -481,12 +485,13 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: comments.php:80 inc/helpers.php:1157 inc/helpers.php:1259
+#: comments.php:80 inc/helpers.php:1164 inc/helpers.php:1266
 #: partials/widgets/featured-post.php:38 partials/widgets/featured-post.php:180
 #: partials/widgets/single-column.php:34 partials/widgets/single-column.php:94
 #: partials/widgets/single-column.php:139 template-parts/content-blog.php:64
-#: template-parts/content-list.php:86 template-parts/content-search.php:62
-#: template-parts/content-single.php:75 template-parts/content.php:71
+#: template-parts/content-list.php:86 template-parts/content-overlay.php:85
+#: template-parts/content-search.php:62 template-parts/content-single.php:75
+#: template-parts/content.php:71
 msgid "Comments"
 msgstr ""
 
@@ -518,72 +523,80 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:198
+#: functions.php:201
 msgid "Hello"
 msgstr ""
 
-#: functions.php:212
+#: functions.php:215
 msgid "is now installed and ready to use. We've provide some links to get you started."
 msgstr ""
 
-#: functions.php:215 functions.php:217
+#: functions.php:218 functions.php:220
 msgid "Theme Dashboard"
 msgstr ""
 
-#: functions.php:219
+#: functions.php:222
 msgid "Live Demo"
 msgstr ""
 
-#: functions.php:221
+#: functions.php:224
 msgid "View Live Demos"
 msgstr ""
 
-#: functions.php:225
+#: functions.php:228
 msgid "Theme Documentation"
 msgstr ""
 
-#: functions.php:235
+#: functions.php:238
 msgid "Welcome Banner"
 msgstr ""
 
-#: functions.php:326
+#: functions.php:329
 msgid "Current"
 msgstr ""
 
-#: functions.php:329
+#: functions.php:332
 msgid "We've consistently aimed to meet our users' needs and demands. In order to address specific requirements and rectify issues from our previous version, we've rolled out version"
 msgstr ""
 
-#: functions.php:329
+#: functions.php:332
 msgid "complete with exciting new features. Take a look now!"
 msgstr ""
 
-#: functions.php:338
+#: functions.php:342
 msgid "Try Now"
 msgstr ""
 
-#: functions.php:340
+#: functions.php:344
 msgid "Try It Now"
 msgstr ""
 
-#: functions.php:345
+#: functions.php:349
 msgid "See Changelog"
 msgstr ""
 
-#: functions.php:348 functions.php:350
+#: functions.php:352 functions.php:354
 msgid "Watch Videos"
 msgstr ""
 
-#: functions.php:353 functions.php:355
+#: functions.php:357 functions.php:359
 msgid "Upgrade To Pro"
 msgstr ""
 
-#: functions.php:379
+#: functions.php:383
 msgid "ago"
 msgstr ""
 
-#: functions.php:393
+#: functions.php:397
 msgid "date-time"
+msgstr ""
+
+#: functions.php:733
+msgid "Related products"
+msgstr ""
+
+#: functions.php:749
+msgid "You may also like…"
 msgstr ""
 
 #: header.php:25
@@ -599,7 +612,7 @@ msgctxt "breadcrumbs aria label"
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/breadcrumbs/breadcrumb-trail/breadcrumbs.php:296 inc/helpers.php:342
+#: inc/breadcrumbs/breadcrumb-trail/breadcrumbs.php:296 inc/helpers.php:344
 #: inc/menu/default_menu_walker.php:19
 msgid "Home"
 msgstr ""
@@ -695,7 +708,8 @@ msgstr ""
 #: inc/customizer/custom-controls/customizer-repeater/class/customizer-repeater-control.php:461
 #: inc/customizer/settings/featured-video.php:45
 #: inc/customizer/settings/news-highlight.php:78
-#: inc/customizer/settings/news-highlight.php:103 partials/widgets/tabs.php:242
+#: inc/customizer/settings/news-highlight.php:103
+#: inc/customizer/settings/woocommerce.php:81 partials/widgets/tabs.php:242
 msgid "Title"
 msgstr ""
 
@@ -944,7 +958,7 @@ msgstr ""
 #: inc/customizer/settings/advertisement.php:55
 #: inc/customizer/settings/featured-video.php:116
 #: inc/customizer/settings/general-settings.php:135
-#: inc/customizer/settings/general-settings.php:1011
+#: inc/customizer/settings/general-settings.php:1047
 #: inc/customizer/settings/main-banner.php:304
 #: inc/customizer/settings/single-post-options.php:277
 #: inc/customizer/settings/theme-footer.php:249
@@ -957,7 +971,7 @@ msgstr ""
 #: inc/customizer/settings/advertisement.php:56
 #: inc/customizer/settings/featured-video.php:117
 #: inc/customizer/settings/general-settings.php:136
-#: inc/customizer/settings/general-settings.php:1012
+#: inc/customizer/settings/general-settings.php:1048
 #: inc/customizer/settings/main-banner.php:305
 #: inc/customizer/settings/single-post-options.php:278
 #: inc/customizer/settings/theme-footer.php:250
@@ -972,44 +986,58 @@ msgstr ""
 msgid "Blog/Archives"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:29
+#: inc/customizer/settings/archives-options.php:32
+#: inc/customizer/settings/archives-options.php:53
 msgid "Blog Variation"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:52
+#: inc/customizer/settings/archives-options.php:78
+#: inc/customizer/settings/main-banner.php:174
+#: inc/customizer/settings/news-highlight.php:185
+#: partials/widgets/post-grid-2-column-slider.php:206
+#: partials/widgets/post-grid-2-column.php:115
+#: partials/widgets/post-grid-3-column-slider.php:178
+#: partials/widgets/post-list-grid-view.php:124
+#: partials/widgets/post-list-view-slider.php:183
+#: partials/widgets/post-overlay-slider.php:292
+#: partials/widgets/single-column.php:117 partials/widgets/tabs.php:253
+msgid "Number of posts to show"
+msgstr ""
+
+#: inc/customizer/settings/archives-options.php:96
 #: inc/customizer/settings/single-post-options.php:152
 msgid "Hide/Show Author"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:68
+#: inc/customizer/settings/archives-options.php:112
 #: inc/customizer/settings/single-post-options.php:137
 msgid "Hide/Show Tag"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:84
+#: inc/customizer/settings/archives-options.php:128
 #: inc/customizer/settings/single-post-options.php:122
 msgid "Hide/Show Categories"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:100
+#: inc/customizer/settings/archives-options.php:144
 #: inc/customizer/settings/single-post-options.php:182
 msgid "Hide/Show Comments"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:116
+#: inc/customizer/settings/archives-options.php:160
 msgid "Hide/Show Title"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:132
+#: inc/customizer/settings/archives-options.php:176
 msgid "Hide/Show Description"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:148
+#: inc/customizer/settings/archives-options.php:192
 #: inc/customizer/settings/single-post-options.php:167
 msgid "Hide/Show Date"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:164
+#: inc/customizer/settings/archives-options.php:208
 #: inc/customizer/settings/main-banner.php:232
 msgid "Hide/Show Read More"
 msgstr ""
@@ -1044,11 +1072,11 @@ msgstr ""
 msgid "Enable/Disable Copyright Text"
 msgstr ""
 
-#: inc/customizer/settings/bottom-footer.php:77 inc/helpers.php:169
+#: inc/customizer/settings/bottom-footer.php:77 inc/helpers.php:171
 msgid "Magazine & Blog"
 msgstr ""
 
-#: inc/customizer/settings/bottom-footer.php:77 inc/helpers.php:169
+#: inc/customizer/settings/bottom-footer.php:77 inc/helpers.php:171
 msgid "Theme"
 msgstr ""
 
@@ -1330,6 +1358,7 @@ msgstr ""
 #: inc/customizer/settings/general-settings.php:697
 #: inc/customizer/settings/general-settings.php:736
 #: inc/customizer/settings/general-settings.php:775
+#: inc/customizer/settings/general-settings.php:812
 msgid "Make sidebar sticky"
 msgstr ""
 
@@ -1352,60 +1381,64 @@ msgstr ""
 msgid "Front Right Content"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:788
-#: inc/customizer/settings/general-settings.php:803
+#: inc/customizer/settings/general-settings.php:792
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/customizer/settings/general-settings.php:824
+#: inc/customizer/settings/general-settings.php:839
 msgid "Theme Layout"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:820
+#: inc/customizer/settings/general-settings.php:856
 msgid "Section/Widget Heading"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:835
+#: inc/customizer/settings/general-settings.php:871
 msgid "Heading Layout"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:852
+#: inc/customizer/settings/general-settings.php:888
 msgid "Date Formatting"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:867
+#: inc/customizer/settings/general-settings.php:903
 msgid "How to display date"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:874
+#: inc/customizer/settings/general-settings.php:910
 msgid "As Published Date"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:875
+#: inc/customizer/settings/general-settings.php:911
 msgid "As Modified Date"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:890
+#: inc/customizer/settings/general-settings.php:926
 msgid "Date Format"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:897
+#: inc/customizer/settings/general-settings.php:933
 msgid "According To Theme"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:898
+#: inc/customizer/settings/general-settings.php:934
 msgid "According To Wordpress"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:907
+#: inc/customizer/settings/general-settings.php:943
 msgid "Category Color"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:962
+#: inc/customizer/settings/general-settings.php:998
 msgid "Theme Color"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:980
+#: inc/customizer/settings/general-settings.php:1016
 msgid "Enable custom color skin"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:999
+#: inc/customizer/settings/general-settings.php:1035
 msgid "Skin Color"
 msgstr ""
 
@@ -1482,18 +1515,6 @@ msgstr ""
 msgid "Oldest"
 msgstr ""
 
-#: inc/customizer/settings/main-banner.php:174
-#: inc/customizer/settings/news-highlight.php:185
-#: partials/widgets/post-grid-2-column-slider.php:206
-#: partials/widgets/post-grid-2-column.php:115
-#: partials/widgets/post-grid-3-column-slider.php:178
-#: partials/widgets/post-list-grid-view.php:124
-#: partials/widgets/post-list-view-slider.php:183
-#: partials/widgets/post-overlay-slider.php:292
-#: partials/widgets/single-column.php:117 partials/widgets/tabs.php:253
-msgid "Number of posts to show"
-msgstr ""
-
 #: inc/customizer/settings/missed-section.php:13
 #: inc/customizer/settings/reorder-sections.php:29
 #: inc/customizer/settings/reorder-sections.php:39
@@ -1554,7 +1575,7 @@ msgstr ""
 msgid "Search By"
 msgstr ""
 
-#: inc/customizer/settings/news-highlight.php:102 inc/helpers.php:356
+#: inc/customizer/settings/news-highlight.php:102 inc/helpers.php:358
 msgid "Category"
 msgstr ""
 
@@ -1695,7 +1716,7 @@ msgstr ""
 msgid "Enable/Disable Related Post"
 msgstr ""
 
-#: inc/customizer/settings/single-post-options.php:238 inc/helpers.php:1359
+#: inc/customizer/settings/single-post-options.php:238 inc/helpers.php:1366
 msgid "Related Posts"
 msgstr ""
 
@@ -1901,6 +1922,103 @@ msgstr ""
 msgid "Icon Background Hover Color"
 msgstr ""
 
+#: inc/customizer/settings/woocommerce.php:22
+msgid "Product Image Hover"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:28
+msgid "No Effect"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:29
+msgid "Image Swap"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:46
+msgid "Product Sale Badge"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:51
+msgid "Hide Badge"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:52
+msgid "Show Percentage"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:53
+msgid "Show Text"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:61
+msgid "Sale"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:70
+msgid "Sale Badge Text"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:82 woocommerce/cart/cart.php:35
+#: woocommerce/cart/cart.php:92
+msgid "Price"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:83
+msgid "Ratings"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:96
+msgid "Product details"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:110
+msgid "Single Product"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:124
+msgid "Enable/Disable Gallery Zoom"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:141
+msgid "Enable/Disable Gallery Lightbox"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:158
+msgid "Enable/Disable Slider Arrows"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:175
+msgid "Enable/Disable Related Products"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:193
+msgid "Related Products Columns"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:217
+msgid "Related Products Rows"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:240
+msgid "Enable/Disable Up-Sell Products"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:258
+msgid "Up-Sell Products Columns"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:282
+msgid "Up-Sell Products Rows"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:305
+msgid "Enable/Disable Cross-Sell Products"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:323
+msgid "Cross-Sell Products Rows"
+msgstr ""
+
 #: inc/customizer/upsell/class-customize.php:75
 #: inc/customizer/upsell/class-customize.php:87
 #: inc/customizer/upsell/class-customize.php:97
@@ -1913,43 +2031,47 @@ msgstr ""
 msgid "Click Here"
 msgstr ""
 
-#: inc/helpers.php:171
+#: inc/helpers.php:173
 msgid "Powered By"
 msgstr ""
 
-#: inc/helpers.php:233
+#: inc/helpers.php:235
 msgid "Assign Footer Menu"
 msgstr ""
 
-#: inc/helpers.php:251
+#: inc/helpers.php:253
 msgid "Back to Top"
 msgstr ""
 
-#: inc/helpers.php:350 partials/header/default-header.php:35
-#: partials/header/default-header.php:42 partials/header/default-header.php:44
-#: partials/header/main-header.php:35 partials/header/main-header.php:42
-#: partials/header/main-header.php:44
+#: inc/helpers.php:352 partials/header/default-header.php:50
+#: partials/header/default-header.php:57 partials/header/default-header.php:59
+#: partials/header/main-header.php:50 partials/header/main-header.php:57
+#: partials/header/main-header.php:59
 msgid "Search"
 msgstr ""
 
-#: inc/helpers.php:359 template-parts/content-single.php:146
+#: inc/helpers.php:361 template-parts/content-single.php:146
 msgid "Tag"
 msgstr ""
 
-#: inc/helpers.php:362
+#: inc/helpers.php:364
 msgid "Author"
 msgstr ""
 
-#: inc/helpers.php:365 inc/helpers.php:368 inc/helpers.php:371
+#: inc/helpers.php:367 inc/helpers.php:370 inc/helpers.php:373
 msgid "Month"
 msgstr ""
 
-#: inc/helpers.php:528
+#: inc/helpers.php:377
+msgid "Shop"
+msgstr ""
+
+#: inc/helpers.php:535
 msgid "Loading Now"
 msgstr ""
 
-#: inc/helpers.php:744 inc/helpers.php:1140 inc/helpers.php:1245
-#: inc/helpers.php:1404 partials/front/main-banner.php:78
+#: inc/helpers.php:751 inc/helpers.php:1147 inc/helpers.php:1252
+#: inc/helpers.php:1411 partials/front/main-banner.php:78
 #: partials/front/main-banner.php:163 partials/front/main-banner.php:238
 #: partials/front/missed-1.php:65 partials/front/news-video.php:134
 #: partials/widgets/featured-post.php:89 partials/widgets/featured-post.php:134
@@ -1958,66 +2080,72 @@ msgstr ""
 #: partials/widgets/post-list-view-slider.php:86
 #: template-parts/content-archive-first.php:66
 #: template-parts/content-blog.php:46 template-parts/content-first.php:46
-#: template-parts/content-list.php:79 template-parts/content-search.php:44
-#: template-parts/content-single.php:58 template-parts/content.php:52
+#: template-parts/content-list.php:79 template-parts/content-overlay.php:57
+#: template-parts/content-search.php:44 template-parts/content-single.php:58
+#: template-parts/content.php:52
 msgid "Posts by"
 msgstr ""
 
-#: inc/helpers.php:830
+#: inc/helpers.php:837
 msgid "Add Header Toggle Sidebar Widgets Area"
 msgstr ""
 
-#: inc/helpers.php:831
+#: inc/helpers.php:838
 msgid "Add Header Toggle Sidebar Widgets Area."
 msgstr ""
 
-#: inc/helpers.php:1125 inc/helpers.php:1230 template-parts/content-list.php:77
+#: inc/helpers.php:1132 inc/helpers.php:1237 template-parts/content-list.php:77
 msgid "author-image"
 msgstr ""
 
-#: inc/helpers.php:1157 inc/helpers.php:1259 inc/helpers.php:1409
+#: inc/helpers.php:1164 inc/helpers.php:1266 inc/helpers.php:1416
 #: partials/widgets/featured-post.php:94 template-parts/content-blog.php:63
-#: template-parts/content-list.php:86 template-parts/content-search.php:61
-#: template-parts/content-single.php:75 template-parts/content.php:71
+#: template-parts/content-list.php:86 template-parts/content-overlay.php:85
+#: template-parts/content-search.php:61 template-parts/content-single.php:75
+#: template-parts/content.php:71
 msgid "Number of Comments"
 msgstr ""
 
-#: inc/helpers.php:1303
+#: inc/helpers.php:1310
 msgid "Add widgets in Primary Left Area"
 msgstr ""
 
-#: inc/helpers.php:1304
+#: inc/helpers.php:1311
 msgid "Add widgets in Primary Left Area."
 msgstr ""
 
-#: inc/helpers.php:1327
+#: inc/helpers.php:1334
 msgid "Previous post"
 msgstr ""
 
-#: inc/helpers.php:1332
+#: inc/helpers.php:1339
 msgid "Previous post arrow"
 msgstr ""
 
-#: inc/helpers.php:1338
+#: inc/helpers.php:1345
 msgid "Next post"
 msgstr ""
 
-#: inc/helpers.php:1343
+#: inc/helpers.php:1350
 msgid "Next post arrow"
 msgstr ""
 
-#: inc/helpers.php:1742
+#: inc/helpers.php:1763
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/helpers.php:1901
+#: inc/helpers.php:1922
 #, php-format
 msgid "Add your Biographical Information. %1$sEdit your Profile%2$s now."
 msgstr ""
 
-#: inc/helpers.php:1906
+#: inc/helpers.php:1927
 msgid "view all posts"
+msgstr ""
+
+#: inc/helpers.php:2650
+msgid "Product hover image"
 msgstr ""
 
 #: inc/meta-boxes/newscrunch-meta-box-page-settings.php:53
@@ -2095,8 +2223,8 @@ msgstr ""
 #: partials/widgets/featured-post.php:179
 #: template-parts/content-archive-first.php:90
 #: template-parts/content-blog.php:92 template-parts/content-first.php:80
-#: template-parts/content-list.php:98 template-parts/content-search.php:94
-#: template-parts/content.php:103
+#: template-parts/content-list.php:98 template-parts/content-overlay.php:118
+#: template-parts/content-search.php:108 template-parts/content.php:117
 msgid "Read More"
 msgstr ""
 
@@ -2124,19 +2252,19 @@ msgstr ""
 msgid "Close Off-Canvas"
 msgstr ""
 
-#: partials/header/default-header.php:39 partials/header/main-header.php:39
+#: partials/header/default-header.php:54 partials/header/main-header.php:54
 msgid "Close Search"
 msgstr ""
 
-#: partials/header/default-header.php:49 partials/header/main-header.php:49
+#: partials/header/default-header.php:64 partials/header/main-header.php:64
 msgid "Dark Light Layout"
 msgstr ""
 
-#: partials/header/default-header.php:54 partials/header/main-header.php:53
+#: partials/header/default-header.php:69 partials/header/main-header.php:68
 msgid "Toggle Icon"
 msgstr ""
 
-#: partials/header/default-header.php:67 partials/header/main-header.php:66
+#: partials/header/default-header.php:82 partials/header/main-header.php:81
 msgid "Close Icon"
 msgstr ""
 
@@ -2409,6 +2537,14 @@ msgstr ""
 msgid "Add widgets in footer widget area"
 msgstr ""
 
+#: partials/widgets/register-sidebars.php:176
+msgid "WooCommerce Sidebar"
+msgstr ""
+
+#: partials/widgets/register-sidebars.php:178
+msgid "Add widgets in woocommerce widget area"
+msgstr ""
+
 #: partials/widgets/single-column.php:16
 msgid "Newscrunch : Single Column Sidebar"
 msgstr ""
@@ -2518,4 +2654,65 @@ msgstr ""
 
 #: template-parts/content-none.php:14
 msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr ""
+
+#: woocommerce/cart/cart.php:34 woocommerce/cart/cart.php:52
+msgid "Product"
+msgstr ""
+
+#: woocommerce/cart/cart.php:36 woocommerce/cart/cart.php:98
+msgid "Quantity"
+msgstr ""
+
+#: woocommerce/cart/cart.php:37
+msgid "Total"
+msgstr ""
+
+#: woocommerce/cart/cart.php:88
+msgid "Available on backorder"
+msgstr ""
+
+#: woocommerce/cart/cart.php:119
+msgid "Subtotal"
+msgstr ""
+
+#: woocommerce/cart/cart.php:125
+msgid "Remove"
+msgstr ""
+
+#: woocommerce/cart/cart.php:132
+msgid "Remove this item"
+msgstr ""
+
+#: woocommerce/cart/cart.php:152
+msgid "Coupon:"
+msgstr ""
+
+#: woocommerce/cart/cart.php:152
+msgid "Coupon code"
+msgstr ""
+
+#: woocommerce/cart/cart.php:152
+msgid "Apply Coupon"
+msgstr ""
+
+#: woocommerce/cart/cart.php:157
+msgid "Continue Shopping"
+msgstr ""
+
+#: woocommerce/cart/cart.php:159
+msgid "Update Cart"
+msgstr ""
+
+#: woocommerce/cart/cart.php:185
+msgid "Your cart is currently empty."
+msgstr ""
+
+#: woocommerce/cart/cart.php:188
+msgid "Return to Shop"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:24
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
 msgstr ""

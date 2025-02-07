@@ -11,7 +11,7 @@ function newscrunch_missed_section_customizer ( $wp_customize ) {
     $wp_customize->add_section('newscrunch_missed_section', 
         array(
             'title'     => esc_html__('Missed Section' , 'newscrunch' ),
-            'priority'  => 25
+            'priority'  => 26
         )
     );
 

@@ -617,12 +617,21 @@ if (!function_exists('newscrunch_theme_layout')) :
 				$newscrunch_ads = '';
 			}
 		}
+
+		if ( class_exists( 'WooCommerce' ) ) 
+	    {
+	    	$newscrunch_wc_active="spnc-wc-active";
+	    }
+	    else
+	    {
+	    	$newscrunch_wc_active='';
+	    }
 		
 	    if ($newscrunch_theme_layout == "boxed") {
-	        $newscrunch_layout_type = "boxed ".$newscrunch_highlight_view. " ".$newscrunch_ads .$newscrunch_pstlayout_class;
+	        $newscrunch_layout_type = "boxed ".$newscrunch_highlight_view. " ".$newscrunch_ads .$newscrunch_pstlayout_class. " ".$newscrunch_wc_active;
 	    } 
 	    else {
-	        $newscrunch_layout_type = "wide ".$newscrunch_highlight_view. " ".$newscrunch_ads .$newscrunch_pstlayout_class;
+	        $newscrunch_layout_type = "wide ".$newscrunch_highlight_view. " ".$newscrunch_ads .$newscrunch_pstlayout_class. " ".$newscrunch_wc_active;
 	    }?>
 	    <body <?php body_class($newscrunch_layout_type); ?> <?php newcrunch_schema_attributes(); ?>>
 	<?php }
@@ -2538,6 +2547,8 @@ if (!function_exists('newscrunch_woocommerce_css')) :
         		.upsells.products{display: none;}
         	<?php endif; if(get_theme_mod('newscrunch_wc_product_hover','none') =='image-swap'):?>
         		.products .product:hover .secondary-image {opacity: 1;}
+        	<?php endif; if(get_theme_mod('spncp_wc_product_hover','none') =='image-swap'):?>
+        		#wrapper .spnc-wc-product-section .product:hover .secondary-image {opacity: 1;}
         	<?php endif; if(get_theme_mod('newscrunch_wc_cross_sell_product',true) == false):?>
         		.spnc-cart-product-wrap .cart-collaterals .cross-sells{display: none;}
         	<?php endif; ?>

@@ -60,7 +60,7 @@ if ( ! empty( $newscrunch_banner_sort ) && is_array( $newscrunch_banner_sort ) )
     endforeach;
 endif;
 
-$newscrunch_sort=get_theme_mod( 'front_page_content_sort', array('front_content_1', 'video_content', 'front_content_2', 'mainblog_content', 'youtube_content','missed_content') );
+$newscrunch_sort=get_theme_mod( 'front_page_content_sort', array('front_content_1', 'video_content', 'front_content_2', 'mainblog_content', 'youtube_content','missed_content','wc_content') );
 
 if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
     foreach ( $newscrunch_sort as $newscrunch_sort_key => $newscrunch_sort_val ) :
@@ -428,6 +428,13 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                 <?php
                 }
         endif; endif;
+
+        if(get_theme_mod('newscrunch_enable_wc_content',true)==true):
+            if ( 'wc_content' === $newscrunch_sort_val ) :
+                if(( class_exists( 'WooCommerce' ) ) && get_theme_mod('hide_show_spncp_wc_product',true)==true):
+                    do_action( 'spncp_wc_product' );
+        endif; endif; endif;
+        
     endforeach;
 endif;
 get_footer();

@@ -470,3 +470,13 @@ box-shadow: 0 0 1px 1px rgba(42, 42, 42, 1);}
 [data-theme="spnc_dark"] .product-category .woocommerce-loop-category__title{color: #a7a7a7}
 [data-theme="spnc_dark"] body .woocommerce-tabs.wc-tabs-wrapper a:focus {outline:none;}
 [data-theme="spnc_dark"] body.woocommerce ul.products li.product {box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.1);}
+[data-theme="spnc_dark"] .spnc-wc-product-section .product .price{color: #a7a7a7;}
+[data-theme="spnc_dark"] .spnc_product-2 .spnc_product_wrap,[data-theme="spnc_dark"] .spnc_product-3 .spnc_product_wrap {background-color: #000;}
+[data-theme="spnc_dark"] .spnc_product-3 .spnc_product_wrap {
+    border-left: 1px solid #393030;
+    border-right: 1px solid #393030;
+    border-bottom: 1px solid #393030;
+}
+[data-theme="spnc_dark"] #wrapper .spnc_product-2 .products .product .price{color: #a7a7a7;}
+[data-theme="spnc_dark"] #wrapper .spnc_product-2 .products .product {
+    border: 1px solid #3c3434;}

@@ -55,7 +55,7 @@ function newscrunch_wc_options_customizer ( $wp_customize ) {
         )
     );
 
-      // Add Sale Badge Text Setting
+    // Add Sale Badge Text Setting
     $wp_customize->add_setting('newscrunch_wc_product_sale_badge_text', 
         array(
             'default'           => esc_html__('Sale', 'newscrunch'),
@@ -95,7 +95,6 @@ function newscrunch_wc_options_customizer ( $wp_customize ) {
     array(
         'label'                 => esc_html__('Product details','newscrunch'),
         'section'               => 'woocommerce_product_catalog',
-        'active_callback'       =>  'newscrunch_main_banner_callback',
         'settings'              => 'newscrunch_wc_sort',
         'type'                  => 'sortable',
         'choices'               => $choices

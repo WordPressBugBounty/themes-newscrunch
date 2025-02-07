@@ -5,7 +5,7 @@ Author: spicethemes
 Author URI: https://spicethemes.com
 Description: Newscrunch is a magazine and blog theme. It is a lightweight, elegant, and fully responsive theme specifically designed for creating magazines, newspapers, editors, blogs, and dynamic news websites. It seamlessly integrates with the Gutenberg block editor, empowering you to effortlessly build your website using intuitive blocks. The theme is highly compatible with popular plugins such as WooCommerce, Contact Form 7, Polylang, and WPML, offering expanded functionality. Newscrunch Theme prioritizes user privacy and complies with the General Data Protection Regulation (GDPR) guidelines by refraining from collecting any personal data restricted under GDPR. Additionally, all fonts used in the theme are locally hosted, eliminating the reliance on external resources like Google Fonts. The theme is also schema-ready, enhancing search engine visibility and optimization. With its GDPR compliance, sleek design, and efficient performance, Newscrunch Theme caters to various businesses. It provides a wide range of widgets and sections tailored to specific industries, enabling you to swiftly create a stunning website with beautiful designs. To explore the theme further, feel free to check out our demo at: https://demo-newscrunch.spicethemes.com/demo-one/. For video tutorial visit here https://www.youtube.com/playlist?list=PLTfjrb24Pq_DeJOZdKEaP3rZPbHuOCLtZ
 Tags: blog, news, photography, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, rtl-language-support, one-column, two-columns, full-width-template, sticky-post, right-sidebar, footer-widgets, grid-layout
-Version: 1.8.1
+Version: 1.8.2
 Requires at least: 4.5
 Tested up to: 6.7
 Requires PHP: 5.6
@@ -3180,7 +3180,7 @@ body #page .img-remove.spnc-grid-catpost .spnc-cat-links{position: inherit;}
 /* ===== Banner corrections css ====== */
 .spnc-bnr-1 .spnc-post-content{ position:unset; }
 .spnc-bnr-1 .spnc-post-wrapper, .spnc-bnr-1 .spnc_column-2 .spnc-post-wrapper, .spnc-bnr-1 .spnc_column-3 .spnc-post-wrapper {padding: 0;}
-.spnc-bnr-1 .spnc-post .spnc-post-img img{ height: 100%; }
+.spnc-bnr-1 .spnc-post .spnc-post-img img{ height: 100%;  object-fit: cover;position: absolute;top: 50%;left: 50%;transform: scale(1) translate(-50%, -50%); }
 .spnc-bnr-1 .spnc-entry-content {z-index: 1;}
 .spnc-bnr-1 .spnc-post-wrapper .entry-header{ position: absolute; top: auto;bottom: 10px; z-index: 1; padding-right: 20px; }
 .spnc-category-page .spnc-blog-cat-wrapper .spnc-first-catpost .spnc-post-overlay { margin: 0; }
@@ -3394,7 +3394,7 @@ width: 53%; margin-left:10px; }
     border-radius: 30px; padding: 0px 3.5px;font-weight: 400;}
 .spnc-custom .cart-dropdown .woocommerce-mini-cart{flex-direction: column;margin:0 0 18px;display: flex;border-bottom: 1px solid #d7d7d7;padding: 10px 0;} 
 .spnc-custom .dropdown-menu .cart-dropdown .woocommerce-mini-cart__empty-message{font-size: 1.125rem;font-weight: 700;}
-body.woocommerce-page .spnc-custom .spnc-nav li>a.search-icon:not(.header-1 .spnc-nav li>a.search-icon) {margin: 8px 5px 8px 0px;}
+body.spnc-wc-active .spnc-custom .spnc-nav li>a.search-icon:not(.header-1 .spnc-nav li>a.search-icon) {margin: 8px 5px 8px 0px;}
 .spnc-custom .header-cart .dropdown-menu { border-bottom: 0;margin-bottom: 20px;}
 .spnc-custom .dropdown-menu {background-color: transparent;}
 .spnc-custom .cart-dropdown .mini_cart_item a:not(a.remove,a.product-image,a.product-title){ display: none;}
@@ -3417,7 +3417,7 @@ body .spnc-custom .spnc-nav .dropdown-menu .sale-price{background-color: transpa
 .woocommerce ul.product_list_widget li {display: -webkit-box;}
 .spnc-custom .spnc-nav li.woocommerce-mini-cart-item  {display: -webkit-box;}
 .woocommerce-page div.quantity {display: flex;}
-@media (max-width:1100px){.spnc-custom .header-cart.spnc-right.spnc-nav{display: none;}}
+@media (max-width:1100px){.spnc-custom .header-cart.spnc-nav{display: none;}}
 .blockUI.blockOverlay {background-color:rgb(255, 255, 255) !important;}
 .spnc-empty-cart i{font-size: 55px;margin-bottom: 20px;color: #d7d7d7;}
 
@@ -3596,3 +3596,4 @@ body.bread-2.woocommerce-cart .spnc-single-post:not(body.all.bread-2.woocommerce
 .woocommerce-page .spnc-sidebar  ul li:last-child {border-bottom: 0;}
 [data-theme="spnc_light"] .woocommerce-page .variations button.reset_variations{color: #000;}
 [data-theme="spnc_light"]  .woocommerce-page .variations button.reset_variations:hover{color: #fff;}
+.wp-block-woocommerce-checkout-order-summary-totals-block {padding-top: 16px;}

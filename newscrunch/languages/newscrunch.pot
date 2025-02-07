@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Newscrunch 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/newscrunch-wordpress-theme\n"
-"POT-Creation-Date: 2025-01-31 17:55+0530\n"
+"POT-Creation-Date: 2025-02-07 12:24+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -230,7 +230,7 @@ msgstr ""
 msgid "Free vs Pro"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:117 functions.php:347
+#: admin/tab-pages/getting-started.php:117 functions.php:345
 msgid "Changelog"
 msgstr ""
 
@@ -386,9 +386,11 @@ msgstr ""
 #: admin/tab-pages/video-tutorials.php:109
 #: inc/customizer/settings/featured-video.php:13
 #: inc/customizer/settings/featured-video.php:38
-#: inc/customizer/settings/reorder-sections.php:25
-#: inc/customizer/settings/reorder-sections.php:51
-#: inc/customizer/settings/reorder-sections.php:63
+#: inc/customizer/settings/reorder-sections.php:27
+#: inc/customizer/settings/reorder-sections.php:40
+#: inc/customizer/settings/reorder-sections.php:69
+#: inc/customizer/settings/reorder-sections.php:82
+#: inc/customizer/settings/reorder-sections.php:95
 #: partials/front/news-video.php:34
 msgid "Featured Video"
 msgstr ""
@@ -485,7 +487,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: comments.php:80 inc/helpers.php:1164 inc/helpers.php:1266
+#: comments.php:80 inc/helpers.php:1173 inc/helpers.php:1275
 #: partials/widgets/featured-post.php:38 partials/widgets/featured-post.php:180
 #: partials/widgets/single-column.php:34 partials/widgets/single-column.php:94
 #: partials/widgets/single-column.php:139 template-parts/content-blog.php:64
@@ -563,39 +565,39 @@ msgstr ""
 msgid "complete with exciting new features. Take a look now!"
 msgstr ""
 
-#: functions.php:342
+#: functions.php:340
 msgid "Try Now"
 msgstr ""
 
-#: functions.php:344
+#: functions.php:342
 msgid "Try It Now"
 msgstr ""
 
-#: functions.php:349
+#: functions.php:347
 msgid "See Changelog"
 msgstr ""
 
-#: functions.php:352 functions.php:354
+#: functions.php:350 functions.php:352
 msgid "Watch Videos"
 msgstr ""
 
-#: functions.php:357 functions.php:359
+#: functions.php:355 functions.php:357
 msgid "Upgrade To Pro"
 msgstr ""
 
-#: functions.php:383
+#: functions.php:381
 msgid "ago"
 msgstr ""
 
-#: functions.php:397
+#: functions.php:395
 msgid "date-time"
 msgstr ""
 
-#: functions.php:733
+#: functions.php:731
 msgid "Related products"
 msgstr ""
 
-#: functions.php:749
+#: functions.php:747
 msgid "You may also like…"
 msgstr ""
 
@@ -1443,18 +1445,22 @@ msgid "Skin Color"
 msgstr ""
 
 #: inc/customizer/settings/left-content-right-sidebar.php:13
-#: inc/customizer/settings/reorder-sections.php:24
-#: inc/customizer/settings/reorder-sections.php:36
-#: inc/customizer/settings/reorder-sections.php:50
-#: inc/customizer/settings/reorder-sections.php:62
+#: inc/customizer/settings/reorder-sections.php:26
+#: inc/customizer/settings/reorder-sections.php:39
+#: inc/customizer/settings/reorder-sections.php:52
+#: inc/customizer/settings/reorder-sections.php:68
+#: inc/customizer/settings/reorder-sections.php:81
+#: inc/customizer/settings/reorder-sections.php:94
 msgid "Left Content Right Sidebar"
 msgstr ""
 
 #: inc/customizer/settings/left-sidebar-right-content.php:13
-#: inc/customizer/settings/reorder-sections.php:26
-#: inc/customizer/settings/reorder-sections.php:37
-#: inc/customizer/settings/reorder-sections.php:52
-#: inc/customizer/settings/reorder-sections.php:64
+#: inc/customizer/settings/reorder-sections.php:28
+#: inc/customizer/settings/reorder-sections.php:41
+#: inc/customizer/settings/reorder-sections.php:53
+#: inc/customizer/settings/reorder-sections.php:70
+#: inc/customizer/settings/reorder-sections.php:83
+#: inc/customizer/settings/reorder-sections.php:96
 msgid "Left Sidebar Right Content"
 msgstr ""
 
@@ -1516,10 +1522,12 @@ msgid "Oldest"
 msgstr ""
 
 #: inc/customizer/settings/missed-section.php:13
-#: inc/customizer/settings/reorder-sections.php:29
-#: inc/customizer/settings/reorder-sections.php:39
+#: inc/customizer/settings/reorder-sections.php:31
+#: inc/customizer/settings/reorder-sections.php:44
 #: inc/customizer/settings/reorder-sections.php:55
-#: inc/customizer/settings/reorder-sections.php:66
+#: inc/customizer/settings/reorder-sections.php:73
+#: inc/customizer/settings/reorder-sections.php:86
+#: inc/customizer/settings/reorder-sections.php:98
 msgid "Missed Section"
 msgstr ""
 
@@ -1615,19 +1623,28 @@ msgstr ""
 msgid "Reorder sections"
 msgstr ""
 
-#: inc/customizer/settings/reorder-sections.php:27
-#: inc/customizer/settings/reorder-sections.php:38
-#: inc/customizer/settings/reorder-sections.php:53
-#: inc/customizer/settings/reorder-sections.php:65
+#: inc/customizer/settings/reorder-sections.php:29
+#: inc/customizer/settings/reorder-sections.php:42
+#: inc/customizer/settings/reorder-sections.php:54
+#: inc/customizer/settings/reorder-sections.php:71
+#: inc/customizer/settings/reorder-sections.php:84
+#: inc/customizer/settings/reorder-sections.php:97
 msgid "Blog"
 msgstr ""
 
-#: inc/customizer/settings/reorder-sections.php:28
-#: inc/customizer/settings/reorder-sections.php:54
+#: inc/customizer/settings/reorder-sections.php:30
+#: inc/customizer/settings/reorder-sections.php:43
+#: inc/customizer/settings/reorder-sections.php:72
+#: inc/customizer/settings/reorder-sections.php:85
 msgid "Youtube Playlist"
 msgstr ""
 
-#: inc/customizer/settings/reorder-sections.php:80
+#: inc/customizer/settings/reorder-sections.php:32
+#: inc/customizer/settings/reorder-sections.php:74
+msgid "WooCommerce Product Section"
+msgstr ""
+
+#: inc/customizer/settings/reorder-sections.php:112
 #: inc/customizer/settings/single-post-options.php:104
 msgid "Drag And Drop to Rearrange"
 msgstr ""
@@ -1716,7 +1733,7 @@ msgstr ""
 msgid "Enable/Disable Related Post"
 msgstr ""
 
-#: inc/customizer/settings/single-post-options.php:238 inc/helpers.php:1366
+#: inc/customizer/settings/single-post-options.php:238 inc/helpers.php:1375
 msgid "Related Posts"
 msgstr ""
 
@@ -1958,8 +1975,8 @@ msgstr ""
 msgid "Sale Badge Text"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:82 woocommerce/cart/cart.php:35
-#: woocommerce/cart/cart.php:92
+#: inc/customizer/settings/woocommerce.php:82 woocommerce/cart/cart.php:31
+#: woocommerce/cart/cart.php:88
 msgid "Price"
 msgstr ""
 
@@ -1971,51 +1988,51 @@ msgstr ""
 msgid "Product details"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:110
+#: inc/customizer/settings/woocommerce.php:109
 msgid "Single Product"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:124
+#: inc/customizer/settings/woocommerce.php:123
 msgid "Enable/Disable Gallery Zoom"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:141
+#: inc/customizer/settings/woocommerce.php:140
 msgid "Enable/Disable Gallery Lightbox"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:158
+#: inc/customizer/settings/woocommerce.php:157
 msgid "Enable/Disable Slider Arrows"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:175
+#: inc/customizer/settings/woocommerce.php:174
 msgid "Enable/Disable Related Products"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:193
+#: inc/customizer/settings/woocommerce.php:192
 msgid "Related Products Columns"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:217
+#: inc/customizer/settings/woocommerce.php:216
 msgid "Related Products Rows"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:240
+#: inc/customizer/settings/woocommerce.php:239
 msgid "Enable/Disable Up-Sell Products"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:258
+#: inc/customizer/settings/woocommerce.php:257
 msgid "Up-Sell Products Columns"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:282
+#: inc/customizer/settings/woocommerce.php:281
 msgid "Up-Sell Products Rows"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:305
+#: inc/customizer/settings/woocommerce.php:304
 msgid "Enable/Disable Cross-Sell Products"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:323
+#: inc/customizer/settings/woocommerce.php:322
 msgid "Cross-Sell Products Rows"
 msgstr ""
 
@@ -2070,8 +2087,8 @@ msgstr ""
 msgid "Loading Now"
 msgstr ""
 
-#: inc/helpers.php:751 inc/helpers.php:1147 inc/helpers.php:1252
-#: inc/helpers.php:1411 partials/front/main-banner.php:78
+#: inc/helpers.php:760 inc/helpers.php:1156 inc/helpers.php:1261
+#: inc/helpers.php:1420 partials/front/main-banner.php:78
 #: partials/front/main-banner.php:163 partials/front/main-banner.php:238
 #: partials/front/missed-1.php:65 partials/front/news-video.php:134
 #: partials/widgets/featured-post.php:89 partials/widgets/featured-post.php:134
@@ -2086,19 +2103,19 @@ msgstr ""
 msgid "Posts by"
 msgstr ""
 
-#: inc/helpers.php:837
+#: inc/helpers.php:846
 msgid "Add Header Toggle Sidebar Widgets Area"
 msgstr ""
 
-#: inc/helpers.php:838
+#: inc/helpers.php:847
 msgid "Add Header Toggle Sidebar Widgets Area."
 msgstr ""
 
-#: inc/helpers.php:1132 inc/helpers.php:1237 template-parts/content-list.php:77
+#: inc/helpers.php:1141 inc/helpers.php:1246 template-parts/content-list.php:77
 msgid "author-image"
 msgstr ""
 
-#: inc/helpers.php:1164 inc/helpers.php:1266 inc/helpers.php:1416
+#: inc/helpers.php:1173 inc/helpers.php:1275 inc/helpers.php:1425
 #: partials/widgets/featured-post.php:94 template-parts/content-blog.php:63
 #: template-parts/content-list.php:86 template-parts/content-overlay.php:85
 #: template-parts/content-search.php:61 template-parts/content-single.php:75
@@ -2106,45 +2123,45 @@ msgstr ""
 msgid "Number of Comments"
 msgstr ""
 
-#: inc/helpers.php:1310
+#: inc/helpers.php:1319
 msgid "Add widgets in Primary Left Area"
 msgstr ""
 
-#: inc/helpers.php:1311
+#: inc/helpers.php:1320
 msgid "Add widgets in Primary Left Area."
 msgstr ""
 
-#: inc/helpers.php:1334
+#: inc/helpers.php:1343
 msgid "Previous post"
 msgstr ""
 
-#: inc/helpers.php:1339
+#: inc/helpers.php:1348
 msgid "Previous post arrow"
 msgstr ""
 
-#: inc/helpers.php:1345
+#: inc/helpers.php:1354
 msgid "Next post"
 msgstr ""
 
-#: inc/helpers.php:1350
+#: inc/helpers.php:1359
 msgid "Next post arrow"
 msgstr ""
 
-#: inc/helpers.php:1763
+#: inc/helpers.php:1772
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/helpers.php:1922
+#: inc/helpers.php:1931
 #, php-format
 msgid "Add your Biographical Information. %1$sEdit your Profile%2$s now."
 msgstr ""
 
-#: inc/helpers.php:1927
+#: inc/helpers.php:1936
 msgid "view all posts"
 msgstr ""
 
-#: inc/helpers.php:2650
+#: inc/helpers.php:2661
 msgid "Product hover image"
 msgstr ""
 
@@ -2656,59 +2673,59 @@ msgstr ""
 msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
 msgstr ""
 
-#: woocommerce/cart/cart.php:34 woocommerce/cart/cart.php:52
+#: woocommerce/cart/cart.php:30 woocommerce/cart/cart.php:48
 msgid "Product"
 msgstr ""
 
-#: woocommerce/cart/cart.php:36 woocommerce/cart/cart.php:98
+#: woocommerce/cart/cart.php:32 woocommerce/cart/cart.php:94
 msgid "Quantity"
 msgstr ""
 
-#: woocommerce/cart/cart.php:37
+#: woocommerce/cart/cart.php:33
 msgid "Total"
 msgstr ""
 
-#: woocommerce/cart/cart.php:88
+#: woocommerce/cart/cart.php:84
 msgid "Available on backorder"
 msgstr ""
 
-#: woocommerce/cart/cart.php:119
+#: woocommerce/cart/cart.php:115
 msgid "Subtotal"
 msgstr ""
 
-#: woocommerce/cart/cart.php:125
+#: woocommerce/cart/cart.php:121
 msgid "Remove"
 msgstr ""
 
-#: woocommerce/cart/cart.php:132
+#: woocommerce/cart/cart.php:128
 msgid "Remove this item"
 msgstr ""
 
-#: woocommerce/cart/cart.php:152
+#: woocommerce/cart/cart.php:148
 msgid "Coupon:"
 msgstr ""
 
-#: woocommerce/cart/cart.php:152
+#: woocommerce/cart/cart.php:148
 msgid "Coupon code"
 msgstr ""
 
-#: woocommerce/cart/cart.php:152
+#: woocommerce/cart/cart.php:148
 msgid "Apply Coupon"
 msgstr ""
 
-#: woocommerce/cart/cart.php:157
+#: woocommerce/cart/cart.php:153
 msgid "Continue Shopping"
 msgstr ""
 
-#: woocommerce/cart/cart.php:159
+#: woocommerce/cart/cart.php:155
 msgid "Update Cart"
 msgstr ""
 
-#: woocommerce/cart/cart.php:185
+#: woocommerce/cart/cart.php:181
 msgid "Your cart is currently empty."
 msgstr ""
 
-#: woocommerce/cart/cart.php:188
+#: woocommerce/cart/cart.php:184
 msgid "Return to Shop"
 msgstr ""
 

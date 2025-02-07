@@ -11,7 +11,7 @@ function newscrunch_archives_options_customizer ( $wp_customize ) {
 	$wp_customize->add_section('newscrunch_blog_section', 
 		array(
 			'title' 	=> esc_html__('Blog/Archives', 'newscrunch' ),
-			'priority' 	=> 26
+			'priority' 	=> 28
 		)
 	);
 

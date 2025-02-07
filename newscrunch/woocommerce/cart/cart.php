@@ -9,15 +9,11 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-if(get_theme_mod('newscrunch_single_post_layout','1') == '8'){ 
-    do_action( 'newscrunch_single_post_layout_eight' );
- }else{
-    do_action( 'newscrunch_breadcrumbs_filter' ); 
- }
+do_action( 'newscrunch_breadcrumbs_filter' );
 
 //News Highlight Section
 newscrunch_highlight_views('inner');?>
-<section class="page-section-full bg-default" id="content">
+<section class="page-section-full bg-default custom-cart-page" id="content">
 	<div class="spnc-container spnc-single-post">
 	<div class="spnc-row">
 		

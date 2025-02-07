@@ -1,5 +1,14 @@
 (function($) {
     $( function() {
+
+        if(jQuery("#_customize-input-spncp_wc_product_sale_badge").val()=="percentage")
+        {
+            jQuery("#customize-control-spncp_wc_product_sale_badge_text").hide();
+        }
+        else
+        {
+            jQuery("#customize-control-spncp_wc_product_sale_badge_text").show();
+        }
         
         /* =============================================================
         ** HIDE SHOW HEADER PRESET SETTINGS

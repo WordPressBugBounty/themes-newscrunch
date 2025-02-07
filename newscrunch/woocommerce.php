@@ -9,11 +9,7 @@
 get_header();
 
 //Breadcrumb Section
-if(get_theme_mod('newscrunch_single_post_layout','1') == '8'){ 
-    do_action( 'newscrunch_single_post_layout_eight' );
- }else{
-    do_action( 'newscrunch_breadcrumbs_filter' ); 
- }
+do_action( 'newscrunch_breadcrumbs_filter' );
 
 //News Highlight Section
 newscrunch_highlight_views('inner'); ?>

@@ -10,7 +10,7 @@ function newscrunch_single_blog_customizer($wp_customize) {
     $wp_customize->add_section('newscrunch_single_blog_section',
         array(
             'title'     => esc_html__('Single Post', 'newscrunch' ),
-            'priority'  => 27
+            'priority'  => 29
         )
     );
 

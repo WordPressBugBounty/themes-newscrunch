@@ -12,22 +12,38 @@ function newscrunch_front_sections ( $wp_customize ) {
     $wp_customize->add_section('front_page_order_section',
     array(
         'title' => esc_html__('Reorder sections', 'newscrunch'),
-        'priority' => 25
+        'priority' => 27
     ));
 
     /************************* Blog Meta Rearrange*********************************/
     if('NewsBlogger' == wp_get_theme()) {
         if ( class_exists('Newscrunch_Plus') )
         {
-            $default = array( 'front_content_1', 'video_content', 'front_content_2', 'mainblog_content','youtube_content','missed_content');
-            $choices = array(
-                'front_content_1'  => esc_html__( 'Left Content Right Sidebar', 'newscrunch'),
-                'video_content'    => esc_html__('Featured Video', 'newscrunch'),
-                'front_content_2'  => esc_html__('Left Sidebar Right Content', 'newscrunch'),
-                'mainblog_content' => esc_html__( 'Blog', 'newscrunch' ),
-                'youtube_content' => esc_html__( 'Youtube Playlist', 'newscrunch' ),
-                'missed_content'   => esc_html__('Missed Section', 'newscrunch')
-            );
+            if ( class_exists( 'WooCommerce' ) ) 
+            {
+                $default = array( 'front_content_1', 'video_content', 'front_content_2', 'mainblog_content','youtube_content','missed_content','wc_content');
+                $choices = array(
+                    'front_content_1'  => esc_html__( 'Left Content Right Sidebar', 'newscrunch'),
+                    'video_content'    => esc_html__('Featured Video', 'newscrunch'),
+                    'front_content_2'  => esc_html__('Left Sidebar Right Content', 'newscrunch'),
+                    'mainblog_content' => esc_html__( 'Blog', 'newscrunch' ),
+                    'youtube_content' => esc_html__( 'Youtube Playlist', 'newscrunch' ),
+                    'missed_content'   => esc_html__('Missed Section', 'newscrunch'),
+                    'wc_content'   => esc_html__('WooCommerce Product Section', 'newscrunch')
+                );
+            }
+            else
+            {
+                $default = array( 'front_content_1', 'video_content', 'front_content_2', 'mainblog_content','youtube_content','missed_content');
+                $choices = array(
+                    'front_content_1'  => esc_html__( 'Left Content Right Sidebar', 'newscrunch'),
+                    'video_content'    => esc_html__('Featured Video', 'newscrunch'),
+                    'front_content_2'  => esc_html__('Left Sidebar Right Content', 'newscrunch'),
+                    'mainblog_content' => esc_html__( 'Blog', 'newscrunch' ),
+                    'youtube_content' => esc_html__( 'Youtube Playlist', 'newscrunch' ),
+                    'missed_content'   => esc_html__('Missed Section', 'newscrunch')
+                );
+            }
         }
         else
         {
@@ -45,15 +61,31 @@ function newscrunch_front_sections ( $wp_customize ) {
     else {
         if ( class_exists('Newscrunch_Plus') )
         {
-            $default = array( 'front_content_1', 'video_content', 'front_content_2', 'mainblog_content','youtube_content','missed_content');
-            $choices = array(
-                'front_content_1'  => esc_html__( 'Left Content Right Sidebar', 'newscrunch'),
-                'video_content'    => esc_html__('Featured Video', 'newscrunch'),
-                'front_content_2'  => esc_html__('Left Sidebar Right Content', 'newscrunch'),
-                'mainblog_content' => esc_html__( 'Blog', 'newscrunch' ),
-                'youtube_content' => esc_html__( 'Youtube Playlist', 'newscrunch' ),
-                'missed_content'   => esc_html__('Missed Section', 'newscrunch')
-            );
+            if ( class_exists( 'WooCommerce' ) ) 
+            {
+                $default = array( 'front_content_1', 'video_content', 'front_content_2', 'mainblog_content','youtube_content','missed_content','wc_content');
+                $choices = array(
+                    'front_content_1'  => esc_html__( 'Left Content Right Sidebar', 'newscrunch'),
+                    'video_content'    => esc_html__('Featured Video', 'newscrunch'),
+                    'front_content_2'  => esc_html__('Left Sidebar Right Content', 'newscrunch'),
+                    'mainblog_content' => esc_html__( 'Blog', 'newscrunch' ),
+                    'youtube_content' => esc_html__( 'Youtube Playlist', 'newscrunch' ),
+                    'missed_content'   => esc_html__('Missed Section', 'newscrunch'),
+                    'wc_content'   => esc_html__('WooCommerce Product Section', 'newscrunch')
+                );
+            }
+            else
+            {
+                $default = array( 'front_content_1', 'video_content', 'front_content_2', 'mainblog_content','youtube_content','missed_content');
+                $choices = array(
+                    'front_content_1'  => esc_html__( 'Left Content Right Sidebar', 'newscrunch'),
+                    'video_content'    => esc_html__('Featured Video', 'newscrunch'),
+                    'front_content_2'  => esc_html__('Left Sidebar Right Content', 'newscrunch'),
+                    'mainblog_content' => esc_html__( 'Blog', 'newscrunch' ),
+                    'youtube_content' => esc_html__( 'Youtube Playlist', 'newscrunch' ),
+                    'missed_content'   => esc_html__('Missed Section', 'newscrunch')
+                );
+            }
         }
         else
         {

@@ -192,7 +192,13 @@ if(!class_exists('Newscrunch_Plus')){
 	        $theme_name=wp_get_theme();
 	        if ( get_option( 'dismissed-newscrunch_comanion_plugin', false ) ) {
 	           return;
-	        }?>
+	        }
+
+	        $dismissed = get_user_meta(get_current_user_id(), 'welcome_admin_notice_dismissed', true);
+    
+		    if ($dismissed) {
+		        return;
+		    } ?>
 
 	        <div class="updated notice is-dismissible newscrunch-theme-notice">
 	        	<div class="dashboard-hero-panel">
@@ -235,30 +241,51 @@ if(!class_exists('Newscrunch_Plus')){
 		                </div>
 		            </div>
 		            <div class="hero-panel-image">
-		                    <img src="<?php echo esc_url(get_theme_file_uri().'/admin/assets/img/welcome-banner.png');?>" alt="<?php esc_attr_e('Welcome Banner','newscrunch'); ?>">
+		                <img src="<?php echo esc_url(get_theme_file_uri().'/admin/assets/img/welcome-banner.png');?>" alt="<?php esc_attr_e('Welcome Banner','newscrunch'); ?>">
 		            </div>
 	        	</div>
+	        	<p><a href="#" class="dismiss-welcome-notice"><?php _e('Dismiss this notice', 'newscrunch'); ?></a></p>
 	        </div>
 	        
 	        <script type="text/javascript">
-	            jQuery(function($) {
-	            $( document ).on( 'click', '.newscrunch-theme-notice .notice-dismiss', function () {
-	                var type = $( this ).closest( '.newscrunch-theme-notice' ).data( 'notice' );
-	                $.ajax( ajaxurl,
-	                  {
-	                    type: 'POST',
-	                    data: {
-	                      action: 'dismissed_notice_handler',
-	                      type: type,
-	                    }
-	                  } );
-	              } );
-	          });
+				jQuery(function($) {
+					$( document ).on( 'click', '.newscrunch-theme-notice .notice-dismiss', function () {
+					    var type = $( this ).closest( '.newscrunch-theme-notice' ).data( 'notice' );
+					    $.ajax( ajaxurl,
+						{
+					        type: 'POST',
+					        data: {
+					          action: 'dismissed_notice_handler',
+					          type: type,
+					        }
+				      	});
+					});
+				});
 	        </script>
-	    <?php
 
-	    }
-	     global $pagenow;
+	        <script>
+		        jQuery(document).ready(function($) {
+		            $('.dismiss-welcome-notice').on('click', function(e) {
+		                e.preventDefault();
+		                $('.newscrunch-theme-notice').fadeOut();
+		                $.post(ajaxurl, {
+		                    action: 'dismiss_welcome_admin_notice',
+		                    security: '<?php echo wp_create_nonce("dismiss_welcome_admin_notice_nonce"); ?>'
+		                });
+		            });
+		        });
+		    </script>
+
+	    <?php }
+
+	    function newscrunch_dismiss_welcome_admin_notice() {
+		    check_ajax_referer('dismiss_welcome_admin_notice_nonce', 'security');
+		    update_user_meta(get_current_user_id(), 'welcome_admin_notice_dismissed', true);
+		    wp_die();
+		}
+		add_action('wp_ajax_dismiss_welcome_admin_notice', 'newscrunch_dismiss_welcome_admin_notice');
+
+		global $pagenow;
 	    if ( "themes.php" == $pagenow && is_admin() ) {
 	    add_action( 'admin_notices', 'newscrunch_admin_plugin_notice_warn' );
 	    add_action( 'wp_ajax_dismissed_notice_handler', 'newscrunch_ajax_notice_handler');
@@ -322,7 +349,11 @@ if(!class_exists('Newscrunch_Plus')) {
 	if('Newscrunch' == $newscrunch_theme->name || 'Newscrunch Child' == $newscrunch_theme->name || 'Newscrunch child' == $newscrunch_theme->name ) :
 		function newscrunch_add_update_admin_notice() {
 			$theme = wp_get_theme(); 
-		  ?>
+	  		$dismissed = get_user_meta(get_current_user_id(), 'update_admin_notice_dismissed', true);
+    
+		    if ($dismissed) {
+		        return;
+		    } ?>
 		    <div class="newscrunch-update-notice notice notice-info is-dismissible">
 		        <div class="notice-content-wrap">
 		            <div class="notice-content">
@@ -333,7 +364,8 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                    <li><?php echo "Added WooCommerce product section & it's variations in PRO."; ?></li>
+		                    <li><?php echo "Added dismiss button to permanently hide the notice."; ?></li>
+		                    <li><?php echo "Fixed error notice issues."; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">
@@ -352,16 +384,39 @@ if(!class_exists('Newscrunch_Plus')) {
 			                	<span><?php esc_html_e('Watch Videos', 'newscrunch'); ?></span>
 			                </a>
 
-			                <a href="<?php echo esc_url('https://spicethemes.com/newscrunch-plus/'); ?>" class="button theme-admin-button admin-button-secondary" target="_blank" title="<?php esc_attr_e('Upgrade To Pro', 'newscrunch'); ?>">
+			                <a href="<?php echo esc_url('https://spicethemes.com/newscrunch/'); ?>" class="button theme-admin-button admin-button-secondary" target="_blank" title="<?php esc_attr_e('Upgrade To Pro', 'newscrunch'); ?>">
 			                	<span class="dashicons dashicons-update"></span>
 			                	<span><?php esc_html_e('Upgrade To Pro', 'newscrunch'); ?></span> 
 			               	</a>			               	
 		                </div>
 		            </div>
 		        </div>
+		        <p><a href="#" class="dismiss-update-notice"><?php _e('Dismiss this notice', 'newscrunch'); ?></a></p>
 		    </div>
+
+		    <script>
+		        jQuery(document).ready(function($) {
+		            $('.dismiss-update-notice').on('click', function(e) {
+		                e.preventDefault();
+		                $('.newscrunch-update-notice').fadeOut();
+		                $.post(ajaxurl, {
+		                    action: 'dismiss_update_admin_notice',
+		                    security: '<?php echo wp_create_nonce("dismiss_update_admin_notice_nonce"); ?>'
+		                });
+		            });
+		        });
+		    </script>
+
 		<?php
 		}
+
+		function newscrunch_dismiss_update_admin_notice() {
+		    check_ajax_referer('dismiss_update_admin_notice_nonce', 'security');
+		    update_user_meta(get_current_user_id(), 'update_admin_notice_dismissed', true);
+		    wp_die();
+		}
+		add_action('wp_ajax_dismiss_update_admin_notice', 'newscrunch_dismiss_update_admin_notice');
+
 		global $pagenow;
 	    if("themes.php" == $pagenow && is_admin()) {
 			add_action('admin_notices', 'newscrunch_add_update_admin_notice');

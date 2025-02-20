@@ -364,8 +364,8 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                    <li><?php echo "Added dismiss button to permanently hide the notice."; ?></li>
-		                    <li><?php echo "Fixed error notice issues."; ?></li>
+		                     <li><?php echo "Added View All Button In PRO."; ?></li>
+		                     <li><?php echo "Update The Font Awesome Library In The Theme."; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">

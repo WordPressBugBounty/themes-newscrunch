@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Newscrunch 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/newscrunch-wordpress-theme\n"
-"POT-Creation-Date: 2025-02-11 18:40+0530\n"
+"POT-Creation-Date: 2025-02-19 17:35+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1064,7 +1064,7 @@ msgid "General"
 msgstr ""
 
 #: inc/customizer/settings/bottom-footer.php:35
-#: inc/customizer/settings/missed-section.php:49
+#: inc/customizer/settings/missed-section.php:52
 #: inc/customizer/settings/scroll-to-top.php:42
 #: inc/customizer/settings/site-identity.php:40
 #: inc/customizer/settings/theme-footer.php:42
@@ -1142,8 +1142,8 @@ msgstr ""
 #: inc/customizer/settings/main-banner.php:152
 #: inc/customizer/settings/main-banner.php:158
 #: inc/customizer/settings/main-banner.php:252
-#: inc/customizer/settings/missed-section.php:108
-#: inc/customizer/settings/missed-section.php:114
+#: inc/customizer/settings/missed-section.php:111
+#: inc/customizer/settings/missed-section.php:117
 #: inc/customizer/settings/news-highlight.php:118
 msgid "Select Category"
 msgstr ""
@@ -1164,7 +1164,7 @@ msgstr ""
 #: inc/customizer/settings/main-banner.php:133
 #: inc/customizer/settings/main-banner.php:214
 #: inc/customizer/settings/main-banner.php:291
-#: inc/customizer/settings/missed-section.php:151
+#: inc/customizer/settings/missed-section.php:154
 msgid "Enable/Disable Meta"
 msgstr ""
 
@@ -1499,7 +1499,7 @@ msgstr ""
 #: inc/customizer/settings/main-banner.php:111
 #: inc/customizer/settings/main-banner.php:192
 #: inc/customizer/settings/main-banner.php:269
-#: inc/customizer/settings/missed-section.php:129
+#: inc/customizer/settings/missed-section.php:132
 msgid "Orderby"
 msgstr ""
 
@@ -1509,8 +1509,8 @@ msgstr ""
 #: inc/customizer/settings/main-banner.php:200
 #: inc/customizer/settings/main-banner.php:276
 #: inc/customizer/settings/main-banner.php:277
-#: inc/customizer/settings/missed-section.php:136
-#: inc/customizer/settings/missed-section.php:137
+#: inc/customizer/settings/missed-section.php:139
+#: inc/customizer/settings/missed-section.php:140
 msgid "Newest"
 msgstr ""
 
@@ -1520,8 +1520,8 @@ msgstr ""
 #: inc/customizer/settings/main-banner.php:200
 #: inc/customizer/settings/main-banner.php:276
 #: inc/customizer/settings/main-banner.php:277
-#: inc/customizer/settings/missed-section.php:136
-#: inc/customizer/settings/missed-section.php:137
+#: inc/customizer/settings/missed-section.php:139
+#: inc/customizer/settings/missed-section.php:140
 msgid "Oldest"
 msgstr ""
 
@@ -1535,16 +1535,16 @@ msgstr ""
 msgid "Missed Section"
 msgstr ""
 
-#: inc/customizer/settings/missed-section.php:71
+#: inc/customizer/settings/missed-section.php:74
 #: inc/customizer/settings/single-post-options.php:228
 msgid "Enable/Disable Missed Section"
 msgstr ""
 
-#: inc/customizer/settings/missed-section.php:83 partials/front/missed-1.php:7
+#: inc/customizer/settings/missed-section.php:86 partials/front/missed-1.php:7
 msgid "You May Have Missed"
 msgstr ""
 
-#: inc/customizer/settings/missed-section.php:90
+#: inc/customizer/settings/missed-section.php:93
 #: partials/widgets/advertisement.php:75
 msgid "Heading"
 msgstr ""
@@ -2094,7 +2094,7 @@ msgstr ""
 #: inc/helpers.php:760 inc/helpers.php:1156 inc/helpers.php:1261
 #: inc/helpers.php:1420 partials/front/main-banner.php:78
 #: partials/front/main-banner.php:163 partials/front/main-banner.php:238
-#: partials/front/missed-1.php:65 partials/front/news-video.php:134
+#: partials/front/missed-1.php:65 partials/front/news-video.php:139
 #: partials/widgets/featured-post.php:89 partials/widgets/featured-post.php:134
 #: partials/widgets/post-grid-2-column-slider.php:88
 #: partials/widgets/post-grid-3-column-slider.php:90
@@ -2257,11 +2257,15 @@ msgstr ""
 msgid "Right Arrow"
 msgstr ""
 
-#: partials/front/news-video.php:106 partials/front/news-video.php:109
-#: partials/front/news-video.php:115 partials/front/news-video.php:220
-#: partials/front/news-video.php:223 partials/front/news-video.php:227
-#: partials/front/news-video.php:317 partials/front/news-video.php:320
-#: partials/front/news-video.php:324
+#: partials/front/news-video.php:44
+msgid "View All"
+msgstr ""
+
+#: partials/front/news-video.php:111 partials/front/news-video.php:114
+#: partials/front/news-video.php:120 partials/front/news-video.php:225
+#: partials/front/news-video.php:228 partials/front/news-video.php:232
+#: partials/front/news-video.php:322 partials/front/news-video.php:325
+#: partials/front/news-video.php:329
 msgid "Video Popup"
 msgstr ""
 

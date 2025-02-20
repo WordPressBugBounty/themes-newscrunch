@@ -42,7 +42,10 @@ function newscrunch_missed_section_customizer ( $wp_customize ) {
                         'hide_show_missed_section_meta',
                         'missed_section_back_image',
                         'missed_section_overlay_enable',
-                        'missed_section_overlay'
+                        'missed_section_overlay',
+                        'missed_view_btn_title',
+                        'missed_view_btn_url',
+                        'missed_view_btn_redirect'
                     ),
                 ),
                 'style' => array(

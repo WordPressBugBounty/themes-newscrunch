@@ -38,7 +38,12 @@ if($newscrunch_hide_show_featured_video == true) {
 				    <h4><?php echo esc_html($newscrunch_fvideo_title); ?></h4>
 				</div>
 		    </div>
-		<?php endif; ?>
+		<?php endif;
+		if ( class_exists('Newscrunch_Plus') ) {
+			if(!empty(get_theme_mod('video_view_btn_title',''))): ?>
+            	<a target="<?php if(get_theme_mod('video_view_btn_redirect',false)==true) { echo "_blank" ;} else { echo "_self"; } ?>" href="<?php echo esc_url(get_theme_mod('video_view_btn_url','#'));?>" class="spncp-view-btn-link"><?php echo esc_html(get_theme_mod('video_view_btn_title', __('View All','newscrunch')));?></a>
+            <?php endif;
+		} ?>
 		<div class="spnc-container-box">
 			<ul data-wow-delay=".5s" class="wow-callback slideInLeft spnc_column spnc_column-1">
 				<?php

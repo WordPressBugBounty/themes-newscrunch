@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Newscrunch 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/newscrunch-wordpress-theme\n"
-"POT-Creation-Date: 2025-02-19 17:35+0530\n"
+"POT-Creation-Date: 2025-03-03 16:27+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -597,11 +597,35 @@ msgstr ""
 msgid "date-time"
 msgstr ""
 
-#: functions.php:786
+#: functions.php:464
+msgid "You do not have permission to manage plugins."
+msgstr ""
+
+#: functions.php:469
+msgid "No plugin slug provided."
+msgstr ""
+
+#: functions.php:496
+msgid "You do not have permission to install plugins."
+msgstr ""
+
+#: functions.php:502
+msgid "Security check failed."
+msgstr ""
+
+#: functions.php:507
+msgid "No plugin URL provided."
+msgstr ""
+
+#: functions.php:523
+msgid "Invalid file type."
+msgstr ""
+
+#: functions.php:811
 msgid "Related products"
 msgstr ""
 
-#: functions.php:802
+#: functions.php:827
 msgid "You may also like…"
 msgstr ""
 

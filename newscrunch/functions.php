@@ -458,9 +458,15 @@ endif;
 add_action('wp_ajax_newscrunch_check_plugin_status', 'newscrunch_check_plugin_status');
 
 function newscrunch_check_plugin_status() {
+	
+	// Check if user is authorized (must be an admin)
+ 	if (!current_user_can('install_plugins')) {
+        wp_send_json_error(esc_html__('You do not have permission to manage plugins.', 'newscrunch'));
+        return;
+    }
 
     if (!isset($_POST['plugin_slug'])) {
-        wp_send_json_error('No plugin slug provided.');
+        wp_send_json_error(esc_html__('No plugin slug provided.', 'newscrunch'));
         return;
     }
 
@@ -484,9 +490,21 @@ function newscrunch_check_plugin_status() {
 add_action('wp_ajax_newscrunch_install_activate_plugin', 'newscrunch_install_and_activate_plugin');
 
 function newscrunch_install_and_activate_plugin() {
+	
+	// Check if user is authorized (must be an admin)
+    if (!current_user_can('install_plugins')) {
+        wp_send_json_error(esc_html__('You do not have permission to install plugins.', 'newscrunch'));
+        return;
+    }
 
+  	// Verify nonce for CSRF protection
+    if (!isset($_POST['_ajax_nonce']) || !wp_verify_nonce($_POST['_ajax_nonce'], 'plugin_installer_nonce')) {
+        wp_send_json_error(esc_html__('Security check failed.', 'newscrunch'));
+        return;
+    }
+	
     if (!isset($_POST['plugin_url'])) {
-        wp_send_json_error('No plugin URL provided.');
+        wp_send_json_error(esc_html__('No plugin URL provided.', 'newscrunch'));
         return;
     }
 
@@ -499,8 +517,15 @@ function newscrunch_install_and_activate_plugin() {
     $plugin_url = esc_url($_POST['plugin_url']);
     $plugin_slug = sanitize_text_field($_POST['plugin_slug']);
     $plugin_main_file = $plugin_slug . '/' . $plugin_slug . '.php'; // Ensure this matches your plugin structure
+	
+	// Ensure the file being downloaded is a zip file
+    if (pathinfo($plugin_url, PATHINFO_EXTENSION) !== 'zip') {
+       	wp_send_json_error(esc_html__('Invalid file type.', 'newscrunch'));
+        return;
+    }
 
     WP_Filesystem();
+
     // Download the plugin file
     $temp_file = download_url($plugin_url);
 

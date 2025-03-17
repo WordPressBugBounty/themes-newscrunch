@@ -20,9 +20,9 @@
            }
 
             if(get_theme_mod('page_widget1_sidebar_layout','right')=='right' || get_theme_mod('page_widget1_sidebar_layout','right')=='left'):        
-                echo '<div class="spnc-col-7 spnc-sticky-content">';
+                echo '<div class="spnc-col-7 '.newscrunch_page_widget1_sidebar_stickycontent().'">';
             else:
-                echo '<div class="spnc-col-1 spnc-sticky-content">';   
+                echo '<div class="spnc-col-1 '.newscrunch_page_widget1_sidebar_stickycontent().'">';   
             endif; ?>
                 <div class="spnc-blog-section">
                     <?php

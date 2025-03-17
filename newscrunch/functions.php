@@ -364,8 +364,7 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                     <li><?php echo "Added View All Button In PRO."; ?></li>
-		                     <li><?php echo "Update The Font Awesome Library In The Theme."; ?></li>
+		                     <li><?php echo "Fixed Container width issue with sticky sidebar."; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">

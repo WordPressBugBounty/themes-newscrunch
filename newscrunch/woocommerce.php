@@ -19,7 +19,7 @@ newscrunch_highlight_views('inner'); ?>
     <?php
     //Left Sidebar
     if (!is_product()): if(get_theme_mod('wc_sidebar_layout','right')=='left'): get_sidebar('woocommerce'); endif; endif; ?>
-        <div class="<?php if (is_product()):?> spnc-col-1<?php else: ?>spnc-col-<?php echo ( !is_active_sidebar( 'woocommerce' ) ? '1' :'7' ); endif;?> wow-callback zoomIn spnc-sticky-content">
+        <div class="<?php if (is_product()):?> spnc-col-1<?php else: ?>spnc-col-<?php echo ( !is_active_sidebar( 'woocommerce' ) ? '1' :'7' ); endif;?> wow-callback zoomIn <?php echo newscrunch_wc_stickycontent();?>">
             <?php woocommerce_content(); ?>
         </div>
     <?php 

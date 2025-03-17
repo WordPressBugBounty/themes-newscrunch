@@ -87,11 +87,11 @@ else
             //main content
             if(get_theme_mod('single_blog_sidebar_layout','full')=='right'|| get_theme_mod('single_blog_sidebar_layout','right')=='left') 
             {
-                echo '<div class="spnc-col-7 spnc-sticky-content">';
+                echo '<div class="spnc-col-7 '.newscrunch_single_post_stickysidebar().'">';
             }
             else if(get_theme_mod('single_blog_sidebar_layout','full')=='both')
             {
-                echo '<div class="spnc-col-8 spnc-sticky-content">';
+                echo '<div class="spnc-col-8 '.newscrunch_single_post_stickysidebar().'">';
             }
             else
             {
@@ -106,19 +106,19 @@ else
             echo '<div class="spnc-col-9 '.newscrunch_single_post_stickysidebar().'"><div class="spnc-sidebar spnc-main-sidebar"><div class="left-sidebar">';
                     dynamic_sidebar($newscrunch_page_sidebar); 
             echo '</div></div></div>';
-            echo '<div class="spnc-col-7 spnc-sticky-content">';
+            echo '<div class="spnc-col-7 '.newscrunch_single_post_stickysidebar().'">';
         } 
 
         // layout is right sidebar in mebtabox
         else if(get_post_meta(get_the_ID(),'newscrunch_site_layout', true ) == 'newscrunch_site_layout_right')
         {
-            echo '<div class="spnc-col-7 spnc-sticky-content">';
+            echo '<div class="spnc-col-7 '.newscrunch_single_post_stickysidebar().'">';
         }
 
         // layout is right sidebar in mebtabox
         else if(get_post_meta(get_the_ID(),'newscrunch_site_layout', true ) == 'newscrunch_site_layout_both')
         {
-            echo '<div class="spnc-col-8 spnc-sticky-content">';
+            echo '<div class="spnc-col-8 '.newscrunch_single_post_stickysidebar().'">';
         }
 
         // layout is container in mebtabox

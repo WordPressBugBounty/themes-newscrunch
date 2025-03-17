@@ -89,11 +89,11 @@ if((get_theme_mod('ad_type','banner')=='banner')): do_action('newscrunch_before_
             //Main content
             if(get_theme_mod('blog_sidebar_layout','right')=='right' || get_theme_mod('blog_sidebar_layout','right')=='left')
             {
-                echo '<div class="spnc-col-7 spnc-sticky-content">';
+                echo '<div class="spnc-col-7 '.newscrunch_blog_stickycontent().'">';
             }
             else if(get_theme_mod('blog_sidebar_layout','right')=='both')
             {
-                echo '<div class="spnc-col-8 spnc-sticky-content">';
+                echo '<div class="spnc-col-8 '.newscrunch_blog_stickycontent().'">';
             }
             else
             {

@@ -123,7 +123,7 @@ function newscrunch_news_highlight ( $wp_customize ) {
     ) );
 
     // select the news highlight post title
-    $args = array('post_type' => 'post', 'posts_per_page' => -1);
+    $args = array('post_type' => 'post', 'posts_per_page' => 50);
     $newscrunch_posts = get_posts( $args ); 
     if( count( $newscrunch_posts ) ) {     
         foreach( $newscrunch_posts as $newscrunch_post ) {

@@ -56,11 +56,11 @@ if(get_post_meta(get_the_ID(),'newscrunch_site_layout', true ) =='')
 {
     if(get_theme_mod('page_sidebar_layout','right')=='right' || get_theme_mod('page_sidebar_layout','right')=='left')  
     {   
-       $page_column='<div class="spnc-col-7 spnc-sticky-content">';
+       $page_column='<div class="spnc-col-7 '.newscrunch_single_page_stickycontent().'">';
     }   
     elseif(get_theme_mod('page_sidebar_layout','right')=='both')
     {
-        $page_column='<div class="spnc-col-8 spnc-sticky-content">';
+        $page_column='<div class="spnc-col-8 '.newscrunch_single_page_stickycontent().'">';
     }
     else
     {
@@ -69,15 +69,15 @@ if(get_post_meta(get_the_ID(),'newscrunch_site_layout', true ) =='')
 }
 else if(get_post_meta(get_the_ID(),'newscrunch_site_layout', true ) == 'newscrunch_site_layout_left')
 {  
-    $page_column='<div class="spnc-col-7 spnc-sticky-content">';
+    $page_column='<div class="spnc-col-7 '.newscrunch_single_page_stickycontent().'">';
 }
 else if(get_post_meta(get_the_ID(),'newscrunch_site_layout', true ) == 'newscrunch_site_layout_right')
 {
-    $page_column='<div class="spnc-col-7 spnc-sticky-content">';
+    $page_column='<div class="spnc-col-7 '.newscrunch_single_page_stickycontent().'">';
 }
 else if(get_post_meta(get_the_ID(),'newscrunch_site_layout', true ) == 'newscrunch_site_layout_both')
 {
-    $page_column='<div class="spnc-col-8 spnc-sticky-content">';
+    $page_column='<div class="spnc-col-8 '.newscrunch_single_page_stickycontent().'">';
 }
 else if(get_post_meta(get_the_ID(),'newscrunch_site_layout', true ) == 'newscrunch_site_layout_without_sidebar')
 {

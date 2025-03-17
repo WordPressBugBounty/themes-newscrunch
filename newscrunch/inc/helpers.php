@@ -1687,12 +1687,37 @@ function newscrunch_blog_stickysidebar()
 	return $sticky;
 }
 
+function newscrunch_blog_stickycontent()
+{
+	if(get_theme_mod('blog_sidebar_sticky',true) == true)
+	{
+		$sticky ='spnc-sticky-content';
+	}
+	else
+	{
+		$sticky='';
+	}
+	return $sticky;
+}
+
 /*  Page Sticky Sidbear */
 function newscrunch_single_post_stickysidebar()
 {
 	if(get_theme_mod('single_sidebar_sticky',true) == true)
 	{
 		$sticky ='spnc-sticky-sidebar';
+	}
+	else
+	{
+		$sticky='';
+	}
+	return $sticky;
+}
+function newscrunch_single_post_stickycontent()
+{
+	if(get_theme_mod('blog_sidebar_sticky',true) == true)
+	{
+		$sticky ='spnc-sticky-content';
 	}
 	else
 	{
@@ -1714,6 +1739,18 @@ function newscrunch_single_page_stickysidebar()
 	}
 	return $sticky;
 }
+function newscrunch_single_page_stickycontent()
+{
+	if(get_theme_mod('page_sidebar_sticky',true) == true)
+	{
+		$sticky ='spnc-sticky-content';
+	}
+	else
+	{
+		$sticky='';
+	}
+	return $sticky;
+}
 
 /*  Front Left Content  */
 function newscrunch_page_widget1_sidebar_sticky()
@@ -1721,6 +1758,18 @@ function newscrunch_page_widget1_sidebar_sticky()
 	if(get_theme_mod('page_widget1_sidebar_sticky',false) == true)
 	{
 		$sticky ='spnc-sticky-sidebar';
+	}
+	else
+	{
+		$sticky='';
+	}
+	return $sticky;
+}
+function newscrunch_page_widget1_sidebar_stickycontent()
+{
+	if(get_theme_mod('page_widget1_sidebar_sticky',false) == true)
+	{
+		$sticky ='spnc-sticky-content';
 	}
 	else
 	{
@@ -1742,6 +1791,18 @@ function newscrunch_page_widget1_sidebar_sticky()
 	}
 	return $sticky;
 }
+ function newscrunch_page_widget2_sidebar_stickycontent()
+{
+	if(get_theme_mod('page_widget2_sidebar_sticky',false) == true)
+	{
+		$sticky ='spnc-sticky-content';
+	}
+	else
+	{
+		$sticky='';
+	}
+	return $sticky;
+}
 
 /* Woocommerce Content */
  function newscrunch_wc_sidebar_sticky()
@@ -1749,6 +1810,18 @@ function newscrunch_page_widget1_sidebar_sticky()
 	if(get_theme_mod('wc_sidebar_sticky',true) == true)
 	{
 		$sticky ='spnc-sticky-sidebar';
+	}
+	else
+	{
+		$sticky='';
+	}
+	return $sticky;
+}
+function newscrunch_wc_stickycontent()
+{
+	if(get_theme_mod('wc_sidebar_sticky',true) == true)
+	{
+		$sticky ='spnc-sticky-content';
 	}
 	else
 	{

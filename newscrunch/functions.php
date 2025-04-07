@@ -364,7 +364,8 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                     <li><?php echo "Fixed Container width issue with sticky sidebar."; ?></li>
+		                     <li><?php echo "Added WooCommerce block CSS."; ?></li>
+		                     <li><?php echo "Fixed some style issues."; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">

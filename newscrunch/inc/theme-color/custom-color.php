@@ -755,6 +755,16 @@ body .product-category .woocommerce-loop-category__title:hover{color:<?php echo 
 [data-theme="spnc_dark"] .woocommerce-loop-product__title:hover {color: <?php echo esc_attr($link_color); ?>;}
 [data-theme="spnc_dark"] .woocommerce .star-rating::before {color: <?php echo esc_attr($link_color); ?>;}
 [data-theme="spnc_dark"] .woocommerce .star-rating span::before {color: <?php echo esc_attr($link_color); ?>;}
+.format-quote a:hover{color: <?php echo esc_attr($link_color); ?>;}
+.wp-block-woocommerce-product-template li:hover .wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button{
+    background-color:<?php echo esc_attr($link_color); ?>;
+    color:#ffffff;
+    border:1px solid <?php echo esc_attr($link_color); ?>;
+}
+.wp-block-woocommerce-product-template .wp-block-button.wc-block-components-product-button .added_to_cart{
+    background-color: <?php echo esc_attr($link_color); ?>;
+    color: #fff;
+}
 </style>
 <?php 
 }

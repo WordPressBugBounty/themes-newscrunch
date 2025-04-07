@@ -480,3 +480,11 @@ box-shadow: 0 0 1px 1px rgba(42, 42, 42, 1);}
 [data-theme="spnc_dark"] #wrapper .spnc_product-2 .products .product .price{color: #a7a7a7;}
 [data-theme="spnc_dark"] #wrapper .spnc_product-2 .products .product {
     border: 1px solid #3c3434;}
+[data-theme="spnc_dark"] body.newscrunch .blog.spnc-category-page.spnc-blog-clr .spnc-grid-catpost .spnc-post-format-wrapper .spnc-entry-meta .spnc-cat-links a:hover{color:#fff;}
+[data-theme="spnc_dark"] .wp-block-woocommerce-product-template li,
+[data-theme="spnc_dark"] .wp-block-woocommerce-product-template .wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button{
+ border:1px solid rgba(255, 255, 255, 0.3);
+}
+[data-theme="spnc_dark"] .wp-block-woocommerce-product-template .wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button{
+   color:#ffffff;
+}

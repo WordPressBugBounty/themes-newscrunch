@@ -364,8 +364,7 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                     <li><?php echo "Added WooCommerce block CSS."; ?></li>
-		                     <li><?php echo "Fixed some style issues."; ?></li>
+		                     <li><?php echo "Added Page title settings on single page for the child theme."; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">

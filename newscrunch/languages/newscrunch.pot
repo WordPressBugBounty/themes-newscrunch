@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Newscrunch 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/newscrunch-wordpress-theme\n"
-"POT-Creation-Date: 2025-03-03 16:27+0530\n"
+"POT-Creation-Date: 2025-04-10 12:30+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -230,7 +230,7 @@ msgstr ""
 msgid "Free vs Pro"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:117 functions.php:377
+#: admin/tab-pages/getting-started.php:117 functions.php:376
 msgid "Changelog"
 msgstr ""
 
@@ -553,7 +553,7 @@ msgstr ""
 msgid "Welcome Banner"
 msgstr ""
 
-#: functions.php:247 functions.php:394
+#: functions.php:247 functions.php:393
 msgid "Dismiss this notice"
 msgstr ""
 
@@ -569,63 +569,63 @@ msgstr ""
 msgid "complete with exciting new features. Take a look now!"
 msgstr ""
 
-#: functions.php:372
+#: functions.php:371
 msgid "Try Now"
 msgstr ""
 
-#: functions.php:374
+#: functions.php:373
 msgid "Try It Now"
 msgstr ""
 
-#: functions.php:379
+#: functions.php:378
 msgid "See Changelog"
 msgstr ""
 
-#: functions.php:382 functions.php:384
+#: functions.php:381 functions.php:383
 msgid "Watch Videos"
 msgstr ""
 
-#: functions.php:387 functions.php:389
+#: functions.php:386 functions.php:388
 msgid "Upgrade To Pro"
 msgstr ""
 
-#: functions.php:436
+#: functions.php:435
 msgid "ago"
 msgstr ""
 
-#: functions.php:450
+#: functions.php:449
 msgid "date-time"
 msgstr ""
 
-#: functions.php:464
+#: functions.php:463
 msgid "You do not have permission to manage plugins."
 msgstr ""
 
-#: functions.php:469
+#: functions.php:468
 msgid "No plugin slug provided."
 msgstr ""
 
-#: functions.php:496
+#: functions.php:495
 msgid "You do not have permission to install plugins."
 msgstr ""
 
-#: functions.php:502
+#: functions.php:501
 msgid "Security check failed."
 msgstr ""
 
-#: functions.php:507
+#: functions.php:506
 msgid "No plugin URL provided."
 msgstr ""
 
-#: functions.php:523
+#: functions.php:522
 msgid "Invalid file type."
 msgstr ""
 
-#: functions.php:811
+#: functions.php:810
 msgid "Related products"
 msgstr ""
 
-#: functions.php:827
+#: functions.php:826
 msgid "You may also like…"
 msgstr ""
 
@@ -1272,6 +1272,7 @@ msgid "Enable/Disable Banner"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:245
+#: inc/customizer/settings/single-post-options.php:337
 msgid "Page Title"
 msgstr ""
 
@@ -1301,36 +1302,43 @@ msgstr ""
 
 #: inc/customizer/settings/general-settings.php:334
 #: inc/customizer/settings/single-post-options.php:68
+#: inc/customizer/settings/single-post-options.php:324
 msgid "Heading 1"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:335
 #: inc/customizer/settings/single-post-options.php:69
+#: inc/customizer/settings/single-post-options.php:325
 msgid "Heading 2"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:336
 #: inc/customizer/settings/single-post-options.php:70
+#: inc/customizer/settings/single-post-options.php:326
 msgid "Heading 3"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:337
 #: inc/customizer/settings/single-post-options.php:71
+#: inc/customizer/settings/single-post-options.php:327
 msgid "Heading 4"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:338
 #: inc/customizer/settings/single-post-options.php:72
+#: inc/customizer/settings/single-post-options.php:328
 msgid "Heading 5"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:339
 #: inc/customizer/settings/single-post-options.php:73
+#: inc/customizer/settings/single-post-options.php:329
 msgid "Heading 6"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:340
 #: inc/customizer/settings/single-post-options.php:74
+#: inc/customizer/settings/single-post-options.php:330
 msgid "Span"
 msgstr ""
 
@@ -1340,6 +1348,7 @@ msgstr ""
 
 #: inc/customizer/settings/general-settings.php:342
 #: inc/customizer/settings/single-post-options.php:75
+#: inc/customizer/settings/single-post-options.php:331
 msgid "Div"
 msgstr ""
 
@@ -1674,6 +1683,7 @@ msgstr ""
 
 #: inc/customizer/settings/reorder-sections.php:112
 #: inc/customizer/settings/single-post-options.php:104
+#: inc/customizer/settings/single-post-options.php:351
 msgid "Drag And Drop to Rearrange"
 msgstr ""
 
@@ -1730,10 +1740,12 @@ msgid "Single Post Layouts"
 msgstr ""
 
 #: inc/customizer/settings/single-post-options.php:61
+#: inc/customizer/settings/single-post-options.php:317
 msgid "Title Markup"
 msgstr ""
 
 #: inc/customizer/settings/single-post-options.php:89
+#: inc/customizer/settings/single-post-options.php:338
 msgid "Featured Image"
 msgstr ""
 
@@ -1768,6 +1780,10 @@ msgstr ""
 #: inc/customizer/settings/single-post-options.php:247
 #: inc/customizer/settings/single-post-options.php:258
 msgid "Related Post Title"
+msgstr ""
+
+#: inc/customizer/settings/single-post-options.php:302
+msgid "Single Page"
 msgstr ""
 
 #: inc/customizer/settings/site-identity.php:66
@@ -2175,21 +2191,21 @@ msgstr ""
 msgid "Next post arrow"
 msgstr ""
 
-#: inc/helpers.php:1772
+#: inc/helpers.php:1845
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/helpers.php:1931
+#: inc/helpers.php:2004
 #, php-format
 msgid "Add your Biographical Information. %1$sEdit your Profile%2$s now."
 msgstr ""
 
-#: inc/helpers.php:1936
+#: inc/helpers.php:2009
 msgid "view all posts"
 msgstr ""
 
-#: inc/helpers.php:2661
+#: inc/helpers.php:2734
 msgid "Product hover image"
 msgstr ""
 

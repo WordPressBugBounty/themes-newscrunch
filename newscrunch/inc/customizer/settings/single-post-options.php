@@ -60,7 +60,7 @@ function newscrunch_single_blog_customizer($wp_customize) {
         array(
             'label'     => esc_html__('Title Markup','newscrunch' ),
             'section'   => 'newscrunch_single_blog_section',
-            'setting'   => 'bredcrumb_markup',
+            'setting'   => 'single_post_title_markup',
             'priority'  => 2,
             'type'      => 'select',
             'choices'   =>  
@@ -294,7 +294,69 @@ function newscrunch_single_blog_customizer($wp_customize) {
             )
     ));
     endif;
+
+    if('NewsBlogger' == wp_get_theme()) { 
+
+    $wp_customize->add_section('newscrunch_single_page_section',
+        array(
+            'title'     => esc_html__('Single Page', 'newscrunch' ),
+            'priority'  => 29
+        )
+    );
+
+    $wp_customize->add_setting('single_page_title_markup',
+        array(
+            'default'           => 'h1',
+            'capability'        =>  'edit_theme_options',
+            'sanitize_callback' =>  'newscrunch_sanitize_select'
+        )
+    );
+
+    $wp_customize->add_control('single_page_title_markup', 
+        array(
+            'label'     => esc_html__('Title Markup','newscrunch' ),
+            'section'   => 'newscrunch_single_page_section',
+            'setting'   => 'single_page_title_markup',
+            'priority'  => 2,
+            'type'      => 'select',
+            'choices'   =>  
+            array(
+                'h1'      =>  esc_html__('Heading 1', 'newscrunch' ),
+                'h2'      =>  esc_html__('Heading 2', 'newscrunch' ),
+                'h3'      =>  esc_html__('Heading 3', 'newscrunch' ),
+                'h4'      =>  esc_html__('Heading 4', 'newscrunch' ),
+                'h5'      =>  esc_html__('Heading 5', 'newscrunch' ),
+                'h6'      =>  esc_html__('Heading 6', 'newscrunch' ),
+                'span'    =>  esc_html__('Span', 'newscrunch' ),
+                'div'     =>  esc_html__('Div', 'newscrunch' )
+            )
+        )
+    );
    
+    $choice = array(
+        'reorder_spage_title'      => __('Page Title','newscrunch'),
+        'reorder_spage_img'        => __('Featured Image','newscrunch'),
+        
+    );
+
+    $wp_customize->add_setting( 'single_page_sort',
+    array(
+        'capability'  => 'edit_theme_options',
+        'sanitize_callback' => 'newscrunch_sanitize_array',
+        'default'     => array( 'reorder_spage_title', 'reorder_spage_img'),
+    ) );
+
+    $wp_customize->add_control( new Newscrunch_Control_Sortable( $wp_customize, 'single_page_sort',
+    array(
+        'label' => esc_html__('Drag And Drop to Rearrange','newscrunch' ),
+        'section' => 'newscrunch_single_page_section',
+        'settings' => 'single_page_sort',
+        'type'=> 'sortable',
+        'priority'  =>  2,
+        'choices'     => $choice
+    ) ) );
+
+   }
 }
 
 add_action('customize_register', 'newscrunch_single_blog_customizer');

@@ -17,7 +17,7 @@ endif;
 do_action('newscrunch_scrolltotop'); ?>
 </div>
 <?php 
-if(get_theme_mod('hide_show_dark_light_icon',true) == true): do_action('newscrunch_script_footer'); endif;
+do_action('newscrunch_script_footer');
 wp_footer(); 
 if((get_theme_mod('ad_type','banner')=='banner')): do_action('newscrunch_after_footer_ads','after footer');  endif;?>
 </body>

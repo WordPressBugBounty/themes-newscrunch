@@ -983,8 +983,12 @@ function newscrunch_footerscript() {
             logoImageUrl1.srcset=theme.value === 'spnc_light' ? img1 : img2;
            }
             let toggleBtn1 = document.querySelector("#spnc-layout-icon");
-            let iconCode = toggleBtn1.querySelector(".fa-solid");
-            iconCode.className = theme.value === 'spnc_light' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+            if(toggleBtn1!=null)
+            {
+            	let iconCode = toggleBtn1.querySelector(".fa-solid");
+            	iconCode.className = theme.value === 'spnc_light' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+            }
+            
         }
 
 

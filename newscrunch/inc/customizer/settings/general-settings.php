@@ -1065,5 +1065,23 @@ function newscrunch_general_settings_customizer ( $wp_customize )
 
         endif;
 
+        // Background Color Description
+        if ( $wp_customize->get_control( 'background_color' ) ) {
+            $wp_customize->get_control( 'background_color' )->description = __( 'Note: This setting will work with the boxed layout.', 'newscrunch' );
+        }
+        // Background Image Description
+        if ( $wp_customize->get_control( 'background_image' ) ) {
+            $wp_customize->get_control( 'background_image' )->description = __( 'Note: This setting will work with the boxed layout.', 'newscrunch' );
+        }
+        // Theme Background Color
+        $wp_customize->add_setting( 'background_color_custom', array(
+            'default'           => '#EEEEF5',
+            'sanitize_callback' => 'sanitize_hex_color',
+        ));
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'background_color_custom_control', array(
+            'label'    => __( 'Theme Background Color', 'newscrunch' ),
+            'section'  => 'colors',
+            'settings' => 'background_color_custom',
+        )));
 }
 add_action( 'customize_register', 'newscrunch_general_settings_customizer' );

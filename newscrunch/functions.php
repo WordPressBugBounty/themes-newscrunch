@@ -364,7 +364,7 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                     <li><?php echo "Fixed some minor issues."; ?></li>
+		                     <li><?php echo "Added theme background color setting."; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">
@@ -830,3 +830,9 @@ function newscrunch_wc_upsell_title() {
 
 //woocommerce endif 
 endif;
+
+function newscrunch_custom_background_color() {
+    $color = esc_html(get_theme_mod( 'background_color_custom', '#EEEEF5' ));
+    echo "<style>body #wrapper { background-color: {$color}; }</style>";
+}
+add_action( 'wp_head', 'newscrunch_custom_background_color' );

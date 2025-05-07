@@ -44,25 +44,46 @@
 		                    </li>
 		                </div>
 						<?php endif;
-						if( get_theme_mod('hide_show_search_icon',true ) == true ):?>
-						<ul class="nav spnc-nav">			         
-				         <li class="menu-item dropdown">
-								<a href="#searchbar_fullscreen" class="search-icon" aria-haspopup="true" aria-expanded="false" title="<?php esc_attr_e('Search','newscrunch'); ?>"><i class="fas fa-search"></i></a>
-							</li>
-						</ul>
-						<div id="searchbar_fullscreen">
-							<button type="button" class="close" aria-label="<?php esc_attr_e('Close Search','newscrunch'); ?>">×</button>
-								<form method="get" id="searchform" autocomplete="off" class="search-form" action="<?php echo esc_url( home_url( '/' )); ?>">
-									<label>
-										<input autofocus type="search" class="search-field" placeholder="<?php echo esc_attr__('Search','newscrunch'); ?>" value="" name="s" id="s" autofocus>
-									</label>
-									<input type="submit" class="search-submit btn" value="<?php echo esc_attr__('Search','newscrunch');?>">
-							</form>
-						</div>
-						<?php endif; if( get_theme_mod('hide_show_dark_light_icon',true ) == true ):?>
-						<div class="spnc-dark-layout menu-item">
-							<a class="spnc-dark-icon" id="spnc-layout-icon" href="#" title="<?php esc_attr_e('Dark Light Layout','newscrunch'); ?>"><i class="fas fa-solid fa-moon"></i></a>
-						</div>
+						if( get_theme_mod('hide_show_search_icon',true ) == true ):
+							if(get_theme_mod('select_search_layout','toggle')=='toggle'):?>
+								<ul class="nav spnc-nav">
+									<li class="menu-item dropdown">
+										<a href="#" title="<?php esc_attr_e('Search','newscrunch'); ?>" class="search-icon dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-search"></i></a>
+										<ul class="dropdown-menu pull-right search-panel" role="menu">
+											<li>
+												<div class="form-spnc-container">
+													<form method="get" id="searchform" autocomplete="off" class="search-form" action="<?php echo esc_url( home_url( '/' )); ?>">
+														<div class="search-results-container"></div>
+														<input autofocus type="search" class="search-field" placeholder="<?php echo esc_attr__('Search','newscrunch'); ?>" value="" name="s" id="s" autofocus>
+														<input type="submit" class="search-submit" value="<?php echo esc_attr__('Search','newscrunch');?>">
+													</form>
+												</div>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							<?php endif;
+							if(get_theme_mod('select_search_layout','toggle')=='lightbox'):?>
+								<ul class="nav spnc-nav">			         
+						        	<li class="menu-item dropdown">
+										<a href="#searchbar_fullscreen" class="search-icon" aria-haspopup="true" aria-expanded="false" title="<?php esc_attr_e('Search','newscrunch'); ?>"><i class="fas fa-search"></i></a>
+									</li>
+								</ul>
+								<div id="searchbar_fullscreen">
+									<button type="button" class="close" aria-label="<?php esc_attr_e('Close Search','newscrunch'); ?>">×</button>
+									<form method="get" id="searchform" autocomplete="off" class="search-form" action="<?php echo esc_url( home_url( '/' )); ?>">
+										<label>
+											<input autofocus type="search" class="search-field" placeholder="<?php echo esc_attr__('Search','newscrunch'); ?>" value="" name="s" id="s" autofocus>
+										</label>
+										<input type="submit" class="search-submit btn" value="<?php echo esc_attr__('Search','newscrunch');?>">
+									</form>
+								</div>
+							<?php endif; 
+						endif; 
+						if( get_theme_mod('hide_show_dark_light_icon',true ) == true ):?>
+							<div class="spnc-dark-layout">
+								<a class="spnc-dark-icon" id="spnc-layout-icon" href="#" title="<?php esc_attr_e('Dark Light Layout','newscrunch'); ?>"><i class="fas fa-solid fa-moon"></i></a>
+							</div>
 						<?php endif;
 						if( get_theme_mod('hide_show_toggle_icon',true ) == true ):?>
 							<div class="spnc-widget-toggle">

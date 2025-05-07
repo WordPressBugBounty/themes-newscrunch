@@ -238,11 +238,21 @@
                 });
               })             
         });
-        jQuery('li a').focus(function() { 
+
+        jQuery(document).on('focusin', function (e) {
+            // Check if the focused element is .search-icon or inside it
+            const focusedElement = jQuery(e.target);
+            const searchIcon = jQuery('a.search-icon');
+            // If focus is not on the .search-icon or its children
+            if (!searchIcon.is(focusedElement) && searchIcon.closest('li').has(focusedElement).length === 0) {
+                searchIcon.closest('li').removeClass('open');
+            }
+        });
+
+       jQuery('li a').focus(function() { 
               jQuery(this).parent().siblings().removeClass('open');
               jQuery(this).parent().siblings().find(".open").removeClass('open');
-        });
-     
+        });    
         jQuery('a,input').bind('focus', function() {
             if(!jQuery(this).closest(".menu-item").length ) {
                 topLevelLinks.forEach(function(link){

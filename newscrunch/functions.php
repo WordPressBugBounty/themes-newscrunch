@@ -364,7 +364,7 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                     <li><?php echo "Added theme background color setting."; ?></li>
+		                     <li><?php echo "Added live search feature."; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">
@@ -836,3 +836,56 @@ function newscrunch_custom_background_color() {
     echo "<style>body #wrapper { background-color: {$color}; }</style>";
 }
 add_action( 'wp_head', 'newscrunch_custom_background_color' );
+
+//Live Search
+function newscrunch_enqueue_ajax_script() {
+    if (
+        get_theme_mod('hide_show_search_icon', true) &&
+        get_theme_mod('select_search_layout', 'toggle') === 'toggle' &&
+        get_theme_mod('hide_show_live_search', true)
+    ) {
+        wp_enqueue_script('jquery');
+        wp_enqueue_script('newscrunch-ajax-search', get_template_directory_uri() . '/assets/js/ajax-search.js', array('jquery'), null, true);
+        wp_localize_script('newscrunch-ajax-search', 'newscrunch_ajax', array(
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'searching_text' => esc_html__('Searching...', 'newscrunch')
+        ));
+    }
+}
+add_action('wp_enqueue_scripts', 'newscrunch_enqueue_ajax_script');
+
+
+
+	function newscrunch_live_search_ajax() {
+	    $newscrunch_keyword = sanitize_text_field($_POST['keyword']);
+	    $args = array(
+	        's' => $newscrunch_keyword,
+	        'post_type' => 'post',
+	        'posts_per_page' => 5,
+	    );
+	    $query = new WP_Query($args);
+
+		if ($query->have_posts()) {
+		    echo '<ul class="search-live-results">';
+		    while ($query->have_posts()) {
+		        $query->the_post();
+		        echo '<li class="search-wrapper">';
+		            echo '<div class="search-img">';
+		                if (has_post_thumbnail()) {
+		                    the_post_thumbnail('thumbnail', ['class' => 'img-fluid sp-thumb-img']);
+		                } else {
+		                    echo '<img src="' . get_template_directory_uri() . '/assets/images/no-preview.jpg" class="img-fluid sp-thumb-img">';
+		                }
+		            echo '</div><div class="search-content"><a href="' . esc_url( get_permalink() ) . '">' . esc_html( get_the_title() ) . '</a></div>';
+		        echo '</li>';
+		    }
+		    echo '</ul>';
+		}
+	 	else {
+	    	echo '<p>'.esc_html__('No results found.', 'newscrunch').'</p>';
+	    }
+
+	    wp_die();
+	}
+	add_action('wp_ajax_newscrunch_live_search', 'newscrunch_live_search_ajax');
+	add_action('wp_ajax_nopriv_newscrunch_live_search', 'newscrunch_live_search_ajax');

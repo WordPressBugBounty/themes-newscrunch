@@ -287,3 +287,18 @@ function newscrunch_show_text_active_callback( $control ) {
     // Check if the 'Show Text' option is selected
     return get_theme_mod('newscrunch_wc_product_sale_badge', 'percentage') === 'text';
 }
+
+// callback function for search 
+function newscrunch_search_callback($control) {
+    if (true == $control->manager->get_setting('hide_show_search_icon')->value()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+function newscrunch_live_search_callback( $control ) {
+    $is_search_icon_enabled = $control->manager->get_setting('hide_show_search_icon')->value();
+    $search_layout = $control->manager->get_setting('select_search_layout')->value();
+
+    return $is_search_icon_enabled && $search_layout === 'toggle';
+}

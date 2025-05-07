@@ -5,7 +5,7 @@ Author: spicethemes
 Author URI: https://spicethemes.com
 Description: Newscrunch is a magazine and blog theme. It is a lightweight, elegant, and fully responsive theme specifically designed for creating magazines, newspapers, editors, blogs, and dynamic news websites. It seamlessly integrates with the Gutenberg block editor, empowering you to effortlessly build your website using intuitive blocks. The theme is highly compatible with popular plugins such as WooCommerce, Contact Form 7, Polylang, and WPML, offering expanded functionality. Newscrunch Theme prioritizes user privacy and complies with the General Data Protection Regulation (GDPR) guidelines by refraining from collecting any personal data restricted under GDPR. Additionally, all fonts used in the theme are locally hosted, eliminating the reliance on external resources like Google Fonts. The theme is also schema-ready, enhancing search engine visibility and optimization. With its GDPR compliance, sleek design, and efficient performance, Newscrunch Theme caters to various businesses. It provides a wide range of widgets and sections tailored to specific industries, enabling you to swiftly create a stunning website with beautiful designs. To explore the theme further, feel free to check out our demo at: https://demo-newscrunch.spicethemes.com/demo-one/. For video tutorial visit here https://www.youtube.com/playlist?list=PLTfjrb24Pq_DeJOZdKEaP3rZPbHuOCLtZ
 Tags: blog, news, photography, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, rtl-language-support, one-column, two-columns, full-width-template, sticky-post, right-sidebar, footer-widgets, grid-layout
-Version: 1.8.4.6
+Version: 1.8.5
 Requires at least: 4.5
 Tested up to: 6.8
 Requires PHP: 5.6
@@ -2203,7 +2203,7 @@ body .spnc-wrapper.spnc-btn-1 .spnc-head-wrap-line .spnc-category-filter,body .s
   body.newscrunch .header-2 .spnc-custom .spnc-nav li > a.search-icon{color: #000;}
  .header-2 .spnc-dark-icon {color: #000;}
  .header-2 .spnc-toggle {margin: 20px 15px 20px 25px;}
-  body .header-2 .spnc-custom .spnc-nav.nav li>a.search-icon {padding: 1px 3px 0;margin: 13px 5px 5px 20px;line-height: 28px;}
+  body .header-2 .spnc-custom .spnc-nav.nav li>a.search-icon {padding: 1px 3px 0;margin: 13px 5px 5px 0;line-height: 28px;}
 }
 .spnc-highlights-2 .spnc-post {padding-right: 0rem;}
 .header-2 .spnc-topbar .spnc-container {padding: 0 15px;}
@@ -3632,3 +3632,35 @@ body.bread-2.woocommerce-cart .spnc-single-post:not(body.all.bread-2.woocommerce
 .wp-block-woocommerce-product-template .wp-block-button.wc-block-components-product-button .added_to_cart{
     padding: 6px 20px;
 }
+
+/* Live Search */
+body.newscrunch .spnc-custom .dropdown-menu.search-panel {top: 60px;left: auto;right: 0px;padding: 18px 12px 18px;width: 400px;background-color: #fff;}
+body.newscrunch .search-panel input[type="search"] {display: block;width: 100%;height: 3rem;line-height: 1.5rem;background: #ffffff;padding: 0.4375rem 6.625rem 0.4375rem 1rem;-webkit-transition: all 300ms ease;-ms-transition: all 300ms ease;-o-transition: all 300ms ease;-moz-transition: all 300ms ease;transition: all 300ms ease;font-size: large;border-radius: 6px;font-size: 0.875rem;}
+body.newscrunch form.search-form input.search-submit {color: #ffffff;border: 0 none;border-radius: 0 6px 6px 0;display: inline-block;font-size: 0.875rem;margin: 0;text-align: center;transition: all 0.4s ease 0s;}
+body.newscrunch .search-form input[type="submit"] {cursor: pointer;position: absolute;width: auto;transition: all .3s ease-in-out;color: #fff;font-weight: 600;height: 3rem;left: auto;right: 0rem;font-size: 0.938rem;top: 0rem;padding: 0.75rem 1.2rem;}
+body.newscrunch input[type="search"]::-webkit-search-cancel-button {-webkit-appearance: none;appearance: none;display: none;}
+@media (max-width: 1100px){
+  body.newscrunch .spnc-custom .dropdown-menu.search-panel {position: absolute;left: 0;}
+  body.newscrunch .spnc-custom .dropdown-menu.search-panel {top: 50px;}
+}
+body.newscrunch .menu-item.dropdown.open .dropdown-menu.pull-right.search-panel{border-top: unset;border-bottom: unset;}
+.search-live-results{margin: 0.875rem 0 0;}
+body.newscrunch #wrapper .search-wrapper{display: flex;border-bottom: 1px solid #d7d7d7;padding: 10px 0;margin-bottom: 0px;}
+body.newscrunch #wrapper .search-img{width: 4.5rem;height: 3rem; margin: 0 15px 0 0;overflow: hidden;float: unset;display: block;}
+body.newscrunch #wrapper .search-content{flex: 1;}
+body.newscrunch #wrapper .search-wrapper:last-child{border: 0;padding-bottom: 0;}
+@media (max-width: 1100px){
+  body.newscrunch .spnc-custom .dropdown-menu.search-panel {left: auto;}
+  body.newscrunch .spnc-custom .spnc-nav .search-wrapper a {color: #000;}
+}
+@media (max-width: 600px){
+  body.newscrunch .spnc-custom .dropdown-menu.search-panel {width: 300px;}
+  body.newscrunch.customize-partial-edit-shortcuts-shown .spnc-custom .dropdown-menu.search-panel{width: 245px;}
+}
+body.newscrunch #wrapper .spnc-header-center .search-content {text-align: left;}
+@media (max-width: 1100px) {body.newscrunch .spnc-header-center .spnc-custom .dropdown-menu.search-panel{transform: translate(-50%, 2%);left:50%;}}
+body.newscrunch .spnc-custom .dropdown-menu.search-panel {border-top: unset;border-bottom: unset;box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);}
+@media (max-width: 1100px) {
+  .spnc-custom .dropdown-menu.search-panel li a {border-bottom: 0;}
+}
+body.newsblogger.newscrunch-plus .widget_spncp_verticle_post_slider i{color: unset;-webkit-text-fill-color: unset;}

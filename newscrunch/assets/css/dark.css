@@ -488,6 +488,8 @@ box-shadow: 0 0 1px 1px rgba(42, 42, 42, 1);}
 [data-theme="spnc_dark"] .wp-block-woocommerce-product-template .wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button{
    color:#ffffff;
 }
-[data-theme="spnc_dark"] .spnc-default-page .spnc-contact-wrapper .spnc-entry-title{
-	color:#ffffff;
-}
+[data-theme="spnc_dark"] .spnc-default-page .spnc-contact-wrapper .spnc-entry-title{color:#ffffff;}
+
+[data-theme="spnc_dark"] body.newscrunch .spnc-custom .dropdown-menu.search-panel {background-color: #0e0e0e;box-shadow: 0 0 18px 5px rgba(255, 255, 255, 0.07);}
+[data-theme="spnc_dark"] body.newscrunch .search-panel input[type="search"] {background: #000000;}
+@media (max-width: 1100px) {[data-theme="spnc_dark"] body.newscrunch  .spnc-custom .spnc-nav .search-wrapper a { color: #fff;}}

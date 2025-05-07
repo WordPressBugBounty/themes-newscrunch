@@ -31,6 +31,8 @@ function newscrunch_theme_header_panel_customizer ( $wp_customize ) {
                         'hide_show_header_border_radius',
                         'header_menu_bg_clr',
                         'hide_show_search_icon',
+                        'select_search_layout',
+                        'hide_show_live_search',
                         'hide_show_sticky_header',
                         'hide_show_dark_light_icon',
                         'hide_show_toggle_icon',
@@ -151,6 +153,49 @@ function newscrunch_theme_header_panel_customizer ( $wp_customize ) {
             'section'   =>  'newscrunch_theme_header',
             'settings'   =>  'hide_show_search_icon',
             'type'      =>  'toggle',
+            'priority'  =>  4
+        )
+    ));
+
+    /* ====== Search Variation ====== */
+
+    $wp_customize->add_setting('select_search_layout',
+    array(
+        'default'           =>  'toggle',
+        'capability'        =>  'edit_theme_options',
+        'sanitize_callback' =>  'newscrunch_sanitize_select'
+        )
+    );
+    $wp_customize->add_control('select_search_layout', 
+        array(
+            'label'     => esc_html__('Search Layout','newscrunch' ),
+            'section'   => 'newscrunch_theme_header',
+            'setting'   => 'select_search_layout',
+            'active_callback'   =>  'newscrunch_search_callback',
+            'priority'  => 4,
+            'type'      => 'select',
+            'choices'   =>  
+            array(
+                'toggle'      =>  esc_html__('Toggle', 'newscrunch' ),
+                'lightbox'      =>  esc_html__('LightBox', 'newscrunch' )
+            )
+        )
+    );
+
+    // enable/disable live search
+    $wp_customize->add_setting('hide_show_live_search',
+        array(
+            'default'           => true,
+            'sanitize_callback' => 'newscrunch_sanitize_checkbox'
+        )
+    );
+    $wp_customize->add_control(new Newscrunch_Toggle_Control( $wp_customize, 'hide_show_live_search',
+        array(
+            'label'     =>  esc_html__( 'Enable/Disable Live Search', 'newscrunch'),
+            'section'   =>  'newscrunch_theme_header',
+            'settings'   =>  'hide_show_live_search',
+            'type'      =>  'toggle',
+             'active_callback'  => 'newscrunch_live_search_callback',
             'priority'  =>  4
         )
     ));

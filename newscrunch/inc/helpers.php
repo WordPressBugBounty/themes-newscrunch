@@ -1041,17 +1041,17 @@ function newscrunch_footerscript() {
         });     
 </script>
 <?php
-if( get_theme_mod('hide_show_search_icon',true ) == true ) { ?>
-			<script>
-				// search   
-		        const search_elm = document.getElementById('searchbar_fullscreen');
-		            search_elm.addEventListener('focusout', (event) => {
-		                if(search_elm.contains(event.relatedTarget)==false){
-		                    jQuery("#searchbar_fullscreen").removeClass('open');
-		            }
-		        });
-			</script>
-	<?php }
+if( (get_theme_mod('hide_show_search_icon',true ) == true ) && (get_theme_mod('select_search_layout','toggle')=='lightbox')){ ?>
+	<script>
+		// search   
+        const search_elm = document.getElementById('searchbar_fullscreen');
+            search_elm.addEventListener('focusout', (event) => {
+                if(search_elm.contains(event.relatedTarget)==false){
+                    jQuery("#searchbar_fullscreen").removeClass('open');
+            }
+        });
+	</script>
+	<?php } 
  }
 add_action('newscrunch_script_footer', 'newscrunch_footerscript');
 

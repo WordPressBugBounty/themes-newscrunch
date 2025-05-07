@@ -765,6 +765,7 @@ body .product-category .woocommerce-loop-category__title:hover{color:<?php echo 
     background-color: <?php echo esc_attr($link_color); ?>;
     color: #fff;
 }
+.search-panel input[type="search"] {border: 1px solid <?php echo esc_attr($link_color); ?>;}
 </style>
 <?php 
 }

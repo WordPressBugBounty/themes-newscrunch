@@ -364,7 +364,7 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                     <li><?php echo "Added live search feature."; ?></li>
+		                     <li><?php echo "Added content layout setting in PRO."; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">

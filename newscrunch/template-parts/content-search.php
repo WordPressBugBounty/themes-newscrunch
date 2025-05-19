@@ -5,7 +5,7 @@
  * @package Newscrunch
  */
 ?>
-<article itemscope itemtype="https://schema.org/Article" id="post-<?php the_ID(); ?>" <?php post_class('spnc-grid-catpost spnc-post'); ?> >
+<article itemscope itemtype="https://schema.org/Article" id="post-<?php the_ID(); ?>" <?php if(!has_post_thumbnail()) { post_class(' img-remove spnc-grid-catpost spnc-post ');} else {  post_class('spnc-grid-catpost spnc-post '); } ?> >
 	<div class="spnc-post-wrap">
 		<div class="spnc-post-overlay"></div>
 	    <div class="spnc-post-format-wrapper">

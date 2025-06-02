@@ -136,7 +136,7 @@ jQuery( document ).ready(function($) {
 
     jQuery('#customize-control-newscrunch_highlight_view').before('<div class="video-guide"><a target="_blank" href="https://youtu.be/dxFWQ2GDr0I" class="video-icon" >Video Guide<span class="dashicons dashicons-video-alt3 video-tutorial"></span></a></div>');
 
-    jQuery('#customize-control-hide_show_featured_video').before('<div class="video-guide"><a target="_blank" href="https://youtu.be/-PZGoKtnXIM" class="video-icon" >Video Guide<span class="dashicons dashicons-video-alt3 video-tutorial"></span></a></div>');
+    jQuery('#customize-control-hide_show_featured_video').before('<div class="video-guide"><a target="_blank" href="https://www.youtube.com/watch?v=nQc-gCu1c_c" class="video-icon" >Video Guide<span class="dashicons dashicons-video-alt3 video-tutorial"></span></a></div>');
 
     jQuery('#accordion-section-sidebar-widgets-front-page-1').before('<div class="video-guide"><a target="_blank" href="https://youtu.be/wxyvxCnZ_ns?si=5LxLxsPZC6JDTrQo" class="video-icon" >Video Guide<span class="dashicons dashicons-video-alt3 video-tutorial"></span></a></div>');
     jQuery('#accordion-section-sidebar-widgets-front-page-2').before('<div class="video-guide"><a target="_blank" href="https://youtu.be/wxyvxCnZ_ns?si=5LxLxsPZC6JDTrQo" class="video-icon" >Video Guide<span class="dashicons dashicons-video-alt3 video-tutorial"></span></a></div>');

@@ -211,13 +211,16 @@ class Newscrunch_Customizer_Notify_Section extends WP_Customize_Section {
 			$ti_customizer_notify_recommended_plugin['id']          = $slug;
 			$ti_customizer_notify_recommended_plugin['plugin_slug'] = $slug;
 
-			if ( ! empty( $plugin_opt['description'] ) ) {
-				$ti_customizer_notify_recommended_plugin['description'] = $plugin_opt['description'];
+			if ( is_wp_error( $info ) ) {
+			    $plugin_name = isset( $plugin_opt['title'] ) ? $plugin_opt['title'] : ucfirst( $slug );
+			    $plugin_description = isset( $plugin_opt['description'] ) ? $plugin_opt['description'] : '';
 			} else {
-				$ti_customizer_notify_recommended_plugin['description'] = $info->short_description;
+			    $plugin_name = $info->name;
+			    $plugin_description = isset( $plugin_opt['description'] ) ? $plugin_opt['description'] : $info->short_description;
 			}
 
-			$ti_customizer_notify_recommended_plugin['title'] = $info->name;
+			$ti_customizer_notify_recommended_plugin['title'] = $plugin_name;
+			$ti_customizer_notify_recommended_plugin['description'] = $plugin_description;
 
 			$customize_plugins[] = $ti_customizer_notify_recommended_plugin;
 

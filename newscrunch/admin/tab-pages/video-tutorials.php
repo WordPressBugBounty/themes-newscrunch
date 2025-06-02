@@ -106,7 +106,7 @@
 				<div class="action-inner">
 					<h3 class="action-title"><?php esc_html_e('Setup Featured Video Section','newscrunch'); ?></h3>
 					<div class="action-button">
-						<a class="button-primary button" target="_blank" href="<?php echo esc_url('https://youtu.be/-PZGoKtnXIM'); ?>" title="<?php esc_attr_e('Featured Video','newscrunch'); ?>"><span class="dashicons dashicons-youtube"></span> <?php esc_html_e('Watch Video','newscrunch'); ?></a>
+						<a class="button-primary button" target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=nQc-gCu1c_c'); ?>" title="<?php esc_attr_e('Featured Video','newscrunch'); ?>"><span class="dashicons dashicons-youtube"></span> <?php esc_html_e('Watch Video','newscrunch'); ?></a>
 						<a class="button-secondary button" target="_blank" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=newscrunch_featured_video_section' ) ); ?>" title="<?php esc_attr_e('Featured Video Customize','newscrunch'); ?>"><?php esc_html_e('Customize','newscrunch'); ?></a>
 					</div>
 				</div>

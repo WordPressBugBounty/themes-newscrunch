@@ -73,7 +73,7 @@
                                    	<?php endif; endif; ?> 
 	                            </div>
 	                            <?php if(get_theme_mod('newscrunch_enable_post_description',true)==true): ?>
-	                            	<p itemprop="description" class="spnc-description <?php if(get_theme_mod('newscrunch_enable_post_read_more',true)== false):?>no-read<?php endif;?>"><?php newscrunch_excerpt(15); ?></p>
+	                            	<p itemprop="description" class="spnc-description <?php if(get_theme_mod('newscrunch_enable_post_read_more',true)== false):?>no-read<?php endif;?>"><?php newscrunch_excerpt_fn(15); ?></p>
 	                            <?php
 	                            endif; 
 	                            if(get_theme_mod('newscrunch_enable_post_read_more',true)==true):

@@ -82,7 +82,7 @@
 	                        </div>
 	                        <?php
 	                        } else { ?>
-	                        <div class="spnc-description"><p><?php newscrunch_excerpt(30); ?></p></div>
+	                        <div class="spnc-description"><p><?php newscrunch_excerpt_fn(30); ?></p></div>
 	                        <?php }
                      endif; ?>
 	            </header>

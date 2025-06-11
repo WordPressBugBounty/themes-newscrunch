@@ -3,7 +3,7 @@
 Contributors: spicethemes
 Requires at least: 4.5
 Tested up to: 6.8
-Stable tag: 1.8.5.1.3
+Stable tag: 1.8.5.2
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -33,6 +33,10 @@ Newscrunch WordPress Theme, Copyright (C) 2023-2025, spicethemes
 Newscrunch WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+@Version 1.8.5.2
+* Added excerpt feature in blog and it's templates.
+* Fixed some minor issues in gutenberg template.
 
 @Version 1.8.5.1.3
 * Update YouTube video link.

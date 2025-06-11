@@ -214,6 +214,13 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                                 endwhile;
                                                 echo'</div></div>';
                                             }
+                                            else if(get_theme_mod('archive_blog_variation','list')=='overlay'){
+                                                echo '<div class="spnc-blog-cat-wrapper">';
+                                                    while ($newscrunch_posts->have_posts()): $newscrunch_posts->the_post();
+                                                    get_template_part( 'template-parts/content-overlay');
+                                                    endwhile;
+                                                echo'</div>';
+                                            }
                                             else
                                             {
                                                 $i=1; 
@@ -244,6 +251,13 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                                 $i++;
                                                 endwhile;
                                             echo'</div>';
+                                          }
+                                          else if(get_theme_mod('archive_blog_variation','grid')=='overlay'){
+                                                echo '<div class="spnc-blog-cat-wrapper">';
+                                                    while ($newscrunch_posts->have_posts()): $newscrunch_posts->the_post();
+                                                    get_template_part( 'template-parts/content-overlay');
+                                                    endwhile;
+                                                echo'</div>';
                                           } 
                                           else
                                           {

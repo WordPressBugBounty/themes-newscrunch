@@ -61,7 +61,7 @@
                     <?php
                     } else { ?>
                     <p class="spnc-description">
-                        <?php newscrunch_excerpt(15); ?>
+                        <?php newscrunch_excerpt_fn(15); ?>
                     </p>
                 <?php }
             endif; ?>

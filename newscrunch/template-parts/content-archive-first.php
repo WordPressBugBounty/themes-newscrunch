@@ -84,7 +84,7 @@ if (is_category()) {
                                                                 </div>
                                                             </div>
                                                             <?php if(get_theme_mod('newscrunch_enable_post_description',true)==true): ?>
-                                                                <p class="spnc-description"><?php newscrunch_excerpt(15); ?></p>
+                                                                <p class="spnc-description"><?php newscrunch_excerpt_fn(15); ?></p>
                                                             <?php 
                                                             endif; 
                                                             $newscrunch_read_more = get_theme_mod('newscrunch_blog_archive_read_btn', __('Read More','newscrunch'));

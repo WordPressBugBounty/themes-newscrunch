@@ -2921,3 +2921,18 @@ function newscrunch_modify_posts_per_page($query) {
     }
 }
 add_action('pre_get_posts', 'newscrunch_modify_posts_per_page');
+
+/*
+-------------------------------------------------------------------------------
+ Get Excerpt content
+-------------------------------------------------------------------------------*/
+function newscrunch_excerpt_fn($word_limit) {
+    if ( has_excerpt() ) {
+    	$excerpt = get_the_excerpt();
+       echo wp_trim_words($excerpt, $word_limit);
+    }
+    else
+    {
+    	newscrunch_excerpt($word_limit);
+    }
+}

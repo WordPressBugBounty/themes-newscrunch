@@ -364,9 +364,8 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                	<li><?php echo "Update YouTube video link."; ?></li>
-		                    <li><?php echo "Fixed the customizer notify warning."; ?></li>
-		                    <li><?php echo "Added footer widget layouts in PRO."; ?></li>
+		                	<li><?php echo "Added excerpt feature in blog and it's templates."; ?></li>
+		                	<li><?php echo "Fixed some minor issues in gutenberg template."; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">

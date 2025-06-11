@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Newscrunch 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/newscrunch-wordpress-theme\n"
-"POT-Creation-Date: 2025-05-06 16:51+0530\n"
+"POT-Creation-Date: 2025-06-11 18:23+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -140,7 +140,7 @@ msgid "Import Image"
 msgstr ""
 
 #: admin/tab-pages/getting-started.php:26 functions.php:238
-#: inc/customizer-notify/newscrunch-customizer-notify-section.php:298
+#: inc/customizer-notify/newscrunch-customizer-notify-section.php:301
 msgid "Install Plugin"
 msgstr ""
 
@@ -230,7 +230,7 @@ msgstr ""
 msgid "Free vs Pro"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:117 functions.php:376
+#: admin/tab-pages/getting-started.php:117 functions.php:377
 msgid "Changelog"
 msgstr ""
 
@@ -553,7 +553,7 @@ msgstr ""
 msgid "Welcome Banner"
 msgstr ""
 
-#: functions.php:247 functions.php:393
+#: functions.php:247 functions.php:394
 msgid "Dismiss this notice"
 msgstr ""
 
@@ -569,71 +569,71 @@ msgstr ""
 msgid "complete with exciting new features. Take a look now!"
 msgstr ""
 
-#: functions.php:371
+#: functions.php:372
 msgid "Try Now"
 msgstr ""
 
-#: functions.php:373
+#: functions.php:374
 msgid "Try It Now"
 msgstr ""
 
-#: functions.php:378
+#: functions.php:379
 msgid "See Changelog"
 msgstr ""
 
-#: functions.php:381 functions.php:383
+#: functions.php:382 functions.php:384
 msgid "Watch Videos"
 msgstr ""
 
-#: functions.php:386 functions.php:388
+#: functions.php:387 functions.php:389
 msgid "Upgrade To Pro"
 msgstr ""
 
-#: functions.php:435
+#: functions.php:436
 msgid "ago"
 msgstr ""
 
-#: functions.php:449
+#: functions.php:450
 msgid "date-time"
 msgstr ""
 
-#: functions.php:463
+#: functions.php:464
 msgid "You do not have permission to manage plugins."
 msgstr ""
 
-#: functions.php:468
+#: functions.php:469
 msgid "No plugin slug provided."
 msgstr ""
 
-#: functions.php:495
+#: functions.php:496
 msgid "You do not have permission to install plugins."
 msgstr ""
 
-#: functions.php:501
+#: functions.php:502
 msgid "Security check failed."
 msgstr ""
 
-#: functions.php:506
+#: functions.php:507
 msgid "No plugin URL provided."
 msgstr ""
 
-#: functions.php:522
+#: functions.php:523
 msgid "Invalid file type."
 msgstr ""
 
-#: functions.php:810
+#: functions.php:811
 msgid "Related products"
 msgstr ""
 
-#: functions.php:826
+#: functions.php:827
 msgid "You may also like…"
 msgstr ""
 
-#: functions.php:851
+#: functions.php:852
 msgid "Searching..."
 msgstr ""
 
-#: functions.php:885
+#: functions.php:886
 msgid "No results found."
 msgstr ""
 
@@ -730,7 +730,7 @@ msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
 
-#: inc/customizer-notify/newscrunch-customizer-notify-section.php:287
+#: inc/customizer-notify/newscrunch-customizer-notify-section.php:290
 msgid "Spice Starter Sites"
 msgstr ""
 

@@ -96,7 +96,7 @@
                         		<p class="spnc-description">
 		                            <?php
 		                            $newscrunch_excerpt_length = get_theme_mod('post_excerpt_length', '15');
-		                            newscrunch_excerpt($newscrunch_excerpt_length); 
+		                            newscrunch_excerpt_fn($newscrunch_excerpt_length); 
 		                            ?>
 		                        </p>
 	                            <?php } else { 
@@ -104,7 +104,7 @@
 	                        	}
 	                        else: ?>
 		                       	<p class="spnc-description">
-		                            <?php newscrunch_excerpt(15); ?>
+		                            <?php newscrunch_excerpt_fn(15); ?>
 		                       	</p>
 		                        <?php
 	                 		endif;

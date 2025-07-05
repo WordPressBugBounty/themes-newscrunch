@@ -121,6 +121,7 @@ function newscrunch_main_banner_panel_customizer ( $wp_customize ) {
         )
     );
 
+    if (! class_exists('Newscrunch_Plus') ):
     // enable/disable left banner meta
     $wp_customize->add_setting('hide_show_banner_left_meta',
         array(
@@ -138,6 +139,7 @@ function newscrunch_main_banner_panel_customizer ( $wp_customize ) {
             'priority'          =>  4
         )
     ));
+    endif;
 
     /* CENTER BANNER */
     // select the banner center category
@@ -203,6 +205,7 @@ function newscrunch_main_banner_panel_customizer ( $wp_customize ) {
     );
 
     // enable/disable center banner meta
+    if (! class_exists('Newscrunch_Plus') ):
     $wp_customize->add_setting('hide_show_banner_center_meta',
         array(
             'default'           => true,
@@ -219,6 +222,7 @@ function newscrunch_main_banner_panel_customizer ( $wp_customize ) {
             'priority'          =>  8
         )
     ));
+    endif;
 
     // enable/disable center banner Read More button
     $wp_customize->add_setting('hide_show_banner_center_read_more',
@@ -280,6 +284,7 @@ function newscrunch_main_banner_panel_customizer ( $wp_customize ) {
     );
 
     // enable/disable right banner meta
+    if (! class_exists('Newscrunch_Plus') ):
     $wp_customize->add_setting('hide_show_banner_right_meta',
         array(
             'default'           => true,
@@ -296,6 +301,7 @@ function newscrunch_main_banner_panel_customizer ( $wp_customize ) {
             'priority'          =>  12
         )
     ));
+    endif;
 
     if ( ! class_exists('Newscrunch_Plus') ):
     class Newscrunch_Banner_Customize_Control extends WP_Customize_Control {

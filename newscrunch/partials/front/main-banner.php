@@ -26,9 +26,22 @@ if($newscrunch_hide_show_banner == true) {
 		    		if ( 'reorder_left' === $newscrunch_sort_val ) : ?>
 						<ul id="element<?php echo esc_attr($i);?>" data-wow-delay=".5s" class="wow-callback fadeInLeft spnc_column spnc_column-2">
 							<?php 
-							 $newscrunch_banner_left_category 	= get_theme_mod('banner_left_dropdown_category',0);
-							 $newscrunch_banner_left_post_order = get_theme_mod('banner_left_post_order','DESC'); 
-							 $newscrunch_hide_show_banner_left_meta = get_theme_mod('hide_show_banner_left_meta',true); 
+							$newscrunch_banner_left_category 	= get_theme_mod('banner_left_dropdown_category',0);
+							$newscrunch_banner_left_post_order = get_theme_mod('banner_left_post_order','DESC'); 
+							$newscrunch_hide_show_banner_left_meta = get_theme_mod('hide_show_banner_left_meta',true);
+							$banner_left_meta = ($newscrunch_hide_show_banner_left_meta == true ) ? true : false;
+							if ( class_exists('Newscrunch_Plus') )
+							{
+								$newscrunch_hide_show_banner_left_author = get_theme_mod('hide_show_banner_left_author',$banner_left_meta);
+								$newscrunch_hide_show_banner_left_date   = get_theme_mod('hide_show_banner_left_date',$banner_left_meta);
+								$newscrunch_hide_show_banner_left_cat    = get_theme_mod('hide_show_banner_left_cat',$banner_left_meta);
+								$newscrunch_hide_show_banner_left_tag    = get_theme_mod('hide_show_banner_left_tag',$banner_left_meta);
+							}
+							else
+							{
+								$newscrunch_hide_show_banner_left_author = $newscrunch_hide_show_banner_left_date =
+								$newscrunch_hide_show_banner_left_cat = $newscrunch_hide_show_banner_left_tag = $newscrunch_hide_show_banner_left_meta;
+							} 
 						
 							global $post;
 							$query_args1 = array( 'category__in'  => $newscrunch_banner_left_category, 'posts_per_page' =>2,'order' => $newscrunch_banner_left_post_order,'ignore_sticky_posts' => 1);
@@ -56,31 +69,34 @@ if($newscrunch_hide_show_banner == true) {
 												<div class="spnc-content-wrapper">
 													<div class="spnc-post-wrapper">
 														<header class="entry-header">
-														<?php if($newscrunch_hide_show_banner_left_meta == true){?>
+														
 															<div class="spnc-entry-meta">
+																<?php if($newscrunch_hide_show_banner_left_cat == true){?>
 																<span class="spnc-cat-links">
 																	<?php newscrunch_get_categories(get_the_ID()); ?>
 																</span>
-																<?php if(has_tag()): ?>
+																<?php }
+																if($newscrunch_hide_show_banner_left_tag == true){
+																 if(has_tag()): ?>
 																<span class="tag-links">
 																	<i class="fa fa-tags"></i>
 																	<?php the_tags('',', ');?></span>
-																<?php endif; ?>	
+																<?php endif; }?>	
 															</div>
-														<?php } ?>
+														
 															<h3 class="spnc-entry-title">
 				                                        		<a class="<?php echo esc_attr(get_theme_mod('link_animate','a_effect1'));?>" href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a>
 				                                   			</h3>
 														</header>
-														<?php if($newscrunch_hide_show_banner_left_meta == true){?>
+														
 														<div class="spnc-entry-content">
 															<div class="spnc-entry-meta">
-																<span class="author"><i class="fas fa-user"></i><a <?php if (is_rtl()) { echo 'dir="rtl"';} ?> href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" title="<?php echo esc_attr__('Posts by','newscrunch') . ' ' . esc_attr(get_the_author()); ?>">
-								                				<?php echo esc_html(get_the_author()); ?></a></span>
-																<span class="date"> <i class="fa fa-solid fa-clock"></i><?php echo newcrunch_post_date_time(get_the_ID()); ?></span>
+																<?php if($newscrunch_hide_show_banner_left_author == true){?><span class="author"><i class="fas fa-user"></i><a <?php if (is_rtl()) { echo 'dir="rtl"';} ?> href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" title="<?php echo esc_attr__('Posts by','newscrunch') . ' ' . esc_attr(get_the_author()); ?>">
+								                				<?php echo esc_html(get_the_author()); ?></a></span><?php } ?>
+																<?php if($newscrunch_hide_show_banner_left_date == true){?><span class="date"> <i class="fa fa-solid fa-clock"></i><?php echo newcrunch_post_date_time(get_the_ID()); ?></span><?php } ?>
 															</div>
 														</div>
-														<?php } ?>
+														
 													</div>
 												</div>
 											</div>
@@ -105,6 +121,20 @@ if($newscrunch_hide_show_banner == true) {
 									$newscrunch_banner_center_num_posts 	  = get_theme_mod('banner_center_num_posts',3);
 									$newscrunch_banner_center_post_order     = get_theme_mod('banner_center_post_order','DESC'); 
 									$newscrunch_hide_show_banner_center_meta = get_theme_mod('hide_show_banner_center_meta',true); 
+
+									$banner_center_meta = ($newscrunch_hide_show_banner_center_meta == true ) ? true : false;
+									if ( class_exists('Newscrunch_Plus') )
+									{
+										$newscrunch_hide_show_banner_center_author = get_theme_mod('hide_show_banner_center_author',$banner_center_meta);
+										$newscrunch_hide_show_banner_center_date   = get_theme_mod('hide_show_banner_center_date',$banner_center_meta);
+										$newscrunch_hide_show_banner_center_cat    = get_theme_mod('hide_show_banner_center_cat',$banner_center_meta);
+										$newscrunch_hide_show_banner_center_tag    = get_theme_mod('hide_show_banner_center_tag',$banner_center_meta);
+									}
+									else
+									{
+										$newscrunch_hide_show_banner_center_author = $newscrunch_hide_show_banner_center_date =
+										$newscrunch_hide_show_banner_center_cat = $newscrunch_hide_show_banner_center_tag = $newscrunch_hide_show_banner_center_meta;
+									}
 
 									global $post;
 
@@ -133,18 +163,20 @@ if($newscrunch_hide_show_banner == true) {
 															<div class="spnc-content-wrapper">
 																<div class="spnc-post-wrapper">
 																	<header class="entry-header">
-																		<?php if($newscrunch_hide_show_banner_center_meta == true){?>
+																		
 																			<div class="spnc-entry-meta">
+																				<?php if($newscrunch_hide_show_banner_center_cat == true){?>
 																				<span class="spnc-cat-links">
 																					<?php newscrunch_get_categories(get_the_ID()); ?>
 																				</span>
-																				<?php if(has_tag()): ?>
+																				<?php }
+																				if($newscrunch_hide_show_banner_center_tag == true){ if(has_tag()): ?>
 																				<span class="tag-links">
 																					<i class="fa fa-tags"></i>
 																					<?php the_tags('',', ');?></span>
-																				<?php endif; ?>	
+																				<?php endif; }?>	
 																			</div>
-																		<?php } ?>
+																		
 																		<h3 class="spnc-entry-title">
 							                                        		<a class="<?php echo esc_attr(get_theme_mod('link_animate','a_effect1'));?>" href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a>
 							                                   			</h3>
@@ -156,16 +188,14 @@ if($newscrunch_hide_show_banner == true) {
 																	<?php
 																	endif; ?>
 																	</header>
-																	<?php 
-																	if($newscrunch_hide_show_banner_center_meta == true) { ?>
 																		<div class="spnc-entry-content">
 																			<div class="spnc-entry-meta">
-																				<span class="author"><i class="fas fa-user"></i><a <?php if (is_rtl()) { echo 'dir="rtl"'; } ?> href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" title="<?php echo esc_attr__('Posts by','newscrunch') . ' ' . esc_attr(get_the_author()); ?>">
-												                				<?php echo esc_html(get_the_author()); ?></a></span>
-																				<span class="date"> <i class="fa fa-solid fa-clock"></i><?php echo newcrunch_post_date_time(get_the_ID()); ?></span>
+																				<?php if($newscrunch_hide_show_banner_center_author == true) { ?><span class="author"><i class="fas fa-user"></i><a <?php if (is_rtl()) { echo 'dir="rtl"'; } ?> href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" title="<?php echo esc_attr__('Posts by','newscrunch') . ' ' . esc_attr(get_the_author()); ?>">
+												                				<?php echo esc_html(get_the_author()); ?></a></span><?php }
+																				if($newscrunch_hide_show_banner_center_date == true) { ?><span class="date"> <i class="fa fa-solid fa-clock"></i><?php echo newcrunch_post_date_time(get_the_ID()); ?></span><?php } ?>
 																			</div>
 																		</div>
-																	<?php } ?>
+																	
 																</div>
 															</div>
 														</div>
@@ -185,9 +215,22 @@ if($newscrunch_hide_show_banner == true) {
 		    		if ( 'reorder_right' === $newscrunch_sort_val ) : ?> 
 						<ul id="element<?php echo esc_attr($i);?>" data-wow-delay=".5s" class="wow-callback fadeInRight spnc_column spnc_column-3">
 							<?php 
-							 $newscrunch_banner_right_category 	  = get_theme_mod('banner_right_dropdown_category',0);
-							 $newscrunch_banner_right_post_order     = get_theme_mod('banner_right_post_order','ASC'); 
-							 $newscrunch_hide_show_banner_right_meta = get_theme_mod('hide_show_banner_right_meta',true); 
+							$newscrunch_banner_right_category 	  = get_theme_mod('banner_right_dropdown_category',0);
+							$newscrunch_banner_right_post_order     = get_theme_mod('banner_right_post_order','ASC'); 
+							$newscrunch_hide_show_banner_right_meta = get_theme_mod('hide_show_banner_right_meta',true);
+							$banner_right_meta = ($newscrunch_hide_show_banner_right_meta == true ) ? true : false;
+							if ( class_exists('Newscrunch_Plus') )
+							{
+								$newscrunch_hide_show_banner_right_author = get_theme_mod('hide_show_banner_right_author',$banner_right_meta);
+								$newscrunch_hide_show_banner_right_date   = get_theme_mod('hide_show_banner_right_date',$banner_right_meta);
+								$newscrunch_hide_show_banner_right_cat    = get_theme_mod('hide_show_banner_right_cat',$banner_right_meta);
+								$newscrunch_hide_show_banner_right_tag    = get_theme_mod('hide_show_banner_right_tag',$banner_right_meta);
+							}
+							else
+							{
+								$newscrunch_hide_show_banner_right_author = $newscrunch_hide_show_banner_right_date =
+								$newscrunch_hide_show_banner_right_cat = $newscrunch_hide_show_banner_right_tag = $newscrunch_hide_show_banner_right_meta;
+							}
 						
 							global $post;
 
@@ -216,31 +259,32 @@ if($newscrunch_hide_show_banner == true) {
 												<div class="spnc-content-wrapper">
 													<div class="spnc-post-wrapper">
 														<header class="entry-header">
-														<?php if($newscrunch_hide_show_banner_right_meta == true){?>
 															<div class="spnc-entry-meta">
+																<?php if($newscrunch_hide_show_banner_right_cat == true){?>
 																<span class="spnc-cat-links">
 																	<?php newscrunch_get_categories(get_the_ID()); ?>
 																</span>
-																<?php if(has_tag()): ?>
+																<?php }
+																if($newscrunch_hide_show_banner_right_tag == true) { if(has_tag()): ?>
 																<span class="tag-links">
 																	<i class="fa fa-tags"></i>
 																	<?php the_tags('',', ');?></span>
-																<?php endif; ?>	
+																<?php endif; } ?>	
 															</div>
-														<?php } ?>
+														
 															<h3 class="spnc-entry-title">
 				                                        		<a class="<?php echo esc_attr(get_theme_mod('link_animate','a_effect1'));?>" href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a>
 				                                   			</h3>
 														</header>
-														<?php if($newscrunch_hide_show_banner_right_meta == true){?>
+														
 														<div class="spnc-entry-content">
 															<div class="spnc-entry-meta">
-																<span class="author"><i class="fas fa-user"></i><a <?php if (is_rtl()) { echo 'dir="rtl"'; } ?> href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" title="<?php echo esc_attr__('Posts by','newscrunch') . ' ' . esc_attr(get_the_author()); ?>">
-								                				<?php echo esc_html(get_the_author()); ?></a></span>
-																<span class="date"> <i class="fa fa-solid fa-clock"></i><?php echo newcrunch_post_date_time(get_the_ID()); ?></span>
+																<?php if($newscrunch_hide_show_banner_right_author == true){?><span class="author"><i class="fas fa-user"></i><a <?php if (is_rtl()) { echo 'dir="rtl"'; } ?> href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" title="<?php echo esc_attr__('Posts by','newscrunch') . ' ' . esc_attr(get_the_author()); ?>">
+								                				<?php echo esc_html(get_the_author()); ?></a></span><?php }
+																if($newscrunch_hide_show_banner_right_date == true){?><span class="date"> <i class="fa fa-solid fa-clock"></i><?php echo newcrunch_post_date_time(get_the_ID()); ?></span><?php } ?>
 															</div>
 														</div>
-														<?php } ?>
+														
 													</div>
 												</div>
 											</div>

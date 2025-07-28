@@ -10,10 +10,10 @@ for ($i=1; $i <=5 ; $i++) {
 
 if($newscrunch_hide_show_featured_video == true) {
 
-	$newscrunch_featured_video_category 	= get_theme_mod('featured_video_dropdown_category',0);
+	$newscrunch_featured_video_category = get_theme_mod('featured_video_dropdown_category',0);
 	global $post;
 	$newscrunch_featured_video_id='';
-	$query_args = array( 'category__in'  => $newscrunch_featured_video_category, 'posts_per_page' => 5, 'order' => 'DESC', 'ignore_sticky_posts' => 1);
+	$query_args = array( 'category__in' => $newscrunch_featured_video_category, 'posts_per_page' => 5, 'order' => 'DESC', 'ignore_sticky_posts' => 1);
     $newscrunch_featured_video_arg = new WP_Query($query_args);
     if ( $newscrunch_featured_video_arg->have_posts() ) 
     {			
@@ -53,6 +53,7 @@ if($newscrunch_hide_show_featured_video == true) {
 				$newscrunch_featured_video_url = get_post_meta( $array[$i], 'newscrunch_post_video_embed', true );
 				//vimeo/youtube url from post content (new user @since 1.6.6)
 				$newscrunch_content_featured_video_url=newscrunch_get_first_video_url($array[$i]);
+				$newscrunch_pop_class='spnc-popup-youtube';
 
 				//@since 1.6.6
 				if(empty($newscrunch_featured_video_img_url) && !empty($newscrunch_content_featured_video_url ) && ( get_post_format($array[$i]) === 'video'))
@@ -93,6 +94,15 @@ if($newscrunch_hide_show_featured_video == true) {
 					else
 					{
 						$newscrunch_icon_url=$newscrunch_content_featured_video_url;
+						//@since 1.8.5.4  Added all video format support apart from youtube and vimeo
+						if(($newscrunch_icon_url=='.mp4') || ($newscrunch_icon_url=='.mkv') || ($newscrunch_icon_url=='.mov') || ($newscrunch_icon_url=='.avi'))
+						{
+							$newscrunch_custom_vdo=newscrunch_get_video_from_post($array[$i]);
+							//$newscrunch_icon_url=newscrunch_custom_video_url($newscrunch_custom_vdo);
+							$newscrunch_icon_url='#spnc-custom-video-popup1';
+							$newscrunch_pop_class='spnc-popup-custom-video';
+							echo '<div id="spnc-custom-video-popup1" class="white-popup mfp-hide mfp-iframe-holder"><video id="spncCustomVideo" controls><source src="'.newscrunch_custom_video_url($newscrunch_custom_vdo).'" type="video/mp4" /></video></div>';
+						}
 					}
 				}
             	?>
@@ -108,16 +118,16 @@ if($newscrunch_hide_show_featured_video == true) {
 											<div class="spnc-video-popup">
 												<?php
 												if(( get_post_format($array[$i]) === 'video') && (!empty($newscrunch_content_featured_video_url))) { ?>
-													<a href="<?php echo esc_url($newscrunch_icon_url);?>" class="spncOpenVideo popup-youtube1" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
+													<a href="<?php echo esc_url($newscrunch_icon_url);?>" class="spncOpenVideo <?php echo esc_attr($newscrunch_pop_class);?>" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
 												<?php }
 												else if(( get_post_format($array[$i]) === 'video') && (!empty($newscrunch_featured_video_url))) { ?>
-													<a href="<?php if(str_contains($newscrunch_featured_video_url, '&')) { echo esc_url(strstr($newscrunch_featured_video_url, '&', true)); } else { echo esc_url($newscrunch_featured_video_url); } ?>" class="spncOpenVideo popup-youtube1" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
+													<a href="<?php if(str_contains($newscrunch_featured_video_url, '&')) { echo esc_url(strstr($newscrunch_featured_video_url, '&', true)); } else { echo esc_url($newscrunch_featured_video_url); } ?>" class="spncOpenVideo <?php echo esc_attr($newscrunch_pop_class);?>" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
 												<?php } 
 												else
 												{ 
 													//old user compatibility
 													if($newscrunch_array_video_url[$i] != ''): ?>
-													<a href="<?php if(str_contains($newscrunch_array_video_url[$i], '&')) { echo esc_url(strstr($newscrunch_array_video_url[$i], '&', true)); } else { echo esc_url($newscrunch_array_video_url[$i]); } ?>" class="spncOpenVideo popup-youtube1" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
+													<a href="<?php if(str_contains($newscrunch_array_video_url[$i], '&')) { echo esc_url(strstr($newscrunch_array_video_url[$i], '&', true)); } else { echo esc_url($newscrunch_array_video_url[$i]); } ?>" class="spncOpenVideo <?php echo esc_attr($newscrunch_pop_class);?>" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
 												<?php endif; 
 												} ?>
 	                                        </div>
@@ -167,6 +177,7 @@ if($newscrunch_hide_show_featured_video == true) {
 						$newscrunch_featured_video_url = get_post_meta( $array[$i], 'newscrunch_post_video_embed', true );
 						//vimeo/youtube url from post content (new user @since 1.6.6)
 						$newscrunch_content_featured_video_url=newscrunch_get_first_video_url($array[$i]);
+						$newscrunch_pop_class='spnc-popup-youtube';
 						
 						//@since 1.6.6
 						if(empty($newscrunch_featured_video_img_url) && !empty($newscrunch_content_featured_video_url ) && ( get_post_format($array[$i]) === 'video'))
@@ -207,6 +218,15 @@ if($newscrunch_hide_show_featured_video == true) {
 							else
 							{
 								$newscrunch_icon_url=$newscrunch_content_featured_video_url;
+								//@since 1.8.5.4  Added all video format support apart from youtube and vimeo
+								if(($newscrunch_icon_url=='.mp4') || ($newscrunch_icon_url=='.mkv') || ($newscrunch_icon_url=='.mov') || ($newscrunch_icon_url=='.avi'))
+								{
+									$newscrunch_custom_vdo=newscrunch_get_video_from_post($array[$i]);
+									//$newscrunch_icon_url=newscrunch_custom_video_url($newscrunch_custom_vdo);
+									$newscrunch_icon_url='#spnc-custom-video-popup'.$array[$i];
+									$newscrunch_pop_class='spnc-popup-custom-video';
+									echo '<div id="spnc-custom-video-popup'.$array[$i].'" class="white-popup mfp-hide mfp-iframe-holder"><video id="spncCustomVideo" controls><source src="'.newscrunch_custom_video_url($newscrunch_custom_vdo).'" type="video/mp4" /></video></div>';
+								}
 							}
 						}
 		            	?>
@@ -222,14 +242,14 @@ if($newscrunch_hide_show_featured_video == true) {
 													<div class="spnc-video-popup">
 													<?php 
 													if(( get_post_format($array[$i]) === 'video') && (!empty($newscrunch_content_featured_video_url))){ ?>
-														<a href="<?php echo esc_url($newscrunch_icon_url);?>" class="spncOpenVideo popup-youtube1" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
+														<a href="<?php echo esc_url($newscrunch_icon_url);?>" class="spncOpenVideo <?php echo esc_attr($newscrunch_pop_class);?>" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
 													<?php }
 													else if(( get_post_format($array[$i]) === 'video') && (!empty($newscrunch_featured_video_url))) { ?>
-														<a href="<?php if(str_contains($newscrunch_featured_video_url, '&')) { echo esc_url(strstr($newscrunch_featured_video_url, '&', true)); } else { echo esc_url($newscrunch_featured_video_url); } ?>" class="spncOpenVideo popup-youtube2" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
+														<a href="<?php if(str_contains($newscrunch_featured_video_url, '&')) { echo esc_url(strstr($newscrunch_featured_video_url, '&', true)); } else { echo esc_url($newscrunch_featured_video_url); } ?>" class="spncOpenVideo <?php echo esc_attr($newscrunch_pop_class);?>" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
 													<?php }
 													else 
 													{ if($newscrunch_array_video_url[$i] != ''): ?>
-														<a href="<?php if(str_contains($newscrunch_array_video_url[$i], '&')) { echo esc_url(strstr($newscrunch_array_video_url[$i], '&', true)); } else { echo esc_url($newscrunch_array_video_url[$i]); } ?>" class="spncOpenVideo popup-youtube2" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
+														<a href="<?php if(str_contains($newscrunch_array_video_url[$i], '&')) { echo esc_url(strstr($newscrunch_array_video_url[$i], '&', true)); } else { echo esc_url($newscrunch_array_video_url[$i]); } ?>" class="spncOpenVideo <?php echo esc_attr($newscrunch_pop_class);?>" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
 													<?php endif; 
 												    } ?>
 	                                              	</div>
@@ -265,6 +285,7 @@ if($newscrunch_hide_show_featured_video == true) {
 						$newscrunch_featured_video_url = get_post_meta( $array[$i], 'newscrunch_post_video_embed', true );
 						//vimeo/youtube url from post content (new user @since 1.6.6)
 						$newscrunch_content_featured_video_url=newscrunch_get_first_video_url($array[$i]);
+						$newscrunch_pop_class='spnc-popup-youtube';
 
 						//@since 1.6.6
 						if(empty($newscrunch_featured_video_img_url) && !empty($newscrunch_content_featured_video_url ) && ( get_post_format($array[$i]) === 'video'))
@@ -305,6 +326,15 @@ if($newscrunch_hide_show_featured_video == true) {
 							else
 							{
 								$newscrunch_icon_url=$newscrunch_content_featured_video_url;
+								//@since 1.8.5.4  Added all video format support apart from youtube and vimeo
+								if(($newscrunch_icon_url=='.mp4') || ($newscrunch_icon_url=='.mkv') || ($newscrunch_icon_url=='.mov') || ($newscrunch_icon_url=='.avi'))
+								{
+									$newscrunch_custom_vdo=newscrunch_get_video_from_post($array[$i]);
+									//$newscrunch_icon_url=newscrunch_custom_video_url($newscrunch_custom_vdo);
+									$newscrunch_icon_url='#spnc-custom-video-popup'.$array[$i];
+									$newscrunch_pop_class='spnc-popup-custom-video';
+									echo '<div id="spnc-custom-video-popup'.$array[$i].'" class="white-popup mfp-hide mfp-iframe-holder"><video id="spncCustomVideo" controls><source src="'.newscrunch_custom_video_url($newscrunch_custom_vdo).'" type="video/mp4" /></video></div>';
+								}
 							}
 						} ?>
 						<li class="spnc_grid_item spnc_grid_item-1">
@@ -319,14 +349,14 @@ if($newscrunch_hide_show_featured_video == true) {
 													<div class="spnc-video-popup">
 														<?php 
 														if(( get_post_format($array[$i]) === 'video') && (!empty($newscrunch_content_featured_video_url))) { ?>
-															<a href="<?php echo esc_url($newscrunch_icon_url);?>" class="spncOpenVideo popup-youtube1" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
+															<a href="<?php echo esc_url($newscrunch_icon_url);?>" class="spncOpenVideo <?php echo esc_attr($newscrunch_pop_class);?>" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
 														<?php }
 														else if(( get_post_format($array[$i]) === 'video') && (!empty($newscrunch_featured_video_url))) { ?>
-															<a href="<?php if(str_contains($newscrunch_featured_video_url, '&')) { echo esc_url(strstr($newscrunch_featured_video_url, '&', true)); } else { echo esc_url($newscrunch_featured_video_url); } ?>" class="spncOpenVideo popup-youtube3" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
+															<a href="<?php if(str_contains($newscrunch_featured_video_url, '&')) { echo esc_url(strstr($newscrunch_featured_video_url, '&', true)); } else { echo esc_url($newscrunch_featured_video_url); } ?>" class="spncOpenVideo <?php echo esc_attr($newscrunch_pop_class);?>" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
 														<?php }
 														else 
 														{	if($newscrunch_array_video_url[$i] != ''): ?>
-																<a href="<?php if(str_contains($newscrunch_array_video_url[$i], '&')) { echo esc_url(strstr($newscrunch_array_video_url[$i], '&', true)); } else { echo esc_url($newscrunch_array_video_url[$i]); } ?>" class="spncOpenVideo popup-youtube3" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
+																<a href="<?php if(str_contains($newscrunch_array_video_url[$i], '&')) { echo esc_url(strstr($newscrunch_array_video_url[$i], '&', true)); } else { echo esc_url($newscrunch_array_video_url[$i]); } ?>" class="spncOpenVideo <?php echo esc_attr($newscrunch_pop_class);?>" title="<?php esc_attr_e('Video Popup','newscrunch'); ?>"><i class="fas fa-solid fa-play"></i></a>
 														<?php endif; 
 														} ?>
 		                                          	</div>

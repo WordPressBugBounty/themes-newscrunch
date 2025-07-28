@@ -1899,7 +1899,7 @@ if ( ! function_exists( 'newscrunch_get_first_video_url' ) ) :
 		}
 		$embed = newscrunch_get_video_from_post( $post_id );
 		// Find the first video URL in the content
-		preg_match( '/https?:\/\/\S+(\.mp4|\.webm|\.ogv|youtube\.com\/embed\/\S+|vimeo\.com\/video\/\S+)/', $embed, $matches );
+		preg_match( '/https?:\/\/\S+(\.mp4|\.webm|\.ogv|\.mov|\.mkv|youtube\.com\/embed\/\S+|vimeo\.com\/video\/\S+)/', $embed, $matches );
 
 		$video_link = false;
 
@@ -2936,3 +2936,24 @@ function newscrunch_excerpt_fn($word_limit) {
     	newscrunch_excerpt($word_limit);
     }
 }
+
+/*
+-------------------------------------------------------------------------------
+ Retrieve MP4/MKV/AVI video foramt
+-------------------------------------------------------------------------------*/
+if ( ! function_exists( 'newscrunch_custom_video_url' ) ) :
+	function newscrunch_custom_video_url($embed) {
+	    $dom = new DOMDocument();
+		// Suppress warnings for invalid HTML
+		libxml_use_internal_errors(true);
+		$dom->loadHTML($embed);
+		libxml_clear_errors();
+
+		$videos = $dom->getElementsByTagName('video');
+
+		foreach ($videos as $video) {
+		    $src = $video->getAttribute('src');
+		    return $src;
+		}
+	}
+endif;

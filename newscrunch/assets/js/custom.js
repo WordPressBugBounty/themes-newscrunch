@@ -104,7 +104,7 @@
         });
 
         // Video section popup
-        $('.popup-youtube1, .popup-youtube2, .popup-youtube3').magnificPopup({
+        $('.spnc-popup-youtube').magnificPopup({
             disableOn: 700,
             type: 'iframe',
             mainClass: 'mfp-fade',
@@ -112,6 +112,30 @@
             preloader: false,
             fixedContentPos: false
         });
+
+
+
+      // Custom MP4 Video Popup (inline)
+    $('.spnc-popup-custom-video').magnificPopup({
+      type: 'inline',
+      midClick: true,
+      mainClass: 'mfp-fade',
+      removalDelay: 160,
+      fixedContentPos: false,
+      closeBtnInside: true,
+      callbacks: {
+        open: function () {
+          const video = document.getElementById('spncCustomVideo');
+          video.pause(); // Ensure paused when opened
+        },
+        close: function () {
+          const video = document.getElementById('spncCustomVideo');
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
+    });
+
 
 
         /* ---------------------------------------------- /*

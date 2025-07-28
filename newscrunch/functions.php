@@ -364,7 +364,7 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                	<li><?php echo "Added feature to hide specific meta at main slider section in PRO."; ?></li>
+		                	<li><?php echo "Added custom video block support for Featured Video Section."; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">

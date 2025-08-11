@@ -404,7 +404,10 @@ if (!class_exists('Newscrunch_About_Page')) {
 			{
 				return true;
 			}
-
+			if( class_exists('Spice_Blocks') && ($name=='Spice Blocks'))
+			{
+				return true;
+			}
 		}
 
 		public function get_plugin_basename_from_slug($slug) {
@@ -543,7 +546,11 @@ function newscrunch_recommended_plugins_array($plugins){
 			'slug'     => 'woocommerce',
 			'desc'     => esc_html__('We highly recommend installing and activating the WooCommerce plugin, which allows you to create a shop and enhance your business.', 'newscrunch'),
 	    );
-
+		$plugins[] = array(
+			'name'     	=> 'Spice Blocks',
+			'slug'     	=> 'spice-blocks',
+			'desc'     	=> esc_html__('It is recommended that you install & activate the Spice Blocks plugin to import the gutenberg starter sites', 'newscrunch' ),
+		);
 	return $plugins;
 }
 add_filter('newscrunch_recommended_plugins', 'newscrunch_recommended_plugins_array');

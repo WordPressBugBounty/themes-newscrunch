@@ -364,7 +364,7 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                	<li><?php echo "Added custom video block support for Featured Video Section."; ?></li>
+		                	<li><?php echo 'Recommanded Spice Blocks plugin for import Gutenberg starter sites.'; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">

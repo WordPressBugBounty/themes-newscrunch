@@ -766,6 +766,53 @@ body .product-category .woocommerce-loop-category__title:hover{color:<?php echo 
     color: #fff;
 }
 .search-panel input[type="search"] {border: 1px solid <?php echo esc_attr($link_color); ?>;}
+.shop-cat-menu .shop-cat-menu-head, .shop-product-search form button{
+     background-color: <?php echo esc_attr($link_color); ?>;
+}
+.shop-cat-menu .shop-cat-card-list a:is(:hover, :focus){
+  color: <?php echo esc_attr($link_color); ?>;
+}
+.shop-product-search .shop-product-cat-search .shop-category-list ul a:is(:hover, :focus){
+  color: <?php echo esc_attr($link_color); ?>;
+}
+.shop-product-search .shop-product-cat-search .shop-category-list .category-list-titl span.shop-cat-close i{
+  background-color: <?php echo esc_attr($link_color); ?>;
+}
+ .header-13 .spnc-custom .spnc-nav>.active>a,
+ .header-13 .spnc-custom .spnc-nav>.active>a:hover,
+.header-13 .spnc-custom .spnc-nav>.active>a:focus{
+     color: <?php echo esc_attr($link_color); ?>;
+}
+
+.header-13 .spnc-custom .header-cart.spnc-nav li > a.cart-icon .cart-count{
+  background-color: <?php echo esc_attr($link_color); ?>;
+}
+.header-13 .spnc-custom .header-cart.spnc-nav li > a.cart-icon{color: #000;}
+.header-13 .spnc-custom .header-cart.spnc-nav li > a.cart-icon:hover{color: <?php echo esc_attr($link_color); ?>;}
+.uti-btns .shop-user a:is(:hover, :focus){
+  color: <?php echo esc_attr($link_color); ?>;
+}
+[data-theme="spnc_dark"] .shop-product-search .shop-product-cat-search .shop-category-list ul a:is(:hover, :focus) {
+  color: <?php echo esc_attr($link_color); ?>;
+}
+@media (max-width: 1100px) {
+    .header-13 .spnc-custom .spnc-toggle {
+        color: <?php echo esc_attr($link_color); ?>;
+    }
+    body .header-13 .spnc-custom .spnc-nav > .active > a,
+    body .header-13 .spnc-custom .spnc-nav > .active > a:hover,
+    body .header-13 .spnc-custom .spnc-nav > .active > a:focus{
+        color: <?php echo esc_attr($link_color); ?>;
+        background-color: transparent;
+    }
+    [data-theme="spnc_dark"] body.newscrunch #wrapper .header-sidebar.header-13 .spnc-custom .spnc-collapse .spnc-nav li.active > a {
+        color: <?php echo esc_attr($link_color); ?>;
+        background-color: transparent;
+    }
+}
+.shop-product-search .shop-product-cat-search .shop-category-list ul {
+      scrollbar-color: <?php echo esc_attr($link_color); ?> #fff;
+}
 </style>
 <?php 
 }

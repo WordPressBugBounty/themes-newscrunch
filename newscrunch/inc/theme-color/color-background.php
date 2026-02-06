@@ -168,13 +168,16 @@ function newscrunch_color_back_custom_css() {
     if($newscrunch_enable_menu_submenu_color == true) { ?>
         <style>
             body .header-4 .spnc-custom .spnc-nav li > a,body .header-5 .spnc-custom .spnc-nav li > a, body .header-6 .spnc-custom .spnc-nav li > a, body .header-7 .spnc-custom .spnc-nav li > a, body .header-8 .spnc-custom .spnc-nav li > a, body .header-12 .spnc-custom .spnc-nav li > a, [data-theme="spnc_dark"] body .header-12 .spnc-custom .spnc-nav li > a,
-            body .spnc-nav > li.parent-menu a, body .spnc-custom .spnc-nav .dropdown.open > a, body .spnc-custom .spnc-nav li > a, [data-theme="spnc_dark"] body .spnc-nav > li.parent-menu a, [data-theme="spnc_dark"] body .spnc-custom .spnc-nav .dropdown.open > a, [data-theme="spnc_dark"] body .spnc-custom .spnc-nav li > a {
+            body .spnc-nav > li.parent-menu a, body .spnc-custom .spnc-nav .dropdown.open > a, body .spnc-custom .spnc-nav li > a, [data-theme="spnc_dark"] body .spnc-nav > li.parent-menu a, [data-theme="spnc_dark"] body .spnc-custom .spnc-nav .dropdown.open > a, [data-theme="spnc_dark"] body .spnc-custom .spnc-nav li > a, .shop-cat-menu .shop-cat-card-list a,
+            [data-theme="spnc_dark"] .shop-cat-menu .shop-cat-card-list a,
+            .shop-cat-menu .shop-cat-card-list .cat-item:has(.children):after, .shop-cat-menu .shop-cat-card-list .menu-item:has(.sub-menu):after,[data-theme="spnc_dark"] .shop-cat-menu .shop-cat-card-list .cat-item:has(.children):after {
                 color: <?php echo esc_attr( get_theme_mod('menu_link_color', '#') ); ?>;
             }
             .header-6 .spnc-custom .spnc-nav li > a:before,[data-theme="spnc_dark"] .header-6 .spnc-custom .spnc-nav li > a:before{
                background-color: <?php echo esc_attr( get_theme_mod('menu_link_color', '#') ); ?>;
             }
-            body .spnc-nav > li.parent-menu a:hover, body .spnc-custom .spnc-nav .open > a:hover, body .spnc-custom .spnc-nav .open.active > a:hover,[data-theme="spnc_dark"] body .spnc-nav > li.parent-menu a:hover, [data-theme="spnc_dark"] body .spnc-custom .spnc-nav .open > a:hover, [data-theme="spnc_dark"] body .spnc-custom .spnc-nav .open.active > a:hover, body.newsblogger .header-12 .spnc-custom .spnc-nav .open > a, [data-theme="spnc_dark"] body.newsblogger.nchild .header-12 .spnc-custom .spnc-nav .open > a {
+            body .spnc-nav > li.parent-menu a:hover, body .spnc-custom .spnc-nav .open > a:hover, body .spnc-custom .spnc-nav .open.active > a:hover,[data-theme="spnc_dark"] body .spnc-nav > li.parent-menu a:hover, [data-theme="spnc_dark"] body .spnc-custom .spnc-nav .open > a:hover, [data-theme="spnc_dark"] body .spnc-custom .spnc-nav .open.active > a:hover, body.newsblogger .header-12 .spnc-custom .spnc-nav .open > a, [data-theme="spnc_dark"] body.newsblogger.nchild .header-12 .spnc-custom .spnc-nav .open > a,
+             body .shop-cat-menu .shop-cat-card-list a:is(:hover, :focus)  {
                     color: <?php echo esc_attr( get_theme_mod('menu_link_hover_color', '#') ); ?>;
             }
 
@@ -193,7 +196,7 @@ function newscrunch_color_back_custom_css() {
             }
 
            body.newscrunch .spnc-custom .spnc-nav > .active > a:hover,body.newscrunch .spnc-custom .spnc-nav > .active > a, body.newscrunch .spnc-custom .spnc-nav > .active > a:focus, body.newscrunch .spnc-custom .spnc-nav > li.parent-menu.active > a:hover, .spnc-custom .spnc-nav li.active > a:hover,body.newscrunch .spnc-custom .spnc-nav .dropdown-menu > .active > a:hover, body.newscrunch .spnc-custom .spnc-nav .open .dropdown-menu > .active > a:hover,[data-theme="spnc_dark"] body .spnc-custom .spnc-nav .dropdown.open.active > a,[data-theme="spnc_dark"] body.newscrunch .spnc-custom .spnc-nav .open .dropdown-menu > .active > a:hover,[data-theme="spnc_dark"] body .spnc-custom .spnc-nav .dropdown.open.active > a:hover,body .spnc-wrapper .header-2 .spnc-custom .spnc-nav > .active > a, body .spnc-wrapper .header-2 .spnc-custom .spnc-nav > .active > a:hover, body .spnc-wrapper .header-2 .spnc-custom .spnc-nav > .active > a:focus,[data-theme="spnc_dark"] body.newscrunch #wrapper .header-sidebar .spnc-custom .spnc-nav > li.parent-menu .dropdown-menu li.active > a:hover,[data-theme="spnc_dark"] body #wrapper .header-6 .spnc-custom .spnc-nav > .active > a,[data-theme="spnc_dark"] body.newscrunch #wrapper .header-6 .spnc-custom .spnc-nav > .active.open > a:hover,[data-theme="spnc_dark"] body.newscrunch #wrapper .header-sidebar .spnc-custom .spnc-collapse .spnc-nav li.active > a:hover,[data-theme="spnc_dark"] body.newscrunch .header-8 .spnc-custom .spnc-nav > .active > a, body .header-8.header-sidebar .spnc-custom .spnc-collapse .spnc-nav .dropdown-menu li.active > a:hover,body.newscrunch .header-3 .spnc-custom .spnc-nav > .active > a, body.newscrunch .header-3 .spnc-custom .spnc-nav > .active > a:hover, body.newscrunch .header-3 .spnc-custom .spnc-nav > .active > a:focus,[data-theme="spnc_dark"] body.newscrunch #wrapper .header-3 .spnc-custom .spnc-nav > .active > a,[data-theme="spnc_dark"] body.newscrunch #wrapper .header-5 .spnc-custom .spnc-nav > .active > a,body.newscrunch #wrapper .header-5 .spnc-custom .spnc-nav > .active > a,[data-theme="spnc_dark"] body.newscrunch #wrapper .header-6 .spnc-custom .spnc-nav > .active > a,body.newscrunch #wrapper .header-6 .spnc-custom .spnc-nav > .active > a ,[data-theme="spnc_dark"] body.newscrunch #wrapper .header-8 .spnc-custom .spnc-nav > .active > a,body.newscrunch #wrapper .header-8 .spnc-custom .spnc-nav > .active > a,body.newscrunch.newscrunch-plus .header-5 .spnc-nav > li.parent-menu .dropdown-menu .active > a, body .header-12 .spnc-custom .spnc-nav > .active > a, [data-theme="spnc_dark"] body #wrapper .header-12 .spnc-custom .spnc-nav > .active > a, [data-theme="spnc_dark"] body.newsblogger .header-12 .spnc-custom .spnc-nav > .active > a, [data-theme="spnc_dark"] body.newsblogger .spnc-custom .spnc-nav .open .dropdown-menu > .active > a, [data-theme="spnc_dark"] body.newsblogger .header-12 .spnc-custom .spnc-nav .dropdown.open.active > a, [data-theme="spnc_dark"] .newsblogger .spnc-nav > li.parent-menu.dropdown .dropdown-menu .open > a, body.newsblogger .header-12 .spnc-custom .spnc-nav .dropdown.open.active > a, body.newsblogger .spnc-nav > li.parent-menu.dropdown .dropdown-menu .open > a, [data-theme="spnc_dark"] .newsblogger.nchild .header-1 .spnc-nav > li.parent-menu.active > a, body.newsblogger.nchild .header-12 .spnc-custom .spnc-nav > .active > a, [data-theme="spnc_dark"] body.newscrunch.newsblogger #wrapper .header-12.header-sidebar .spnc-custom .collapse.spnc-collapse .spnc-nav li.active > a, body.newsblogger.nchild .header-12 .spnc-custom .spnc-nav .open .dropdown-menu > .active > a, body.newsblogger.nchild .header-12 .spnc-custom .spnc-nav .open .dropdown-menu > .active > a:is(:hover, :focus), 
-
+           .newsblogger .header-13 .spnc-custom .spnc-nav>.active>a, .newsblogger .header-13 .spnc-custom .spnc-nav>.active>a:hover, .newsblogger .header-13 .spnc-custom .spnc-nav>.active>a:focus,
            [data-theme="spnc_dark"] body.newscrunch.newsblogger #wrapper .header-12.header-sidebar .spnc.spnc-custom .spnc-collapse .spnc-nav .dropdown-menu > li.active > a, 
            [data-theme="spnc_dark"] body.newscrunch.newsblogger #wrapper .header-12.header-sidebar .spnc.spnc-custom .spnc-collapse .spnc-nav li.active > a {
                 color: <?php echo esc_attr( get_theme_mod('menu_active_link_color', '#') ); ?>;
@@ -270,7 +273,8 @@ function newscrunch_color_back_custom_css() {
             }
             [data-theme="spnc_light"] .spnc-custom .spnc-nav li > a.search-icon,
             [data-theme="spnc_light"] body .header-4 .spnc-custom .spnc-nav li > a.search-icon,
-            [data-theme="spnc_light"] .header-7 .spnc-custom .spnc-nav li > a.search-icon i{
+            [data-theme="spnc_light"] .header-7 .spnc-custom .spnc-nav li > a.search-icon i,
+            [data-theme="spnc_light"] .shop-product-search form button{
                 color: <?php echo esc_attr( get_theme_mod('search_icon_color', '#') ); ?>;
             }
             @media (max-width: 1100px) {
@@ -279,7 +283,8 @@ function newscrunch_color_back_custom_css() {
                 }
             }
             [data-theme="spnc_dark"] body.newscrunch .spnc-custom .spnc-nav li > a.search-icon,
-            [data-theme="spnc_dark"] .header-7 .spnc-custom .spnc-nav li > a.search-icon i{
+            [data-theme="spnc_dark"] .header-7 .spnc-custom .spnc-nav li > a.search-icon i,
+            [data-theme="spnc_dark"] .shop-product-search form button{
                 color: <?php echo esc_attr( get_theme_mod('search_icon_dcolor', '#') ); ?>;
             }
             [data-theme="spnc_light"] .spnc-dark-icon,

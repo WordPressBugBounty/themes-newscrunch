@@ -96,7 +96,7 @@ function newscrunch_archives_options_customizer ( $wp_customize ) {
             'label'     => esc_html__('Hide/Show Author', 'newscrunch' ),
             'type'      => 'toggle',
             'section'   => 'newscrunch_blog_section',
-            'priority'  => 2
+            'priority'  => 3
         )
     ));
 

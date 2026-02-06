@@ -88,6 +88,7 @@ if ( ! function_exists( 'newscrunch_setup' ) ) :
 			array(
 				'primary' => esc_html__( 'Primary Menu', 'newscrunch' ),
 				'footer_menu' => esc_html__( 'Footer Menu', 'newscrunch' ),
+				'shop_categories_menu' => esc_html__( 'Shop Categories Menu', 'newscrunch' ),
 			)
 		);
 
@@ -364,7 +365,7 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                	<li><?php echo 'Recommanded Spice Blocks plugin for import Gutenberg starter sites.'; ?></li>
+		                	<li><?php echo 'Update category setting in featured post widget to select multiple category.'; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">
@@ -889,3 +890,66 @@ add_action('wp_enqueue_scripts', 'newscrunch_enqueue_ajax_script');
 	}
 	add_action('wp_ajax_newscrunch_live_search', 'newscrunch_live_search_ajax');
 	add_action('wp_ajax_nopriv_newscrunch_live_search', 'newscrunch_live_search_ajax');
+
+	//Product Live Search
+	function newscrunch_enqueue_product_ajax_script() {
+	    if ( get_theme_mod('hide_show_product_search', true)) {
+	        wp_enqueue_script('jquery');
+	        wp_enqueue_script('newscrunch-product-ajax-search', get_template_directory_uri() . '/assets/js/product-ajax-search.js', array('jquery'), null, true);
+	        wp_localize_script('newscrunch-product-ajax-search', 'newscrunch_ajax', array(
+	            'ajax_url' => admin_url('admin-ajax.php'),
+	            'searching_text' => esc_html__('Searching...', 'newscrunch')
+	        ));
+	    }
+	}
+	add_action('wp_enqueue_scripts', 'newscrunch_enqueue_product_ajax_script');
+
+	add_action('wp_ajax_newscrunch_live_product_search', 'newscrunch_live_product_search');
+	add_action('wp_ajax_nopriv_newscrunch_live_product_search', 'newscrunch_live_product_search');
+
+	function newscrunch_live_product_search() {
+
+	    $keyword  = sanitize_text_field($_POST['keyword']);
+	    $category = sanitize_text_field($_POST['category']);
+
+	    $args = [
+	        'post_type'      => 'product',
+	        'posts_per_page' => 5,
+	        's'              => $keyword,
+	    ];
+
+	    if (!empty($category)) {
+	        $args['tax_query'] = [
+	            [
+	                'taxonomy' => 'product_cat',
+	                'field'    => 'slug',
+	                'terms'    => $category,
+	            ],
+	        ];
+	    }
+
+	    $query = new WP_Query($args);
+
+	    if ($query->have_posts()) {
+		    while ($query->have_posts()) {
+		        $query->the_post();
+		        global $product;
+
+		        echo '<div class="product-search-result-card">';
+		        echo '<a href="' . esc_url(get_permalink()) . '">';
+		        echo '<div class="product-search-thumb">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</div>';
+		        echo '<div class="product-search-info">';
+		        echo '<span class="product-title">' . esc_html(get_the_title()) . '</span>';
+		        if ($product) {
+		            echo '<span class="product-price">' .  wp_kses_post($product->get_price_html()) . '</span>';
+		        }
+		        echo '</div>';
+		        echo '</a>';
+		        echo '</div>';
+		    }
+		} else {
+		    echo '<div class="no-results">' . esc_html__('No products found.', 'newscrunch') . '</div>';
+		}
+
+	    wp_die();
+	}

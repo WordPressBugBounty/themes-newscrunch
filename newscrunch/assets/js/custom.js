@@ -279,3 +279,294 @@ function updateMenuFocusVisibility() {
 }
 updateMenuFocusVisibility();
 // open and close sidemenu
+
+// js for category panel open and close start---------------------------------------------------
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownWrapper = document.getElementById("shop-product-cat-search");
+   if (!dropdownWrapper) {
+    // Element not found, stop script
+    return;
+  }
+  const trigger = dropdownWrapper.querySelector(".shop-product-cat-selected"); 
+  const dropdown = dropdownWrapper.querySelector(".shop-category-list");
+  const items = dropdown.querySelectorAll("li[role='menuitem']");
+  const shopCloseBtn = dropdownWrapper.querySelector(".shop-cat-close"); 
+  const hiddenInput = document.getElementById("selected-product-cat"); 
+  const categoryLinks = dropdownWrapper.querySelectorAll(".shop-category-list ul li a");
+  const catIcon = dropdownWrapper.querySelector("i.fa-chevron-down");
+
+  let currentIndex = -1;
+
+  // --- Utility functions ---
+  function openDropdown() {
+    dropdownWrapper.classList.add("open");
+    dropdown.setAttribute("aria-hidden", "false");
+    currentIndex = 0;
+
+    if (items.length > 0) {
+      items[currentIndex].querySelector("a").focus();
+    }
+  }
+
+  function closeDropdown() {
+    dropdownWrapper.classList.remove("open");
+    dropdown.setAttribute("aria-hidden", "true");
+    currentIndex = -1;
+    trigger.focus();
+  }
+
+  function selectItem(item) {
+    const link = item.querySelector("a");
+    const value = link.getAttribute("cat-value");
+    const text = link.textContent.trim();
+
+    trigger.textContent = text;
+    hiddenInput.value = value;
+    closeDropdown();
+  }
+
+  // --- Event listeners ---
+
+  // Mouse click on category link
+  categoryLinks.forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const catName = this.textContent;
+      const catSlug = this.getAttribute("cat-value");
+
+      trigger.textContent = catName;
+      hiddenInput.value = catSlug;
+      dropdownWrapper.classList.remove("open");
+    });
+  });
+   if (catIcon) {
+            [trigger, catIcon].forEach(function (element) {
+                element.addEventListener("click", function (e) {
+                    e.stopPropagation();
+                    dropdownWrapper.classList.toggle("open");
+                });
+            });
+        }
+
+  // Trigger button click
+  trigger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdownWrapper.classList.contains("open") ? closeDropdown() : openDropdown();
+  });
+
+  // Close button mouse click
+  shopCloseBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeDropdown();
+  });
+
+  // Close button keyboard (Enter / Space)
+  shopCloseBtn.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      e.stopPropagation();
+      closeDropdown();
+    }
+  });
+
+  // Mouse click on item
+  items.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      selectItem(item);
+    });
+  });
+
+  // Sync currentIndex when links are focused (Tab navigation or mouse focus)
+  items.forEach((item, index) => {
+    const link = item.querySelector("a");
+    link.addEventListener("focus", () => {
+      currentIndex = index;
+    });
+  });
+  // close full dropdown when focus leaves panel
+      if (dropdownWrapper) {
+        dropdownWrapper.addEventListener('focusout', () => {
+          setTimeout(() => {
+            if (!dropdownWrapper.contains(document.activeElement)) {
+              closeDropdown();
+            }
+          }, 0);
+        });
+      }
+  // Keyboard navigation inside dropdown
+  dropdownWrapper.addEventListener("keydown", (e) => {
+    if (!dropdownWrapper.classList.contains("open") &&
+        (e.key === "Enter" || e.key === " " || e.key === "ArrowDown")) {
+      e.preventDefault();
+      openDropdown();
+      return;
+    }
+
+    if (dropdownWrapper.classList.contains("open")) {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        currentIndex = (currentIndex + 1) % items.length;
+        items[currentIndex].querySelector("a").focus();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        items[currentIndex].querySelector("a").focus();
+      } else if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        const currentLink = items[currentIndex].querySelector("a");
+        currentLink.click(); // triggers selection
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        closeDropdown();
+      }
+    }
+  });
+
+  // Close dropdown on outside click
+  document.addEventListener("click", (e) => {
+    if (dropdownWrapper.classList.contains("open") && !dropdownWrapper.contains(e.target)) {
+      closeDropdown();
+    }
+  });
+});
+
+// js for category panel open and close Ends---------------------------------------------------
+
+// header category select open js Start-------------------------------------------------------------
+// Run after DOM is ready (add inside your existing DOMContentLoaded / IIFE)
+(function () {
+  document.addEventListener("DOMContentLoaded", function () {
+    const menus = document.querySelectorAll(".shop-cat-menu");
+    if (!menus.length) return;
+
+    menus.forEach((menuWrapper, idx) => {
+      const toggleBtn = menuWrapper.querySelector(".shop-cat-menu-head");
+      const panel = menuWrapper.querySelector(".shop-cat-card");
+      const items = panel ? panel.querySelectorAll("a") : [];
+      let currentIndex = -1;
+
+      // accessibility setup
+      if (toggleBtn && !toggleBtn.hasAttribute("tabindex")) toggleBtn.setAttribute("tabindex", "0");
+      toggleBtn && toggleBtn.setAttribute("role", "button");
+      toggleBtn && toggleBtn.setAttribute("aria-expanded", "false");
+
+      const panelId = panel.id || `shop-cat-card-${idx}`;
+      panel && panel.setAttribute("id", panelId);
+      toggleBtn && toggleBtn.setAttribute("aria-controls", panelId);
+      panel && panel.setAttribute("aria-hidden", "true");
+
+      function openMenu() {
+        menuWrapper.classList.add("open");
+        panel && panel.setAttribute("aria-hidden", "false");
+        toggleBtn && toggleBtn.setAttribute("aria-expanded", "true");
+        currentIndex = (items.length > 0) ? 0 : -1;
+        if (items.length > 0 && items[0].focus) items[0].focus();
+      }
+
+      function closeMenu() {
+        menuWrapper.classList.remove("open");
+        panel && panel.setAttribute("aria-hidden", "true");
+        toggleBtn && toggleBtn.setAttribute("aria-expanded", "false");
+        currentIndex = -1;
+      }
+
+      function toggleMenu() {
+        menuWrapper.classList.contains("open") ? closeMenu() : openMenu();
+      }
+
+      // click toggle
+      toggleBtn && toggleBtn.addEventListener("click", (ev) => {
+        ev.stopPropagation();
+        toggleMenu();
+      });
+
+      // keyboard toggle
+      toggleBtn && toggleBtn.addEventListener("keydown", (ev) => {
+        const key = ev.key;
+        if (key === "Enter" || key === " ") {
+          ev.preventDefault();
+          toggleMenu();
+        } else if (key === "ArrowDown") {
+          ev.preventDefault();
+          if (!menuWrapper.classList.contains("open")) {
+            openMenu();
+          } else if (items.length) {
+            currentIndex = 0;
+            items[currentIndex].focus();
+          }
+        }
+      });
+
+      // keyboard navigation inside
+      menuWrapper.addEventListener("keydown", (ev) => {
+        const key = ev.key;
+        if (!menuWrapper.classList.contains("open") && (key === "Enter" || key === " " || key === "ArrowDown")) {
+          ev.preventDefault();
+          openMenu();
+          return;
+        }
+        if (!menuWrapper.classList.contains("open")) return;
+
+        if (key === "ArrowDown") {
+          ev.preventDefault();
+          if (!items.length) return;
+          currentIndex = (currentIndex + 1) % items.length;
+          items[currentIndex].focus();
+        } else if (key === "ArrowUp") {
+          ev.preventDefault();
+          if (!items.length) return;
+          currentIndex = (currentIndex - 1 + items.length) % items.length;
+          items[currentIndex].focus();
+        } else if (key === "Escape") {
+          ev.preventDefault();
+          closeMenu();
+          if (toggleBtn && toggleBtn.focus) toggleBtn.focus();
+        }
+      });
+
+      // submenu open/close on focus
+      const parentItems = panel.querySelectorAll('.cat-item');
+      parentItems.forEach((li) => {
+        const submenu = li.querySelector('.children, .sub-menu');
+        if (!submenu) return;
+
+        li.addEventListener('focusin', () => {
+          li.classList.add('keyboard-open');
+          const a = li.querySelector('a');
+          if (a) a.setAttribute('aria-expanded', 'true');
+        });
+
+        li.addEventListener('focusout', () => {
+          setTimeout(() => {
+            if (!li.contains(document.activeElement)) {
+              li.classList.remove('keyboard-open');
+              const a = li.querySelector('a');
+              if (a) a.setAttribute('aria-expanded', 'false');
+            }
+          }, 0);
+        });
+      });
+
+      //  close full dropdown when focus leaves panel
+      if (panel) {
+        panel.addEventListener('focusout', () => {
+          setTimeout(() => {
+            if (!panel.contains(document.activeElement)) {
+              closeMenu();
+            }
+          }, 0);
+        });
+      }
+
+      // close on outside click
+      document.addEventListener("click", (ev) => {
+        if (menuWrapper.classList.contains("open") && !menuWrapper.contains(ev.target)) {
+          closeMenu();
+        }
+      });
+    });
+  });
+})();
+
+// header category select open js Ends-------------------------------------------------------------

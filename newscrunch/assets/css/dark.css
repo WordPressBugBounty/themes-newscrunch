@@ -493,3 +493,124 @@ box-shadow: 0 0 1px 1px rgba(42, 42, 42, 1);}
 [data-theme="spnc_dark"] body.newscrunch .spnc-custom .dropdown-menu.search-panel {background-color: #0e0e0e;box-shadow: 0 0 18px 5px rgba(255, 255, 255, 0.07);}
 [data-theme="spnc_dark"] body.newscrunch .search-panel input[type="search"] {background: #000000;}
 @media (max-width: 1100px) {[data-theme="spnc_dark"] body.newscrunch  .spnc-custom .spnc-nav .search-wrapper a { color: #fff;}}
+
+
+
+[data-theme="spnc_dark"] .header-12.header-sidebar .spnc-custom .spnc-header-logo,
+[data-theme="spnc_dark"] .header-12 .spnc-custom .spnc-navbar {
+  background: #161616;
+}
+
+[data-theme="spnc_dark"] .header-12 .spnc-dark-icon {
+  color: #fff;
+  background-color: #242424;
+}
+
+[data-theme="spnc_dark"] .header-12 .spnc-custom .spnc-nav li>a,
+[data-theme="spnc_dark"] .header-12 .spnc-custom .spnc-widget-toggle>a.spnc-toggle-icon,
+[data-theme="spnc_dark"] .header-12 .spnc-custom .spnc-nav li>a.search-icon {
+  color: #fff;
+}
+
+@media (max-width: 1100px) {
+  [data-theme="spnc_dark"] .header-12 .spnc-custom .spnc-nav {
+    background-color: #242424;
+  }
+
+  [data-theme="spnc_dark"] .header-12 .spnc-custom .spnc-toggle {
+    color: #fff;
+  }
+}
+
+[data-theme="spnc_dark"] .header-12.header-sidebar .spnc-custom .spnc-navbar {
+  border-top: 1px solid #242424;
+}
+
+
+/* Header 13 dark css */
+[data-theme="spnc_dark"] .header-13.header-sidebar .spnc-custom .spnc-header-logo,
+[data-theme="spnc_dark"] .header-13 .spnc-custom .spnc-navbar {
+  background: #161616;
+}
+
+[data-theme="spnc_dark"] .uti-btns .shop-user a,
+[data-theme="spnc_dark"] .uti-btns .shop-wishlist a,
+[data-theme="spnc_dark"] .uti-btns .shop-cart a {
+  color: #ffffff;
+}
+
+[data-theme="spnc_dark"] .header-13.header-sidebar .spnc-custom .spnc-navbar {
+  border-top: 1px solid #242424;
+}
+
+/*[data-theme="spnc_dark"] .header-13 .spnc-custom .spnc-nav li>a,
+[data-theme="spnc_dark"] .header-13 .spnc-custom .spnc-widget-toggle>a.spnc-toggle-icon,
+[data-theme="spnc_dark"] .header-13 .spnc-custom .spnc-nav li>a.search-icon {
+  color: #fff;
+}
+*/
+[data-theme="spnc_dark"] .shop-head-btn .shop-offer-btn,
+[data-theme="spnc_dark"] .shop-cat-menu .shop-cat-card-list a,
+[data-theme="spnc_dark"] .shop-cat-menu .shop-cat-card-list i {
+  color: #fff;
+}
+
+[data-theme="spnc_dark"] .shop-cat-menu .shop-cat-card-list a:is(:hover, :focus) {
+  background-color: #282737;
+}
+
+[data-theme="spnc_dark"] .shop-cat-menu .shop-cat-card,
+[data-theme="spnc_dark"] .shop-cat-menu .shop-cat-card-list a {
+  background: #21202e;
+}
+
+[data-theme="spnc_dark"] .shop-product-search {
+  background: #252525;
+}
+
+[data-theme="spnc_dark"] .shop-product-search .shop-product-cat-selected,
+[data-theme="spnc_dark"] .shop-product-search .shop-product-cat-search i {
+  color: #ffffff;
+}
+
+[data-theme="spnc_dark"] .shop-product-search form::after {
+  background-color: #ffffff24;
+}
+
+[data-theme="spnc_dark"] .shop-product-search .shop-product-cat-search .shop-category-list {
+  background: #21202e;
+}
+
+[data-theme="spnc_dark"] .shop-product-search .shop-product-cat-search .shop-category-list .category-list-titl span,
+[data-theme="spnc_dark"] .shop-product-search .shop-product-cat-search .shop-category-list ul a {
+  color: #ffffff;
+}
+
+[data-theme="spnc_dark"] .shop-product-search form input {
+  color: #ffffff;
+}
+
+[data-theme="spnc_dark"] body .product-search-results-container{
+	background: #21202e;
+}
+
+[data-theme="spnc_dark"] .shop-product-search input[type=text]{
+border: 0;
+}
+
+[data-theme="spnc_dark"] .shop-cat-menu .shop-cat-card-list .menu-item:has(.sub-menu):after,
+[data-theme="spnc_dark"] .shop-cat-menu .shop-cat-card-list .cat-item:has(.children):after{
+	color: #ffffff;
+}
+@media (max-width: 1100px) {
+  [data-theme="spnc_dark"] .shop-product-search::before {
+    background: #242424;
+  }
+}
+[data-theme="spnc_dark"] .header-13 .spnc-custom .header-cart.spnc-nav li > a.cart-icon{color:#fff;}
+[data-theme="spnc_dark"] .header-13 .shop-cat-menu .shop-cat-card-list .cat-item .children, 
+[data-theme="spnc_dark"] .header-13 .shop-cat-menu .shop-cat-card-list .menu-item .sub-menu
+{
+  background-color: #21202e;
+}
+[data-theme="spnc_dark"] .shop-cat-menu-head:focus {outline: 2px dotted #fff;}

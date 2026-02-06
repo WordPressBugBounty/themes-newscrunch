@@ -302,3 +302,19 @@ function newscrunch_live_search_callback( $control ) {
 
     return $is_search_icon_enabled && $search_layout === 'toggle';
 }
+// callback function for enable seach setting 
+function newscrunch_enable_search($control) {
+    if ($control->manager->get_setting('header_layout')->value() != '10') {
+        return true;
+    } else {
+        return false;
+    }
+}
+// callback function for prduct live search
+function newscrunch_enable_product_search($control) {
+    if ($control->manager->get_setting('header_layout')->value() == '10') {
+        return true;
+    } else {
+        return false;
+    }
+}

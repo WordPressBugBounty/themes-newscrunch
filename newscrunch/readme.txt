@@ -1,9 +1,9 @@
 === Newscrunch ===
 
 Contributors: spicethemes
-Requires at least: 4.5
-Tested up to: 6.8
-Stable tag: 1.8.5.5
+Requires at least: 5.4
+Tested up to: 6.9
+Stable tag: 1.8.6.2
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -29,10 +29,19 @@ Keyboard navigation is working properly in the forward direction by using the ta
 Newscrunch is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
-Newscrunch WordPress Theme, Copyright (C) 2023-2025, spicethemes
+Newscrunch WordPress Theme, Copyright (C) 2023-2026, spicethemes
 Newscrunch WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+@Version 1.8.6.2
+* Update category setting in featured post widget to select multiple category.
+
+@Version 1.8.6.1
+* Fixed console error issue.
+
+@Version 1.8.6
+* Added WooCommerce header variation.
 
 @Version 1.8.5.5
 * Recommanded Spice Blocks plugin for import Gutenberg starter sites.
@@ -365,4 +374,4 @@ https://pxhere.com/en/photo/1378105
 https://pxhere.com/en/photo/31285
 
 * Images on /assets/images folder
-Copyright (C) 2025, spicethemes and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
+Copyright (C) 2026, spicethemes and available as [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)

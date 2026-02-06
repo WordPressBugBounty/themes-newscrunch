@@ -33,6 +33,7 @@ function newscrunch_theme_header_panel_customizer ( $wp_customize ) {
                         'hide_show_search_icon',
                         'select_search_layout',
                         'hide_show_live_search',
+                        'hide_show_product_search',
                         'hide_show_sticky_header',
                         'hide_show_dark_light_icon',
                         'hide_show_toggle_icon',
@@ -99,6 +100,9 @@ function newscrunch_theme_header_panel_customizer ( $wp_customize ) {
                 ),
                 '2'    => array(
                     'image' => trailingslashit( get_template_directory_uri() ). '/inc/customizer/assets/img/header2.jpg',
+                ),
+                '10'   => array( 
+                    'image' => trailingslashit( get_template_directory_uri() ) . '/inc/customizer/assets/img/woo-header.jpg',
                 )
             )
         )
@@ -152,6 +156,7 @@ function newscrunch_theme_header_panel_customizer ( $wp_customize ) {
             'label'     =>  esc_html__( 'Enable/Disable Search Icon', 'newscrunch'),
             'section'   =>  'newscrunch_theme_header',
             'settings'   =>  'hide_show_search_icon',
+            'active_callback'   =>  'newscrunch_enable_search',
             'type'      =>  'toggle',
             'priority'  =>  4
         )
@@ -171,7 +176,13 @@ function newscrunch_theme_header_panel_customizer ( $wp_customize ) {
             'label'     => esc_html__('Search Layout','newscrunch' ),
             'section'   => 'newscrunch_theme_header',
             'setting'   => 'select_search_layout',
-            'active_callback'   =>  'newscrunch_search_callback',
+            'active_callback'   =>  function($control) {
+                                        return (
+                                            newscrunch_search_callback($control) &&
+                                            newscrunch_enable_search($control)
+                                        );
+                                    },
+
             'priority'  => 4,
             'type'      => 'select',
             'choices'   =>  
@@ -195,8 +206,32 @@ function newscrunch_theme_header_panel_customizer ( $wp_customize ) {
             'section'   =>  'newscrunch_theme_header',
             'settings'   =>  'hide_show_live_search',
             'type'      =>  'toggle',
-             'active_callback'  => 'newscrunch_live_search_callback',
+             'active_callback'  => function($control) {
+                                        return (
+                                            newscrunch_live_search_callback($control) &&
+                                            newscrunch_enable_search($control)
+                                        );
+                                    },
             'priority'  =>  4
+        )
+    ));
+
+
+     // enable/disable header sticky
+    $wp_customize->add_setting('hide_show_product_search',
+        array(
+            'default'           => true,
+            'sanitize_callback' => 'newscrunch_sanitize_checkbox'
+        )
+    );
+    $wp_customize->add_control(new Newscrunch_Toggle_Control( $wp_customize, 'hide_show_product_search',
+        array(
+            'label'     =>  esc_html__( 'Enable/Disable Product Live Search', 'newscrunch'),
+            'section'   =>  'newscrunch_theme_header',
+            'settings'   =>  'hide_show_product_search',
+            'type'      =>  'toggle',
+            'active_callback'   =>  'newscrunch_enable_product_search',
+            'priority'  =>  5
         )
     ));
 

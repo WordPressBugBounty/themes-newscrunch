@@ -13,6 +13,7 @@
 	# Header
     # Logo Width
     # Enqueue file for customizer preview
+	# Enqueue JS for the Customizer Controls panel
 	# Footer Section
 	# Footer Widget Layout
 	# Footer Bar Menu
@@ -70,6 +71,10 @@ if ( ! function_exists( 'newscrunch_header_template' ) ) {
 		{
 			get_template_part( 'partials/header/default-header' );
 		}
+		else if(get_theme_mod('header_layout','2') == '10')
+		{
+			get_template_part( 'partials/header/woo-header' );
+		}
 		else
 		{
 			get_template_part( 'partials/header/main-header' );
@@ -116,6 +121,22 @@ if ( ! function_exists( 'newscrunch_customizer_preview' ) ) {
 	}
 	add_action('customize_preview_init','newscrunch_customizer_preview');
 }
+
+/*
+-------------------------------------------------------------------------------
+ Enqueue JS for the Customizer Controls panel
+-------------------------------------------------------------------------------*/
+
+function newscrunch_customizer_controls_js() {
+    wp_enqueue_script(
+        'newscrunch-customizer-controls',
+        NEWSCRUNCH_TEMPLATE_DIR_URI . '/inc/customizer/assets/js/customizer-controls.js',
+        array('jquery', 'customize-controls'),
+        false,
+        true
+    );
+}
+add_action('customize_controls_enqueue_scripts', 'newscrunch_customizer_controls_js');
 
 /*
 -------------------------------------------------------------------------------

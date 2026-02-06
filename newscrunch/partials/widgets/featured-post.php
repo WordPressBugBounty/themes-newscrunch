@@ -25,8 +25,7 @@ class Newscrunch_Featured_Post_Widget_Controller extends WP_Widget {
     public function widget( $args, $instance ) {
         if ( ! isset( $args['widget_id'] ) ) { $args['widget_id'] = $this->id;}
         $title      = isset( $instance['title'] ) ? $instance['title'] : '';
-        $category   = isset( $instance['category'] ) ? $instance['category'] : '';
-        if ( ! is_numeric($category) && !empty($category) ) {  $term = get_term_by('slug', $category, 'category'); $category = $term->term_id; }
+        $categories = isset( $instance['category'] ) ? (array) $instance['category'] : [];
         $date       = isset( $instance['date'] ) ? $instance['date'] : '';
         $show_cat   = isset( $instance['show_cat'] ) ? $instance['show_cat'] : '';
         $show_auth  = isset( $instance['show_auth'] ) ? $instance['show_auth'] : '';
@@ -42,7 +41,7 @@ class Newscrunch_Featured_Post_Widget_Controller extends WP_Widget {
             $query_args = new WP_Query( apply_filters( 'widget_posts_args', array(
                 'no_found_rows'       => true,
                 'post_status'         => 'publish',
-                'cat'                 => $category,
+                'category__in'        => $categories,
                 'posts_per_page'      => 5,
                 'order'               => 'DESC',
                 'ignore_sticky_posts' => true
@@ -168,7 +167,7 @@ class Newscrunch_Featured_Post_Widget_Controller extends WP_Widget {
     //Widget Back End
     public function form( $instance ) {
         if ( isset( $instance[ 'title' ])){ $title = $instance[ 'title' ]; } else { $title = esc_html__("Widget title","newscrunch" ); }
-        if ( isset( $instance[ 'category' ])){ $category = $instance[ 'category' ]; }
+        $category = isset( $instance['category'] ) ? (array) $instance['category'] : [];
         if ( isset( $instance[ 'date' ])){ $date = $instance[ 'date' ]; }
         if ( isset( $instance[ 'show_cat' ])){ $show_cat = $instance[ 'show_cat' ]; }  
         if ( isset( $instance[ 'show_auth' ])){ $show_auth = $instance[ 'show_auth' ]; }  
@@ -179,7 +178,6 @@ class Newscrunch_Featured_Post_Widget_Controller extends WP_Widget {
             if ( isset( $instance[ 'rtitle' ])){ $rtitle = $instance[ 'rtitle' ]; } else { $rtitle = __("Read More","newscrunch" ); }
             if ( isset( $instance[ 'ctitle' ])){ $ctitle = $instance[ 'ctitle' ]; } else { $ctitle = __("Comments","newscrunch" ); }
         endif;
-        if ( ! is_numeric($category) ) { $category = get_term_by('slug', $category, 'category'); $category =$category->term_id; }
         ?>
             <!-- Heading -->
             <p class="newscrunch-widet-area">
@@ -188,14 +186,20 @@ class Newscrunch_Featured_Post_Widget_Controller extends WP_Widget {
             </p>
             <!-- Category -->
             <p class="newscrunch-widet-area">
-                <label for="<?php echo esc_attr($this->get_field_id( 'category' )); ?>"><?php echo esc_html__( 'Categories','newscrunch' ); echo ':'; ?></label>
-                <select class="widefat" id="<?php echo esc_attr($this->get_field_id( 'category' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'category' )); ?>">
-                    <option value=""><?php echo esc_html__( 'Select category', 'newscrunch' );?></option>
-                    <?php  
-                    $categories = get_categories(); 
-                    foreach( $categories as $cat ): ?>
-                    <option  value="<?php echo esc_attr($cat->term_id);?>" <?php if($cat->term_id == $category) { echo 'selected'; } ?>><?php echo esc_html($cat->name). ' (' .esc_html($cat->count). ') ';?></option>
-                    <?php endforeach;?>
+                <label><?php esc_html_e('Select multiple categories','newscrunch'); ?></label>
+                <select class="widefat"
+                        name="<?php echo esc_attr($this->get_field_name('category')); ?>[]"
+                        multiple="multiple"
+                        style="height:150px;">
+                    <?php
+                    $categories = get_categories();
+                    foreach ( $categories as $cat ) :
+                    ?>
+                        <option value="<?php echo esc_attr($cat->term_id); ?>"
+                            <?php if ( in_array( $cat->term_id, $category ) ) echo 'selected'; ?>>
+                            <?php echo esc_html($cat->name); ?> (<?php echo esc_html($cat->count); ?>)
+                        </option>
+                    <?php endforeach; ?>
                 </select>
             </p>
             <!-- date -->
@@ -250,7 +254,7 @@ class Newscrunch_Featured_Post_Widget_Controller extends WP_Widget {
     {
       $instance = $old_instance;
       $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
-      $instance['category'] = ( ! empty( $new_instance['category'] ) ) ? sanitize_text_field( $new_instance['category'] ) : '';
+      $instance['category'] = ! empty( $new_instance['category'] ) ? array_map( 'absint', $new_instance['category'] ) : [];
       $instance['date'] = ( ! empty( $new_instance['date'] ) ) ? newscrunch_sanitize_checkbox( $new_instance['date'] ) : '';
       $instance['show_cat'] = ( ! empty( $new_instance['show_cat'] ) ) ? newscrunch_sanitize_checkbox( $new_instance['show_cat'] ) : ''; 
       $instance['show_auth'] = ( ! empty( $new_instance['show_auth'] ) ) ? newscrunch_sanitize_checkbox( $new_instance['show_auth'] ) : ''; 

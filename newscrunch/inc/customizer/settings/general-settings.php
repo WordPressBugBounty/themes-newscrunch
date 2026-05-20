@@ -991,6 +991,36 @@ function newscrunch_general_settings_customizer ( $wp_customize )
                 }
         }
 
+        /* CATEGORY COLOR STYLE */  
+        $wp_customize->add_section('newscrunch_category_style_section',
+        array(
+            'title' => esc_html__('Category Style', 'newscrunch'),
+            'priority' => 2
+        ));
+
+        $wp_customize->add_setting('newscrunch_category_style',
+            array(
+                'default'           =>  'desgin_1',
+                'capability'        =>  'edit_theme_options',
+                'sanitize_callback' =>  'newscrunch_sanitize_select',
+            )
+        );
+
+        $wp_customize->add_control('newscrunch_category_style',
+            array(
+                'label' => esc_html__('Category Style','newscrunch'),
+                'section' => 'newscrunch_category_style_section',
+                'setting' => 'newscrunch_category_style',
+                'type'    =>  'select',
+                'priority' => 2,
+                'choices' =>
+                array(
+                    'desgin_1'  => esc_html__('Design 1','newscrunch' ),
+                    'desgin_2'  => esc_html__('Design 2','newscrunch' )
+                )
+            )
+        );
+
 
         /* Theme Color settings */
         $wp_customize->add_section( 'theme_color' , 

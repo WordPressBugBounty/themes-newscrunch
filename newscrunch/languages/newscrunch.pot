@@ -5,14 +5,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Newscrunch 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/newscrunch-wordpress-theme\n"
-"POT-Creation-Date: 2025-10-06 14:39+0530\n"
+"POT-Creation-Date: 2026-05-14 18:10+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.8\n"
 "X-Domain: newscrunch\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
@@ -492,7 +492,7 @@ msgid "Email"
 msgstr ""
 
 #: comments.php:80 inc/helpers.php:1198 inc/helpers.php:1300
-#: partials/widgets/featured-post.php:38 partials/widgets/featured-post.php:180
+#: partials/widgets/featured-post.php:37 partials/widgets/featured-post.php:179
 #: partials/widgets/single-column.php:34 partials/widgets/single-column.php:94
 #: partials/widgets/single-column.php:139 template-parts/content-blog.php:64
 #: template-parts/content-list.php:86 template-parts/content-overlay.php:85
@@ -1008,7 +1008,7 @@ msgstr ""
 #: inc/customizer/settings/advertisement.php:55
 #: inc/customizer/settings/featured-video.php:116
 #: inc/customizer/settings/general-settings.php:135
-#: inc/customizer/settings/general-settings.php:1047
+#: inc/customizer/settings/general-settings.php:1077
 #: inc/customizer/settings/main-banner.php:310
 #: inc/customizer/settings/single-post-options.php:277
 #: inc/customizer/settings/theme-footer.php:249
@@ -1021,7 +1021,7 @@ msgstr ""
 #: inc/customizer/settings/advertisement.php:56
 #: inc/customizer/settings/featured-video.php:117
 #: inc/customizer/settings/general-settings.php:136
-#: inc/customizer/settings/general-settings.php:1048
+#: inc/customizer/settings/general-settings.php:1078
 #: inc/customizer/settings/main-banner.php:311
 #: inc/customizer/settings/single-post-options.php:278
 #: inc/customizer/settings/theme-footer.php:250
@@ -1490,24 +1490,37 @@ msgstr ""
 msgid "Category Color"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:998
+#: inc/customizer/settings/general-settings.php:997
+#: inc/customizer/settings/general-settings.php:1011
+msgid "Category Style"
+msgstr ""
+
+#: inc/customizer/settings/general-settings.php:1018
+msgid "Design 1"
+msgstr ""
+
+#: inc/customizer/settings/general-settings.php:1019
+msgid "Design 2"
+msgstr ""
+
+#: inc/customizer/settings/general-settings.php:1028
 msgid "Theme Color"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:1016
+#: inc/customizer/settings/general-settings.php:1046
 msgid "Enable custom color skin"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:1035
+#: inc/customizer/settings/general-settings.php:1065
 msgid "Skin Color"
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:1070
-#: inc/customizer/settings/general-settings.php:1074
+#: inc/customizer/settings/general-settings.php:1100
+#: inc/customizer/settings/general-settings.php:1104
 msgid "Note: This setting will work with the boxed layout."
 msgstr ""
 
-#: inc/customizer/settings/general-settings.php:1082
+#: inc/customizer/settings/general-settings.php:1112
 msgid "Theme Background Color"
 msgstr ""
 
@@ -2188,7 +2201,7 @@ msgstr ""
 #: inc/helpers.php:1445 partials/front/main-banner.php:94
 #: partials/front/main-banner.php:193 partials/front/main-banner.php:282
 #: partials/front/missed-1.php:65 partials/front/news-video.php:149
-#: partials/widgets/featured-post.php:89 partials/widgets/featured-post.php:134
+#: partials/widgets/featured-post.php:88 partials/widgets/featured-post.php:133
 #: partials/widgets/post-grid-2-column-slider.php:88
 #: partials/widgets/post-grid-3-column-slider.php:90
 #: partials/widgets/post-list-view-slider.php:86
@@ -2213,7 +2226,7 @@ msgid "author-image"
 msgstr ""
 
 #: inc/helpers.php:1198 inc/helpers.php:1300 inc/helpers.php:1450
-#: partials/widgets/featured-post.php:94 template-parts/content-blog.php:63
+#: partials/widgets/featured-post.php:93 template-parts/content-blog.php:63
 #: template-parts/content-list.php:86 template-parts/content-overlay.php:85
 #: template-parts/content-search.php:61 template-parts/content-single.php:75
 #: template-parts/content.php:71
@@ -2333,8 +2346,8 @@ msgstr ""
 msgid "Next Page"
 msgstr ""
 
-#: partials/front/main-banner.php:184 partials/widgets/featured-post.php:37
-#: partials/widgets/featured-post.php:179
+#: partials/front/main-banner.php:184 partials/widgets/featured-post.php:36
+#: partials/widgets/featured-post.php:178
 #: template-parts/content-archive-first.php:90
 #: template-parts/content-blog.php:92 template-parts/content-first.php:80
 #: template-parts/content-list.php:98 template-parts/content-overlay.php:118
@@ -2407,7 +2420,7 @@ msgstr ""
 msgid "Display the advertisement"
 msgstr ""
 
-#: partials/widgets/advertisement.php:61 partials/widgets/featured-post.php:170
+#: partials/widgets/advertisement.php:61 partials/widgets/featured-post.php:169
 #: partials/widgets/post-grid-2-column-slider.php:173
 #: partials/widgets/post-grid-2-column.php:89
 #: partials/widgets/post-grid-3-column-slider.php:146
@@ -2416,7 +2429,7 @@ msgstr ""
 msgid "Widget title"
 msgstr ""
 
-#: partials/widgets/advertisement.php:70 partials/widgets/featured-post.php:186
+#: partials/widgets/advertisement.php:70 partials/widgets/featured-post.php:184
 #: partials/widgets/post-grid-2-column-slider.php:189
 #: partials/widgets/post-grid-2-column.php:98
 #: partials/widgets/post-grid-3-column-slider.php:161
@@ -2445,24 +2458,11 @@ msgstr ""
 msgid "Display your post as featured post"
 msgstr ""
 
-#: partials/widgets/featured-post.php:191
-#: partials/widgets/post-grid-2-column-slider.php:194
-#: partials/widgets/post-grid-2-column.php:103
-#: partials/widgets/post-grid-3-column-slider.php:166
-#: partials/widgets/post-list-grid-view.php:112
-#: partials/widgets/post-list-view-slider.php:171
-#: partials/widgets/post-overlay-slider.php:280
-#: partials/widgets/single-column.php:105
-msgid "Categories"
+#: partials/widgets/featured-post.php:189
+msgid "Select multiple categories"
 msgstr ""
 
-#: partials/widgets/featured-post.php:193
-#: partials/widgets/post-grid-2-column.php:105
-#: partials/widgets/single-column.php:107
-msgid "Select category"
-msgstr ""
-
-#: partials/widgets/featured-post.php:204
+#: partials/widgets/featured-post.php:208
 #: partials/widgets/post-grid-2-column-slider.php:229
 #: partials/widgets/post-grid-2-column.php:121
 #: partials/widgets/post-grid-3-column-slider.php:201
@@ -2473,7 +2473,7 @@ msgstr ""
 msgid "Show post date"
 msgstr ""
 
-#: partials/widgets/featured-post.php:209
+#: partials/widgets/featured-post.php:213
 #: partials/widgets/post-grid-2-column-slider.php:239
 #: partials/widgets/post-grid-3-column-slider.php:196
 #: partials/widgets/post-list-view-slider.php:206
@@ -2481,23 +2481,23 @@ msgstr ""
 msgid "Show post category"
 msgstr ""
 
-#: partials/widgets/featured-post.php:214
+#: partials/widgets/featured-post.php:218
 #: partials/widgets/post-grid-2-column-slider.php:234
 #: partials/widgets/post-grid-3-column-slider.php:206
 #: partials/widgets/post-overlay-slider.php:310
 msgid "Show author details"
 msgstr ""
 
-#: partials/widgets/featured-post.php:219
+#: partials/widgets/featured-post.php:223
 #: partials/widgets/single-column.php:128
 msgid "Show comments"
 msgstr ""
 
-#: partials/widgets/featured-post.php:224
+#: partials/widgets/featured-post.php:228
 msgid "Show read more"
 msgstr ""
 
-#: partials/widgets/featured-post.php:230
+#: partials/widgets/featured-post.php:234
 #: partials/widgets/post-grid-2-column-slider.php:245
 #: partials/widgets/post-grid-2-column.php:127
 #: partials/widgets/post-grid-3-column-slider.php:212
@@ -2507,7 +2507,7 @@ msgstr ""
 msgid "Show read time"
 msgstr ""
 
-#: partials/widgets/featured-post.php:231
+#: partials/widgets/featured-post.php:235
 #: partials/widgets/post-grid-2-column-slider.php:246
 #: partials/widgets/post-grid-2-column.php:128
 #: partials/widgets/post-grid-3-column-slider.php:213
@@ -2517,11 +2517,11 @@ msgstr ""
 msgid "If you want display post read time, then you should need to enable this setting from customizer ( Global >> Read Time )"
 msgstr ""
 
-#: partials/widgets/featured-post.php:235
+#: partials/widgets/featured-post.php:239
 msgid "Read More Title"
 msgstr ""
 
-#: partials/widgets/featured-post.php:240 partials/widgets/tabs.php:278
+#: partials/widgets/featured-post.php:244 partials/widgets/tabs.php:278
 msgid "Comment Title"
 msgstr ""
 
@@ -2535,6 +2535,16 @@ msgstr ""
 
 #: partials/widgets/post-grid-2-column-slider.php:72
 msgid "Posts Date"
+msgstr ""
+
+#: partials/widgets/post-grid-2-column-slider.php:194
+#: partials/widgets/post-grid-2-column.php:103
+#: partials/widgets/post-grid-3-column-slider.php:166
+#: partials/widgets/post-list-grid-view.php:112
+#: partials/widgets/post-list-view-slider.php:171
+#: partials/widgets/post-overlay-slider.php:280
+#: partials/widgets/single-column.php:105
+msgid "Categories"
 msgstr ""
 
 #: partials/widgets/post-grid-2-column-slider.php:196
@@ -2566,6 +2576,11 @@ msgstr ""
 
 #: partials/widgets/post-grid-2-column.php:19
 msgid "This represent your post design layout in 2 column"
+msgstr ""
+
+#: partials/widgets/post-grid-2-column.php:105
+#: partials/widgets/single-column.php:107
+msgid "Select category"
 msgstr ""
 
 #: partials/widgets/post-grid-3-column-slider.php:15

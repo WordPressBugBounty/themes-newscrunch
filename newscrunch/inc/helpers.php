@@ -2978,3 +2978,23 @@ if ( ! function_exists( 'newscrunch_custom_video_url' ) ) :
 		}
 	}
 endif;
+
+/*
+-------------------------------------------------------------------------------
+ Category style css function
+-------------------------------------------------------------------------------*/
+function newscrunch_category_style_css() {
+    $category_style = get_theme_mod('newscrunch_category_style', 'desgin_1');
+    if($category_style == 'desgin_2'){
+    ?>
+    <style>
+        body.newscrunch .spnc-entry-meta .spnc-cat-links a:not(.spnc-category-page .spnc-blog-cat-wrapper .spnc-first-catpost .spnc-cat-links a, .widget_newscrunch_grid_slider_two_column .spnc-filter .spnc-post .spnc-entry-meta a, .widget_newscrunch_list_view_slider .spnc-blog-wrapper .spnc-post .spnc-entry-meta a, .widget_spncp_filter_two_column .spnc-filter .spnc-post .spnc-entry-meta a), 
+        .spnc-post-list-view-section .spnc-post .spnc-post-content .spnc-cat-links a, .spnc-single-post.spnc-single-post-one .spnc-post-overlay .spnc-cat-links a, .spnc-single-post.spnc-single-post-two .spnc-post-overlay .entry-header .spnc-cat-links a, .spnc-single-post.spnc-single-post-three .spnc-post-overlay .entry-header .spnc-cat-links a, .spnc-single-post.spnc-single-post-six .spnc-post-overlay .entry-header .spnc-cat-links a, .seven-single .spnc-post-overlay .entry-header .spnc-cat-links a , .page-template .spnc-blog-page.spnc-list-view .spnc-post .spnc-post-content .spnc-cat-links a{
+        	padding-right: 18px !important;
+            clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+        }
+    </style>
+    <?php
+	}
+}
+add_action('wp_head', 'newscrunch_category_style_css');

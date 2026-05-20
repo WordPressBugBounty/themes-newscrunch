@@ -365,7 +365,7 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                	<li><?php echo 'Update category setting in featured post widget to select multiple category.'; ?></li>
+		                	<li><?php echo ' Added category style variations.'; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">

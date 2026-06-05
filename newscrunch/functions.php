@@ -71,9 +71,10 @@ if ( ! function_exists( 'newscrunch_setup' ) ) :
 		/*
 		* Add theme supports.
 		*/
+		add_theme_support( 'editor-styles' );
+        add_editor_style( NEWSCRUNCH_TEMPLATE_DIR_URI .'/assets/css/editor-style.css');
 		add_theme_support( 'title-tag' );
 		add_theme_support( "align-wide" );
-		add_editor_style();
 		add_theme_support( 'responsive-embeds' );
 		add_theme_support( 'wp-block-styles' );
 		add_theme_support( 'register_block_style' );
@@ -365,7 +366,7 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                	<li><?php echo ' Added category style variations.'; ?></li>
+		                	<li><?php echo ' Fixed Post/Page Editor Style issue.'; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">

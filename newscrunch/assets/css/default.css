@@ -558,3 +558,12 @@ body .product-category .woocommerce-loop-category__title:hover{color: #669c9b;}
 .shop-product-search .shop-product-cat-search .shop-category-list ul {
       scrollbar-color: #669c9b #fff;
 }
+.spnc-wrapper.spnc-btn-1 .spnc-blog-home .spnc-main-wrapper{
+    border-bottom: 1px solid #669C9B;
+}
+.spnc-wrapper.spnc-btn-1 .spnc-blog-home .spnc-main-wrapper-heading{
+    background-color: #669C9B;
+}
+.spnc-blog-home .spnc-main-wrapper {
+    background-color: #669C9B;
+}

@@ -15,6 +15,26 @@ function newscrunch_archives_options_customizer ( $wp_customize ) {
 		)
 	);
 
+
+    // Blog Post Section Title
+    $wp_customize->add_setting('blog_post_section_title', 
+        array(
+            'default'           =>  esc_html__('Latest News', 'newscrunch'),
+            'sanitize_callback' =>  'newscrunch_sanitize_text',
+            'transport'         =>  'postMessage',
+        )
+    );
+
+    $wp_customize->add_control( 'blog_post_section_title',
+        array(
+            'label'             =>  esc_html__('Blog Title', 'newscrunch'),
+            'section'           =>  'newscrunch_blog_section',
+            'settings'          =>  'blog_post_section_title',
+            'type'              =>  'text',
+            'priority'          =>  1
+        )
+    );
+
     if('NewsBlogger' == wp_get_theme()) { $blog='list'; } else {$blog='grid';}
 
     // index blog layouts

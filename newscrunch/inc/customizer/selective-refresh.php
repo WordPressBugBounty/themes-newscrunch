@@ -82,6 +82,14 @@ function newscrunch_customize_selective_refresh( $wp_customize ) {
         )
     );
 
+   // Blog Post Title
+    $wp_customize->selective_refresh->add_partial('blog_post_section_title',
+        array(
+            'selector'        => '.spnc-blog-home .spnc-blog-title',
+            'render_callback' => 'newscrunch_blog_section_title_callback'
+        )
+    );
+
     // Releted Post Title
     $wp_customize->selective_refresh->add_partial('newscrunch_related_post_title',
         array(
@@ -167,4 +175,7 @@ function newscrunch_missed_section_title_callback(){
 function newscrunch_wc_product_sale_badge_text_callback() {
     $badge_text = get_theme_mod('newscrunch_wc_product_sale_badge_text', 'Sale'); 
     return esc_html($badge_text); 
+}
+function newscrunch_blog_section_title_callback(){
+    return get_theme_mod('blog_post_section_title');
 }

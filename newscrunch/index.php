@@ -214,7 +214,21 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                             if(get_theme_mod('archive_blog_variation','list')=='list')
                                             {
                                                 $i=1;
-                                                echo '<div class="spnc-blog-section"><div class="spnc-post-list-view-section">';
+                                                echo '<div class="spnc-blog-section"><div class="spnc-post-list-view-section spnc-blog-home">';
+
+                                                $newscrunch_blog_post_section_title = get_theme_mod('blog_post_section_title',__('Latest News','newscrunch'));
+                                                     if(!empty($newscrunch_blog_post_section_title)):
+                                                    ?>      
+                                                   <div class="spnc-list-box">                                 
+                                                    <div class="spnc-main-wrapper">
+                                                        <div class="spnc-main-wrapper-heading">
+                                                            <h2 class="spnc-blog-title"><?php echo esc_html($newscrunch_blog_post_section_title);?></h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php endif; 
+
+
                                                 while (have_posts()): the_post();
                                                 get_template_part( 'template-parts/content-list');
                                                 // Insert a random advertisement
@@ -232,7 +246,20 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                             }
                                             else if(get_theme_mod('archive_blog_variation','list')=='overlay'){
                                             $i=1;
-                                                echo '<div class="spnc-blog-cat-wrapper">';
+                                                echo '<div class="spnc-blog-cat-wrapper spnc-blog-home">';
+
+                                                $newscrunch_blog_post_section_title = get_theme_mod('blog_post_section_title',__('Latest News','newscrunch'));
+                                                 if(!empty($newscrunch_blog_post_section_title)):
+                                                ?>      
+                                               <div class="spnc-overlay-box">
+                                                    <div class="spnc-main-wrapper">
+                                                        <div class="spnc-main-wrapper-heading">
+                                                            <h2 class="spnc-blog-title"><?php echo esc_html($newscrunch_blog_post_section_title);?></h2>
+                                                        </div>
+                                                    </div>  
+                                                </div>
+                                                 <?php endif; 
+
                                                     while (have_posts()): the_post();
                                                     get_template_part( 'template-parts/content-overlay');
                                                     // Insert a random advertisement
@@ -251,7 +278,7 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                             else
                                             {
                                                 $i=1;
-                                                echo '<div class="spnc-blog-cat-wrapper">';
+                                                echo '<div class="spnc-blog-cat-wrapper spnc-blog-home">';
                                                     while (have_posts()): the_post();
                                                         if($i==1){
                                                             get_template_part( 'template-parts/content-first');
@@ -292,7 +319,7 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                           if(get_theme_mod('archive_blog_variation','grid')=='grid')
                                           {
                                             $i=1;
-                                            echo '<div class="spnc-blog-cat-wrapper">';
+                                            echo '<div class="spnc-blog-cat-wrapper spnc-blog-home">';
                                                 while (have_posts()): the_post();
                                                     if($i==1){
                                                         get_template_part( 'template-parts/content-first');
@@ -314,7 +341,20 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                           }
                                           else if(get_theme_mod('archive_blog_variation','grid')=='overlay'){
                                             $i=1;
-                                                echo '<div class="spnc-blog-cat-wrapper">';
+                                                echo '<div class="spnc-blog-cat-wrapper spnc-blog-home">';
+
+                                                 $newscrunch_blog_post_section_title = get_theme_mod('blog_post_section_title',__('Latest News','newscrunch'));
+                                                 if(!empty($newscrunch_blog_post_section_title)):
+                                                ?>      
+                                                <div class="spnc-overlay-box">                     
+                                                    <div class="spnc-main-wrapper">
+                                                        <div class="spnc-main-wrapper-heading">
+                                                            <h2 class="spnc-blog-title"><?php echo esc_html($newscrunch_blog_post_section_title);?></h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php endif; 
+
                                                     while (have_posts()): the_post();
                                                     get_template_part( 'template-parts/content-overlay');
                                                     // Insert a random advertisement
@@ -333,7 +373,21 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                           else
                                           {
                                                 $i=1;
-                                                echo '<div class="spnc-blog-section"><div class="spnc-post-list-view-section">';
+                                                echo '<div class="spnc-blog-section"><div class="spnc-post-list-view-section spnc-blog-home">';
+
+
+                                             $newscrunch_blog_post_section_title = get_theme_mod('blog_post_section_title',__('Latest News','newscrunch'));
+                                                 if(!empty($newscrunch_blog_post_section_title)):
+                                                ?>      
+                                               <div class="spnc-list-box">                                 
+                                                <div class="spnc-main-wrapper">
+                                                    <div class="spnc-main-wrapper-heading">
+                                                        <h2 class="spnc-blog-title"><?php echo esc_html($newscrunch_blog_post_section_title);?></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php endif; 
+
                                                 while (have_posts()): the_post();
                                                 get_template_part( 'template-parts/content-list');
                                                 // Insert a random advertisement
@@ -358,7 +412,20 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                             if(get_theme_mod('archive_blog_variation','list')=='list')
                                             {
                                                 $i=1;
-                                                echo '<div class="spnc-blog-section"><div class="spnc-post-list-view-section">';
+                                                echo '<div class="spnc-blog-section"><div class="spnc-post-list-view-section spnc-blog-home">';
+
+                                                 $newscrunch_blog_post_section_title = get_theme_mod('blog_post_section_title',__('Latest News','newscrunch'));
+                                                 if(!empty($newscrunch_blog_post_section_title)):
+                                                ?>      
+                                                <div class="spnc-list-box">
+                                                    <div class="spnc-main-wrapper">
+                                                        <div class="spnc-main-wrapper-heading">
+                                                            <h2 class="spnc-blog-title"><?php echo esc_html($newscrunch_blog_post_section_title);?></h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php endif; 
+
                                                 while (have_posts()): the_post();
                                                     get_template_part( 'template-parts/content-list');
                                                     $i++;
@@ -368,7 +435,7 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                             else
                                             {
                                                 $i=1; 
-                                                echo '<div class="spnc-blog-cat-wrapper">';
+                                                echo '<div class="spnc-blog-cat-wrapper spnc-blog-home">';
                                                     while (have_posts()): the_post();
                                                         if($i==1){
                                                             get_template_part( 'template-parts/content-first');
@@ -384,7 +451,7 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                             if(get_theme_mod('archive_blog_variation','grid')=='grid')
                                             {
                                                 $i=1;
-                                                echo '<div class="spnc-blog-cat-wrapper">';
+                                                echo '<div class="spnc-blog-cat-wrapper spnc-blog-home">';
                                                 while (have_posts()): the_post();
                                                     if($i==1){
                                                         get_template_part( 'template-parts/content-first');
@@ -398,7 +465,20 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                             else
                                             {
                                                 $i=1;
-                                                echo '<div class="spnc-blog-section"><div class="spnc-post-list-view-section">';
+                                                echo '<div class="spnc-blog-section"><div class="spnc-post-list-view-section spnc-blog-home">';
+
+                                              $newscrunch_blog_post_section_title = get_theme_mod('blog_post_section_title',__('Latest News','newscrunch'));
+                                                    if(!empty($newscrunch_blog_post_section_title)):
+                                                        ?>      
+                                                   <div class="spnc-list-box">                                 
+                                                    <div class="spnc-main-wrapper">
+                                                        <div class="spnc-main-wrapper-heading">
+                                                            <h2 class="spnc-blog-title"><?php echo esc_html($newscrunch_blog_post_section_title);?></h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php endif; 
+
                                                 while (have_posts()): the_post();
                                                     get_template_part( 'template-parts/content-list');
                                                 $i++;

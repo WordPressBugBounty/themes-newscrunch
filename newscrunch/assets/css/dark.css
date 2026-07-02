@@ -614,3 +614,6 @@ border: 0;
   background-color: #21202e;
 }
 [data-theme="spnc_dark"] .shop-cat-menu-head:focus {outline: 2px dotted #fff;}
+
+[data-theme="spnc_dark"]  .spnc-blog-home .spnc-list-box,
+[data-theme="spnc_dark"]  .spnc-blog-home .spnc-overlay-box { background-color: #1b1b1b; }

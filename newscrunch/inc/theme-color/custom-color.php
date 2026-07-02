@@ -813,6 +813,15 @@ body .product-category .woocommerce-loop-category__title:hover{color:<?php echo 
 .shop-product-search .shop-product-cat-search .shop-category-list ul {
       scrollbar-color: <?php echo esc_attr($link_color); ?> #fff;
 }
+.spnc-wrapper.spnc-btn-1 .spnc-blog-home .spnc-main-wrapper{
+    border-bottom: 1px solid <?php echo esc_attr($link_color); ?>;
+}
+.spnc-wrapper.spnc-btn-1 .spnc-blog-home .spnc-main-wrapper-heading{
+    background-color: <?php echo esc_attr($link_color); ?>;
+}
+.spnc-blog-home .spnc-main-wrapper {
+    background-color: <?php echo esc_attr($link_color); ?>;
+}
 </style>
 <?php 
 }

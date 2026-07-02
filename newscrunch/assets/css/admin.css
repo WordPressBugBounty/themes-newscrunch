@@ -40,7 +40,6 @@
 .newscrunch-theme-notice .theme-admin-button-group .theme-admin-button > span,
 .newscrunch-update-notice .theme-admin-button span {
     display: inline-block;
-    vertical-align: middle;
 }
 .newscrunch-theme-notice .theme-admin-button-group .admin-button-primary {
     border-color: #ff495c;
@@ -238,3 +237,4 @@
 }
 .dismiss-welcome-notice:is(:hover, :focus), .dismiss-update-notice:is(:hover, :focus) { color: #ffffff; }
 .newscrunch-theme-notice.updated { padding-bottom: 5px; }
+div.notice a, div.updated a, div.notice a:hover, div.updated a:hover {color: #fff; text-decoration: none;}

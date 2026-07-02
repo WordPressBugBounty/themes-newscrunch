@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Newscrunch 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/newscrunch-wordpress-theme\n"
-"POT-Creation-Date: 2026-05-14 18:10+0530\n"
+"POT-Creation-Date: 2026-07-01 17:33+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,7 +55,7 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: admin/inc/class-spicethemes-about-page.php:116 functions.php:217
+#: admin/inc/class-spicethemes-about-page.php:116 functions.php:218
 msgid "Welcome to"
 msgstr ""
 
@@ -143,7 +143,7 @@ msgstr ""
 msgid "Import Image"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:26 functions.php:239
+#: admin/tab-pages/getting-started.php:26 functions.php:240
 #: inc/customizer-notify/newscrunch-customizer-notify-section.php:301
 msgid "Install Plugin"
 msgstr ""
@@ -206,7 +206,7 @@ msgstr ""
 msgid "Theme Demos"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:101 functions.php:233
+#: admin/tab-pages/getting-started.php:101 functions.php:234
 msgid "Help Docs"
 msgstr ""
 
@@ -234,7 +234,7 @@ msgstr ""
 msgid "Free vs Pro"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:117 functions.php:377
+#: admin/tab-pages/getting-started.php:117 functions.php:378
 msgid "Changelog"
 msgstr ""
 
@@ -521,132 +521,141 @@ msgstr ""
 msgid "Post Comment"
 msgstr ""
 
-#: functions.php:89
+#: functions.php:90
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:90
+#: functions.php:91
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:92
 msgid "Shop Categories Menu"
 msgstr ""
 
-#: functions.php:208
+#: functions.php:209
 msgid "Hello"
 msgstr ""
 
-#: functions.php:222
+#: functions.php:223
 msgid "is now installed and ready to use. We've provide some links to get you started."
 msgstr ""
 
-#: functions.php:225 functions.php:227
+#: functions.php:226 functions.php:228
 msgid "Theme Dashboard"
 msgstr ""
 
-#: functions.php:229
+#: functions.php:230
 msgid "Live Demo"
 msgstr ""
 
-#: functions.php:231
+#: functions.php:232
 msgid "View Live Demos"
 msgstr ""
 
-#: functions.php:235
+#: functions.php:236
 msgid "Theme Documentation"
 msgstr ""
 
-#: functions.php:245
+#: functions.php:246
 msgid "Welcome Banner"
 msgstr ""
 
-#: functions.php:248 functions.php:394
+#: functions.php:249 functions.php:395
 msgid "Dismiss this notice"
 msgstr ""
 
-#: functions.php:361
+#: functions.php:362
 msgid "Current"
 msgstr ""
 
-#: functions.php:364
+#: functions.php:365
 msgid "We've consistently aimed to meet our users' needs and demands. In order to address specific requirements and rectify issues from our previous version, we've rolled out version"
 msgstr ""
 
-#: functions.php:364
+#: functions.php:365
 msgid "complete with exciting new features. Take a look now!"
 msgstr ""
 
-#: functions.php:372
+#: functions.php:373
 msgid "Try Now"
 msgstr ""
 
-#: functions.php:374
+#: functions.php:375
 msgid "Try It Now"
 msgstr ""
 
-#: functions.php:379
+#: functions.php:380
 msgid "See Changelog"
 msgstr ""
 
-#: functions.php:382 functions.php:384
+#: functions.php:383 functions.php:385
 msgid "Watch Videos"
 msgstr ""
 
-#: functions.php:387 functions.php:389
+#: functions.php:388 functions.php:390
 msgid "Upgrade To Pro"
 msgstr ""
 
-#: functions.php:436
+#: functions.php:437
 msgid "ago"
 msgstr ""
 
-#: functions.php:450
+#: functions.php:451
 msgid "date-time"
 msgstr ""
 
-#: functions.php:464
+#: functions.php:465
 msgid "You do not have permission to manage plugins."
 msgstr ""
 
-#: functions.php:469
+#: functions.php:470
 msgid "No plugin slug provided."
 msgstr ""
 
-#: functions.php:496
+#: functions.php:497
 msgid "You do not have permission to install plugins."
 msgstr ""
 
-#: functions.php:502
+#: functions.php:503
 msgid "Security check failed."
 msgstr ""
 
-#: functions.php:507
+#: functions.php:508
 msgid "No plugin URL provided."
 msgstr ""
 
-#: functions.php:523
+#: functions.php:524
 msgid "Invalid file type."
 msgstr ""
 
-#: functions.php:811
+#: functions.php:812
 msgid "Related products"
 msgstr ""
 
-#: functions.php:827
+#: functions.php:828
 msgid "You may also like…"
 msgstr ""
 
-#: functions.php:852 functions.php:901
+#: functions.php:853 functions.php:902
 msgid "Searching..."
 msgstr ""
 
-#: functions.php:886
+#: functions.php:887
 msgid "No results found."
 msgstr ""
 
-#: functions.php:951
+#: functions.php:952
 msgid "No products found."
+msgstr ""
+
+#: gutenberg-news-template.php:212 gutenberg-news-template.php:233
+#: gutenberg-news-template.php:283 gutenberg-news-template.php:305
+#: gutenberg-news-template.php:335 gutenberg-news-template.php:388
+#: inc/customizer/settings/archives-options.php:22 index.php:219 index.php:251
+#: index.php:346 index.php:379 index.php:417 index.php:470
+#: template-parts/content-first.php:11
+msgid "Latest News"
 msgstr ""
 
 #: header.php:25
@@ -1036,12 +1045,16 @@ msgstr ""
 msgid "Blog/Archives"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:32
-#: inc/customizer/settings/archives-options.php:53
+#: inc/customizer/settings/archives-options.php:30
+msgid "Blog Title"
+msgstr ""
+
+#: inc/customizer/settings/archives-options.php:52
+#: inc/customizer/settings/archives-options.php:73
 msgid "Blog Variation"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:78
+#: inc/customizer/settings/archives-options.php:98
 #: inc/customizer/settings/main-banner.php:176
 #: inc/customizer/settings/news-highlight.php:185
 #: partials/widgets/post-grid-2-column-slider.php:206
@@ -1054,40 +1067,40 @@ msgstr ""
 msgid "Number of posts to show"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:96
+#: inc/customizer/settings/archives-options.php:116
 #: inc/customizer/settings/single-post-options.php:152
 msgid "Hide/Show Author"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:112
+#: inc/customizer/settings/archives-options.php:132
 #: inc/customizer/settings/single-post-options.php:137
 msgid "Hide/Show Tag"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:128
+#: inc/customizer/settings/archives-options.php:148
 #: inc/customizer/settings/single-post-options.php:122
 msgid "Hide/Show Categories"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:144
+#: inc/customizer/settings/archives-options.php:164
 #: inc/customizer/settings/single-post-options.php:182
 msgid "Hide/Show Comments"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:160
+#: inc/customizer/settings/archives-options.php:180
 msgid "Hide/Show Title"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:176
+#: inc/customizer/settings/archives-options.php:196
 msgid "Hide/Show Description"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:192
+#: inc/customizer/settings/archives-options.php:212
 #: inc/customizer/settings/single-post-options.php:167
 msgid "Hide/Show Date"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:208
+#: inc/customizer/settings/archives-options.php:228
 #: inc/customizer/settings/main-banner.php:236
 msgid "Hide/Show Read More"
 msgstr ""
@@ -2206,7 +2219,7 @@ msgstr ""
 #: partials/widgets/post-grid-3-column-slider.php:90
 #: partials/widgets/post-list-view-slider.php:86
 #: template-parts/content-archive-first.php:66
-#: template-parts/content-blog.php:46 template-parts/content-first.php:46
+#: template-parts/content-blog.php:46 template-parts/content-first.php:57
 #: template-parts/content-list.php:79 template-parts/content-overlay.php:57
 #: template-parts/content-search.php:44 template-parts/content-single.php:58
 #: template-parts/content.php:52
@@ -2349,7 +2362,7 @@ msgstr ""
 #: partials/front/main-banner.php:184 partials/widgets/featured-post.php:36
 #: partials/widgets/featured-post.php:178
 #: template-parts/content-archive-first.php:90
-#: template-parts/content-blog.php:92 template-parts/content-first.php:80
+#: template-parts/content-blog.php:92 template-parts/content-first.php:91
 #: template-parts/content-list.php:98 template-parts/content-overlay.php:118
 #: template-parts/content-search.php:108 template-parts/content.php:117
 msgid "Read More"

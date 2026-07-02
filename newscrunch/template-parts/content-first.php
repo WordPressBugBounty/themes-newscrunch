@@ -7,6 +7,17 @@
 ?>
 <div data-wow-delay=".8s" class="wow-callback zoomIn spnc-first-catpost">
 	<article  itemscope itemtype="https://schema.org/Article" id="post-<?php the_ID(); ?>" <?php post_class('spnc-post '); ?> >
+
+		<?php $newscrunch_blog_post_section_title = get_theme_mod('blog_post_section_title',__('Latest News','newscrunch'));
+                            if ( ! empty($newscrunch_blog_post_section_title) && ! is_archive()  && ! is_search() ) :
+                            	?>               	
+            <div class="spnc-main-wrapper">
+                <div class="spnc-main-wrapper-heading">
+                    <h2 class="spnc-blog-title"><?php echo esc_html($newscrunch_blog_post_section_title);?></h2>
+                </div>
+            </div>
+        <?php endif; ?>
+
 	    <div class="spnc-post-img <?php echo esc_attr(get_theme_mod('img_animation','i_effect1'));?>">
 			<a href="<?php the_permalink();?>" itemprop="url"  title="<?php the_title(); ?>" >
 				<div class="spnc-post-overlay"></div>

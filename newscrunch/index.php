@@ -192,6 +192,7 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                             if((get_theme_mod('post_nav_style_setting','pagination') == 'pagination')  || ( class_exists('Newscrunch_Plus') && get_theme_mod('post_nav_style_setting','pagination') == 'pagination' )):
                                 if (have_posts()): 
 
+                                    $newscrunch_enable_blog_post_title = get_theme_mod('newscrunch_enable_blog_post_title', true);
                                     if(class_exists('Newscrunch_Plus'))
                                     {
                                         if('NewsBlogger' == wp_get_theme())
@@ -217,7 +218,7 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                                 echo '<div class="spnc-blog-section"><div class="spnc-post-list-view-section spnc-blog-home">';
 
                                                 $newscrunch_blog_post_section_title = get_theme_mod('blog_post_section_title',__('Latest News','newscrunch'));
-                                                     if(!empty($newscrunch_blog_post_section_title)):
+                                                     if(!empty($newscrunch_blog_post_section_title) && $newscrunch_enable_blog_post_title == true):
                                                     ?>      
                                                    <div class="spnc-list-box">                                 
                                                     <div class="spnc-main-wrapper">
@@ -249,7 +250,7 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                                 echo '<div class="spnc-blog-cat-wrapper spnc-blog-home">';
 
                                                 $newscrunch_blog_post_section_title = get_theme_mod('blog_post_section_title',__('Latest News','newscrunch'));
-                                                 if(!empty($newscrunch_blog_post_section_title)):
+                                                 if(!empty($newscrunch_blog_post_section_title) && $newscrunch_enable_blog_post_title == true):
                                                 ?>      
                                                <div class="spnc-overlay-box">
                                                     <div class="spnc-main-wrapper">
@@ -344,7 +345,7 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                                 echo '<div class="spnc-blog-cat-wrapper spnc-blog-home">';
 
                                                  $newscrunch_blog_post_section_title = get_theme_mod('blog_post_section_title',__('Latest News','newscrunch'));
-                                                 if(!empty($newscrunch_blog_post_section_title)):
+                                                 if(!empty($newscrunch_blog_post_section_title) && $newscrunch_enable_blog_post_title == true ):
                                                 ?>      
                                                 <div class="spnc-overlay-box">                     
                                                     <div class="spnc-main-wrapper">
@@ -377,7 +378,7 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
 
 
                                              $newscrunch_blog_post_section_title = get_theme_mod('blog_post_section_title',__('Latest News','newscrunch'));
-                                                 if(!empty($newscrunch_blog_post_section_title)):
+                                                 if(!empty($newscrunch_blog_post_section_title) && $newscrunch_enable_blog_post_title == true ):
                                                 ?>      
                                                <div class="spnc-list-box">                                 
                                                 <div class="spnc-main-wrapper">
@@ -415,7 +416,7 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                                 echo '<div class="spnc-blog-section"><div class="spnc-post-list-view-section spnc-blog-home">';
 
                                                  $newscrunch_blog_post_section_title = get_theme_mod('blog_post_section_title',__('Latest News','newscrunch'));
-                                                 if(!empty($newscrunch_blog_post_section_title)):
+                                                 if(!empty($newscrunch_blog_post_section_title) && $newscrunch_enable_blog_post_title == true ):
                                                 ?>      
                                                 <div class="spnc-list-box">
                                                     <div class="spnc-main-wrapper">
@@ -468,7 +469,7 @@ if ( ! empty( $newscrunch_sort ) && is_array( $newscrunch_sort ) ) :
                                                 echo '<div class="spnc-blog-section"><div class="spnc-post-list-view-section spnc-blog-home">';
 
                                               $newscrunch_blog_post_section_title = get_theme_mod('blog_post_section_title',__('Latest News','newscrunch'));
-                                                    if(!empty($newscrunch_blog_post_section_title)):
+                                                    if(!empty($newscrunch_blog_post_section_title) && $newscrunch_enable_blog_post_title == true):
                                                         ?>      
                                                    <div class="spnc-list-box">                                 
                                                     <div class="spnc-main-wrapper">

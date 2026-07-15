@@ -8,8 +8,11 @@
 <div data-wow-delay=".8s" class="wow-callback zoomIn spnc-first-catpost">
 	<article  itemscope itemtype="https://schema.org/Article" id="post-<?php the_ID(); ?>" <?php post_class('spnc-post '); ?> >
 
-		<?php $newscrunch_blog_post_section_title = get_theme_mod('blog_post_section_title',__('Latest News','newscrunch'));
-                            if ( ! empty($newscrunch_blog_post_section_title) && ! is_archive()  && ! is_search() ) :
+			<?php
+			$newscrunch_enable_blog_post_title = get_theme_mod('newscrunch_enable_blog_post_title', true);
+
+			$newscrunch_blog_post_section_title = get_theme_mod('blog_post_section_title',__('Latest News','newscrunch'));
+                            if ( ! empty($newscrunch_blog_post_section_title) && ! is_archive()  && ! is_search() && $newscrunch_enable_blog_post_title == true ) :
                             	?>               	
             <div class="spnc-main-wrapper">
                 <div class="spnc-main-wrapper-heading">

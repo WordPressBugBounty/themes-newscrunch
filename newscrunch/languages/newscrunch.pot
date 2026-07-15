@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Newscrunch 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/newscrunch-wordpress-theme\n"
-"POT-Creation-Date: 2026-07-01 17:33+0530\n"
+"POT-Creation-Date: 2026-07-08 18:54+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -649,12 +649,12 @@ msgstr ""
 msgid "No products found."
 msgstr ""
 
-#: gutenberg-news-template.php:212 gutenberg-news-template.php:233
-#: gutenberg-news-template.php:283 gutenberg-news-template.php:305
-#: gutenberg-news-template.php:335 gutenberg-news-template.php:388
-#: inc/customizer/settings/archives-options.php:22 index.php:219 index.php:251
-#: index.php:346 index.php:379 index.php:417 index.php:470
-#: template-parts/content-first.php:11
+#: gutenberg-news-template.php:214 gutenberg-news-template.php:235
+#: gutenberg-news-template.php:285 gutenberg-news-template.php:307
+#: gutenberg-news-template.php:337 gutenberg-news-template.php:390
+#: inc/customizer/settings/archives-options.php:38 index.php:220 index.php:252
+#: index.php:347 index.php:380 index.php:418 index.php:471
+#: template-parts/content-first.php:13
 msgid "Latest News"
 msgstr ""
 
@@ -1045,16 +1045,20 @@ msgstr ""
 msgid "Blog/Archives"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:30
+#: inc/customizer/settings/archives-options.php:28
+msgid "Hide/Show Blog Title"
+msgstr ""
+
+#: inc/customizer/settings/archives-options.php:46
 msgid "Blog Title"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:52
-#: inc/customizer/settings/archives-options.php:73
+#: inc/customizer/settings/archives-options.php:69
+#: inc/customizer/settings/archives-options.php:90
 msgid "Blog Variation"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:98
+#: inc/customizer/settings/archives-options.php:115
 #: inc/customizer/settings/main-banner.php:176
 #: inc/customizer/settings/news-highlight.php:185
 #: partials/widgets/post-grid-2-column-slider.php:206
@@ -1067,40 +1071,40 @@ msgstr ""
 msgid "Number of posts to show"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:116
+#: inc/customizer/settings/archives-options.php:133
 #: inc/customizer/settings/single-post-options.php:152
 msgid "Hide/Show Author"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:132
+#: inc/customizer/settings/archives-options.php:149
 #: inc/customizer/settings/single-post-options.php:137
 msgid "Hide/Show Tag"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:148
+#: inc/customizer/settings/archives-options.php:165
 #: inc/customizer/settings/single-post-options.php:122
 msgid "Hide/Show Categories"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:164
+#: inc/customizer/settings/archives-options.php:181
 #: inc/customizer/settings/single-post-options.php:182
 msgid "Hide/Show Comments"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:180
+#: inc/customizer/settings/archives-options.php:197
 msgid "Hide/Show Title"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:196
+#: inc/customizer/settings/archives-options.php:213
 msgid "Hide/Show Description"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:212
+#: inc/customizer/settings/archives-options.php:229
 #: inc/customizer/settings/single-post-options.php:167
 msgid "Hide/Show Date"
 msgstr ""
 
-#: inc/customizer/settings/archives-options.php:228
+#: inc/customizer/settings/archives-options.php:245
 #: inc/customizer/settings/main-banner.php:236
 msgid "Hide/Show Read More"
 msgstr ""
@@ -2219,7 +2223,7 @@ msgstr ""
 #: partials/widgets/post-grid-3-column-slider.php:90
 #: partials/widgets/post-list-view-slider.php:86
 #: template-parts/content-archive-first.php:66
-#: template-parts/content-blog.php:46 template-parts/content-first.php:57
+#: template-parts/content-blog.php:46 template-parts/content-first.php:59
 #: template-parts/content-list.php:79 template-parts/content-overlay.php:57
 #: template-parts/content-search.php:44 template-parts/content-single.php:58
 #: template-parts/content.php:52
@@ -2362,7 +2366,7 @@ msgstr ""
 #: partials/front/main-banner.php:184 partials/widgets/featured-post.php:36
 #: partials/widgets/featured-post.php:178
 #: template-parts/content-archive-first.php:90
-#: template-parts/content-blog.php:92 template-parts/content-first.php:91
+#: template-parts/content-blog.php:92 template-parts/content-first.php:93
 #: template-parts/content-list.php:98 template-parts/content-overlay.php:118
 #: template-parts/content-search.php:108 template-parts/content.php:117
 msgid "Read More"

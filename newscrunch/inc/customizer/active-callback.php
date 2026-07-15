@@ -318,3 +318,11 @@ function newscrunch_enable_product_search($control) {
         return false;
     }
 }
+// callback function for blog post title
+function newscrunch_blog_post_section_title_callback($control) {
+    if ($control->manager->get_setting('newscrunch_enable_blog_post_title')->value() == true) {
+        return true;
+    } else {
+        return false;
+    }
+}

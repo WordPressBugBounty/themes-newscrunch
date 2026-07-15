@@ -3,7 +3,7 @@
 Contributors: spicethemes
 Requires at least: 5.4
 Tested up to: 7.0
-Stable tag: 1.8.6.5
+Stable tag: 1.8.6.6
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -33,6 +33,9 @@ Newscrunch WordPress Theme, Copyright (C) 2023-2026, spicethemes
 Newscrunch WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+@Version 1.8.6.6
+* Added hide/show setting for blog post title.
 
 @Version 1.8.6.5
 * Added title setting for blog posts.

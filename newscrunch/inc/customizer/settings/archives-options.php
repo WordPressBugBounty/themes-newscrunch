@@ -15,6 +15,22 @@ function newscrunch_archives_options_customizer ( $wp_customize ) {
 		)
 	);
 
+    // enable/disable author
+    $wp_customize->add_setting('newscrunch_enable_blog_post_title',
+        array(
+            'default'           => true,
+            'sanitize_callback' => 'newscrunch_sanitize_checkbox'
+        )
+    );
+
+    $wp_customize->add_control(new Newscrunch_Toggle_Control($wp_customize, 'newscrunch_enable_blog_post_title',
+        array(
+            'label'     => esc_html__('Hide/Show Blog Title', 'newscrunch' ),
+            'type'      => 'toggle',
+            'section'   => 'newscrunch_blog_section',
+            'priority'  => 1
+        )
+    ));
 
     // Blog Post Section Title
     $wp_customize->add_setting('blog_post_section_title', 
@@ -29,6 +45,7 @@ function newscrunch_archives_options_customizer ( $wp_customize ) {
         array(
             'label'             =>  esc_html__('Blog Title', 'newscrunch'),
             'section'           =>  'newscrunch_blog_section',
+            'active_callback'   => 'newscrunch_blog_post_section_title_callback',
             'settings'          =>  'blog_post_section_title',
             'type'              =>  'text',
             'priority'          =>  1

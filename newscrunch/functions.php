@@ -236,7 +236,7 @@ if(!class_exists('Newscrunch_Plus')){
 		                        <span><?php esc_html_e('Theme Documentation', 'newscrunch'); ?></span>
 		                    </a>
 			                <?php if(!class_exists('Spice_Starter_Sites')){?>
-			               		<button id="install-plugin-button" data-plugin-url="<?php echo esc_url( 'https://spicethemes.com/extensions/spice-starter-sites.zip' ); ?>">
+			               		<button id="install-plugin-button" data-plugin-url="<?php echo esc_url( 'https://downloads.spicethemes.com/extensions/spice-starter-sites.zip' ); ?>">
                                     <?php echo esc_html__( 'Install Plugin', 'newscrunch' ); ?>
                                 </button>
 			               <?php }?>

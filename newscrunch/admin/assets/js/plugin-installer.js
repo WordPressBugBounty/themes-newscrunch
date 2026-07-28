@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
      var pluginSlug = 'spice-starter-sites'; // Adjust this based on your plugin slug
-    var pluginUrl = 'https://spicethemes.com/extensions/spice-starter-sites.zip'; // The plugin URL
+    var pluginUrl = 'https://downloads.spicethemes.com/extensions/spice-starter-sites.zip'; // The plugin URL
 
     // Check the plugin status when the page loads
     $.ajax({

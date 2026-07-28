@@ -297,7 +297,7 @@ class Newscrunch_Customizer_Notify_Section extends WP_Customize_Section {
 										<div class="description">{{{ data.recommended_plugins[action].description }}}</div>
 										<# if( data.recommended_plugins[action].plugin_slug ){ #>
 											<div class="custom-action">
-												<button id="install-plugin-button" data-plugin-url="<?php echo esc_url( 'https://spicethemes.com/extensions/spice-starter-sites.zip' ); ?>">
+												<button id="install-plugin-button" data-plugin-url="<?php echo esc_url( 'https://downloads.spicethemes.com/extensions/spice-starter-sites.zip' ); ?>">
 				                                    <?php echo esc_html__( 'Install Plugin', 'newscrunch' ); ?>
 				                                </button>
 											</div>

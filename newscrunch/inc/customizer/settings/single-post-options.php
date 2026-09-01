@@ -111,6 +111,21 @@ function newscrunch_single_blog_customizer($wp_customize) {
     ) ) );
 
 
+    $wp_customize->add_setting('newscrunch_enable_drop_cap',
+        array(
+            'default'           => false,
+            'sanitize_callback' => 'newscrunch_sanitize_checkbox'
+        )
+    );
+    $wp_customize->add_control(new Newscrunch_Toggle_Control($wp_customize, 'newscrunch_enable_drop_cap',
+        array(
+            'label'     => esc_html__('Hide/Show Drop Caps', 'newscrunch'),
+            'type'      => 'toggle',
+            'section'   => 'newscrunch_single_blog_section',
+            'priority'  => 2
+        )
+    ));
+
     $wp_customize->add_setting('newscrunch_enable_single_post_categories',
         array(
             'default'           => true,

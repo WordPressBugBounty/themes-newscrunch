@@ -5,20 +5,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Newscrunch 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/newscrunch-wordpress-theme\n"
-"POT-Creation-Date: 2026-07-08 18:54+0530\n"
+"POT-Creation-Date: 2026-09-01 13:02+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 "X-Domain: newscrunch\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:17 inc/helpers.php:376
+#: 404.php:17 inc/helpers.php:377
 msgid "Error 404"
 msgstr ""
 
@@ -491,7 +491,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: comments.php:80 inc/helpers.php:1198 inc/helpers.php:1300
+#: comments.php:80 inc/helpers.php:1199 inc/helpers.php:1301
 #: partials/widgets/featured-post.php:37 partials/widgets/featured-post.php:179
 #: partials/widgets/single-column.php:34 partials/widgets/single-column.php:94
 #: partials/widgets/single-column.php:139 template-parts/content-blog.php:64
@@ -654,7 +654,7 @@ msgstr ""
 #: gutenberg-news-template.php:337 gutenberg-news-template.php:390
 #: inc/customizer/settings/archives-options.php:38 index.php:220 index.php:252
 #: index.php:347 index.php:380 index.php:418 index.php:471
-#: template-parts/content-first.php:13
+#: template-parts/content-first.php:14
 msgid "Latest News"
 msgstr ""
 
@@ -671,7 +671,7 @@ msgctxt "breadcrumbs aria label"
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/breadcrumbs/breadcrumb-trail/breadcrumbs.php:296 inc/helpers.php:365
+#: inc/breadcrumbs/breadcrumb-trail/breadcrumbs.php:296 inc/helpers.php:366
 #: inc/menu/default_menu_walker.php:19
 msgid "Home"
 msgstr ""
@@ -1019,7 +1019,7 @@ msgstr ""
 #: inc/customizer/settings/general-settings.php:135
 #: inc/customizer/settings/general-settings.php:1077
 #: inc/customizer/settings/main-banner.php:310
-#: inc/customizer/settings/single-post-options.php:277
+#: inc/customizer/settings/single-post-options.php:292
 #: inc/customizer/settings/theme-footer.php:249
 #: inc/customizer/settings/theme-header.php:475
 #: inc/customizer/settings/top-header.php:110
@@ -1032,7 +1032,7 @@ msgstr ""
 #: inc/customizer/settings/general-settings.php:136
 #: inc/customizer/settings/general-settings.php:1078
 #: inc/customizer/settings/main-banner.php:311
-#: inc/customizer/settings/single-post-options.php:278
+#: inc/customizer/settings/single-post-options.php:293
 #: inc/customizer/settings/theme-footer.php:250
 #: inc/customizer/settings/theme-header.php:476
 #: inc/customizer/settings/top-header.php:111
@@ -1072,22 +1072,22 @@ msgid "Number of posts to show"
 msgstr ""
 
 #: inc/customizer/settings/archives-options.php:133
-#: inc/customizer/settings/single-post-options.php:152
+#: inc/customizer/settings/single-post-options.php:167
 msgid "Hide/Show Author"
 msgstr ""
 
 #: inc/customizer/settings/archives-options.php:149
-#: inc/customizer/settings/single-post-options.php:137
+#: inc/customizer/settings/single-post-options.php:152
 msgid "Hide/Show Tag"
 msgstr ""
 
 #: inc/customizer/settings/archives-options.php:165
-#: inc/customizer/settings/single-post-options.php:122
+#: inc/customizer/settings/single-post-options.php:137
 msgid "Hide/Show Categories"
 msgstr ""
 
 #: inc/customizer/settings/archives-options.php:181
-#: inc/customizer/settings/single-post-options.php:182
+#: inc/customizer/settings/single-post-options.php:197
 msgid "Hide/Show Comments"
 msgstr ""
 
@@ -1100,7 +1100,7 @@ msgid "Hide/Show Description"
 msgstr ""
 
 #: inc/customizer/settings/archives-options.php:229
-#: inc/customizer/settings/single-post-options.php:167
+#: inc/customizer/settings/single-post-options.php:182
 msgid "Hide/Show Date"
 msgstr ""
 
@@ -1139,11 +1139,11 @@ msgstr ""
 msgid "Enable/Disable Copyright Text"
 msgstr ""
 
-#: inc/customizer/settings/bottom-footer.php:77 inc/helpers.php:192
+#: inc/customizer/settings/bottom-footer.php:77 inc/helpers.php:193
 msgid "Magazine & Blog"
 msgstr ""
 
-#: inc/customizer/settings/bottom-footer.php:77 inc/helpers.php:192
+#: inc/customizer/settings/bottom-footer.php:77 inc/helpers.php:193
 msgid "Theme"
 msgstr ""
 
@@ -1310,7 +1310,7 @@ msgid "Enable/Disable Banner"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:245
-#: inc/customizer/settings/single-post-options.php:337
+#: inc/customizer/settings/single-post-options.php:352
 msgid "Page Title"
 msgstr ""
 
@@ -1340,43 +1340,43 @@ msgstr ""
 
 #: inc/customizer/settings/general-settings.php:334
 #: inc/customizer/settings/single-post-options.php:68
-#: inc/customizer/settings/single-post-options.php:324
+#: inc/customizer/settings/single-post-options.php:339
 msgid "Heading 1"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:335
 #: inc/customizer/settings/single-post-options.php:69
-#: inc/customizer/settings/single-post-options.php:325
+#: inc/customizer/settings/single-post-options.php:340
 msgid "Heading 2"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:336
 #: inc/customizer/settings/single-post-options.php:70
-#: inc/customizer/settings/single-post-options.php:326
+#: inc/customizer/settings/single-post-options.php:341
 msgid "Heading 3"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:337
 #: inc/customizer/settings/single-post-options.php:71
-#: inc/customizer/settings/single-post-options.php:327
+#: inc/customizer/settings/single-post-options.php:342
 msgid "Heading 4"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:338
 #: inc/customizer/settings/single-post-options.php:72
-#: inc/customizer/settings/single-post-options.php:328
+#: inc/customizer/settings/single-post-options.php:343
 msgid "Heading 5"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:339
 #: inc/customizer/settings/single-post-options.php:73
-#: inc/customizer/settings/single-post-options.php:329
+#: inc/customizer/settings/single-post-options.php:344
 msgid "Heading 6"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:340
 #: inc/customizer/settings/single-post-options.php:74
-#: inc/customizer/settings/single-post-options.php:330
+#: inc/customizer/settings/single-post-options.php:345
 msgid "Span"
 msgstr ""
 
@@ -1386,7 +1386,7 @@ msgstr ""
 
 #: inc/customizer/settings/general-settings.php:342
 #: inc/customizer/settings/single-post-options.php:75
-#: inc/customizer/settings/single-post-options.php:331
+#: inc/customizer/settings/single-post-options.php:346
 msgid "Div"
 msgstr ""
 
@@ -1500,7 +1500,7 @@ msgid "According To Theme"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:934
-msgid "According To Wordpress"
+msgid "According To WordPress"
 msgstr ""
 
 #: inc/customizer/settings/general-settings.php:943
@@ -1629,7 +1629,7 @@ msgid "Missed Section"
 msgstr ""
 
 #: inc/customizer/settings/missed-section.php:74
-#: inc/customizer/settings/single-post-options.php:228
+#: inc/customizer/settings/single-post-options.php:243
 msgid "Enable/Disable Missed Section"
 msgstr ""
 
@@ -1680,7 +1680,7 @@ msgstr ""
 msgid "Search By"
 msgstr ""
 
-#: inc/customizer/settings/news-highlight.php:102 inc/helpers.php:379
+#: inc/customizer/settings/news-highlight.php:102 inc/helpers.php:380
 msgid "Category"
 msgstr ""
 
@@ -1743,7 +1743,7 @@ msgstr ""
 
 #: inc/customizer/settings/reorder-sections.php:112
 #: inc/customizer/settings/single-post-options.php:104
-#: inc/customizer/settings/single-post-options.php:351
+#: inc/customizer/settings/single-post-options.php:366
 msgid "Drag And Drop to Rearrange"
 msgstr ""
 
@@ -1800,12 +1800,12 @@ msgid "Single Post Layouts"
 msgstr ""
 
 #: inc/customizer/settings/single-post-options.php:61
-#: inc/customizer/settings/single-post-options.php:317
+#: inc/customizer/settings/single-post-options.php:332
 msgid "Title Markup"
 msgstr ""
 
 #: inc/customizer/settings/single-post-options.php:89
-#: inc/customizer/settings/single-post-options.php:338
+#: inc/customizer/settings/single-post-options.php:353
 msgid "Featured Image"
 msgstr ""
 
@@ -1825,24 +1825,28 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: inc/customizer/settings/single-post-options.php:197
-msgid "Hide/Show Author Details"
+#: inc/customizer/settings/single-post-options.php:122
+msgid "Hide/Show Drop Caps"
 msgstr ""
 
 #: inc/customizer/settings/single-post-options.php:212
+msgid "Hide/Show Author Details"
+msgstr ""
+
+#: inc/customizer/settings/single-post-options.php:227
 msgid "Enable/Disable Related Post"
 msgstr ""
 
-#: inc/customizer/settings/single-post-options.php:238 inc/helpers.php:1400
+#: inc/customizer/settings/single-post-options.php:253 inc/helpers.php:1401
 msgid "Related Posts"
 msgstr ""
 
-#: inc/customizer/settings/single-post-options.php:247
-#: inc/customizer/settings/single-post-options.php:258
+#: inc/customizer/settings/single-post-options.php:262
+#: inc/customizer/settings/single-post-options.php:273
 msgid "Related Post Title"
 msgstr ""
 
-#: inc/customizer/settings/single-post-options.php:302
+#: inc/customizer/settings/single-post-options.php:317
 msgid "Single Page"
 msgstr ""
 
@@ -2172,19 +2176,19 @@ msgstr ""
 msgid "Click Here"
 msgstr ""
 
-#: inc/helpers.php:194
+#: inc/helpers.php:195
 msgid "Powered By"
 msgstr ""
 
-#: inc/helpers.php:256
+#: inc/helpers.php:257
 msgid "Assign Footer Menu"
 msgstr ""
 
-#: inc/helpers.php:274
+#: inc/helpers.php:275
 msgid "Back to Top"
 msgstr ""
 
-#: inc/helpers.php:373 partials/header/default-header.php:51
+#: inc/helpers.php:374 partials/header/default-header.php:51
 #: partials/header/default-header.php:57 partials/header/default-header.php:58
 #: partials/header/default-header.php:69 partials/header/default-header.php:76
 #: partials/header/default-header.php:78 partials/header/main-header.php:51
@@ -2194,28 +2198,28 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: inc/helpers.php:382 template-parts/content-single.php:146
+#: inc/helpers.php:383 template-parts/content-single.php:146
 msgid "Tag"
 msgstr ""
 
-#: inc/helpers.php:385
+#: inc/helpers.php:386
 msgid "Author"
 msgstr ""
 
-#: inc/helpers.php:388 inc/helpers.php:391 inc/helpers.php:394
+#: inc/helpers.php:389 inc/helpers.php:392 inc/helpers.php:395
 msgid "Month"
 msgstr ""
 
-#: inc/helpers.php:398
+#: inc/helpers.php:399
 msgid "Shop"
 msgstr ""
 
-#: inc/helpers.php:556
+#: inc/helpers.php:557
 msgid "Loading Now"
 msgstr ""
 
-#: inc/helpers.php:781 inc/helpers.php:1181 inc/helpers.php:1286
-#: inc/helpers.php:1445 partials/front/main-banner.php:94
+#: inc/helpers.php:782 inc/helpers.php:1182 inc/helpers.php:1287
+#: inc/helpers.php:1446 partials/front/main-banner.php:94
 #: partials/front/main-banner.php:193 partials/front/main-banner.php:282
 #: partials/front/missed-1.php:65 partials/front/news-video.php:149
 #: partials/widgets/featured-post.php:88 partials/widgets/featured-post.php:133
@@ -2223,26 +2227,26 @@ msgstr ""
 #: partials/widgets/post-grid-3-column-slider.php:90
 #: partials/widgets/post-list-view-slider.php:86
 #: template-parts/content-archive-first.php:66
-#: template-parts/content-blog.php:46 template-parts/content-first.php:59
+#: template-parts/content-blog.php:46 template-parts/content-first.php:60
 #: template-parts/content-list.php:79 template-parts/content-overlay.php:57
 #: template-parts/content-search.php:44 template-parts/content-single.php:58
 #: template-parts/content.php:52
 msgid "Posts by"
 msgstr ""
 
-#: inc/helpers.php:867
+#: inc/helpers.php:868
 msgid "Add Header Toggle Sidebar Widgets Area"
 msgstr ""
 
-#: inc/helpers.php:868
+#: inc/helpers.php:869
 msgid "Add Header Toggle Sidebar Widgets Area."
 msgstr ""
 
-#: inc/helpers.php:1166 inc/helpers.php:1271 template-parts/content-list.php:77
+#: inc/helpers.php:1167 inc/helpers.php:1272 template-parts/content-list.php:77
 msgid "author-image"
 msgstr ""
 
-#: inc/helpers.php:1198 inc/helpers.php:1300 inc/helpers.php:1450
+#: inc/helpers.php:1199 inc/helpers.php:1301 inc/helpers.php:1451
 #: partials/widgets/featured-post.php:93 template-parts/content-blog.php:63
 #: template-parts/content-list.php:86 template-parts/content-overlay.php:85
 #: template-parts/content-search.php:61 template-parts/content-single.php:75
@@ -2250,45 +2254,45 @@ msgstr ""
 msgid "Number of Comments"
 msgstr ""
 
-#: inc/helpers.php:1344
+#: inc/helpers.php:1345
 msgid "Add widgets in Primary Left Area"
 msgstr ""
 
-#: inc/helpers.php:1345
+#: inc/helpers.php:1346
 msgid "Add widgets in Primary Left Area."
 msgstr ""
 
-#: inc/helpers.php:1368
+#: inc/helpers.php:1369
 msgid "Previous post"
 msgstr ""
 
-#: inc/helpers.php:1373
+#: inc/helpers.php:1374
 msgid "Previous post arrow"
 msgstr ""
 
-#: inc/helpers.php:1379
+#: inc/helpers.php:1380
 msgid "Next post"
 msgstr ""
 
-#: inc/helpers.php:1384
+#: inc/helpers.php:1385
 msgid "Next post arrow"
 msgstr ""
 
-#: inc/helpers.php:1870
+#: inc/helpers.php:1871
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/helpers.php:2029
+#: inc/helpers.php:2030
 #, php-format
 msgid "Add your Biographical Information. %1$sEdit your Profile%2$s now."
 msgstr ""
 
-#: inc/helpers.php:2034
+#: inc/helpers.php:2035
 msgid "view all posts"
 msgstr ""
 
-#: inc/helpers.php:2759
+#: inc/helpers.php:2760
 msgid "Product hover image"
 msgstr ""
 
@@ -2366,7 +2370,7 @@ msgstr ""
 #: partials/front/main-banner.php:184 partials/widgets/featured-post.php:36
 #: partials/widgets/featured-post.php:178
 #: template-parts/content-archive-first.php:90
-#: template-parts/content-blog.php:92 template-parts/content-first.php:93
+#: template-parts/content-blog.php:92 template-parts/content-first.php:94
 #: template-parts/content-list.php:98 template-parts/content-overlay.php:118
 #: template-parts/content-search.php:108 template-parts/content.php:117
 msgid "Read More"

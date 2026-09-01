@@ -366,7 +366,7 @@ if(!class_exists('Newscrunch_Plus')) {
 		                </p>
 
 		                <ol class="admin-notice-up-list">
-		                	<li><?php echo 'Added hide/show setting for blog post title.'; ?></li>
+		                	<li><?php echo 'Added drop cap setting for single post.'; ?></li>
 		                </ol>
 
 		                <div class="admin-notice-up-btn-wrap">

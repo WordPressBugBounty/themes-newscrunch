@@ -931,7 +931,7 @@ function newscrunch_general_settings_customizer ( $wp_customize )
                 'choices'   =>  
                 array(
                     'date_format_by_theme'      =>  esc_html__('According To Theme', 'newscrunch' ),
-                    'date_format_by_wp'      =>  esc_html__('According To Wordpress', 'newscrunch' )
+                    'date_format_by_wp'      =>  esc_html__('According To WordPress', 'newscrunch' )
                 )
             )
         );

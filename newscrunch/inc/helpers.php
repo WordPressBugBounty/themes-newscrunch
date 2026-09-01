@@ -60,6 +60,7 @@
 	# Post Formats
 	# Add WooCommerce Compatibility
 	# Number of posts display in blog/archive section
+	# Drop capt fist lettter capital style css function
 /*
 -------------------------------------------------------------------------------
  Header
@@ -2998,3 +2999,28 @@ function newscrunch_category_style_css() {
 	}
 }
 add_action('wp_head', 'newscrunch_category_style_css');
+
+/*
+------------------------------------------------------------------------
+ Drop capt fist lettter capital style css function
+-------------------------------------------------------------------------------*/
+function newscrunch_dropcap(){
+
+	$newscrunch_single_post_drop_cap = get_theme_mod('newscrunch_enable_drop_cap','false');
+		
+		if($newscrunch_single_post_drop_cap == 'true') {	?>
+		<style>
+		/* 3-line drop cap */
+		.spnc-single-post .spnc-post-content .spnc-entry-content p:nth-of-type(1)::first-letter {
+		    float: left;
+		    font-size: 4.8em; /* 1.6 × 3 = 4.8 → exact 3 lines */
+		    line-height: 0.85;
+		    font-weight: 800;
+		    margin-right: 10px;
+		    margin-top: 4px;
+		}
+		</style>
+	<?php }
+   
+} 
+add_action('wp_head','newscrunch_dropcap'); 
